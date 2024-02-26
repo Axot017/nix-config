@@ -4,6 +4,7 @@
   imports = [
     ../../modules/home-manager/nix-vim/default.nix
     ../../modules/home-manager/git.nix
+    ../../modules/home-manager/zsh.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
