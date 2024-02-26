@@ -2,6 +2,11 @@
 {
   programs.zsh = {
     enable = true;
+    syntaxHighlighting = {
+      enable = true;
+    };
+    enableAutosuggestions = true;
+    enableCompletion = true;
     initExtra = ''
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -41,26 +46,6 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
     '';
-    plugins = [
-      {
-        name = "zsh-autosuggestions";
-	src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-	  repo = "zsh-autosuggestions";
-	  rev = "v0.7.0";
-	  sha256 = "sha256-KLUYpUu4DHRumQZ3w59m9aTW6TBKMCXl2UcKi4uMd7w=";
-	};
-      }
-      {
-        name = "zsh-syntax-highlighting";
-	src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-	  repo = "zsh-syntax-highlighting";
-	  rev = "v0.8.0";
-	  sha256 = "sha256-KLUYpUu4DHRumQZ3w59m9aTW6TBKMCXl2UcKi4uMd7w=";
-	};
-      }
-    ];
   };
 }
 
