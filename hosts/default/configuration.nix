@@ -89,9 +89,11 @@
     description = "Axot";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      alacritty
     ];
+    shell = pkgs.zsh;
   };
+
+  programs.zsh.enable = true;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
