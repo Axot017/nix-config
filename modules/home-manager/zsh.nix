@@ -12,6 +12,15 @@
 	  sha256 = "sha256-KLUYpUu4DHRumQZ3w59m9aTW6TBKMCXl2UcKi4uMd7w=";
 	};
       }
+      {
+        name = "zsh-syntax-highlighting";
+	src = pkgs.fetchFromGitHub {
+          owner = "zsh-users";
+	  repo = "zsh-syntax-highlighting";
+	  rev = "v0.7.0";
+	  sha256 = "sha256-KLUYpUu4DHRumQZ3w59m9aTW6TBKMCXl2UcKi4uMd7w=";
+	};
+      }
     ];
   };
 }
