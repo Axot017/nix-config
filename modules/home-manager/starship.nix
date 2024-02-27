@@ -22,7 +22,7 @@
       erlang.format = "\[[$symbol($version)]($style)\]";
       gcloud.format = "\[[$symbol$account(@$domain)(\($region\))]($style)\]";
       git_branch.format = "\[[$symbol$branch]($style)\]";
-      git_status.format = "([\[$all_status$ahead_behind\]]($style))";
+      git_status.format = "([[$all_status$ahead_behind]]($style))";
       golang.format = "\[[$symbol($version)]($style)\]";
       helm.format = "\[[$symbol($version)]($style)\]";
       hg_branch.format = "\[[$symbol$branch]($style)\]";
