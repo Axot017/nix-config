@@ -43,7 +43,7 @@
             background = "#282a36";
             foreground = "#f8f8f2";
           };
-          hint = {
+          hints = {
             start = {
               background = "#282a36";
               foreground = "#f1fa8c";
