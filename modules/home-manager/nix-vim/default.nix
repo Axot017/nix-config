@@ -6,6 +6,7 @@
     ./keymaps.nix
     ./plugins/nvim-tree.nix
     ./plugins/treesitter.nix
+    ./plugins/telescope.nix
   ];
   programs.nixvim = {
     enable = true;
