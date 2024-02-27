@@ -2,7 +2,7 @@
 { config, pkgs, ... }:
 {
   programs = {
-    allacrity = {
+    alacritty = {
       enable = true;
       settings = {
 
