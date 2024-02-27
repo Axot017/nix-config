@@ -2,6 +2,7 @@
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./options.nix
   ];
   programs.nixvim = {
     enable = true;

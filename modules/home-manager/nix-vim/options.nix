@@ -3,7 +3,7 @@
   options = {
     backup = false;
     cmdheight = 1;
-    completeopt = { "menuone", "noselect" };
+    completeopt = [ "menuone" "noselect" ];
     conceallevel = 0;
     fileencoding = "utf-8";
     hlsearch = true;
@@ -32,7 +32,7 @@
     signcolumn = "yes";
     wrap = false;
     scrolloff = 8;
-    guifont = { "JetBrainsMonoNL Nerd Font Mono", "h12" };
+    guifont = "JetBrainsMonoNL\ Nerd\ Font\ Mono:h12";
     sidescrolloff = 8;
   };
 }
