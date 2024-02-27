@@ -1,6 +1,6 @@
 { pkgs, config, inputs, ... }: 
 {
-  options = {
+  programs.nixvim.options = {
     backup = false;
     cmdheight = 1;
     completeopt = [ "menuone" "noselect" ];
