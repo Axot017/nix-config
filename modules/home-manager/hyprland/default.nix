@@ -15,7 +15,7 @@
         drop_shadow = "yes";
         shadow_range = "4";
         shadow_render_power = "3";
-        col.shadow = "rgba(1a1a1aee)";
+        "col.shadow" = "rgba(1a1a1aee)";
         blur = {
           enabled = "true";
           size = "3";
@@ -27,8 +27,8 @@
         gaps_in = "4";
         gaps_out = "8";
         border_size = "2";
-        col.active_border = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        col.inactive_border = "rgba(595959aa)";
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
       };
       monitor = ",preferred,auto,auto";
       "$mainMod" = "SUPER";
