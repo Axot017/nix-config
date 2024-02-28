@@ -90,6 +90,7 @@
     description = "Axot";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      libnotify
     ];
     shell = pkgs.zsh;
   };
