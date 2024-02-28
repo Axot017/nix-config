@@ -11,7 +11,6 @@
       inputs.home-manager.nixosModules.default
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/pipewire.nix
-      ../../modules/nixos/xdg-portal.nix
     ];
 
   # Bootloader.
@@ -47,12 +46,8 @@
     LC_TIME = "pl_PL.UTF-8";
   };
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -66,7 +61,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -77,7 +71,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       libnotify
-      brave
     ];
     shell = pkgs.zsh;
   };
@@ -98,6 +91,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    libnotify
+    brave
+    swww
+    rofi-wayland
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
