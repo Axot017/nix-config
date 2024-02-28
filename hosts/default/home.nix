@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../modules/home-manager/hyprland/default.nix
     ../../modules/home-manager/nix-vim/default.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/zsh.nix
