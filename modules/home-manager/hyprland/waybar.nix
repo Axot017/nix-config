@@ -17,7 +17,7 @@
         };
       };
       clock = {
-        format = "<span color='#b4befe'> </span>{:%d-%m-%Y %H:%M}";
+        format = "{:%d-%m-%Y %H:%M}";
       };
       pulseaudio = {
         format = "<span color='#b4befe'>{icon}</span> {volume}%";
@@ -46,7 +46,7 @@
       };
       disk = {
           interval = 30;
-          format = "<span color='#b4befe'>󰋊 </span>{percentage_used}%";
+          format = "{percentage_used}%<span color='#b4befe'> 󰋊</span>";
           path = "/";
       };
       memory = {
@@ -61,7 +61,7 @@
       };
       temperature = {
           critical-threshold = 80;
-          format = "{temperatureC}°C {icon}";
+          format = "{temperatureC}°C <span color='#b4befe'>{icon}</span>";
           format-icons = ["" "" ""];
       };
     };
