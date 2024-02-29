@@ -92,16 +92,17 @@ window#waybar.empty #window {
  background: none;  
 } 
 
-#cpu {
-}
+#pulseaudio, #memory, #cpu {
+  border-top-left-radius: 32px;
+  border-top-right-radius: 8px;
 
-#memory {
-}
-
-#pulseaudio {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 32px;
 }
 
 #clock {
+  padding-left: 8px;
+  padding-right: 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 
@@ -109,13 +110,12 @@ window#waybar.empty #window {
   border-bottom-right-radius: 32px;
 }
 
-#network {
-}
+#network, #disk, #temperature {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 32px;
 
-#disk {
-}
-
-#temperature {
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 8px;
 }
 
 #workspaces {
