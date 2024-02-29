@@ -104,7 +104,7 @@ window#waybar {
   color: #b4befe;
 }
 
-#clock, #pulseaudio, #network, #cpu, #memory, #disk {
+#clock, #pulseaudio, #network, #cpu, #memory, #disk, #temperature {
   background-color: #11111b;
   color: #cdd6f4;
   padding-left: 8px;
