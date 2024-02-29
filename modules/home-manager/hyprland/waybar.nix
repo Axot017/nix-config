@@ -17,7 +17,7 @@
         };
       };
       clock = {
-        format = "<span color='#b4befe'> </span>{:%Y-:%m-:%d :%H:%M}";
+        format = "<span color='#b4befe'> </span>{:%d-%m-%Y %H:%M}";
       };
       pulseaudio = {
         format = "<span color='#b4befe'>{icon}</span> {volume}%";
