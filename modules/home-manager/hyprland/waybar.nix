@@ -83,7 +83,7 @@
   margin-right: 4px;
   padding-left: 24px;
   padding-right: 24px;
-  min-width: 250px;
+  min-width: 100px;
 }
 
 #window {
