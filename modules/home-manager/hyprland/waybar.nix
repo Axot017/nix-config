@@ -72,10 +72,12 @@
   font-size: 16px;
   min-height: 0px;
 }
-
 #clock, #pulseaudio, #network, #cpu, #memory, #disk, #temperature, #clock, #window, #workspaces {
   background-color: #11111b;
   color: #cdd6f4;
+}
+
+#clock, #pulseaudio, #network, #cpu, #memory, #disk, #temperature, #clock, #window, #workspaces {
   margin-top: 8px;
   margin-left: 4px;
   margin-right: 4px;
@@ -84,6 +86,12 @@
 }
 
 #window {
+  margin-top: 8px;
+  padding-left: 16px;
+  padding-right: 24px;
+
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 8px;
 }
 
 window#waybar {
@@ -119,6 +127,12 @@ window#waybar.empty #window {
 }
 
 #workspaces {
+  margin-top: 8px;
+  padding-left: 24px;
+  padding-right: 16px;
+
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 32px;
 }
 
 #workspaces button {
