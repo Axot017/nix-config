@@ -10,6 +10,7 @@
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/zoxide.nix
+    ../../modules/home-manager/htop.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
