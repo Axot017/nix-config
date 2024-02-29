@@ -93,11 +93,11 @@ window#waybar.empty #window {
 } 
 
 #pulseaudio, #memory, #cpu {
-  border-top-left-radius: 32px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 32px;
 
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 8px;
 }
 
 #clock {
@@ -111,11 +111,11 @@ window#waybar.empty #window {
 }
 
 #network, #disk, #temperature {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 32px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 8px;
 
-  border-bottom-left-radius: 32px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 32px;
 }
 
 #workspaces {
