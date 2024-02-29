@@ -33,7 +33,7 @@
       network = {
         interface = "wlan0";
         format = "{ifname}";
-        format-wifi = "{ipaddr}/{cidr} ({signalStrength}%)<span color='#b4befe'> {icon}</span>";
+        format-wifi = "{signalStrength}%<span color='#b4befe'> 󰤨</span>";
         format-ethernet = "{ipaddr}/{cidr} 󱎔 ";
         format-disconnected = "<span color='#b4befe'>󰖪 </span>No Network";
         format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
