@@ -73,30 +73,52 @@
   min-height: 0px;
 }
 
+#clock, #pulseaudio, #network, #cpu, #memory, #disk, #temperature, #clock, #window, #workspaces {
+  background-color: #11111b;
+  color: #cdd6f4;
+  margin-top: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#window {
+}
+
 window#waybar {
   background: transparent;
 }
 
-#custom-arch, #workspaces {
-  border-radius: 8px;
-  background-color: #11111b;
-  color: #b4befe;
-	margin-left: 8px;
-  padding-left: 4px;
-  padding-right: 4px;
+window#waybar.empty #window {  
+ background: none;  
+} 
+
+#cpu {
 }
 
-#custom-arch {
-  font-size: 20px;
-  color: #b4befe;
+#memory {
 }
 
-#window {
-  border-radius: 8px;
-  background-color: #11111b;
-  color: #cdd6f4;
-  padding-left: 8px;
-  padding-right: 8px;
+#pulseaudio {
+}
+
+#clock {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+}
+
+#network {
+}
+
+#disk {
+}
+
+#temperature {
+}
+
+#workspaces {
 }
 
 #workspaces button {
@@ -104,39 +126,6 @@ window#waybar {
   color: #b4befe;
 }
 
-#clock, #pulseaudio, #network, #cpu, #memory, #disk, #temperature {
-  background-color: #11111b;
-  color: #cdd6f4;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-#cpu {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-
-#disk {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-
-#clock, #pulseaudio, #network {
-  border-radius: 8px;
-}
-
-#clock, #pulseaudio, #network, #disk {
-  margin-right: 8px;
-}
-
-#custom-arch, #workspaces, #window, #cpu, #memory, #clock, #pulseaudio, #network, #disk {
-  margin-top: 8px;
-  padding: 4px 8px;
-}
-
-window#waybar.empty #window {  
- background: none;  
-} 
     '';
   };
 }
