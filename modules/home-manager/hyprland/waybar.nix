@@ -4,9 +4,9 @@
     enable = true;
     settings.mainBar = {
       layer = "top";
-      modules-left = ["hyprland/workspaces"];
-      modules-center = ["hyprland/window"];
-      modules-right = ["cpu" "memory" "disk" "pulseaudio" "network" "battery" "clock" "temperature"];
+      modules-left = ["hyprland/window"];
+      modules-center = ["cpu" "memory" "pulseaudio" "clock" "network" "disk" "temperature"];
+      modules-right = ["hyprland/workspaces"];
       "hyprland/workspaces" = {
         format = "{icon}";
         tooltip = false;
@@ -17,7 +17,7 @@
         };
       };
       clock = {
-        format = "<span color='#b4befe'> </span>{:%H:%M}";
+        format = "<span color='#b4befe'> </span>{%Y-%m-%d %H:%M}";
       };
       pulseaudio = {
         format = "<span color='#b4befe'>{icon}</span> {volume}%";
@@ -31,7 +31,7 @@
         scroll-step = 1;
       };
       network = {
-        interface = "wlan0";
+        interface = "wlo1";
         format = "{ifname}";
         format-wifi = "{ipaddr}/{cidr} ({signalStrength}%)<span color='#b4befe'> {icon}</span>";
         format-ethernet = "{ipaddr}/{cidr} 󱎔 ";
