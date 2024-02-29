@@ -33,9 +33,9 @@
       network = {
         interface = "wlo1";
         format = "{ifname}";
-        format-wifi = "{ipaddr}/{cidr} ({signalStrength}%)<span color='#b4befe'> {icon}</span>";
-        format-ethernet = "{ipaddr}/{cidr} 󱎔 ";
-        format-disconnected = "<span color='#b4befe'>󰖪 </span>No Network";
+        format-wifi = "{signalStrength}%<span color='#b4befe'> {icon}</span>";
+        format-ethernet = "<span color='#b4befe'> 󱎔 </span>";
+        format-disconnected = "<span color='#b4befe'> 󰖪 </span>";
         format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
         on-click = "";
         tooltip = false;
