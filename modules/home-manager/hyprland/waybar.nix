@@ -79,6 +79,8 @@
   margin-top: 8px;
   margin-left: 4px;
   margin-right: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 #window {
@@ -101,8 +103,6 @@ window#waybar.empty #window {
 }
 
 #clock {
-  padding-left: 8px;
-  padding-right: 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 
