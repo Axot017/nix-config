@@ -65,5 +65,78 @@
           format-icons = ["" "" ""];
       };
     };
+    style = ''
+* {
+  border: none;
+  font-family: 'JetBrainsMonoNL Nerd Font Mono', 'Symbols Nerd Font Mono';
+  font-size: 16px;
+  min-height: 0px;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+#custom-arch, #workspaces {
+  border-radius: 8px;
+  background-color: #11111b;
+  color: #b4befe;
+	margin-left: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#custom-arch {
+  font-size: 20px;
+  color: #b4befe;
+}
+
+#window {
+  border-radius: 8px;
+  background-color: #11111b;
+  color: #cdd6f4;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#workspaces button {
+  background: #11111b;
+  color: #b4befe;
+}
+
+#clock, #pulseaudio, #network, #cpu, #memory, #disk {
+  background-color: #11111b;
+  color: #cdd6f4;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#cpu {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+#disk {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+#clock, #pulseaudio, #network {
+  border-radius: 8px;
+}
+
+#clock, #pulseaudio, #network, #disk {
+  margin-right: 8px;
+}
+
+#custom-arch, #workspaces, #window, #cpu, #memory, #clock, #pulseaudio, #network, #disk {
+  margin-top: 8px;
+  padding: 4px 8px;
+}
+
+window#waybar.empty #window {  
+ background: none;  
+} 
+    '';
   };
 }
