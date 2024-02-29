@@ -79,8 +79,8 @@
   margin-top: 8px;
   margin-left: 4px;
   margin-right: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 #window {
