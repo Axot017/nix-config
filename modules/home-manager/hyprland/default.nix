@@ -4,6 +4,7 @@
     ./waybar.nix
     ./mako.nix
     ./rofi.nix
+    ./wallpapers.nix
   ];
   wayland.windowManager.hyprland = {
     enable = true;
