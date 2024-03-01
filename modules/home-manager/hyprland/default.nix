@@ -3,6 +3,7 @@
   imports = [
     ./waybar.nix
     ./mako.nix
+    ./rofi.nix
   ];
   wayland.windowManager.hyprland = {
     enable = true;

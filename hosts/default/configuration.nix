@@ -98,7 +98,6 @@
     libnotify
     brave
     swww
-    rofi-wayland
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
