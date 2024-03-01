@@ -30,6 +30,7 @@
 
           location = mkLiteral "north";
           anchor = mkLiteral "center";
+          y-offset = 250;
           width = 640;
           border-radius = 8;
       };
