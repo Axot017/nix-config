@@ -9,7 +9,7 @@ fi
 # Edit below to control the images transition
 export SWWW_TRANSITION_FPS=120
 export SWWW_TRANSITION_STEP=1
-export SWWW_TRANSITION=random
+export SWWW_TRANSITION=any
 
 # This controls (in seconds) when to switch to the next image
 INTERVAL=20
@@ -21,6 +21,7 @@ while true; do
 		done \
 		| sort -n | cut -d':' -f2- \
 		| while read -r img; do
+      echo "test"
 			swww img "$img"
 			sleep $INTERVAL
 		done

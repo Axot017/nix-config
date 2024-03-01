@@ -6,14 +6,14 @@
     ./rofi.nix
     ./wallpapers.nix
   ];
-  home.file.".config/hyprland/scripts".source = ./scripts;
+  home.file.".config/hypr/scripts".source = ./scripts;
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       exec-once = [
         "waybar"
         "swww init"
-        "~/.config/hyprland/scripts/swww_randomize.sh ~/Wallpapers"
+        "~/.config/hypr/scripts/swww_randomize.sh ~/Wallpapers/"
       ];
       decoration = {
         rounding = "10";
@@ -82,7 +82,7 @@
 
         "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "$mainMod, SPACE, exec, rofi -show drun -show-icons"
-        "$mainMod, P, exec, rofi -show power-menu -modi power-menu:~/.config/hyprland/scripts/rofi-power-menu"
+        "$mainMod, P, exec, rofi -show power-menu -modi power-menu:~/.config/hypr/scripts/rofi-power-menu"
         # "$mainMod SHIFT, S, exec, grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png "
         # "$mainMod, S, exec, grim ~/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png "
       ];
