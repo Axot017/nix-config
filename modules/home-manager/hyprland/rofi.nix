@@ -28,8 +28,8 @@
       window = {
           background-color = mkLiteral "@bg0";
 
-          location = mkLiteral "center";
-          anchor = mkLiteral "north";
+          location = mkLiteral "north";
+          anchor = mkLiteral "center";
           width = 640;
           border-radius = 8;
       };
