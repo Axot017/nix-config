@@ -46,7 +46,7 @@
       };
 
       "icon-search, entry, element-icon, element-text" = {
-          vertical-align: = 0.5;
+          vertical-align = 0.5;
       };
 
       "entry" = {
