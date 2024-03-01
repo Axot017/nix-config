@@ -98,7 +98,6 @@
     libnotify
     brave
     swww
-    networkmanagerapplet
     cinnamon.nemo
   ];
 

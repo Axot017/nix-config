@@ -6,12 +6,14 @@
     ./rofi.nix
     ./wallpapers.nix
   ];
+  home.file.".config/hyprland/scripts".source = ./scripts;
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       exec-once = [
-        "nm-applet --indicator"
         "waybar"
+        "swww init"
+        "~/.config/hyprland/scripts/swww_randomize.sh ~/Wallpapers"
       ];
       decoration = {
         rounding = "10";

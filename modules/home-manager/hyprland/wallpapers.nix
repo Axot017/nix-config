@@ -1,4 +1,4 @@
 { config, pkgs, ... }:
 {
-  home.file."wallpapers".source = ./wallpapers;
+  home.file."Wallpapers".source = ./wallpapers;
 }
