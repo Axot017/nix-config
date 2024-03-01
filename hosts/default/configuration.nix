@@ -98,6 +98,8 @@
     libnotify
     brave
     swww
+    networkmanagerapplet
+    cinnamon.nemo
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

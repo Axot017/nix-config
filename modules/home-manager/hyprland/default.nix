@@ -9,6 +9,7 @@
     enable = true;
     settings = {
       exec-once = [
+        "nm-applet --indicator"
         "waybar"
       ];
       decoration = {
