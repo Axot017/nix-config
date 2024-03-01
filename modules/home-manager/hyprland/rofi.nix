@@ -5,6 +5,15 @@
     package = pkgs.rofi-wayland;
     font = "JetBrainsMonoNL Nerd Font Mono 14";
     theme = ''
+
+window {
+    background-color:   @bg0;
+
+    location:       center;
+    width:          640;
+    border-radius:  8;
+}
+
 * {
     font:   "JetBrainsMonoNL Nerd Font Mono 14";
 
@@ -22,14 +31,6 @@
     margin:     0;
     padding:    0;
     spacing:    0;
-}
-
-window {
-    background-color:   @bg0;
-
-    location:       center;
-    width:          640;
-    border-radius:  8;
 }
 
 inputbar {
