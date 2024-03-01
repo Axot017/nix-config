@@ -28,7 +28,7 @@
       window = {
           background-color = mkLiteral "@bg0";
 
-          location = mkLiteral "center";
+          location = mkLiteral "north";
           width = 640;
           border-radius = 8;
       };
