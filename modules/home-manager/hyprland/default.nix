@@ -5,7 +5,7 @@
     ./mako.nix
     ./rofi.nix
     ./wallpapers.nix
-    ./gtk.nix
+    ./theme.nix
   ];
   home.file.".config/hypr/scripts".source = ./scripts;
   wayland.windowManager.hyprland = {
