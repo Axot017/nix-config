@@ -3,13 +3,16 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Macchiato-Compact-Pink-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "pink" ];
-        size = "compact";
-        tweaks = [ "black" ];
-        variant = "macchiato";
-      };
+      name = "Sweet";
+      package = pkgs.sweet;
+    };
+    iconTheme = {
+      name = "SweetIcon";
+      package = pkgs.sweet;
+    };
+    cursorTheme = {
+      name = "SweetCursor";
+      package = pkgs.sweet;
     };
   };
   xdg.configFile = {
