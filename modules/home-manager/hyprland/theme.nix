@@ -3,16 +3,16 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Sweet";
-      package = pkgs.sweet;
+      name = "dracula";
+      package = pkgs.dracula-theme;
     };
     iconTheme = {
-      name = "SweetIcon";
-      package = pkgs.sweet;
+      name = "dracula-icon";
+      package = pkgs.dracula-icon-theme;
     };
     cursorTheme = {
-      name = "SweetCursor";
-      package = pkgs.sweet;
+      name = "dracula-cursor";
+      package = pkgs.dracula-icon-theme;
     };
   };
   xdg.configFile = {
