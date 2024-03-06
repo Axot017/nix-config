@@ -1,18 +1,13 @@
 { config, pkgs, ... }:
+let
+  sweet = import ./packages/sweet-theme.nix { inherit pkgs; };
+in
 {
   gtk = {
     enable = true;
     theme = {
-      name = "dracula";
-      package = pkgs.dracula-theme;
-    };
-    iconTheme = {
-      name = "dracula-icon";
-      package = pkgs.dracula-icon-theme;
-    };
-    cursorTheme = {
-      name = "dracula-cursor";
-      package = pkgs.dracula-icon-theme;
+      name = "Sweet";
+      package = sweet;
     };
   };
   #xdg.configFile = {
