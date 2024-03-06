@@ -6,12 +6,12 @@ in
   gtk = {
     enable = true;
     theme = {
-      name = "Sweet";
+      name = "Sweet-Ambar-Blue-Dark";
       package = sweet;
     };
   };
   home.file = {
-    ".theme/${config.gtk.theme.name}".source = "${config.gtk.theme.package}/Sweet-Ambar-Blue-Dark";
+    ".themes/${config.gtk.theme.name}".source = "${config.gtk.theme.package}/${config.gtk.theme.name}";
   };
   qt = {
     enable = true;
