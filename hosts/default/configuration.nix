@@ -98,7 +98,7 @@
     libnotify
     brave
     swww
-    cinnamon.nemo
+    dolphin
     feh
     discord
     unzip
