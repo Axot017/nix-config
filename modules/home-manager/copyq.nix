@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  programs = {
+  services = {
     copyq = {
       enable = true;
     };
