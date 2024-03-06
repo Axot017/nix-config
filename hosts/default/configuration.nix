@@ -102,6 +102,8 @@
     feh
     discord
     unzip
+    gnome.nautilus
+    cinnamon.nemo
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
