@@ -100,7 +100,7 @@
     swww
     cinnamon.nemo
     feh
-    gtkcord4
+    discord
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
