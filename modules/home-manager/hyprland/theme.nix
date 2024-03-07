@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   sweet = import ./packages/sweet-theme.nix { inherit pkgs; };
+  candy-icons = import ./packages/candy-icons-theme.nix { inherit pkgs; };
 in
 {
   gtk = {
@@ -12,11 +13,6 @@ in
   };
   home.file = {
     ".themes/${config.gtk.theme.name}".source = "${config.gtk.theme.package}/${config.gtk.theme.name}";
-  };
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
   };
   qt = {
     enable = true;
