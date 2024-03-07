@@ -11,5 +11,6 @@ pkgs.stdenv.mkDerivation {
   installPhase = ''
     mkdir -p $out
     ${pkgs.unzip}/bin/unzip $src -d $out/
+    mv $out/candy-icons-master $out/Candy-Icons
   '';
 }
