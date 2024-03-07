@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
   sweet = import ./packages/sweet-theme.nix { inherit pkgs; };
-  candy-icons = import ./packages/candy-icons-theme.nix { inherit pkgs; };
+  candy = import ./packages/candy-icons-theme.nix { inherit pkgs; };
 in
 {
   gtk = {
@@ -10,9 +10,14 @@ in
       name = "Sweet-Ambar-Blue-Dark";
       package = sweet;
     };
+    iconTheme = {
+      name = "Candy-Icons";
+      package = candy;
+    };
   };
   home.file = {
     ".themes/${config.gtk.theme.name}".source = "${config.gtk.theme.package}/${config.gtk.theme.name}";
+    ".icons/${config.gtk.iconTheme.name}".source = "${config.gtk.iconTheme.package}/${config.gtk.iconTheme.name}";
   };
   qt = {
     enable = true;
