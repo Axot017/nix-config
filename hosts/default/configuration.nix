@@ -98,11 +98,8 @@
     libnotify
     brave
     swww
-    dolphin
-    feh
     discord
     unzip
-    gnome.nautilus
     cinnamon.nemo
   ];
 
