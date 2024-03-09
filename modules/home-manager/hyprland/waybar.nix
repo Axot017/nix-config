@@ -67,15 +67,15 @@
     };
     style = ''
 * {
+  border: none;
   font-family: 'JetBrainsMonoNL Nerd Font Mono', 'Symbols Nerd Font Mono';
   font-size: 16px;
   min-height: 0px;
 }
+
 #clock, #pulseaudio, #network, #cpu, #memory, #disk, #temperature, #clock, #window, #workspaces {
   background-color: #11111b;
   color: #cdd6f4;
-  border-image: linear-gradient(45deg, purple, orange) 1;
-  border: 5px;
 }
 
 #clock, #pulseaudio, #network, #cpu, #memory, #disk, #temperature, #clock {

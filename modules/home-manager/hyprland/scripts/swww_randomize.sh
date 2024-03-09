@@ -14,6 +14,8 @@ export SWWW_TRANSITION=any
 # This controls (in seconds) when to switch to the next image
 INTERVAL=60
 
+sleep 2
+
 while true; do
 	find "$1" -type f \
 		| while read -r img; do
