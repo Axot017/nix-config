@@ -17,7 +17,7 @@
         "~/.config/hypr/scripts/swww_randomize.sh ~/Wallpapers/"
       ];
       input = {
-        kb_layout = "pl,us"
+        kb_layout = "pl,us";
       };
       decoration = {
         rounding = "10";
