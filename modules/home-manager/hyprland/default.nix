@@ -18,7 +18,7 @@
       ];
       input = {
         kb_layout = "pl,us"
-      },
+      };
       decoration = {
         rounding = "10";
         drop_shadow = "yes";
