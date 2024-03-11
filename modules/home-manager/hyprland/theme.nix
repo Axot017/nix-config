@@ -7,7 +7,7 @@ in
   services.xserver = {
     sddm = {
       enable = true;
-      theme = "${import ./packages/sddm-chili.nix { inherit pkgs; }}"
+      theme = "${import ./packages/sddm-chili.nix { inherit pkgs; }}";
     };
   };
   gtk = {
