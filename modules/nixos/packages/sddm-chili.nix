@@ -9,6 +9,6 @@ pkgs.stdenv.mkDerivation {
   dontUnpack = true;
   installPhase = ''
     mkdir -p $out
-    ${pkgs.unzip}/bin/unzip $src -d $out/
+    ${pkgs.unzip}/bin/unzip -j $src -d $out/
   '';
 }
