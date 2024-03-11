@@ -11,6 +11,7 @@
       inputs.home-manager.nixosModules.default
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/pipewire.nix
+      ../../modules/nixos/xserver.nix
     ];
 
   # Bootloader.
@@ -45,9 +46,6 @@
     LC_TELEPHONE = "pl_PL.UTF-8";
     LC_TIME = "pl_PL.UTF-8";
   };
-
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
