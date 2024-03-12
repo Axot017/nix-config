@@ -9,6 +9,8 @@ pkgs.stdenv.mkDerivation {
   dontUnpack = true;
   installPhase = ''
     mkdir -p $out
-    ${pkgs.unzip}/bin/unzip -j $src -d $out/
+    ${pkgs.unzip}/bin/unzip -j $src -d $out/tmp
+    mv $out/tmp/sddm-sugar-dark-1.2/* 
+    rm -r $out/tmp
   '';
 }
