@@ -93,7 +93,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     libsForQt5.qt5.qtquickcontrols
-    libsForQt5.qt5.qtgraphicaleffect
+    libsForQt5.qt5.qtgraphicaleffects
     git
     libnotify
     brave
