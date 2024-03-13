@@ -15,8 +15,8 @@ in
       package = candy;
     };
     cursorTheme = {
-      name = "Candy-Icons";
-      package = candy;
+      name = "Sweet-Ambar-Blue-Dark";
+      package = sweet;
     };
   };
   home.file = {
