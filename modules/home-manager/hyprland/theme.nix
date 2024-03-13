@@ -16,13 +16,13 @@ in
       package = candy;
     };
     cursorTheme = {
-      name = "Sweet-Ambar-Blue-Dark";
-      package = sweet-cursors;
+      name = "Sweet-cursors";
+      package = sweet;
     };
   };
   home.file = {
     ".themes/${config.gtk.theme.name}".source = "${config.gtk.theme.package}/${config.gtk.theme.name}";
-    ".themes/${config.gtk.cursorTheme.name}/cursors".source = "${config.gtk.cursorTheme.package}/${config.gtk.cursorTheme.name}/cursors";
+    ".icons/${config.gtk.cursorTheme.name}".source = "${config.gtk.cursorTheme.package}/${config.gtk.cursorTheme.name}";
     ".icons/${config.gtk.iconTheme.name}".source = "${config.gtk.iconTheme.package}/${config.gtk.iconTheme.name}";
   };
   qt = {
