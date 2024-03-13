@@ -17,7 +17,7 @@ in
     };
     cursorTheme = {
       name = "Sweet-cursors";
-      package = sweet;
+      package = sweet-cursors;
     };
   };
   home.file = {
