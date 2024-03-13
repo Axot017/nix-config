@@ -14,6 +14,10 @@ in
       name = "Candy-Icons";
       package = candy;
     };
+    cursorTheme = {
+      name = "Candy-Icons";
+      package = candy;
+    };
   };
   home.file = {
     ".themes/${config.gtk.theme.name}".source = "${config.gtk.theme.package}/${config.gtk.theme.name}";
