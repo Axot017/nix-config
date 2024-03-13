@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   sweet = import ./packages/sweet-theme.nix { inherit pkgs; };
+  sweet-cursors = import ./packages/sweet-cursors.nix { inherit pkgs; };
   candy = import ./packages/candy-icons-theme.nix { inherit pkgs; };
 in
 {
@@ -16,11 +17,12 @@ in
     };
     cursorTheme = {
       name = "Sweet-cursors";
-      package = sweet;
+      package = sweet-cursors;
     };
   };
   home.file = {
     ".themes/${config.gtk.theme.name}".source = "${config.gtk.theme.package}/${config.gtk.theme.name}";
+    ".themes/${config.gtk.cursorTheme.name}".source = "${config.gtk.cursorTheme.package}/${config.gtk.cursorTheme.name}";
     ".icons/${config.gtk.iconTheme.name}".source = "${config.gtk.iconTheme.package}/${config.gtk.iconTheme.name}";
   };
   qt = {
