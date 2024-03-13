@@ -15,7 +15,7 @@ in
       package = candy;
     };
     cursorTheme = {
-      name = "Sweet-Ambar-Blue-Dark";
+      name = "Sweet-cursors";
       package = sweet;
     };
   };
