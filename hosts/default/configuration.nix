@@ -33,10 +33,12 @@
   time.timeZone = "Europe/Warsaw";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8/UTF-8";
   i18n.supportedLocales = [
-    "en_US.UTF-8"
+    "en_US.UTF-8/UTF-8"
+    "en_US/ISO-8859-1"
     "pl_PL.UTF-8/UTF-8"
+    "pl_PL/ISO-8859-2"
   ];
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "pl_PL.UTF-8";
