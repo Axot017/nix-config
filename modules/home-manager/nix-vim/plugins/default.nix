@@ -4,5 +4,6 @@
     ./nvim-tree.nix
     ./treesitter.nix
     ./telescope.nix
+    ./copilot.nix
   ];
 }
