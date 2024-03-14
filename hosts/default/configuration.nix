@@ -12,6 +12,7 @@
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/pipewire.nix
       ../../modules/nixos/xserver.nix
+      ../../modules/nixos/i18n.nix
     ];
 
   # Bootloader.
@@ -31,26 +32,6 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8/UTF-8";
-  i18n.supportedLocales = [
-    "en_US.UTF-8/UTF-8"
-    "en_US/ISO-8859-1"
-    "pl_PL.UTF-8/UTF-8"
-    "pl_PL/ISO-8859-2"
-  ];
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "pl_PL.UTF-8";
-    LC_IDENTIFICATION = "pl_PL.UTF-8";
-    LC_MEASUREMENT = "pl_PL.UTF-8";
-    LC_MONETARY = "pl_PL.UTF-8";
-    LC_NAME = "pl_PL.UTF-8";
-    LC_NUMERIC = "pl_PL.UTF-8";
-    LC_PAPER = "pl_PL.UTF-8";
-    LC_TELEPHONE = "pl_PL.UTF-8";
-    LC_TIME = "pl_PL.UTF-8";
-  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
