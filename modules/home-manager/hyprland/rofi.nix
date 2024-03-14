@@ -44,7 +44,7 @@
       icon-search = {
           expand = false;
           filename = "search";
-          size = mkLiteral "28px";
+          size = mkLiteral "0px";
       };
 
       "icon-search, entry, element-icon, element-text" = {
