@@ -87,6 +87,7 @@
     discord
     unzip
     cinnamon.nemo
+    nodejs_20
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
