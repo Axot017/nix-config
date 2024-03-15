@@ -2,7 +2,7 @@
 {
   programs.nixvim.plugins = {
     nvim-cmp-cmdline.enabled = true;
-    nvim-cmp-buffer.enabled = true;
+    cmp-buffer.enabled = true;
     nvim-cmp-nvim-lsp.enabled = true;
     nvim-cmp-path.enabled = true;
     nvim-cmp-luasnip.enabled = true;
