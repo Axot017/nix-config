@@ -1,11 +1,11 @@
 { pkgs, config, inputs, ... }: 
 {
   programs.nixvim.plugins = {
-    cmp-cmdline.enabled = true;
-    cmp-buffer.enabled = true;
-    cmp-nvim-lsp.enabled = true;
-    cmp-path.enabled = true;
-    cmp-luasnip.enabled = true;
+    nvim-cmp-cmdline.enabled = true;
+    nvim-cmp-buffer.enabled = true;
+    nvim-cmp-nvim-lsp.enabled = true;
+    nvim-cmp-path.enabled = true;
+    nvim-cmp-luasnip.enabled = true;
     nvim-cmp = {
       enable = true;
       settings = {
