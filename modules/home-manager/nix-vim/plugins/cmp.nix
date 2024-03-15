@@ -14,14 +14,6 @@
           { name = "buffer"; }
           { name = "luasnip"; }
       ];
-      cmdline = {
-        "/".sources = [
-          { name = "buffer"; }
-        ];
-        ":".sources = [
-          { name = "cmdline"; }
-        ];
-      };
       expand = ''
         function(args)
           require('luasnip').lsp_expand(args.body)
