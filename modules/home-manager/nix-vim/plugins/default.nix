@@ -5,5 +5,7 @@
     ./treesitter.nix
     ./telescope.nix
     ./copilot.nix
+    ./cmp.nix
+    ./lsp.nix
   ];
 }
