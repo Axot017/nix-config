@@ -62,11 +62,11 @@
           })'';
         };
         formatting = {
-          fields = {
+          fields = [
             "kind"
             "abbr"
             "menu"
-          };
+          ];
           format = ''
             function(entry, vim_item)
               vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
