@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, helpers, ... }: 
+{ pkgs, config, inputs, ... }: 
 {
   programs.nixvim.plugins = {
     nvim-cmp = {
@@ -8,7 +8,7 @@
           { name = "path"; }
           { name = "luasnip"; }
       ];
-      snippet.expand = helpers.mkRaw ''
+      snippet.expand = ''
         function(args)
           require('luasnip').lsp_expand(args.body)
         end
