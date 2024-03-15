@@ -9,12 +9,12 @@
     cmp = {
       enable = true;
       settings = {
-        sources = {
+        sources = [
             { name = "nvim_lsp"; }
             { name = "path"; }
             { name = "buffer"; }
             { name = "luasnip"; }
-        };
+        ];
         cmdline = {
           "/".sources = [
             { name = "buffer"; }
