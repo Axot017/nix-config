@@ -6,7 +6,7 @@
     cmp-nvim-lsp.enabled = true;
     cmp-path.enabled = true;
     cmp-luasnip.enabled = true;
-    cmp = {
+    nvim-cmp = {
       enable = true;
       settings = {
         sources = [
