@@ -86,8 +86,8 @@
                 Struct = "",
                 Event = "",
                 Operator = "󰆕",
-                TypeParameter = " ",
-                Misc = " ", 
+                TypeParameter = "",
+                Misc = "", 
               }
               vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
               vim_item.menu = ({
