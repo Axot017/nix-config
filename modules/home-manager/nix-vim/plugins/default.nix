@@ -1,6 +1,6 @@
-{ pkgs, config, inputs, helpers, ... }: 
-{
+{ pkgs, config, inputs, helpers, ... }: {
   imports = [
+    ./autoclose.nix
     ./nvim-tree.nix
     ./treesitter.nix
     ./telescope.nix
