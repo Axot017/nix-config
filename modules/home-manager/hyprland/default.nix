@@ -1,12 +1,5 @@
-{ config, pkgs, ... }:
-{
-  imports = [
-    ./waybar.nix
-    ./mako.nix
-    ./rofi.nix
-    ./wallpapers.nix
-    ./theme.nix
-  ];
+{ config, pkgs, ... }: {
+  imports = [ ./waybar.nix ./mako.nix ./rofi.nix ./wallpapers.nix ./theme.nix ];
   home.file.".config/hypr/scripts".source = ./scripts;
   wayland.windowManager.hyprland = {
     enable = true;
@@ -16,9 +9,7 @@
         "swww init"
         "~/.config/hypr/scripts/swww_randomize.sh ~/Wallpapers/"
       ];
-      input = {
-        kb_layout = "pl,us";
-      };
+      input = { kb_layout = "pl,us"; };
       decoration = {
         rounding = "10";
         drop_shadow = "yes";
@@ -30,6 +21,11 @@
           size = "3";
           passes = "1";
         };
+      };
+      master = {
+        new_is_master = "false";
+        orientation = "right";
+
       };
       general = {
         layout = "master";
