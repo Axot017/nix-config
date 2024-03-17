@@ -8,5 +8,6 @@
     ./lsp.nix
     ./cmp.nix
     ./comment-nvim.nix
+    ./luasnip.nix
   ];
 }
