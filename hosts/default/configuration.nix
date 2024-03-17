@@ -5,16 +5,15 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      ../../modules/nixos/fonts.nix
-      ../../modules/nixos/pipewire.nix
-      ../../modules/nixos/xserver.nix
-      ../../modules/nixos/i18n.nix
-      ../../modules/nixos/steam.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ../../modules/nixos/fonts.nix
+    ../../modules/nixos/pipewire.nix
+    ../../modules/nixos/xserver.nix
+    ../../modules/nixos/i18n.nix
+    ../../modules/nixos/steam.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -54,9 +53,7 @@
     isNormalUser = true;
     description = "Axot";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      libnotify
-    ];
+    packages = with pkgs; [ libnotify ];
     shell = pkgs.zsh;
   };
 
@@ -68,9 +65,7 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = {
-      "axot" = import ./home.nix;
-    };  
+    users = { "axot" = import ./home.nix; };
   };
 
   # Allow unfree packages
@@ -89,6 +84,10 @@
     unzip
     cinnamon.nemo
     nodejs_20
+    gleam
+    rebar3
+    rustup
+    go
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
