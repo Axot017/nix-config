@@ -13,7 +13,7 @@
         ocamlformat.enable = true;
       };
       code_actions = {
-        gitsigns = true;
+        gitsigns.enable = true;
       };
     };
   };
