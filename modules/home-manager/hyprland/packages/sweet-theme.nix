@@ -2,7 +2,7 @@
 
 pkgs.stdenv.mkDerivation {
   name = "sweet-theme";
-  src = pkgs.fetchFromGtiHub {
+  src = pkgs.fetchFromGitHub {
     owner = "EliverLara";
     repo = "Sweet";
     rev = "0f79dedc505d946f8c1c57e0ce0c7da16a7bdee0";
