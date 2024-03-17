@@ -5,7 +5,7 @@ pkgs.stdenv.mkDerivation {
   name = "candy-icons-theme";
   src = pkgs.fetchurl {
     url = "https://github.com/EliverLara/candy-icons/archive/refs/heads/master.zip";
-    sha256 = "sha256-Xk+kx27V3DJSdSrGLgIN4asWdTpxzqZU9PtO7tRk4SU=";
+    sha256 = "sha256-e9XAnP5LC6AB4oV0GU5ckz9JTo5hek35Dl2gm359y4I=";
   };
   dontUnpack = true;
   installPhase = ''
