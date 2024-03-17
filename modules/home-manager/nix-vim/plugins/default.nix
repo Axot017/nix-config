@@ -9,6 +9,7 @@
     ./lsp.nix
     ./cmp.nix
     ./comment-nvim.nix
+    ./project-nvim.nix
     ./luasnip.nix
     ./lualine.nix
     ./none-ls.nix
