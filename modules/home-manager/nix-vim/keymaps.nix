@@ -95,7 +95,7 @@
     {
       mode = "n";
       key = "<leader>x";
-      action = "<cmd>BufferLineCycleNext<CR><cmd>BufferLineCloseLeft<CR>";
+      action = "<cmd>bdelete<CR>";
       options = { silent = true; };
     }
 
