@@ -1,5 +1,4 @@
-{ pkgs, config, inputs, ... }: 
-{
+{ pkgs, config, inputs, ... }: {
   programs.nixvim.plugins.telescope = {
     enable = true;
     keymaps = {
@@ -14,6 +13,10 @@
       "<leader>fb" = {
         action = "buffers";
         desc = "Find buffer";
+      };
+      "<leader>fd" = {
+        action = "diagnostics";
+        desc = "Show diagnostics";
       };
       "gi" = {
         action = "lsp_implementations";

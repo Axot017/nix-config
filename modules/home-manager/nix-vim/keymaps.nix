@@ -48,7 +48,7 @@
       action = ''"+p'';
       options = { silent = true; };
     }
-    # Other
+    # Movement
     {
       mode = "n";
       key = "<ESC>";
@@ -79,6 +79,26 @@
       action = "Nzz";
       options = { silent = true; };
     }
+    # Tabs
+    {
+      mode = "n";
+      key = "<S-h>";
+      action = "<cmd>BufferLineCyclePrev<CR>";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<S-l>";
+      action = "<cmd>BufferLineCycleNext<CR>";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>x";
+      action = "<cmd>BufferLineCycleNext<CR><cmd>BufferLineCloseLeft<CR>";
+      options = { silent = true; };
+    }
+
     ##########################
     ##  Visual              ##
     ##########################
