@@ -21,7 +21,7 @@ in
   };
   home.file = {
     ".themes/${config.gtk.theme.name}".source = "${config.gtk.theme.package}/${config.gtk.theme.name}";
-    ".icons/${config.gtk.sweet.name}".source = "${config.gtk.sweet.package}/${config.gtk.sweet.name}";
+    ".icons/${config.gtk.theme.name}".source = "${config.gtk.theme.package}/${config.gtk.theme.name}";
     ".icons/${config.gtk.iconTheme.name}".source = "${config.gtk.iconTheme.package}/${config.gtk.iconTheme.name}";
   };
   qt = {
