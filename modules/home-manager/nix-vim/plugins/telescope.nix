@@ -26,14 +26,6 @@
         action = "lsp_references";
         desc = "Go to reference";
       };
-      # "<TAB>" = {
-      #   action = "move_selection_worse";
-      #   desc = "Move selection worse";
-      # };
-      # "<S-TAB>" = {
-      #   action = "move_selection_better";
-      #   desc = "Move selection better";
-      # };
     };
   };
 }
