@@ -9,6 +9,7 @@
     ./cmp.nix
     ./comment-nvim.nix
     ./luasnip.nix
+    ./lualine.nix
     ./none-ls.nix
   ];
 }
