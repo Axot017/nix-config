@@ -2,13 +2,15 @@
 
 pkgs.stdenv.mkDerivation {
   name = "sweet-theme";
-  src = pkgs.fetchurl {
-    url = "https://github.com/EliverLara/Sweet/releases/download/v4.0/Sweet-Ambar-Blue-Dark.zip";
-    sha256 = "sha256-2hb2FHWyGSowRdUnrWMJENlqRtSr2CrPtDe3DSZlP8M=";
+  src = pkgs.fetchFromGtiHub {
+    owner = "EliverLara";
+    repo = "Sweet";
+    rev = "0f79dedc505d946f8c1c57e0ce0c7da16a7bdee0";
+    sha256 = "";
   };
   dontUnpack = true;
   installPhase = ''
     mkdir -p $out
-    ${pkgs.unzip}/bin/unzip $src -d $out/
+    cp -r $src $out
   '';
 }
