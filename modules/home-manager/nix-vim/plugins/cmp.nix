@@ -3,7 +3,7 @@
   programs.nixvim.plugins = {
     cmp = {
       enable = true;
-      sources = [
+      settings.sources = [
           { name = "nvim_lsp"; }
           { name = "path"; }
           { name = "luasnip"; }
