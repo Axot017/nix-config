@@ -9,7 +9,6 @@
         golines.enable = true;
         hclfmt.enable = true;
         nixfmt.enable = true;
-        nixpkgs-fmt.enable = true;
         ocamlformat.enable = true;
       };
       code_actions = {
