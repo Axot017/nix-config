@@ -12,6 +12,7 @@
     ../../modules/home-manager/zoxide.nix
     ../../modules/home-manager/htop.nix
     ../../modules/home-manager/copyq.nix
+    ../../modules/home-manager/thefuck.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
