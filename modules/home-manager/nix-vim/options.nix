@@ -36,6 +36,12 @@
       guifont = "JetBrainsMonoNL\ Nerd\ Font\ Mono:h12";
       sidescrolloff = 8;
     };
+    autoCmd = [
+      {
+        event = [ "BufWritePre" ];
+        command = "lua vim.lsp.buf.format()";
+      }
+    ];
     globals = {
       mapleader = " ";
       maplocalleader = " ";
