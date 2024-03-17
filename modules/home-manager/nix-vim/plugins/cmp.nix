@@ -3,11 +3,11 @@
   programs.nixvim.plugins = {
     cmp = {
       enable = true;
-      # sources = [
-      #     { name = "nvim_lsp"; }
-      #     { name = "path"; }
-      #     { name = "luasnip"; }
-      # ];
+      sources = [
+          { name = "nvim_lsp"; }
+          { name = "path"; }
+          { name = "luasnip"; }
+      ];
       # snippet.expand = ''
       #   function(args)
       #     require('luasnip').lsp_expand(args.body)
