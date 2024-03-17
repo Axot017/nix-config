@@ -1,5 +1,6 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim.plugins = {
+    cmp-buffer = { enable = true; };
     cmp = {
       enable = true;
       settings = {
