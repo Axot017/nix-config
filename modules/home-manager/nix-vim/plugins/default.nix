@@ -6,6 +6,7 @@
     ./telescope.nix
     ./copilot.nix
     ./lsp.nix
+    ./cmp.nix
     ./comment-nvim.nix
   ];
 }
