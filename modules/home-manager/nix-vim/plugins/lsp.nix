@@ -12,6 +12,7 @@
       jsonls = { enable = true; };
       terraformls = { enable = true; };
       yamlls = { enable = true; };
+      pyright = { enable = true; };
     };
   };
 }
