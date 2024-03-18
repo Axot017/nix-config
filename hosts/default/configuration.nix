@@ -89,8 +89,8 @@
     rustup
     go
     chromedriver
-    python3.withPackages
-    (ps: with ps; [ numpy pandas selenium requests beautifulsoup4 ])
+    # python3.withPackages
+    # (ps: with ps; [ numpy pandas selenium requests beautifulsoup4 ])
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
