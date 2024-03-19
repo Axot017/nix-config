@@ -88,6 +88,7 @@
     rebar3
     rustup
     go
+    copyq
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

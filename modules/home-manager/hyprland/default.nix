@@ -6,6 +6,7 @@
     settings = {
       exec-once = [
         "waybar"
+        "copyq --start-server"
         "swww init"
         "~/.config/hypr/scripts/swww_randomize.sh ~/Wallpapers/"
       ];
