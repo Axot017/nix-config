@@ -22,7 +22,7 @@ in {
     ".themes/${config.gtk.theme.name}".source =
       "${config.gtk.theme.package}/${config.gtk.theme.name}";
     ".icons/${config.gtk.theme.name}".source =
-      "${config.gtk.theme.package}/${config.gtk.theme.name}/kde";
+      "${config.gtk.theme.package}/${config.gtk.theme.name}/kde/cursors/Sweet-cursors";
     ".icons/${config.gtk.iconTheme.name}".source =
       "${config.gtk.iconTheme.package}/${config.gtk.iconTheme.name}";
   };
