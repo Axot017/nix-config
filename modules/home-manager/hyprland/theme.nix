@@ -21,8 +21,8 @@ in {
   home.file = {
     ".themes/${config.gtk.theme.name}".source =
       "${config.gtk.theme.package}/${config.gtk.theme.name}";
-    ".icons/${config.gtk.theme.name}".source =
-      "${config.gtk.cursorTheme.package}/${config.gtk.theme.name}/kde/cursors/Sweet-cursors";
+    ".icons/${config.gtk.cursorTheme.name}".source =
+      "${config.gtk.cursorTheme.package}/${config.gtk.cursorTheme.name}/kde/cursors/Sweet-cursors";
     ".icons/${config.gtk.iconTheme.name}".source =
       "${config.gtk.iconTheme.package}/${config.gtk.iconTheme.name}";
   };

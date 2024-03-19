@@ -132,7 +132,7 @@
     {
       mode = "v";
       key = "p";
-      action = "_dP";
+      action = ''"_dP"'';
       options = { silent = true; };
     }
     ##########################
