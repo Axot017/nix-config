@@ -36,6 +36,32 @@
       action = "<C-w>l";
       options = { silent = true; };
     }
+    # Resizing
+    {
+      mode = "n";
+      key = "<S-Up>";
+      action = "<cmd>resize +2<CR>";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<S-Down>";
+      action = "<cmd>resize -2<CR>";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<S-Left>";
+      action = "<cmd>vertical resize -2<CR>";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<S-Right>";
+      action = "<cmd>vertical resize +2<CR>";
+      options = { silent = true; };
+    }
+    # Clipboard
     {
       mode = "n";
       key = "<C-y>";
