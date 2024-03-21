@@ -88,7 +88,8 @@
     rebar3
     rustup
     go
-    copyq
+    cliphist
+    wl-clipboard
     postman
   ];
 

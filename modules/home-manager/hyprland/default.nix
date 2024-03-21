@@ -6,7 +6,8 @@
     settings = {
       exec-once = [
         "waybar"
-        "copyq --start-server"
+        "exec-once = wl-paste --type text --watch cliphist store"
+        "exec-once = wl-paste --type image --watch cliphist store"
         "swww init"
         "~/.config/hypr/scripts/swww_randomize.sh ~/Wallpapers/"
       ];
