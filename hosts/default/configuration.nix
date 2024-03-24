@@ -91,7 +91,8 @@
     cliphist
     wl-clipboard
     postman
-    (python3.withPackages (ps: with ps; [ pandas numpy requests tensorflow ]))
+    (python3.withPackages
+      (ps: with ps; [ pandas numpy requests tensorflow python-dotenv ]))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
