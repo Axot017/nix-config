@@ -100,6 +100,7 @@
         python-dotenv
         keras
         dm-tree
+        rich
       ]))
   ];
 
