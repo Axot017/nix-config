@@ -91,8 +91,16 @@
     cliphist
     wl-clipboard
     postman
-    (python3.withPackages
-      (ps: with ps; [ pandas numpy requests tensorflow python-dotenv keras ]))
+    (python3.withPackages (ps:
+      with ps; [
+        pandas
+        numpy
+        requests
+        tensorflow
+        python-dotenv
+        keras
+        dm_tree
+      ]))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
