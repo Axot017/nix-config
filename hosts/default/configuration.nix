@@ -99,7 +99,7 @@
         tensorflow
         python-dotenv
         keras
-        dm_tree
+        dm-tree
       ]))
   ];
 
