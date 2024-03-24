@@ -91,8 +91,7 @@
     cliphist
     wl-clipboard
     postman
-    python3.withPackages
-    (ps: with ps; [ pandas numpy requests ])
+    (python3.withPackages (ps: with ps; [ pandas numpy requests ]))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

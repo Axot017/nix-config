@@ -2,7 +2,7 @@
   programs.zsh = {
     enable = true;
     syntaxHighlighting = { enable = true; };
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     initExtra = ''
       autoload -U compinit
