@@ -91,6 +91,7 @@
     cliphist
     wl-clipboard
     postman
+    (python3.withPackages (ps: with ps; [ pip ]))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
