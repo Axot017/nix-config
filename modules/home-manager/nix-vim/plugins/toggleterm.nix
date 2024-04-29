@@ -2,6 +2,6 @@
   programs.nixvim.plugins.toggleterm = {
     enable = true;
     direction = "float";
-    open_mapping = "<C-t>";
+    settings.open_mapping = "<C-t>";
   };
 }
