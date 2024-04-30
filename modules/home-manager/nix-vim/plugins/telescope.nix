@@ -4,27 +4,27 @@
     keymaps = {
       "<leader>ff" = {
         action = "find_files";
-        desc = "Find files";
+        options.desc = "Find files";
       };
       "<leader>fg" = {
         action = "live_grep";
-        desc = "Live grep";
+        options.desc = "Live grep";
       };
       "<leader>fb" = {
         action = "buffers";
-        desc = "Find buffer";
+        options.desc = "Find buffer";
       };
       "<leader>fd" = {
         action = "diagnostics";
-        desc = "Show diagnostics";
+        options.desc = "Show diagnostics";
       };
       "gi" = {
         action = "lsp_implementations";
-        desc = "Go to implementation";
+        options.desc = "Go to implementation";
       };
       "gr" = {
         action = "lsp_references";
-        desc = "Go to reference";
+        options.desc = "Go to reference";
       };
     };
   };
