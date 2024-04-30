@@ -1,7 +1,6 @@
 { pkgs, config, inputs, helpers, ... }: {
   imports = [
     ./autoclose.nix
-    ./toggleterm.nix
     ./bufferline.nix
     ./nvim-tree.nix
     ./treesitter.nix
