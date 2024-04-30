@@ -7,7 +7,7 @@
     # Neotest
     {
       mode = "n";
-      key = "gt";
+      key = "<leader>gt";
       action = "<cmd>lua require('neotest').run()<CR>";
       options = { silent = true; };
     }
