@@ -4,6 +4,13 @@
     ##  Normal              ##
     ##########################
 
+    # Neotest
+    {
+      mode = "n";
+      key = "gt";
+      action = "<cmd>lua require('neotest').run()<CR>";
+      options = { silent = true; };
+    }
     # Oil
     {
       mode = "n";

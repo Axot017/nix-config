@@ -3,6 +3,8 @@
     ./autoclose.nix
     ./bufferline.nix
     ./oil.nix
+    ./dap.nix
+    ./neotest.nix
     ./treesitter.nix
     ./telescope.nix
     ./copilot.nix
