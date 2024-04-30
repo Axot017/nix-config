@@ -26,6 +26,10 @@
         action = "lsp_definitions";
         options.desc = "Go to definitions";
       };
+      "gr" = {
+        action = "lsp_references";
+        options.desc = "Go to reference";
+      };
     };
   };
 }
