@@ -4,11 +4,11 @@
     ##  Normal              ##
     ##########################
 
-    # NvimTree
+    # Oil
     {
       mode = "n";
       key = "<C-n>";
-      action = "<cmd>NvimTreeFindFileToggle<CR>";
+      action = "<cmd>Oil<CR>";
       options = { silent = true; };
     }
     # Window navigation

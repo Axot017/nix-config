@@ -3,7 +3,6 @@
     ./autoclose.nix
     ./bufferline.nix
     ./oil.nix
-    ./nvim-tree.nix
     ./treesitter.nix
     ./telescope.nix
     ./copilot.nix
