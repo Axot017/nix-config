@@ -22,9 +22,9 @@
         action = "lsp_implementations";
         options.desc = "Go to implementation";
       };
-      "gr" = {
-        action = "lsp_references";
-        options.desc = "Go to reference";
+      "gd" = {
+        action = "lsp_definitions";
+        options.desc = "Go to definitions";
       };
     };
   };
