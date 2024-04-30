@@ -6,6 +6,7 @@
       columns = [ "icon" ];
       skip_confirm_for_simple_edits = true;
       lsp_file_methods = { autosave_changes = true; };
+      view_options = { shoe_hidden = true; };
     };
   };
 }
