@@ -10,6 +10,7 @@
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/zoxide.nix
+    ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/htop.nix
     ../../modules/home-manager/thefuck.nix
   ];
