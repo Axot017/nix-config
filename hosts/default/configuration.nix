@@ -92,6 +92,7 @@
     wl-clipboard
     postman
     gnumake
+    erlang
     (python3.withPackages (ps: with ps; [ pip ]))
   ];
 
