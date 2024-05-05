@@ -15,5 +15,6 @@
     ./luasnip.nix
     ./lualine.nix
     ./none-ls.nix
+    ./tmux-navigator.nix
   ];
 }
