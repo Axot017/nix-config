@@ -6,6 +6,7 @@
         "]d" = "goto_next";
         "[d" = "goto_prev";
       };
+      lspBuf = { "<leader>ca" = "code_action"; };
     };
     servers = {
       lua-ls = { enable = true; };
