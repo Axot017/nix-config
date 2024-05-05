@@ -94,6 +94,7 @@
     gnumake
     erlang
     deno
+    elixir
     (python3.withPackages (ps: with ps; [ pip ]))
   ];
 
