@@ -91,6 +91,7 @@
     cliphist
     wl-clipboard
     postman
+    gnumake
     (python3.withPackages (ps: with ps; [ pip ]))
   ];
 
