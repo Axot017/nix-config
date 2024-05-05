@@ -1,6 +1,12 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim.plugins.lsp = {
     enable = true;
+    keymaps = {
+      diagnostic = {
+        "]d" = "goto_next";
+        "[d" = "goto_prev";
+      };
+    };
     servers = {
       lua-ls = { enable = true; };
       rust-analyzer = { enable = true; };
