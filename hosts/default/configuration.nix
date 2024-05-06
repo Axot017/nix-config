@@ -95,6 +95,7 @@
     erlang
     deno
     elixir
+    lldb
     (python3.withPackages (ps: with ps; [ pip ]))
   ];
 
