@@ -55,7 +55,7 @@
         {
           name = "Attach";
           type = "lldb";
-          request = "launch";
+          request = "attach";
           cwd = "\${workspaceFolder}";
           pid.__raw = ''
             function()
