@@ -9,14 +9,14 @@
           type = "lldb";
           request = "launch";
           cwd = "\${workspaceFolder}";
-          initCommands = [ "cargo build" ];
           program.__raw = ''
             function()
               local cwd = vim.fn.getcwd()
               local target = vim.fn.split(cwd, '/')
               local len = #target
               local last = target[len]
-              return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/debug/' .. last, 'file')
+
+              return vim.fn.getcwd() .. '/target/debug/' .. last
             end
           '';
         }
@@ -25,7 +25,6 @@
           type = "lldb";
           request = "launch";
           cwd = "\${workspaceFolder}";
-          initCommands = [ "cargo build" ];
           program.__raw = ''
             function()
               local possible_files  = vim.split(vim.fn.glob(vim.fn.getcwd() .. '/target/debug/*'), '\n', {trimempty=true})
@@ -47,7 +46,6 @@
           type = "lldb";
           request = "launch";
           cwd = "\${workspaceFolder}";
-          initCommands = [ "cargo build" ];
           program.__raw = ''
             function()
               return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/debug/', 'file')
@@ -59,10 +57,14 @@
           type = "lldb";
           request = "launch";
           cwd = "\${workspaceFolder}";
-          initCommands = [ "cargo build" ];
-          program.__raw = ''
+          pid.__raw = ''
             function()
-              return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/debug/', 'file')
+              local cwd = vim.fn.getcwd()
+              local target = vim.fn.split(cwd, '/')
+              local len = #target
+              local last = target[len]
+
+              return require('dap.utils').pick_process({ filter = last })
             end
           '';
         }
