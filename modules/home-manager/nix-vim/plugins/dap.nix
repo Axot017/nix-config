@@ -6,7 +6,7 @@
       rust = [
         {
           name = "Launch - default";
-          type = "lldb-dap";
+          type = "lldb";
           request = "launch";
           cwd = "\${workspaceFolder}";
           initCommands = [ "cargo build" ];
@@ -22,7 +22,7 @@
         }
         {
           name = "Launch - select";
-          type = "lldb-dap";
+          type = "lldb";
           request = "launch";
           cwd = "\${workspaceFolder}";
           initCommands = [ "cargo build" ];
@@ -32,7 +32,7 @@
 
               local files = {}
               for _, file in ipairs(possible_files) do
-                if vim.fn.isdirectory(file) == 0 and vim.fn.matchstr(file, '.*%.') == "" then
+                if vim.fn.isdirectory(file) == 0 and vim.fn.matchstr(file, '.') == "" then
                   table.insert(files, file)
                 end
               end
@@ -43,8 +43,20 @@
           '';
         }
         {
+          name = "Launch - select raw";
+          type = "lldb";
+          request = "launch";
+          cwd = "\${workspaceFolder}";
+          initCommands = [ "cargo build" ];
+          program.__raw = ''
+            function()
+              return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/debug/', 'file')
+            end
+          '';
+        }
+        {
           name = "Attach";
-          type = "lldb-dap";
+          type = "lldb";
           request = "launch";
           cwd = "\${workspaceFolder}";
           initCommands = [ "cargo build" ];
