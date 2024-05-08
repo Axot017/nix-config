@@ -12,7 +12,11 @@
       lua-ls = { enable = true; };
       rust-analyzer = { enable = true; };
       nil_ls = { enable = true; };
-      gleam = { enable = true; };
+      gleam = {
+        enable = true;
+        cmd =
+          "${config.users.users.axot.home}/Projects/gleam/target/debug/gleam";
+      };
       gopls = { enable = true; };
       html = { enable = true; };
       htmx = { enable = true; };
