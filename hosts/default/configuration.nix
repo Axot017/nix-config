@@ -84,7 +84,6 @@
     unzip
     cinnamon.nemo
     nodejs_20
-    gleam
     rebar3
     rustup
     go

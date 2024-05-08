@@ -46,7 +46,10 @@
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
     };
-    sessionPath = [ "$HOME/Projects/nix-config/bin" ];
+    sessionPath = [
+      "$HOME/Projects/nix-config/bin"
+      "$HOME/Projects/gleam/target/debug/gleam"
+    ];
 
   };
 
