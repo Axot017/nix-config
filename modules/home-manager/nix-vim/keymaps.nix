@@ -4,6 +4,12 @@
     ##  Normal              ##
     ##########################
 
+    # DAP
+    {
+      mode = "n";
+      key = "<F1>";
+      action.__raw = "require('dapui').toggle()";
+    }
     # Neotest
     {
       mode = "n";

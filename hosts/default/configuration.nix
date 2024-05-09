@@ -95,6 +95,7 @@
     deno
     elixir
     lldb
+    gleam
     (python3.withPackages (ps: with ps; [ pip ]))
   ];
 
