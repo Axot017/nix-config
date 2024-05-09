@@ -31,8 +31,8 @@
 
               local files = {}
               for _, file in ipairs(possible_files) do
-                contains_extension = string.find(file, '.')
-                if vim.fn.isdirectory(file) == 0 and contains_extension  then
+                has_any_extension = string.match(file, '%.')
+                if vim.fn.isdirectory(file) == 0 and not has_any_extension then
                   table.insert(files, file)
                 end
               end
