@@ -10,6 +10,16 @@
       key = "<F1>";
       action.__raw = "require('dapui').toggle";
     }
+    {
+      mode = "n";
+      key = "<F2>";
+      action.__raw = "require('dap').continue";
+    }
+    {
+      mode = "n";
+      key = "<F3>";
+      action.__raw = "require('dap').toggle_breakpoint";
+    }
     # Neotest
     {
       mode = "n";
