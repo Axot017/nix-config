@@ -14,7 +14,7 @@
       nil_ls = { enable = true; };
       gleam = {
         enable = true;
-        cmd = [ "gleam" "lsp" ];
+        cmd = [ "/home/axot/Projects/gleam/target/debug/gleam" "lsp" ];
       };
       gopls = { enable = true; };
       html = { enable = true; };
