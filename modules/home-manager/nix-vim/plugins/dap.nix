@@ -15,6 +15,7 @@
           name = "Launch - default";
           type = "lldb";
           request = "launch";
+          args = [ "--port" "17000" ];
           cwd = "\${workspaceFolder}";
           program.__raw = ''
             function()
