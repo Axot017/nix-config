@@ -96,7 +96,7 @@
     elixir
     lldb
     gleam
-    packages.vscode-extensions.vadimcn.vscode-lldb
+    vscode-extensions.vadimcn.vscode-lldb
     (python3.withPackages (ps: with ps; [ pip ]))
   ];
 
