@@ -4,7 +4,7 @@
     adapters = {
       servers = {
         lldb = {
-          port = "17000";
+          port = 17000;
           executable = {
             command =
               "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
