@@ -1,7 +1,15 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim.plugins.dap = {
     enable = true;
-    adapters = { executables = { lldb = { command = "lldb-vscode"; }; }; };
+    adapters = {
+      executables = {
+        lldb = {
+          command =
+            "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
+          args = [ "--port" "17000" ];
+        };
+      };
+    };
     configurations = {
       rust = [
         {
@@ -58,6 +66,33 @@
           type = "lldb";
           request = "attach";
           cwd = "\${workspaceFolder}";
+          pid.__raw = ''
+            function()
+              local cwd = vim.fn.getcwd()
+              local target = vim.fn.split(cwd, '/')
+              local len = #target
+              local last = target[len]
+
+              return require('dap.utils').pick_process({ filter = last })
+            end
+          '';
+          program.__raw = ''
+            function()
+              local cwd = vim.fn.getcwd()
+              local target = vim.fn.split(cwd, '/')
+              local len = #target
+              local last = target[len]
+
+              return vim.fn.getcwd() .. '/target/debug/' .. last
+            end
+          '';
+        }
+        {
+          name = "Attach - wait for";
+          type = "lldb";
+          request = "attach";
+          cwd = "\${workspaceFolder}";
+          waitFor = true;
           pid.__raw = ''
             function()
               local cwd = vim.fn.getcwd()
