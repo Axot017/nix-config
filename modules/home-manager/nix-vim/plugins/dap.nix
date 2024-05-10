@@ -96,16 +96,6 @@
           request = "attach";
           cwd = "\${workspaceFolder}";
           waitFor = true;
-          pid.__raw = ''
-            function()
-              local cwd = vim.fn.getcwd()
-              local target = vim.fn.split(cwd, '/')
-              local len = #target
-              local last = target[len]
-
-              return require('dap.utils').pick_process({ filter = last })
-            end
-          '';
           program.__raw = ''
             function()
               local cwd = vim.fn.getcwd()
