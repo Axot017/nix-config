@@ -1,1 +1,1 @@
-{ ... }: { home.file.".config/nvim".source = ./files; }
+{ ... }: { home.file.".config/nvim".source = ./config; }
