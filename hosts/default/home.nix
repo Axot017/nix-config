@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
+let
+  nix-edit-script =
+    import ../../modules/home-manager/scripts/nix-edit.nix { inherit pkgs; };
 
-{
+in {
   imports = [
     ../../modules/home-manager/hyprland/default.nix
     ../../modules/home-manager/nix-vim/default.nix
@@ -13,7 +16,6 @@
     ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/htop.nix
     ../../modules/home-manager/thefuck.nix
-    ../../modules/home-manager/scripts/nix-edit.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -28,7 +30,6 @@
     # want to update the value, then make sure to first check the Home Manager
     # release notes.
     stateVersion = "23.11"; # Please read the comment before changing.
-    packages = [ ];
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
     file = {
@@ -47,7 +48,7 @@
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
     };
-
+    packages = [ nix-edit-script ];
   };
 
   # Let Home Manager install and manage itself.
