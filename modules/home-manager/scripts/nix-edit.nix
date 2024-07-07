@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-pkgs.writeShellScriptBin "nix-edit-2" ''
+pkgs.writeShellScriptBin "nix-edit" ''
   set -e
   pushd ~/Projects/nix-config
   nvim .
