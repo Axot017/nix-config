@@ -13,6 +13,7 @@
     ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/htop.nix
     ../../modules/home-manager/thefuck.nix
+    ../../modules/home-manager/scripts/nix-edit.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -46,7 +47,6 @@
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
     };
-    sessionPath = [ "$HOME/Projects/nix-config/bin" ];
 
   };
 
