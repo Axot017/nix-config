@@ -66,6 +66,8 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = { "axot" = import ./home.nix; };
+    backupFileExtension = ".backup";
+
   };
 
   # Allow unfree packages
