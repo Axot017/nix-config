@@ -7,7 +7,7 @@ pkgs.writeShellScriptBin "nix-edit" ''
   git diff -U0 *.nix
   git add -A
   echo "NixOS - rebuilding..."
-  sudo nixos-rebuild switch --flake .#default &>nixos-switch.log || cat nixos-switch.log
+  sudo nixos-rebuild switch --flake .#default
 
   gen=$(nixos-rebuild list-generations --flake .#default | grep current)
   git commit -m "$gen"
