@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  imports = [ ./waybar.nix ./mako.nix ./rofi.nix ./wallpapers.nix ./theme.nix ];
+  imports = [ ./waybar.nix ./mako.nix ./rofi.nix ./wallpapers.nix ];
   home.file.".config/hypr/scripts".source = ./scripts;
   wayland.windowManager.hyprland = {
     enable = true;
