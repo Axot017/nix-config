@@ -1,7 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   sweet = import ./packages/sweet-theme.nix { inherit pkgs; };
-  candy = import ./packages/candy-icons-theme.nix { inherit pkgs; };
+  candy = import ./packages/candy-icons-theme.nix {
+    inherit pkgs;
+    inherit lib;
+  };
 in {
   gtk = {
     enable = true;
