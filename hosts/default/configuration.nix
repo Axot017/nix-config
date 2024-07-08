@@ -69,6 +69,10 @@
     xwayland.enable = true;
   };
 
+  programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+  programs.gamemode.enable = true;
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = { "axot" = import ./home.nix; };
@@ -107,6 +111,7 @@
     lldb
     gleam
     vscode-extensions.vadimcn.vscode-lldb
+    mangohud
     (python3.withPackages (ps: with ps; [ pip ]))
   ];
 
