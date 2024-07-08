@@ -18,6 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    lockfile = "/home/axot/Projects/nix-config/modules/home-manager/nvim/config/lua/config/lazy-lock.json",
   },
+  lockfile = "/home/axot/Projects/nix-config/modules/home-manager/nvim/config/lua/config/lazy-lock.json",
 })
