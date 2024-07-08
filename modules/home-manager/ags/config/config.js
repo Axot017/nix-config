@@ -2,7 +2,7 @@ const time = Variable('', {
   poll: [1000, function() {
     let date = new Date()
     let day = date.getDate()
-    let month = date.getMonth()
+    let month = date.getMonth() + 1
     let year = date.getFullYear()
 
     let hours = date.getHours()
