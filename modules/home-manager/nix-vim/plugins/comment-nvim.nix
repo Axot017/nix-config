@@ -1,6 +1,3 @@
-{ pkgs, config, inputs, ... }: 
-{
-  programs.nixvim.plugins.comment-nvim = {
-    enable = true;
-  };
+{ pkgs, config, inputs, ... }: {
+  programs.nixvim.plugins.comment = { enable = true; };
 }

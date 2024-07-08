@@ -10,12 +10,7 @@
     };
     servers = {
       lua-ls = { enable = true; };
-      rust-analyzer = { enable = true; };
       nil_ls = { enable = true; };
-      gleam = {
-        enable = true;
-        cmd = [ "/home/axot/Projects/gleam/target/debug/gleam" "lsp" ];
-      };
       gopls = { enable = true; };
       html = { enable = true; };
       htmx = { enable = true; };
@@ -23,6 +18,7 @@
       terraformls = { enable = true; };
       yamlls = { enable = true; };
       pyright = { enable = true; };
+      elixirls = { enable = true; };
     };
   };
 }

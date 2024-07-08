@@ -1,7 +1,6 @@
-{ pkgs, config, inputs, ... }: 
-{
+{ pkgs, config, inputs, ... }: {
   programs.nixvim = {
-    options = {
+    opts = {
       backup = false;
       cmdheight = 1;
       completeopt = [ "menuone" "noselect" ];
@@ -33,15 +32,13 @@
       signcolumn = "yes";
       wrap = false;
       scrolloff = 8;
-      guifont = "JetBrainsMonoNL\ Nerd\ Font\ Mono:h12";
+      guifont = "JetBrainsMonoNL Nerd Font Mono:h12";
       sidescrolloff = 8;
     };
-    autoCmd = [
-      {
-        event = [ "BufWritePre" ];
-        command = "lua vim.lsp.buf.format()";
-      }
-    ];
+    autoCmd = [{
+      event = [ "BufWritePre" ];
+      command = "lua vim.lsp.buf.format()";
+    }];
     globals = {
       mapleader = " ";
       maplocalleader = " ";
