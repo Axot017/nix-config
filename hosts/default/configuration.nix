@@ -79,6 +79,7 @@
     libsForQt5.qt5.qtquickcontrols
     libsForQt5.qt5.qtgraphicaleffects
     neovim
+    ags
     git
     libnotify
     brave
