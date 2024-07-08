@@ -4,6 +4,7 @@
     ./bufferline.nix
     ./oil.nix
     ./dap.nix
+    ./hardtime.nix
     ./neotest.nix
     ./treesitter.nix
     ./telescope.nix
