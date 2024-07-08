@@ -1,7 +1,7 @@
 const time = Variable('', {
   poll: [1000, function() {
     let date = new Date()
-    let day = date.getDay()
+    let day = date.getDate()
     let month = date.getMonth()
     let year = date.getFullYear()
 
@@ -12,9 +12,14 @@ const time = Variable('', {
   }],
 })
 
-const Time = () => Widget.Label({
-  hpack: 'center',
-  label: time.bind(),
+const Time = () => Widget.Box({
+  class_name: 'clock',
+  children: [
+    Widget.Label({
+      hpack: 'center',
+      label: time.bind(),
+    }),
+  ],
 })
 
 const Bar = (/** @type {number} */ monitor) => Widget.Window({
