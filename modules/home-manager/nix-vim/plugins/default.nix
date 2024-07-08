@@ -3,6 +3,7 @@
     ./autoclose.nix
     ./bufferline.nix
     ./oil.nix
+    ./neorg.nix
     ./dap.nix
     ./hardtime.nix
     ./neotest.nix
