@@ -5,6 +5,7 @@ let
 
 in {
   imports = [
+    ../../modules/home-manager/ags/default.nix
     ../../modules/home-manager/hyprland/default.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/zsh.nix

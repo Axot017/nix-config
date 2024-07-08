@@ -19,6 +19,7 @@
       yamlls = { enable = true; };
       pyright = { enable = true; };
       elixirls = { enable = true; };
+      tsserver = { enable = true; };
     };
   };
 }
