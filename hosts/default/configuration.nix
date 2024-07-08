@@ -15,6 +15,11 @@
     ../../modules/nixos/steam.nix
   ];
 
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -33,6 +38,7 @@
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
 
+  services.xserver.videoDrivers = [ "amdgpu" ];
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "pl";
