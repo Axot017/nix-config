@@ -37,7 +37,7 @@
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
       };
-      animation = "global,1,2,default";
+      animation = "global,0,2,default";
       monitor = ",preferred,auto,auto";
       "$mainMod" = "SUPER";
       bind = [
