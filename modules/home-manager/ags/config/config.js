@@ -17,7 +17,7 @@ const disk = Variable('', {
 })
 
 const mem = Variable('', {
-  poll: [1000, ["bash", "-c", "free | grep Mem | awk '{pring 100 - ($7/$2 * 100)}'"], out => out.toString().trim()],
+  poll: [1000, ["bash", "-c", "free | grep Mem | awk '{print 100 - ($7/$2 * 100)}'"], out => out.toString().trim()],
 })
 
 const Time = () => Widget.Box({
