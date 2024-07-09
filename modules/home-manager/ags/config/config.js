@@ -1,5 +1,5 @@
 const time = Variable('', {
-  poll: [1000, function() {
+  poll: [1000, () => {
     let date = new Date()
     let day = date.getDate().toString().padStart(2, '0')
     let month = (date.getMonth() + 1).toString().padStart(2, '0')
@@ -13,11 +13,11 @@ const time = Variable('', {
 })
 
 const disk = Variable('', {
-  poll: [1000, "df / | grep / | awk '{print 0 + $5}'", out => out.toString().trim()],
+  poll: [1000, ["bash", "-c", "df / | grep / | awk '{print 0 + $5}'"], out => out.toString().trim()],
 })
 
 const mem = Variable('', {
-  poll: [1000, "free | grep Mem | awk '{pring 100 - ($7/$2 * 100)}'", out => out.toString().trim()],
+  poll: [1000, ["bash", "-c", "free | grep Mem | awk '{pring 100 - ($7/$2 * 100)}'"], out => out.toString().trim()],
 })
 
 const Time = () => Widget.Box({
