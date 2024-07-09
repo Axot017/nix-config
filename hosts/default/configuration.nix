@@ -89,7 +89,7 @@
     libsForQt5.qt5.qtquickcontrols
     libsForQt5.qt5.qtgraphicaleffects
     protonup
-    neovim
+    lm_sensors
     ags
     git
     libnotify
