@@ -85,7 +85,7 @@ const Bar = (/** @type {number} */ monitor) => Widget.Window({
       hpack: 'center',
       label: mem.bind(),
     }),
-    center_widget: Time(),
+    center_widget: Center(),
     end_widget: Widget.Label({
       hpack: 'center',
       label: disk.bind(),
