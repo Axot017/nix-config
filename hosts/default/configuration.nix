@@ -14,15 +14,8 @@
     ../../modules/nixos/i18n.nix
     ../../modules/nixos/steam.nix
   ];
-  systemd.services.init-sensors = {
-    script = ''
-      modprobe nct6775
-      /usr/local/bin/sensors -s
-    '';
-    wantedBy = [ "graphical-session.target" ];
-    partOf = [ "graphical-session.target" ];
-  };
 
+  boot.kernelModules = [ "nct6775" ];
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
