@@ -12,6 +12,14 @@ const time = Variable('', {
   }],
 })
 
+const disk = Variable('', {
+  poll: [1000, "df / | grep / | awk '{print 0 + $5}'", out => out.toString().trim()],
+})
+
+const mem = Variable('', {
+  poll: [1000, "free | grep Mem | awk '{pring 100 - ($7/$2 * 100)}'", out => out.toString().trim()],
+})
+
 const Time = () => Widget.Box({
   class_name: 'clock',
   children: [
@@ -31,12 +39,12 @@ const Bar = (/** @type {number} */ monitor) => Widget.Window({
   child: Widget.CenterBox({
     start_widget: Widget.Label({
       hpack: 'center',
-      label: 'Welcome to AGS!',
+      label: mem.bind(),
     }),
     center_widget: Time(),
     end_widget: Widget.Label({
       hpack: 'center',
-      label: time.bind(),
+      label: disk.bind(),
     }),
   }),
 })
