@@ -1,4 +1,20 @@
-.clock, .cpu, .mem, .temp {
+.cpu, .mem, .temp {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 32px;
+
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 8px;
+}
+
+.disk, .sound, .network {
+  border-top-left-radius: 32px;
+  border-top-right-radius: 8px;
+
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 32px;
+}
+
+.clock, .cpu, .mem, .temp, .disk {
   background-color: #11111b;
   color: #cdd6f4;
   margin-top: 8px;
@@ -7,10 +23,12 @@
   padding-left: 24px;
   padding-right: 24px;
   min-width: 72px;
+  font-size: 16px;
+  font-family: 'JetBrainsMonoNL Nerd Font Mono', 'Symbols Nerd Font Mono';
+  min-height: 24px;
 }
 
 .clock {
-
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 
