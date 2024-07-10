@@ -54,7 +54,7 @@ const Disk = () => Widget.Box({
   children: [
     Widget.Label({
       hpack: 'center',
-      label: disk.bind() + "% 󰋊",
+      label: disk.bind(),
     }),
   ],
 })
