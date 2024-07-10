@@ -42,8 +42,8 @@ const mem = Variable('', {
 
 const tempCommand = "sensors | grep CPUTIN | awk '{print $2}'"
 const formatTemp = (/** @type {string} */ out) => {
-  const value = out.replace("+", "")
-  return ` ${value}`
+  const value = Math.floor(+(out.replace("+", "").replace("°C", ""))).toString()
+  return ` ${value} °C`
 }
 const temp = Variable('', {
   poll: [1000, asBashCommand(tempCommand), formatTemp],
@@ -60,34 +60,28 @@ const Center = () => Widget.Box({
   ],
 })
 
-const Temp = () => Widget.Box({
+const Temp = () => Widget.CenterBox({
   class_name: 'temp',
-  children: [
-    Widget.Label({
-      hpack: 'center',
-      label: temp.bind(),
-    }),
-  ],
+  center_widget: Widget.Label({
+    hpack: 'center',
+    label: temp.bind(),
+  }),
 })
 
-const Disk = () => Widget.Box({
+const Disk = () => Widget.CenterBox({
   class_name: 'disk',
-  children: [
-    Widget.Label({
-      hpack: 'center',
-      label: disk.bind(),
-    }),
-  ],
+  center_widget: Widget.Label({
+    hpack: 'center',
+    label: disk.bind(),
+  }),
 })
 
-const Mem = () => Widget.Box({
+const Mem = () => Widget.CenterBox({
   class_name: 'mem',
-  children: [
-    Widget.Label({
-      hpack: 'center',
-      label: mem.bind(),
-    }),
-  ],
+  center_widget: Widget.Label({
+    hpack: 'center',
+    label: mem.bind(),
+  }),
 })
 
 const Cpu = () => Widget.CenterBox({

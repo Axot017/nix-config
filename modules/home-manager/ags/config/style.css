@@ -35,3 +35,20 @@
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
 }
+
+.cpu {
+  color: @borders;
+  background-color: @theme_fg_color;
+}
+
+.mem {
+  background-color: @theme_text_color;
+}
+
+.temp {
+  background-color: @theme_bg_color;
+}
+
+.disk {
+  background-color: @theme_base_color;
+}
