@@ -24,17 +24,28 @@ const mem = Variable('', {
   poll: [1000, ["bash", "-c", "free | grep Mem | awk '{print 100 - ($7/$2 * 100)}'"], out => Math.floor(+out).toString()],
 })
 
-// const temp = Variable('', {
-//   poll: [1000, ["bash", "-c", "sensors | grep Package | awk '{print $4}'"], out => out.replace('+', '').replace('°C', '')],
-// })
+const temp = Variable('', {
+  poll: [1000, ["bash", "-c", "sensors | grep CPU | awk '{print $2}'"], out => out],
+})
 
 const Center = () => Widget.Box({
   class_name: 'center',
   children: [
     Cpu(),
+    Temp(),
     Mem(),
     Time(),
     Disk(),
+  ],
+})
+
+const Temp = () => Widget.Box({
+  class_name: 'temp',
+  children: [
+    Widget.Label({
+      hpack: 'center',
+      label: temp.bind(),
+    }),
   ],
 })
 
