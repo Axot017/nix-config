@@ -42,7 +42,7 @@ const mem = Variable('', {
 
 const tempCommand = "sensors | grep CPUTIN | awk '{print $2}'"
 const formatTemp = (/** @type {string} */ out) => {
-  const value = Math.floor(+out).toString().replace("+", "")
+  const value = out.replace("+", "")
   return ` ${value}`
 }
 const temp = Variable('', {
@@ -75,7 +75,7 @@ const Disk = () => Widget.Box({
   children: [
     Widget.Label({
       hpack: 'center',
-      label: disk.bind() + "% 󰋊",
+      label: disk.bind(),
     }),
   ],
 })
