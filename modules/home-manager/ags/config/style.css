@@ -14,9 +14,9 @@
   border-bottom-right-radius: 32px;
 }
 
-.clock, .cpu, .mem, .temp, .disk {
-  background-color: #11111b;
-  color: #cdd6f4;
+.clock, .cpu, .mem, .temp, .disk, .sound, .network {
+  background-color: @theme_bg_color;
+  color: @theme_text_color;
   margin-top: 8px;
   margin-left: 4px;
   margin-right: 4px;
@@ -34,21 +34,4 @@
 
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
-}
-
-.cpu {
-  color: @borders;
-  background-color: @theme_fg_color;
-}
-
-.mem {
-  background-color: @theme_text_color;
-}
-
-.temp {
-  background-color: @theme_bg_color;
-}
-
-.disk {
-  background-color: @theme_base_color;
 }

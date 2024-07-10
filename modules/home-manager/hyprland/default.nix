@@ -40,6 +40,7 @@
       monitor = ",preferred,auto,auto";
       "$mainMod" = "SUPER";
       bind = [
+        ", mouse:276, pass, ^discord$"
         "$mainMod, T, exec, alacritty"
         "$mainMod, Q, killactive"
 
