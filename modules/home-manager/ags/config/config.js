@@ -13,15 +13,15 @@ const time = Variable('', {
 })
 
 const cpu = Variable('', {
-  poll: [1000, ["bash", "-c", "top -bn1 | grep Cpu | awk '{print $2 + $4}'"], out => Math.floor(+out).toString()],
+  poll: [1000, ["bash", "-c", "top -bn1 | grep Cpu | awk '{print $2 + $4}'"], out => (+out).toString()],
 })
 
 const disk = Variable('', {
-  poll: [1000, ["bash", "-c", "df / | grep / | awk '{print 0 + $5}'"], out => Math.floor(+out).toString()],
+  poll: [1000, ["bash", "-c", "df / | grep / | awk '{print 0 + $5}'"], out => (+out).toString()],
 })
 
 const mem = Variable('', {
-  poll: [1000, ["bash", "-c", "free | grep Mem | awk '{print 100 - ($7/$2 * 100)}'"], out => Math.floor(+out).toString()],
+  poll: [1000, ["bash", "-c", "free | grep Mem | awk '{print 100 - ($7/$2 * 100)}'"], out => (+out).toString()],
 })
 
 const temp = Variable('', {
