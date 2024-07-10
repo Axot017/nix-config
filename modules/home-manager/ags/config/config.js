@@ -90,14 +90,12 @@ const Mem = () => Widget.Box({
   ],
 })
 
-const Cpu = () => Widget.Box({
+const Cpu = () => Widget.CenterBox({
   class_name: 'cpu',
-  children: [
-    Widget.Label({
-      hpack: 'center',
-      label: cpu.bind(),
-    }),
-  ],
+  center_widget: Widget.Label({
+    hpack: 'center',
+    label: cpu.bind(),
+  }),
 })
 
 const Time = () => Widget.Box({
