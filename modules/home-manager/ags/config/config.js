@@ -12,20 +12,41 @@ const time = Variable('', {
   }],
 })
 
+const asBashCommand = (/** @type {string} */ command) => ["bash", "-c", command]
+const cpuCommand = "top -bn1 | grep Cpu | awk '{print $2 + $4}'"
+const formatCpu = (/** @type {string} */ out) => {
+  const value = Math.floor(+out).toString()
+  return ` ${value}%`
+}
 const cpu = Variable('', {
-  poll: [1000, ["bash", "-c", "top -bn1 | grep Cpu | awk '{print $2 + $4}'"], out => out],
+  poll: [1000, asBashCommand(cpuCommand), formatCpu],
 })
 
+const diskCommand = "df / | grep / | awk '{print 0 + $5}'"
+const formatDisk = (/** @type {string} */ out) => {
+  const value = Math.floor(+out).toString()
+  return `${value}% 󰋊`
+}
 const disk = Variable('', {
-  poll: [1000, ["bash", "-c", "df / | grep / | awk '{print 0 + $5}'"], out => out],
+  poll: [1000, asBashCommand(diskCommand), formatDisk],
 })
 
+const memCommand = "free | grep Mem | awk '{print 100 - ($7/$2 * 100)}'"
+const formatMem = (/** @type {string} */ out) => {
+  const value = Math.floor(+out).toString()
+  return `󰒋 ${value}%`
+}
 const mem = Variable('', {
-  poll: [1000, ["bash", "-c", "free | grep Mem | awk '{print 100 - ($7/$2 * 100)}'"], out => out],
+  poll: [1000, asBashCommand(memCommand), formatMem],
 })
 
+const tempCommand = "sensors | grep CPUTIN | awk '{print $2}'"
+const formatTemp = (/** @type {string} */ out) => {
+  const value = Math.floor(+out).toString().replace("+", "")
+  return ` ${value}`
+}
 const temp = Variable('', {
-  poll: [1000, ["bash", "-c", "sensors | grep CPUTIN: | awk '{print $2}'"], out => out],
+  poll: [1000, asBashCommand(tempCommand), formatTemp],
 })
 
 const Center = () => Widget.Box({
@@ -54,7 +75,7 @@ const Disk = () => Widget.Box({
   children: [
     Widget.Label({
       hpack: 'center',
-      label: disk.bind(),
+      label: disk.bind() + "% 󰋊",
     }),
   ],
 })
@@ -64,7 +85,7 @@ const Mem = () => Widget.Box({
   children: [
     Widget.Label({
       hpack: 'center',
-      label: "󰒋 " + mem.bind() + "%",
+      label: mem.bind(),
     }),
   ],
 })
@@ -74,7 +95,7 @@ const Cpu = () => Widget.Box({
   children: [
     Widget.Label({
       hpack: 'center',
-      label: " " + cpu.bind() + "%",
+      label: cpu.bind(),
     }),
   ],
 })
