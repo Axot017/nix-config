@@ -25,7 +25,7 @@ const mem = Variable('', {
 })
 
 const temp = Variable('', {
-  poll: [1000, ["bash", "-c", "sensors | grep CPU | awk '{print $2}'"], out => out],
+  poll: [1000, ["bash", "-c", "sensors | grep CPUTIN: | awk '{print $2}'"], out => out],
 })
 
 const Center = () => Widget.Box({
