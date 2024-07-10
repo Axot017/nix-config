@@ -1,5 +1,4 @@
-
-.clock {
+.clock, .cpu, .mem, .temp {
   background-color: #11111b;
   color: #cdd6f4;
   margin-top: 8px;
@@ -8,6 +7,9 @@
   padding-left: 24px;
   padding-right: 24px;
   min-width: 72px;
+}
+
+.clock {
 
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
