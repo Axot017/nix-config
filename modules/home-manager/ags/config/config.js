@@ -89,12 +89,15 @@ const Mem = () => Widget.CenterBox({
   }),
 })
 
-const Cpu = () => Widget.CenterBox({
-  class_name: 'cpu',
-  center_widget: Widget.Label({
-    hpack: 'center',
-    label: cpu.bind(),
-  }),
+const Cpu = () => Widget.EventBox({
+  on_primary_click: () => Utils.exec(`alacritty -e htop`),
+  child: Widget.CenterBox({
+    class_name: 'cpu',
+    center_widget: Widget.Label({
+      hpack: 'center',
+      label: cpu.bind(),
+    }),
+  })
 })
 
 const Time = () => Widget.Box({
