@@ -3,9 +3,13 @@ const hyprland = await Service.import('hyprland')
 
 const FocusedTitle = () => Widget.CenterBox({
   class_name: 'title',
-  visible: hyprland.active.client.bind('address').as(address => !!address),
-  start_widget: Widget.Label({
-    label: hyprland.active.client.bind('title'),
+  start_widget: Widget.Box({
+    visible: hyprland.active.client.bind('address').as(address => !!address),
+    children: [
+      Widget.Label({
+        label: hyprland.active.client.bind('title'),
+      })
+    ]
   })
 })
 
