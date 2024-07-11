@@ -13,6 +13,7 @@
     ../../modules/nixos/xserver.nix
     ../../modules/nixos/i18n.nix
     ../../modules/nixos/steam.nix
+    ../../modules/nixos/stylix.nix
   ];
 
   boot.kernelModules = [ "nct6775" ];

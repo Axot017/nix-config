@@ -8,8 +8,6 @@
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "swww init"
-        "~/.config/hypr/scripts/swww_randomize.sh ~/Wallpapers/"
       ];
       input = { kb_layout = "pl,us"; };
       decoration = {
@@ -17,7 +15,6 @@
         drop_shadow = "yes";
         shadow_range = "4";
         shadow_render_power = "3";
-        "col.shadow" = "rgba(1a1a1aee)";
         blur = {
           enabled = "true";
           size = "3";
@@ -33,8 +30,6 @@
         gaps_in = "4";
         gaps_out = "8";
         border_size = "2";
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
       };
       animation = "global,1,2,default";
       monitor = ",preferred,auto,auto";

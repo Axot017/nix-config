@@ -1,13 +1,9 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    font = "JetBrainsMonoNL Nerd Font Mono 14";
-    theme = let
-      inherit (config.lib.formats.rasi) mkLiteral;
-    in
-    {
+    theme = let inherit (config.lib.formats.rasi) mkLiteral;
+    in {
       "*" = {
         bg0 = mkLiteral "#242424E6";
         bg1 = mkLiteral "#7E7E7E80";
@@ -17,88 +13,63 @@
         fg1 = mkLiteral "#FFFFFF";
         fg2 = mkLiteral "#DEDEDE80";
 
-        background-color = mkLiteral "transparent";
-        text-color = mkLiteral "@fg0";
-
         margin = 0;
         padding = 0;
         spacing = 0;
       };
 
       window = {
-          background-color = mkLiteral "@bg0";
 
-          location = mkLiteral "north";
-          anchor = mkLiteral "center";
-          y-offset = 250;
-          width = 640;
-          border-radius = 8;
+        location = mkLiteral "north";
+        anchor = mkLiteral "center";
+        y-offset = 250;
+        width = 640;
+        border-radius = 8;
       };
 
       inputbar = {
-          padding = mkLiteral "12px";
-          spacing = mkLiteral "12px";
-          children = map mkLiteral [ "icon-search" "entry" ];
+        padding = mkLiteral "12px";
+        spacing = mkLiteral "12px";
+        children = map mkLiteral [ "icon-search" "entry" ];
       };
 
       icon-search = {
-          expand = false;
-          filename = "search";
-          size = mkLiteral "0px";
+        expand = false;
+        filename = "search";
+        size = mkLiteral "0px";
       };
 
       "icon-search, entry, element-icon, element-text" = {
-          vertical-align = mkLiteral "0.5";
+        vertical-align = mkLiteral "0.5";
       };
 
       "entry" = {
-          font = mkLiteral "inherit";
+        font = mkLiteral "inherit";
 
-          placeholder = "Search";
-          placeholder-color = mkLiteral "@fg2";
+        placeholder = "Search";
       };
 
-      message = {
-          border = mkLiteral "2px 0 0";
-          border-color = mkLiteral "@bg1";
-          background-color = mkLiteral "@bg1";
-      };
+      message = { border = mkLiteral "2px 0 0"; };
 
-      textbox = {
-          padding = mkLiteral "8px 24px";
-      };
+      textbox = { padding = mkLiteral "8px 24px"; };
 
       listview = {
-          lines = 10;
-          columns = 1;
+        lines = 10;
+        columns = 1;
 
-          fixed-height = false;
-          border = mkLiteral "1px 0 0";
-          border-color = mkLiteral "@bg1";
+        fixed-height = false;
+        border = mkLiteral "1px 0 0";
       };
 
       element = {
-          padding = mkLiteral "8px 16px";
-          spacing = mkLiteral "16px";
-          background-color = mkLiteral "transparent";
+        padding = mkLiteral "8px 16px";
+        spacing = mkLiteral "16px";
       };
 
-      "element normal active" = {
-          text-color = mkLiteral "@bg2";
-      };
+      "element selected normal, element selected active" = { };
 
-      "element selected normal, element selected active" = {
-          background-color = mkLiteral "@bg2";
-          text-color = mkLiteral "@fg1";
-      };
+      element-icon = { size = mkLiteral "1em"; };
 
-      element-icon = {
-          size = mkLiteral "1em";
-      };
-
-      element-text = {
-          text-color = mkLiteral "inherit";
-      };
     };
   };
 }

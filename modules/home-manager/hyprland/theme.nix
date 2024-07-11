@@ -5,10 +5,10 @@ let
 in {
   gtk = {
     enable = true;
-    theme = {
-      name = "Sweet-Ambar-Blue-Dark";
-      package = sweet;
-    };
+    # theme = {
+    #   name = "Sweet-Ambar-Blue-Dark";
+    #   package = sweet;
+    # };
     iconTheme = {
       name = "Candy-Icons";
       package = candy;

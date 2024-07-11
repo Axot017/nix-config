@@ -43,7 +43,7 @@ const mem = Variable('', {
 const tempCommand = "sensors | grep CPUTIN | awk '{print $2}'"
 const formatTemp = (/** @type {string} */ out) => {
   const value = Math.floor(+(out.replace("+", "").replace("°C", ""))).toString()
-  return ` ${value} °C`
+  return ` ${value}°C`
 }
 const temp = Variable('', {
   poll: [1000, asBashCommand(tempCommand), formatTemp],
