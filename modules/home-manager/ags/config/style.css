@@ -17,6 +17,7 @@
 .clock, .cpu, .mem, .temp, .disk, .sound, .network {
   background-color: @theme_bg_color;
   color: @theme_text_color;
+  border: 1px solid @borders;
   margin-top: 8px;
   margin-left: 4px;
   margin-right: 4px;
