@@ -1,5 +1,13 @@
 const audio = await Service.import('audio')
+const hyprland = await Service.import('hyprland')
 
+const FocusedTitle = () => Widget.CenterBox({
+  class_name: 'title',
+  visible: hyprland.active.client.bind('address').as(address => !!address),
+  start_widget: Widget.Label({
+    label: hyprland.active.client.bind('title'),
+  })
+})
 
 const time = Variable('', {
   poll: [1000, () => {
@@ -131,6 +139,7 @@ const Bar = (/** @type {number} */ monitor) => Widget.Window({
   anchor: ['top', 'left', 'right'],
   exclusivity: 'exclusive',
   child: Widget.CenterBox({
+    start_widget: FocusedTitle(),
     center_widget: Center(),
   }),
 })
