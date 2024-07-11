@@ -31,7 +31,7 @@ const formatDisk = (/** @type {string} */ out) => {
   return `${value}% 󰋊`
 }
 const disk = Variable('', {
-  poll: [1000, asBashCommand(diskCommand), formatDisk],
+  poll: [60000, asBashCommand(diskCommand), formatDisk],
 })
 
 const memCommand = "free | grep Mem | awk '{print 100 - ($7/$2 * 100)}'"
@@ -119,7 +119,7 @@ const Audio = (/** @type {string} */ type, /** @type {string} */ icon) => Widget
 })
 
 const Sound = () => Audio('speaker', '󰕾');
-const Mic = () => Audio('microphone', '');
+const Mic = () => Audio('microphone', '');
 
 const Bar = (/** @type {number} */ monitor) => Widget.Window({
   monitor,

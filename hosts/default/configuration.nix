@@ -116,6 +116,7 @@
     gleam
     vscode-extensions.vadimcn.vscode-lldb
     mangohud
+    fzf
     (python3.withPackages (ps: with ps; [ pip ]))
   ];
 
