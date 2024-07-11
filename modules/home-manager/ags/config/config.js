@@ -128,15 +128,7 @@ const Bar = (/** @type {number} */ monitor) => Widget.Window({
   anchor: ['top', 'left', 'right'],
   exclusivity: 'exclusive',
   child: Widget.CenterBox({
-    start_widget: Widget.Label({
-      hpack: 'center',
-      label: mem.bind(),
-    }),
     center_widget: Center(),
-    end_widget: Widget.Label({
-      hpack: 'center',
-      label: disk.bind(),
-    }),
   }),
 })
 
