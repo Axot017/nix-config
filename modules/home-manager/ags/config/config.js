@@ -119,7 +119,7 @@ const Audio = (/** @type {string} */ type, /** @type {string} */ icon) => Widget
 })
 
 const Sound = () => Audio('speaker', '󰕾');
-const Mic = () => Audio('mic', '');
+const Mic = () => Audio('microphone', '');
 
 const Bar = (/** @type {number} */ monitor) => Widget.Window({
   monitor,
