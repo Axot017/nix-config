@@ -1,3 +1,12 @@
+const audio = await Service.import('audio')
+
+const Sound = () => Widget.CenterBox({
+  class_name: 'sound',
+  center_widget: Widget.Label({
+    label: audio['speaker'].bind('volume').as(value => value.toString())
+  }),
+})
+
 const time = Variable('', {
   poll: [1000, () => {
     let date = new Date()
@@ -57,6 +66,7 @@ const Center = () => Widget.Box({
     Mem(),
     Time(),
     Disk(),
+    Sound(),
   ],
 })
 
@@ -125,3 +135,5 @@ App.config({
   style: "./style.css",
   windows: [Bar(0)],
 })
+
+export { }
