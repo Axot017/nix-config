@@ -108,8 +108,8 @@ const Time = () => Widget.Box({
 })
 
 const Audio = (/** @type {string} */ type, /** @type {string} */ icon) => Widget.EventBox({
-  onScrollUp: () => audio[type].volume = Math.min(1, audio[type].volume + 0.1),
-  onScrollDown: () => audio[type].volume = Math.max(0, audio[type].volume - 0.1),
+  onScrollUp: () => audio[type].volume = Math.min(1, audio[type].volume + 0.01),
+  onScrollDown: () => audio[type].volume = Math.max(0, audio[type].volume - 0.01),
   child: Widget.CenterBox({
     class_name: 'sound',
     center_widget: Widget.Label({

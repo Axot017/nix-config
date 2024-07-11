@@ -1,11 +1,11 @@
 { config, pkgs, ... }: {
-  imports = [ ./waybar.nix ./mako.nix ./rofi.nix ./wallpapers.nix ./theme.nix ];
+  imports = [ ./mako.nix ./rofi.nix ./wallpapers.nix ./theme.nix ];
   home.file.".config/hypr/scripts".source = ./scripts;
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       exec-once = [
-        "waybar"
+        "ags"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
       ];
