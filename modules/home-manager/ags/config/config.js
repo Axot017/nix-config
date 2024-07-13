@@ -1,6 +1,22 @@
 const audio = await Service.import('audio')
 const hyprland = await Service.import('hyprland')
 
+const Workspaces = () => Widget.Box({
+  children: [
+    Widget.CenterBox(),
+    Widget.Box({
+      class_name: 'workspaces',
+      children: Array.from({ length: 10 }, (_, i) => i + 1).map(i => Widget.Button({
+        attribute: i,
+        label: `${i}`,
+      })),
+      setup: self => self.hook(hyprland, () => self.children.forEach(btn => {
+        btn.visible = hyprland.workspaces.some(ws => ws.id === btn.attribute);
+      })),
+    })
+  ]
+})
+
 const FocusedTitle = () => Widget.Box({
   children: [
     Widget.Box({
@@ -148,6 +164,7 @@ const Bar = (/** @type {number} */ monitor) => Widget.Window({
   child: Widget.CenterBox({
     start_widget: FocusedTitle(),
     center_widget: Center(),
+    end_widget: Workspaces(),
   }),
 })
 

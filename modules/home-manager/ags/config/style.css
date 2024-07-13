@@ -10,6 +10,11 @@
   min-height: 24px;
 }
 
+.workspaces {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 32px;
+}
+
 .title {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 32px;
