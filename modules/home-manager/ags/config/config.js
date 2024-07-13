@@ -2,7 +2,7 @@ const audio = await Service.import('audio')
 const hyprland = await Service.import('hyprland')
 
 const Workspaces = () => Widget.Box({
-  class_name: 'workspaces-box',
+  hpack: 'end',
   children: [
     Widget.Box(),
     Widget.Box({
