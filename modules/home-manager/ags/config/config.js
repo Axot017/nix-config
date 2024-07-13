@@ -12,9 +12,7 @@ const FocusedTitle = () => Widget.Box({
         })
       ]
     }),
-    Widget.CenterBox({
-      center_widget: Widget.Box({})
-    }),
+    Widget.CenterBox(),
   ],
 })
 
