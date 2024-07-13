@@ -7,12 +7,9 @@ const Workspaces = () => Widget.Box({
     Widget.Box(),
     Widget.Box({
       class_name: 'workspaces',
-      children: Array.from({ length: 10 }, (_, i) => i + 1).map(i => Widget.Button({
-        attribute: i,
-        label: `${i}`,
-      })),
-      setup: self => self.hook(hyprland, () => self.children.forEach(btn => {
-        btn.visible = hyprland.workspaces.some(ws => ws.id === btn.attribute);
+      children: Array.from({ length: 5 }, (_, i) => i + 1).map(i => Widget.Label({
+        class_name: 'workspace-label',
+        label: hyprland.active.workspace.bind("id").as(id => id === i ? "" : ""),
       })),
     })
   ]

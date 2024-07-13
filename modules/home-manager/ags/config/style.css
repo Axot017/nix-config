@@ -10,6 +10,10 @@
   min-height: 24px;
 }
 
+.workspace-label + .workspace-label {
+  margin-left: 4px;
+}
+
 .workspaces {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 32px;
