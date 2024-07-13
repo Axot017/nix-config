@@ -11,7 +11,7 @@
 }
 
 .workspaces-box {
-  direction: rtl;
+  flex-direction: row-reverse;
 }
 
 .workspaces {
