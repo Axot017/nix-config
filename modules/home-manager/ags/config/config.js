@@ -105,8 +105,8 @@ const Temp = () => Widget.CenterBox({
   class_name: 'temp',
   center_widget: Widget.Box({
     children: [
-      Gap(),
       Icon(""),
+      Gap(),
       Widget.Label({
         hpack: 'center',
         label: temp.bind().as(value => value),
@@ -133,8 +133,8 @@ const Mem = () => Widget.CenterBox({
   class_name: 'mem',
   center_widget: Widget.Box({
     children: [
-      Gap(),
       Icon("󰒋"),
+      Gap(),
       Widget.Label({
         hpack: 'center',
         label: mem.bind().as(value => value),
@@ -149,8 +149,8 @@ const Cpu = () => Widget.EventBox({
     class_name: 'cpu',
     center_widget: Widget.Box({
       children: [
-        Gap(),
         Icon(""),
+        Gap(),
         Widget.Label({
           hpack: 'center',
           label: cpu.bind().as(value => value),
