@@ -1,4 +1,4 @@
-.clock, .cpu, .mem, .temp, .disk, .sound, .network, .title, .workspaces {
+.clock, .cpu, .mem, .temp, .disk, .audio, .network, .title, .workspaces {
   background-color: @theme_bg_color;
   color: @theme_text_color;
   border: 1px solid @borders;
@@ -44,7 +44,7 @@
   border-bottom-right-radius: 8px;
 }
 
-.disk, .sound, .network {
+.disk, .audio, .network {
   border-top-left-radius: 32px;
   border-top-right-radius: 8px;
 
@@ -52,7 +52,7 @@
   border-bottom-right-radius: 32px;
 }
 
-.clock, .cpu, .mem, .temp, .disk, .sound, .network {
+.clock, .cpu, .mem, .temp, .disk, .audio, .network {
   margin-left: 4px;
   margin-right: 4px;
   min-width: 72px;

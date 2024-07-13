@@ -175,7 +175,7 @@ const Audio = (/** @type {string} */ type, /** @type {string} */ icon) => Widget
   onScrollUp: () => audio[type].volume = Math.min(1, audio[type].volume + 0.01),
   onScrollDown: () => audio[type].volume = Math.max(0, audio[type].volume - 0.01),
   child: Widget.CenterBox({
-    class_name: 'cpu',
+    class_name: 'audio',
     center_widget: Widget.Box({
       children: [
         Widget.Label({
