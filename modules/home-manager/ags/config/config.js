@@ -2,13 +2,20 @@ const audio = await Service.import('audio')
 const hyprland = await Service.import('hyprland')
 
 const FocusedTitle = () => Widget.Box({
-  class_name: 'title',
-  visible: hyprland.active.client.bind('address').as(address => !!address),
   children: [
-    Widget.Label({
-      label: hyprland.active.client.bind('title'),
-    })
-  ]
+    Widget.Box({
+      class_name: 'title',
+      visible: hyprland.active.client.bind('address').as(address => !!address),
+      children: [
+        Widget.Label({
+          label: hyprland.active.client.bind('title'),
+        })
+      ]
+    }),
+    Widget.CenterBox({
+      center_widget: Widget.Box({})
+    }),
+  ],
 })
 
 const time = Variable('', {
