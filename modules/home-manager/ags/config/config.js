@@ -105,12 +105,12 @@ const Temp = () => Widget.CenterBox({
   class_name: 'temp',
   center_widget: Widget.Box({
     children: [
+      Gap(),
+      Icon(""),
       Widget.Label({
         hpack: 'center',
         label: temp.bind().as(value => value),
       }),
-      Gap(),
-      Icon("")
     ]
   }),
 })
@@ -133,12 +133,12 @@ const Mem = () => Widget.CenterBox({
   class_name: 'mem',
   center_widget: Widget.Box({
     children: [
+      Gap(),
+      Icon("󰒋"),
       Widget.Label({
         hpack: 'center',
         label: mem.bind().as(value => value),
       }),
-      Gap(),
-      Icon("󰒋")
     ]
   }),
 })
@@ -149,12 +149,12 @@ const Cpu = () => Widget.EventBox({
     class_name: 'cpu',
     center_widget: Widget.Box({
       children: [
+        Gap(),
+        Icon(""),
         Widget.Label({
           hpack: 'center',
           label: cpu.bind().as(value => value),
         }),
-        Gap(),
-        Icon("")
       ]
     }),
   })
@@ -180,7 +180,7 @@ const Audio = (/** @type {string} */ type, /** @type {string} */ icon) => Widget
       children: [
         Widget.Label({
           hpack: 'center',
-          label: audio[type].bind('volume').as(value => `${Math.floor(value * 100)}% ${icon}`),
+          label: audio[type].bind('volume').as(value => `${Math.floor(value * 100)}%`),
         }),
         Gap(),
         Icon(icon)
