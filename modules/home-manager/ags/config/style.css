@@ -8,14 +8,19 @@
   font-size: 16px;
   font-family: 'JetBrainsMonoNL Nerd Font Mono', 'Symbols Nerd Font Moo';
   min-height: 28px;
+  font-size: 16px;
+}
+
+.icon {
+  font-size: 16px;
 }
 
 .workspace-label {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 
 .workspaces {
-  margin-left: 0px;
+  padding-left: 16px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 32px;
 }
