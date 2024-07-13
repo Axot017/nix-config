@@ -1,15 +1,22 @@
 const audio = await Service.import('audio')
 const hyprland = await Service.import('hyprland')
 
+const Gap = () => Widget.Box({ class_name: 'gap' });
+
+const Icon = (/** @type {string} */ icon) => Widget.Label({
+  class_name: 'icon',
+  label: icon,
+})
+
 const Workspaces = () => Widget.Box({
   hpack: 'end',
   children: [
     Widget.Box(),
     Widget.Box({
       class_name: 'workspaces',
-      children: Array.from({ length: 5 }, (_, i) => i + 1).map(i => Widget.Label({
+      children: Array.from({ length: 5 }, (_, i) => i + 1).map(i => Widget.Box({
         class_name: 'workspace-label',
-        label: hyprland.active.workspace.bind("id").as(id => id === i ? "" : ""),
+        child: hyprland.active.workspace.bind("id").as(id => Icon(id === i ? "" : "")),
       })),
     })
   ]
@@ -48,7 +55,7 @@ const asBashCommand = (/** @type {string} */ command) => ["bash", "-c", command]
 const cpuCommand = "top -bn1 | grep Cpu | awk '{print $2 + $4}'"
 const formatCpu = (/** @type {string} */ out) => {
   const value = Math.floor(+out).toString()
-  return ` ${value}%`
+  return `${value}%`
 }
 const cpu = Variable('', {
   poll: [1000, asBashCommand(cpuCommand), formatCpu],
@@ -57,7 +64,7 @@ const cpu = Variable('', {
 const diskCommand = "df / | grep / | awk '{print 0 + $5}'"
 const formatDisk = (/** @type {string} */ out) => {
   const value = Math.floor(+out).toString()
-  return `${value}% 󰋊`
+  return `${value}%`
 }
 const disk = Variable('', {
   poll: [60000, asBashCommand(diskCommand), formatDisk],
@@ -66,7 +73,7 @@ const disk = Variable('', {
 const memCommand = "free | grep Mem | awk '{print 100 - ($7/$2 * 100)}'"
 const formatMem = (/** @type {string} */ out) => {
   const value = Math.floor(+out).toString()
-  return `󰒋 ${value}%`
+  return `${value}%`
 }
 const mem = Variable('', {
   poll: [1000, asBashCommand(memCommand), formatMem],
@@ -75,7 +82,7 @@ const mem = Variable('', {
 const tempCommand = "sensors | grep CPUTIN | awk '{print $2}'"
 const formatTemp = (/** @type {string} */ out) => {
   const value = Math.floor(+(out.replace("+", "").replace("°C", ""))).toString()
-  return ` ${value}°C`
+  return `${value}°C`
 }
 const temp = Variable('', {
   poll: [1000, asBashCommand(tempCommand), formatTemp],
@@ -96,25 +103,43 @@ const Center = () => Widget.Box({
 
 const Temp = () => Widget.CenterBox({
   class_name: 'temp',
-  center_widget: Widget.Label({
-    hpack: 'center',
-    label: temp.bind(),
+  center_widget: Widget.Box({
+    children: [
+      Widget.Label({
+        hpack: 'center',
+        label: temp.bind().as(value => value),
+      }),
+      Gap(),
+      Icon("")
+    ]
   }),
 })
 
 const Disk = () => Widget.CenterBox({
   class_name: 'disk',
-  center_widget: Widget.Label({
-    hpack: 'center',
-    label: disk.bind(),
+  center_widget: Widget.Box({
+    children: [
+      Widget.Label({
+        hpack: 'center',
+        label: disk.bind().as(value => value),
+      }),
+      Gap(),
+      Icon("󰋊")
+    ]
   }),
 })
 
 const Mem = () => Widget.CenterBox({
   class_name: 'mem',
-  center_widget: Widget.Label({
-    hpack: 'center',
-    label: mem.bind(),
+  center_widget: Widget.Box({
+    children: [
+      Widget.Label({
+        hpack: 'center',
+        label: mem.bind().as(value => value),
+      }),
+      Gap(),
+      Icon("󰒋")
+    ]
   }),
 })
 
@@ -122,9 +147,15 @@ const Cpu = () => Widget.EventBox({
   on_primary_click: () => Utils.exec(`alacritty -e htop`),
   child: Widget.CenterBox({
     class_name: 'cpu',
-    center_widget: Widget.Label({
-      hpack: 'center',
-      label: cpu.bind(),
+    center_widget: Widget.Box({
+      children: [
+        Widget.Label({
+          hpack: 'center',
+          label: cpu.bind().as(value => value),
+        }),
+        Gap(),
+        Icon("")
+      ]
     }),
   })
 })
@@ -139,13 +170,21 @@ const Time = () => Widget.Box({
   ],
 })
 
+
 const Audio = (/** @type {string} */ type, /** @type {string} */ icon) => Widget.EventBox({
   onScrollUp: () => audio[type].volume = Math.min(1, audio[type].volume + 0.01),
   onScrollDown: () => audio[type].volume = Math.max(0, audio[type].volume - 0.01),
   child: Widget.CenterBox({
-    class_name: 'sound',
-    center_widget: Widget.Label({
-      label: audio[type].bind('volume').as(value => `${Math.floor(value * 100)}% ${icon}`),
+    class_name: 'cpu',
+    center_widget: Widget.Box({
+      children: [
+        Widget.Label({
+          hpack: 'center',
+          label: audio[type].bind('volume').as(value => `${Math.floor(value * 100)}% ${icon}`),
+        }),
+        Gap(),
+        Icon(icon)
+      ]
     }),
   })
 })
