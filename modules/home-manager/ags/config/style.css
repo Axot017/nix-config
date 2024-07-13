@@ -12,20 +12,20 @@
 }
 
 .gap {
-  margin-left:12px;
+  margin-left: 12px;
 }
 
 .icon {
   color: @warning_color;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .workspace-label {
-  margin-left: 8px;
+  margin-left: 12px;
 }
 
 .workspaces {
-  padding-left: 16px;
+  padding-left: 12px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 32px;
 }
