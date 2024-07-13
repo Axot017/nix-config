@@ -1,4 +1,4 @@
-.clock, .cpu, .mem, .temp, .disk, .sound, .network, .title {
+.clock, .cpu, .mem, .temp, .disk, .sound, .network, .title, .workspaces {
   background-color: @theme_bg_color;
   color: @theme_text_color;
   border: 1px solid @borders;
@@ -6,8 +6,12 @@
   padding-left: 24px;
   padding-right: 24px;
   font-size: 16px;
-  font-family: 'JetBrainsMonoNL Nerd Font Mono', 'Symbols Nerd Font Mono';
+  /* font-family: 'JetBrainsMonoNL Nerd Font Mono', 'Symbols Nerd Font Moo'; */
   min-height: 24px;
+}
+
+.workspaces-box {
+  direction: rtl;
 }
 
 .workspaces {

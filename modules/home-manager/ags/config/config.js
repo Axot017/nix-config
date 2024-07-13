@@ -2,8 +2,9 @@ const audio = await Service.import('audio')
 const hyprland = await Service.import('hyprland')
 
 const Workspaces = () => Widget.Box({
+  class_name: 'workspaces-box',
   children: [
-    Widget.CenterBox(),
+    Widget.Box(),
     Widget.Box({
       class_name: 'workspaces',
       children: Array.from({ length: 10 }, (_, i) => i + 1).map(i => Widget.Button({
@@ -28,7 +29,7 @@ const FocusedTitle = () => Widget.Box({
         })
       ]
     }),
-    Widget.CenterBox(),
+    Widget.Box(),
   ],
 })
 
