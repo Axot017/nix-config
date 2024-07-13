@@ -19,7 +19,7 @@ const FocusedTitle = () => Widget.Box({
   children: [
     Widget.Box({
       class_name: 'title',
-      visible: hyprland.active.client.bind('address').as(address => !!address),
+      visible: hyprland.active.client.bind('title').as(address => !!address),
       children: [
         Widget.Label({
           label: hyprland.active.client.bind('title'),
