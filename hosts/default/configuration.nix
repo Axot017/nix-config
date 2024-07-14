@@ -93,6 +93,7 @@
     libsForQt5.qt5.qtgraphicaleffects
     protonup
     wev
+    libnotify
     lm_sensors
     ags
     git
