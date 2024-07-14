@@ -5,8 +5,5 @@
     ./keymaps.nix
     ./plugins/default.nix
   ];
-  programs.nixvim = {
-    enable = true;
-    colorschemes.tokyonight.enable = true;
-  };
+  programs.nixvim = { enable = true; };
 }
