@@ -11,7 +11,7 @@ function NotificationIcon({ app_entry, app_icon, image }) {
     })
   }
 
-  let icon = "dialog-information-symbolic"
+  let icon = "dialog-information"
   if (Utils.lookUpIcon(app_icon))
     icon = app_icon
 
