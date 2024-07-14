@@ -5,7 +5,7 @@ const network = await Service.import('network')
 const Gap = () => Widget.Box({ class_name: 'gap' });
 
 const Icon = (icon) => Widget.Label({
-  class_name: 'icon',
+  class_name: 'topbar-icon',
   label: icon,
 })
 

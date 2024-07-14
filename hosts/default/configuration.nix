@@ -61,7 +61,6 @@
     isNormalUser = true;
     description = "Axot";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ libnotify ];
     shell = pkgs.zsh;
   };
 
@@ -93,7 +92,6 @@
     libsForQt5.qt5.qtgraphicaleffects
     protonup
     wev
-    libnotify
     lm_sensors
     ags
     git
