@@ -1,4 +1,4 @@
-import { TopBar } from "./topbar"
+import { TopBar } from "./topbar.js"
 
 App.config({
   style: "./style.css",
