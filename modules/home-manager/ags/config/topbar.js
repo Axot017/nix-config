@@ -26,7 +26,7 @@ const Workspaces = () => Widget.Box({
 const FocusedTitle = () => Widget.Box({
   children: [
     Widget.Box({
-      class_name: 'title',
+      class_name: 'window-title',
       visible: hyprland.active.client.bind('title').as(address => !!address),
       children: [
         Widget.Label({

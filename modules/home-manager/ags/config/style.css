@@ -1,4 +1,8 @@
-.clock, .cpu, .mem, .temp, .fan, .disk, .audio, .network, .title, .workspaces {
+* {
+  font-family: 'JetBrainsMonoNL Nerd Font Mono', 'Symbols Nerd Font Moo';
+}
+
+.clock, .cpu, .mem, .temp, .fan, .disk, .audio, .network, .window-title, .workspaces {
   background-color: @theme_bg_color;
   color: @theme_text_color;
   border: 1px solid @borders;
@@ -30,7 +34,7 @@
   border-bottom-left-radius: 32px;
 }
 
-.title {
+.window-title {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 32px;
 }
@@ -99,7 +103,7 @@ window.notification-popups box.notifications {
 }
 
 .notification.critical {
-    border: 1px solid lightcoral;
+    border: 1px solid @error_color;
 }
 
 .title {
