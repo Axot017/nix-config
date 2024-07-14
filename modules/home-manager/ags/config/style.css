@@ -94,7 +94,7 @@ window.notification-popups box.notifications {
     border-radius: 11px;
     padding: 1em;
     margin: .5em;
-    border: 1px solid @wm_borders_edge;
+    border: 1px solid @borders;
     background-color: @theme_bg_color;
 }
 
