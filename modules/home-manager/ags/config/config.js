@@ -4,7 +4,7 @@ const network = await Service.import('network')
 
 const Gap = () => Widget.Box({ class_name: 'gap' });
 
-const Icon = (/** @type {string} */ icon) => Widget.Label({
+const Icon = (icon) => Widget.Label({
   class_name: 'icon',
   label: icon,
 })
@@ -205,7 +205,7 @@ const Network = () => {
             label: network.wifi.bind("strength").as(strength => `${strength}%`),
           }),
           Gap(),
-          Icon(icon.prop),
+          Icon(icon),
         ],
       }),
 
