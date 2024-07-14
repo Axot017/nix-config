@@ -188,14 +188,14 @@ const Cpu = () => Widget.EventBox({
 })
 
 const Network = () => {
-  let strength = network.wifi.bind("strength").as(strength => strength);
-  let status = network.wifi.bind("internet").as(internet => internet);
   let possibleIcons = ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
-  let disconnectedIcon = "󰖪"
-  let selectedIcon = status ? possibleIcons[Math.floor((+strength) / 20)] : disconnectedIcon
+  let icon = network.wifi.bind("strength").as(strength => {
+    return possibleIcons[Math.floor((+strength) / 20)]
+  });
 
 
   return Widget.EventBox({
+    on_primary_click: () => Utils.exec(`alacritty -e nmtui`),
     child: Widget.CenterBox({
       class_name: 'network',
       center_widget: Widget.Box({
@@ -205,7 +205,7 @@ const Network = () => {
             label: network.wifi.bind("strength").as(strength => `${strength}%`),
           }),
           Gap(),
-          Icon(selectedIcon),
+          Icon(icon.prop),
         ],
       }),
 
