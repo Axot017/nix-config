@@ -4,6 +4,7 @@ const notifications = await Service.import("notifications")
 function NotificationIcon({ app_entry, app_icon, image }) {
   if (image) {
     return Widget.Box({
+      class_name: "icon",
       css: `background-image: url("${image}");`
         + "background-size: contain;"
         + "background-repeat: no-repeat;"
@@ -20,6 +21,7 @@ function NotificationIcon({ app_entry, app_icon, image }) {
 
   if (icon) {
     return Widget.Box({
+      class_name: "icon",
       child: Widget.Icon(icon),
     })
   } else {
@@ -31,7 +33,6 @@ function NotificationIcon({ app_entry, app_icon, image }) {
 function Notification(n) {
   const icon = Widget.Box({
     vpack: "start",
-    class_name: "icon",
     child: NotificationIcon(n),
   })
 
