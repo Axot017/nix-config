@@ -214,14 +214,17 @@ const Network = () => {
 }
 
 
-const Time = () => Widget.Box({
-  class_name: 'clock',
-  children: [
-    Widget.Label({
-      hpack: 'center',
-      label: time.bind(),
-    }),
-  ],
+const Time = () => Widget.EventBox({
+  on_primary_click: () => Utils.exec(`brave https://calendar.google.com`),
+  child: Widget.Box({
+    class_name: 'clock',
+    children: [
+      Widget.Label({
+        hpack: 'center',
+        label: time.bind(),
+      }),
+    ],
+  })
 })
 
 
