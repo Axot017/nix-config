@@ -228,15 +228,6 @@ const Time = () => Widget.Box({
 const Audio = (/** @type {string} */ type, /** @type {string} */ icon) => Widget.EventBox({
   on_scroll_up: () => audio[type].volume = Math.min(1, audio[type].volume + 0.01),
   on_scroll_down: () => audio[type].volume = Math.max(0, audio[type].volume - 0.01),
-  on_primary_click: () => Utils.notify({
-    summary: "Notification Popup Example",
-    iconName: "info-symbolic",
-    body: "Lorem ipsum dolor sit amet, qui minim labore adipisicing "
-      + "minim sint cillum sint consectetur cupidatat.",
-    actions: {
-      "Cool": () => print("pressed Cool"),
-    },
-  }),
   child: Widget.CenterBox({
     class_name: 'audio',
     center_widget: Widget.Box({
