@@ -1,5 +1,6 @@
 const audio = await Service.import('audio')
 const hyprland = await Service.import('hyprland')
+const network = await Service.import('network')
 
 const Gap = () => Widget.Box({ class_name: 'gap' });
 
@@ -88,17 +89,43 @@ const temp = Variable('', {
   poll: [1000, asBashCommand(tempCommand), formatTemp],
 })
 
+const fanCommand = "sensors | grep fan2 | awk '{print $2}'"
+const formatFan = (/** @type {string} */ out) => {
+  const value = Math.floor(+(out.replace("RPM", "").trim())).toString()
+
+  return `${value} RPM`
+}
+const fan = Variable('', {
+  poll: [1000, asBashCommand(fanCommand), formatFan],
+})
+
 const Center = () => Widget.Box({
   class_name: 'center',
   children: [
     Cpu(),
     Temp(),
+    Fan(),
     Mem(),
     Time(),
     Disk(),
+    Network(),
     Sound(),
     Mic(),
   ],
+})
+
+const Fan = () => Widget.CenterBox({
+  class_name: 'fan',
+  center_widget: Widget.Box({
+    children: [
+      Icon(""),
+      Gap(),
+      Widget.Label({
+        hpack: 'center',
+        label: fan.bind().as(value => value),
+      }),
+    ],
+  })
 })
 
 const Temp = () => Widget.CenterBox({
@@ -159,6 +186,33 @@ const Cpu = () => Widget.EventBox({
     }),
   })
 })
+
+const Network = () => {
+  let strength = network.wifi.bind("strength").as(strength => strength);
+  let status = network.wifi.bind("internet").as(internet => internet);
+  let possibleIcons = ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+  let disconnectedIcon = "󰖪"
+  let selectedIcon = status ? possibleIcons[Math.floor((+strength) / 20)] : disconnectedIcon
+
+
+  return Widget.EventBox({
+    child: Widget.CenterBox({
+      class_name: 'network',
+      center_widget: Widget.Box({
+        children: [
+          Widget.Label({
+            hpack: 'center',
+            label: network.wifi.bind("strength").as(strength => `${strength}%`),
+          }),
+          Gap(),
+          Icon(selectedIcon),
+        ],
+      }),
+
+    }),
+  })
+}
+
 
 const Time = () => Widget.Box({
   class_name: 'clock',
