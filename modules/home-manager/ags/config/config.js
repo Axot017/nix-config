@@ -93,7 +93,7 @@ const fanCommand = "sensors | grep fan2 | awk '{print $2}'"
 const formatFan = (/** @type {string} */ out) => {
   const value = Math.floor(+(out.replace("RPM", "").trim())).toString()
 
-  return `${value} RPM`
+  return value
 }
 const fan = Variable('', {
   poll: [1000, asBashCommand(fanCommand), formatFan],
