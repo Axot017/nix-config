@@ -11,16 +11,20 @@ function NotificationIcon({ app_entry, app_icon, image }) {
     })
   }
 
-  let icon = "dialog-information"
+  let icon = null
   if (Utils.lookUpIcon(app_icon))
     icon = app_icon
 
   if (app_entry && Utils.lookUpIcon(app_entry))
     icon = app_entry
 
-  return Widget.Box({
-    child: Widget.Icon(icon),
-  })
+  if (icon) {
+    return Widget.Box({
+      child: Widget.Icon(icon),
+    })
+  } else {
+    return Widget.Box()
+  }
 }
 
 /** @param {import('resource:///com/github/Aylur/ags/service/notifications.js').Notification} n */
