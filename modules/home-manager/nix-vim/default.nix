@@ -5,5 +5,8 @@
     ./keymaps.nix
     ./plugins/default.nix
   ];
-  programs.nixvim = { enable = true; };
+  programs.nixvim = {
+    enable = true;
+    colorschemes.dracula.enable = true;
+  };
 }
