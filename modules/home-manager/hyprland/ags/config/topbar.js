@@ -128,7 +128,7 @@ const Fan = () => Widget.CenterBox({
       Gap(),
       Widget.Label({
         hpack: 'center',
-        label: weather.bind().as(value => value),
+        label: fan.bind().as(value => value),
       }),
     ],
   })
