@@ -38,6 +38,12 @@ const FocusedTitle = () => Widget.Box({
   ],
 })
 
+const weather = Variable("", {
+  poll: [60000, async () => {
+    const key = await Utils.readFileAsync('~/.config/.secret/openweather')
+    return key;
+  }]
+});
 const time = Variable('', {
   poll: [1000, () => {
     let date = new Date()
@@ -122,7 +128,7 @@ const Fan = () => Widget.CenterBox({
       Gap(),
       Widget.Label({
         hpack: 'center',
-        label: fan.bind().as(value => value),
+        label: weather.bind().as(value => value),
       }),
     ],
   })
