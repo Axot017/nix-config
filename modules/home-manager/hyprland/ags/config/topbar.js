@@ -40,8 +40,7 @@ const FocusedTitle = () => Widget.Box({
 
 const weather = Variable("", {
   poll: [60000, async () => {
-    const home = process.env.HOME
-    const key = await Utils.readFileAsync(`${home}/.config/.secret/openweather`)
+    const key = await Utils.readFileAsync(`${Utils.HOME}/.config/.secret/openweather`)
     return key;
   }]
 });
