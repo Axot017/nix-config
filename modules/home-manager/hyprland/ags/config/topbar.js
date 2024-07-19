@@ -38,12 +38,21 @@ const FocusedTitle = () => Widget.Box({
   ],
 })
 
-const weather = Variable("", {
-  poll: [60000, async () => {
-    const key = await Utils.readFileAsync(`${Utils.HOME}/.config/.secret/openweather`)
-    return key;
-  }]
-});
+const weather = Variable({})
+Utils.interval(6000, async () => {
+  const key = await Utils.readFileAsync(`${Utils.HOME}/.config/.secret/openweather`)
+  const result = await Utils.fetch(`https://api.openweathermap.org/data/2.5/weather?lat=50.281760&lon=18.997510&appid=${key}&units=metric`)
+  if (result.status !== 200) {
+    return
+  }
+  const body = await result.json()
+
+
+  weather.setValue({
+    temp: Math.floor(body.main.temp).toString() + "°C",
+  })
+})
+
 const time = Variable('', {
   poll: [1000, () => {
     let date = new Date()
@@ -128,7 +137,7 @@ const Fan = () => Widget.CenterBox({
       Gap(),
       Widget.Label({
         hpack: 'center',
-        label: fan.bind().as(value => value),
+        label: weather.bind().as(value => value.temp),
       }),
     ],
   })
