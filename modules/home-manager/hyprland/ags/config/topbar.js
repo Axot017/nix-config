@@ -42,18 +42,21 @@ const weather = Variable({})
 Utils.interval(6000, async () => {
   try {
     const key = await Utils.readFileAsync(`${Utils.HOME}/.config/.secret/openweather`)
-    const result = await Utils.fetch(`https://api.openweathermap.org/data/2.5/weather?lat=50.281760&lon=18.997510&appid=${key}&units=metric`)
-    console.log(result)
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.281760&lon=18.997510&appid=${key}&units=metric`
+    console.log(`Fetching weather from ${url}`)
+    const result = await Utils.fetch(url)
+    console.log(`Result status: ${result.status}`)
+
     if (result.status !== 200) {
       return
     }
     const body = await result.text()
 
-    console.log(body)
+    console.log(`Weather: ${body}`)
 
     weather.setValue({
       // temp: Math.floor(body.main.temp).toString() + "°C",
-      temp: body
+      temp: ""
     })
   } catch (e) {
     console.log(`Error fetching weather: ${e}`)
