@@ -41,6 +41,7 @@ const FocusedTitle = () => Widget.Box({
 const weather = Variable({
   temp: "",
 })
+
 Utils.interval(6000, async () => {
   try {
     const key = (await Utils.readFileAsync(`${Utils.HOME}/.config/.secret/openweather`)).trim()
@@ -111,33 +112,23 @@ const temp = Variable('', {
   poll: [1000, asBashCommand(tempCommand), formatTemp],
 })
 
-const fanCommand = "sensors | grep fan2 | awk '{print $2}'"
-const formatFan = (/** @type {string} */ out) => {
-  const value = Math.floor(+(out.replace("RPM", "").trim())).toString()
-
-  return value
-}
-const fan = Variable('', {
-  poll: [1000, asBashCommand(fanCommand), formatFan],
-})
-
 const Center = () => Widget.Box({
   class_name: 'center',
   children: [
     Cpu(),
     Temp(),
-    Fan(),
     Mem(),
-    Time(),
     Disk(),
+    Time(),
+    Weather(),
     Network(),
     Sound(),
     Mic(),
   ],
 })
 
-const Fan = () => Widget.CenterBox({
-  class_name: 'fan',
+const Weather = () => Widget.CenterBox({
+  class_name: 'weather',
   center_widget: Widget.Box({
     children: [
       Icon(""),
