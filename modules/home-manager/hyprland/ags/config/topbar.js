@@ -38,13 +38,20 @@ const FocusedTitle = () => Widget.Box({
   ],
 })
 
-const weather = Variable({})
+const weather = Variable({
+  temp: "",
+})
 Utils.interval(6000, async () => {
   try {
     const key = await Utils.readFileAsync(`${Utils.HOME}/.config/.secret/openweather`)
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.281760&lon=18.997510&appid=${key}&units=metric`
     console.log(`Fetching weather from ${url}`)
-    const result = await Utils.fetch(url)
+    const result = await Utils.fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
     console.log(`Result status: ${result.status}`)
 
     if (result.status !== 200) {
