@@ -42,7 +42,7 @@ const weather = Variable({
   temp: "",
 })
 
-Utils.interval(6000, async () => {
+Utils.interval(900000, async () => {
   try {
     const key = (await Utils.readFileAsync(`${Utils.HOME}/.config/.secret/openweather`)).trim()
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.281760&lon=18.997510&appid=${key}&units=metric`
