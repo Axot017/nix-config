@@ -58,9 +58,9 @@ const mapWeatherIcon = (/** @type {string} */ icon) => {
     case "03n":
       return ""
     case "04d":
-      return ""
+      return ""
     case "04n":
-      return ""
+      return ""
     case "09d":
       return ""
     case "09n":
