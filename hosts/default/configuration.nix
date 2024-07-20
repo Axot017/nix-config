@@ -117,6 +117,7 @@
     vscode-extensions.vadimcn.vscode-lldb
     mangohud
     fzf
+    xwaylandvideobridge
     (python3.withPackages (ps: with ps; [ pip ]))
   ];
 
