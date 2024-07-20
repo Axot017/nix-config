@@ -178,12 +178,12 @@ const Weather = () => Widget.EventBox({
     class_name: 'weather',
     center_widget: Widget.Box({
       children: [
-        Icon(weather.bind().as(value => value.icon)),
-        Gap(),
         Widget.Label({
           hpack: 'center',
           label: weather.bind().as(value => value.temp),
         }),
+        Gap(),
+        Icon(weather.bind().as(value => value.icon)),
       ],
     })
   })
@@ -207,12 +207,12 @@ const Disk = () => Widget.CenterBox({
   class_name: 'disk',
   center_widget: Widget.Box({
     children: [
+      Icon("󰋊"),
+      Gap(),
       Widget.Label({
         hpack: 'center',
         label: disk.bind().as(value => value),
       }),
-      Gap(),
-      Icon("󰋊")
     ]
   }),
 })
