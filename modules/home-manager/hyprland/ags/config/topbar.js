@@ -172,17 +172,20 @@ const Center = () => Widget.Box({
   ],
 })
 
-const Weather = () => Widget.CenterBox({
-  class_name: 'weather',
-  center_widget: Widget.Box({
-    children: [
-      Icon(""),
-      Gap(),
-      Widget.Label({
-        hpack: 'center',
-        label: weather.bind().as(value => value.temp),
-      }),
-    ],
+const Weather = () => Widget.EventBox({
+  on_primary_click: () => Utils.exec(`brave https://openweathermap.org/city/3096472`),
+  child: Widget.CenterBox({
+    class_name: 'weather',
+    center_widget: Widget.Box({
+      children: [
+        Icon(weather.bind().as(value => value.icon)),
+        Gap(),
+        Widget.Label({
+          hpack: 'center',
+          label: weather.bind().as(value => value.temp),
+        }),
+      ],
+    })
   })
 })
 
