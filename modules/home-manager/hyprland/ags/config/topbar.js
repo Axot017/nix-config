@@ -46,41 +46,41 @@ const weather = Variable({
 const mapWeatherIcon = (/** @type {string} */ icon) => {
   switch (icon) {
     case "01d":
-      return ""
+      return "󰖙"
     case "01n":
-      return ""
+      return "󰖙"
     case "02d":
-      return ""
+      return "󰖕"
     case "02n":
-      return ""
+      return "󰖕"
     case "03d":
-      return ""
+      return "󰖐"
     case "03n":
-      return ""
+      return "󰖐"
     case "04d":
       return "󰖐"
     case "04n":
-      return ""
+      return "󰖐"
     case "09d":
-      return ""
+      return "󰖗"
     case "09n":
-      return ""
+      return "󰖗"
     case "10d":
-      return ""
+      return "󰼳"
     case "10n":
-      return ""
+      return "󰼳"
     case "11d":
-      return ""
+      return "󰙾"
     case "11n":
-      return ""
+      return "󰙾"
     case "13d":
-      return ""
+      return "󰖘"
     case "13n":
-      return ""
+      return "󰖘"
     case "50d":
-      return ""
+      return "󰖑"
     case "50n":
-      return ""
+      return "󰖑"
     default:
       return ""
   }
