@@ -13,7 +13,6 @@ in {
     ../../modules/home-manager/yazi.nix
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/zoxide.nix
-    ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/htop.nix
     ../../modules/home-manager/thefuck.nix
     ../../modules/home-manager/nix-vim/default.nix

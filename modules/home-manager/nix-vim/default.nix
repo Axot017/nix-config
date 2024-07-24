@@ -7,6 +7,12 @@
   ];
   programs.nixvim = {
     enable = true;
-    colorschemes.dracula.enable = true;
+    colorschemes.tokyonight = {
+      enable = true;
+      settings = {
+        style = "storm";
+        background = "transparent";
+      };
+    };
   };
 }
