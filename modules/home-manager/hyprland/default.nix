@@ -37,7 +37,7 @@
       "$mainMod" = "SUPER";
       bind = [
         ", mouse:276, pass, ^discord$"
-        "$mainMod, T, exec, alacritty"
+        "$mainMod, T, exec, wezterm"
         "$mainMod, Q, killactive"
 
         "$mainMod, H, movefocus, l"

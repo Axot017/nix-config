@@ -9,7 +9,7 @@ in {
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/starship.nix
-    ../../modules/home-manager/alacritty.nix
+    ../../modules/home-manager/wezterm.nix
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/zoxide.nix
     ../../modules/home-manager/tmux.nix
