@@ -8,7 +8,7 @@ in {
     ../../modules/home-manager/hyprland/default.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/zsh.nix
-    ../../modules/home-manager/starship.nix
+    ../../modules/home-manager/oh-my-posh.nix
     ../../modules/home-manager/wezterm.nix
     ../../modules/home-manager/yazi.nix
     ../../modules/home-manager/ripgrep.nix
