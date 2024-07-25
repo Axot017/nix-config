@@ -232,7 +232,7 @@ const Mem = () => Widget.CenterBox({
 })
 
 const Cpu = () => Widget.EventBox({
-  on_primary_click: () => Utils.exec(`wezterm --always-new-process -e htop`),
+  on_primary_click: () => Utils.exec(`wezterm start --new-tab htop`),
   child: Widget.CenterBox({
     class_name: 'cpu',
     center_widget: Widget.Box({
@@ -256,7 +256,7 @@ const Network = () => {
 
 
   return Widget.EventBox({
-    on_primary_click: () => Utils.exec(`wezterm --always-new-process -e nmtui`),
+    on_primary_click: () => Utils.exec(`wezterm start --new-tab nmtui`),
     child: Widget.CenterBox({
       class_name: 'network',
       center_widget: Widget.Box({

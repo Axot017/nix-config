@@ -37,7 +37,7 @@
       "$mainMod" = "SUPER";
       bind = [
         ", mouse:276, pass, ^discord$"
-        "$mainMod, T, exec, wezterm --always-new-process"
+        "$mainMod, T, exec, wezterm start"
         "$mainMod, Q, killactive"
 
         "$mainMod, H, movefocus, l"
