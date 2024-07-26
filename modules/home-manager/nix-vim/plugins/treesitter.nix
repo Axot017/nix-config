@@ -1,8 +1,8 @@
-{ pkgs, config, inputs, ... }: 
-{
+{ pkgs, config, inputs, ... }: {
   programs.nixvim.plugins = {
     treesitter = {
       enable = true;
+      settings = { ensure_installed = [ "lua" "nix" "elixir" ]; };
     };
     treesitter-textobjects = {
       enable = true;
