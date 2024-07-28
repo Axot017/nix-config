@@ -117,6 +117,7 @@
     fzf
     xwaylandvideobridge
     ffmpeg
+    aubio
   ];
 
   environment.sessionVariables = {
