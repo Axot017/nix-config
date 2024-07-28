@@ -2,7 +2,8 @@
   programs.nixvim.plugins = {
     treesitter = {
       enable = true;
-      settings = { ensure_installed = [ "lua" "nix" "elixir" ]; };
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars;
+        [ elixir ];
     };
     treesitter-textobjects = {
       enable = true;
