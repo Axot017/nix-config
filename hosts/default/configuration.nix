@@ -97,8 +97,6 @@
     git
     libnotify
     brave
-    swww
-    aubio
     discord
     unzip
     cinnamon.nemo
@@ -111,7 +109,6 @@
     postman
     gnumake
     erlang
-    deno
     elixir
     lldb
     gleam
@@ -119,7 +116,6 @@
     mangohud
     fzf
     xwaylandvideobridge
-    (python3.withPackages (ps: with ps; [ pip ]))
   ];
 
   environment.sessionVariables = {
