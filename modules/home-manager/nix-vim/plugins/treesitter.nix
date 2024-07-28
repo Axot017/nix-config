@@ -1,12 +1,12 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim.plugins = {
     treesitter = {
-      enable = false;
-      # grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars;
-      #   [ elixir ];
+      enable = true;
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars;
+        [ elixir ];
     };
     treesitter-textobjects = {
-      enable = false;
+      enable = true;
       move = {
         gotoNextStart = {
           "]f" = {
