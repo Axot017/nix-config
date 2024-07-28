@@ -20,13 +20,6 @@
       key = "<F3>";
       action.__raw = "require('dap').toggle_breakpoint";
     }
-    # Neotest
-    {
-      mode = "n";
-      key = "<leader>gt";
-      action = "<cmd>lua require('neotest').run()<CR>";
-      options = { silent = true; };
-    }
     # Oil
     {
       mode = "n";

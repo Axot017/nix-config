@@ -6,7 +6,6 @@
     ./neorg.nix
     ./dap.nix
     ./hardtime.nix
-    ./neotest.nix
     ./treesitter.nix
     ./telescope.nix
     ./copilot.nix
