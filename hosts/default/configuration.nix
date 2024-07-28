@@ -116,6 +116,7 @@
     mangohud
     fzf
     xwaylandvideobridge
+    ffmpeg
   ];
 
   environment.sessionVariables = {
