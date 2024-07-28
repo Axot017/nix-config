@@ -98,6 +98,7 @@
     libnotify
     brave
     swww
+    aubio
     discord
     unzip
     cinnamon.nemo
