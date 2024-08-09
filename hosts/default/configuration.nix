@@ -3,8 +3,22 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, inputs, ... }:
-
-{
+let
+  flutter = with pkgs;
+    stdenv.mkDerivation {
+      name = "flutter";
+      src = fetchFromGitHub {
+        owner = "flutter";
+        repo = "flutter";
+        rev = "d211f42860350d914a5ad8102f9ec32764dc6d06";
+        sha256 = "sha256-+j+BshGl6NDv6AU65XoJqRDx6cZwMVRLxPXLbsSwbF8=";
+      };
+      installPhase = ''
+        mkdir -p $out
+        cp -r $src $out
+      '';
+    };
+in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
@@ -88,6 +102,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    flutter
     libsForQt5.qt5.qtquickcontrols
     libsForQt5.qt5.qtgraphicaleffects
     protonup
@@ -117,7 +132,6 @@
     fzf
     xwaylandvideobridge
     ffmpeg
-    aubio
   ];
 
   environment.sessionVariables = {
