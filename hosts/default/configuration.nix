@@ -33,6 +33,7 @@ in {
     openssl
     curl
     expat
+    libepoxy
   ];
 
   imports = [ # Include the results of the hardware scan.
