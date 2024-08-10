@@ -23,6 +23,8 @@ let
 in {
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
+    fontconfig.lib
+    sqlite.out
     stdenv.cc.cc
     zlib
     fuse3
