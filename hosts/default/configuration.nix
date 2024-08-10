@@ -4,20 +4,20 @@
 
 { config, pkgs, inputs, ... }:
 let
-  fvm = with pkgs;
+  flutter = with pkgs;
     stdenv.mkDerivation {
-      name = "fvm";
-      src = fetchurl {
-        url =
-          "https://github.com/leoafarias/fvm/releases/download/3.1.7/fvm-3.1.7-linux-x64.tar.gz";
-        hash = "sha256-s+cA5BQ0XKo81tXmjPABE/15cWQ+fIKPRfOsmPqzXgk=";
+      name = "flutter";
+      src = fetchFromGitHub {
+        owner = "flutter";
+        repo = "flutter";
+        rev = "3.13.9";
+        hash = "sha256-+j+BshGl6NDv6AU65XoJqRDx6cZwMVRLxPXLbsSwbF8=";
       };
       nativeBuildInputs = [ autoPatchelfHook ];
       buildInputs = [ stdenv.cc.cc.lib ];
       installPhase = ''
         mkdir -p $out
-        tar -xzf $src -C $out
-        cp -r $out/* $out/bin
+        cp -r $src/* $out
       '';
     };
 in {
@@ -104,7 +104,7 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    fvm
+    flutter
     libsForQt5.qt5.qtquickcontrols
     libsForQt5.qt5.qtgraphicaleffects
     protonup
