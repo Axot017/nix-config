@@ -2,25 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
-let
-  flutter = with pkgs;
-    stdenv.mkDerivation {
-      name = "flutter";
-      src = fetchFromGitHub {
-        owner = "flutter";
-        repo = "flutter";
-        rev = "3.13.9";
-        hash = "sha256-+j+BshGl6NDv6AU65XoJqRDx6cZwMVRLxPXLbsSwbF8=";
-      };
-      nativeBuildInputs = [ autoPatchelfHook ];
-      buildInputs = [ stdenv.cc.cc.lib ];
-      installPhase = ''
-        mkdir -p $out
-        cp -r $src/* $out
-      '';
-    };
-in {
+{ config, pkgs, inputs, ... }: {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
