@@ -119,6 +119,7 @@ in {
     cmake
     ninja
     clang
+    pkg-config
     fvm
     libsForQt5.qt5.qtquickcontrols
     libsForQt5.qt5.qtgraphicaleffects
