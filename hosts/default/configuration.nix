@@ -120,6 +120,7 @@ in {
     ninja
     clang
     pkg-config
+    gtk3
     fvm
     libsForQt5.qt5.qtquickcontrols
     libsForQt5.qt5.qtgraphicaleffects
