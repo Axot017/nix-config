@@ -12,6 +12,8 @@ let
           "https://github.com/leoafarias/fvm/releases/download/3.1.7/fvm-3.1.7-linux-x64.tar.gz";
         hash = "sha256-s+cA5BQ0XKo81tXmjPABE/15cWQ+fIKPRfOsmPqzXgk=";
       };
+      nativeBuildInputs = [ autoPatchelfHook ];
+      buildInputs = [ stdenv.cc.cc.lib ];
       installPhase = ''
         mkdir -p $out
         tar -xzf $src -C $out
