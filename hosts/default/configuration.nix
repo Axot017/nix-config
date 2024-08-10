@@ -147,6 +147,8 @@ in {
     fzf
     xwaylandvideobridge
     ffmpeg
+    grim
+    slurp
   ];
 
   environment.sessionVariables = {
