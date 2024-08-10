@@ -13,7 +13,7 @@ let
         hash = "sha256-s+cA5BQ0XKo81tXmjPABE/15cWQ+fIKPRfOsmPqzXgk=";
       };
       nativeBuildInputs = [ autoPatchelfHook ];
-      buildInputs = [ stdenv.cc.cc.lib ];
+      buildInputs = [ stdenv.cc.cc ];
       installPhase = ''
         mkdir -p $out
         tar -xzf $src -C $out
@@ -22,7 +22,16 @@ let
     };
 in {
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc.lib ];
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    zlib
+    fuse3
+    icu
+    nss
+    openssl
+    curl
+    expat
+  ];
 
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
