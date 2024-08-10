@@ -121,6 +121,7 @@ in {
     clang
     pkg-config
     gtk3
+    gtk3-x11
     gtk3.dev
     fvm
     libsForQt5.qt5.qtquickcontrols
