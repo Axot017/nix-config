@@ -117,6 +117,7 @@ in {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     cmake
+    ninja
     fvm
     libsForQt5.qt5.qtquickcontrols
     libsForQt5.qt5.qtgraphicaleffects
