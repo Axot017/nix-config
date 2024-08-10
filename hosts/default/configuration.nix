@@ -12,6 +12,8 @@ let
           "https://github.com/leoafarias/fvm/releases/download/3.1.7/fvm-3.1.7-linux-x64.tar.gz";
         hash = "sha256-s+cA5BQ0XKo81tXmjPABE/15cWQ+fIKPRfOsmPqzXgk=";
       };
+      nativeBuildInputs = [ autoPatchelfHook ];
+      buildInputs = [ stdenv.cc.cc.lib ];
       installPhase = ''
         mkdir -p $out
         tar -xzf $src -C $out
@@ -19,6 +21,9 @@ let
       '';
     };
 in {
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc.lib ];
+
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
