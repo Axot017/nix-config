@@ -15,6 +15,7 @@ let
       installPhase = ''
         mkdir -p $out
         tar -xzf $src -C $out
+        cp -r $out/* $out/bin
       '';
     };
 in {
