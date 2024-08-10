@@ -118,6 +118,7 @@ in {
   environment.systemPackages = with pkgs; [
     cmake
     ninja
+    clang
     fvm
     libsForQt5.qt5.qtquickcontrols
     libsForQt5.qt5.qtgraphicaleffects
