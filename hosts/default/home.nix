@@ -44,7 +44,6 @@ in {
       #   org.gradle.daemon.idletimeout=3600000
       # '';
     };
-    sessionPath = [ "${config.home.homeDirectory}/.dynamic-bin" ];
     sessionVariables = {
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
