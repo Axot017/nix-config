@@ -145,9 +145,7 @@ in {
     clang
     pkg-config
     slack
-    hunspell
-    hunspellDicts.en-us
-    hunspellDicts.pl-pl
+    (hunspellWithDicts [ hunspellDicts.en-us hunspellDicts.pl-pl ])
   ];
 
   environment.sessionVariables = {
@@ -180,8 +178,4 @@ in {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
-  environment.etc."hunspell/hunspell.conf".text = ''
-    DICTIONARY pl_PL,en_US
-  '';
 }
