@@ -146,6 +146,7 @@ in {
     dart
     dbus.dev
     gtk3
+    gtkmm3
     libdatrie
     libepoxy.dev
     libselinux
