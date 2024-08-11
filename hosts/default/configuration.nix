@@ -140,6 +140,9 @@ in {
     ffmpeg
     # flutter
     fvm
+    cmake
+    ninja
+    clang
   ];
 
   environment.sessionVariables = {
