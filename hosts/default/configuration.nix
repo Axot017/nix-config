@@ -22,26 +22,7 @@ let
     };
 in {
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    util-linux.dev
-    fontconfig.lib
-    sqlite.out
-    stdenv.cc.cc
-    zlib
-    fuse3
-    icu
-    nss
-    openssl
-    curl
-    expat
-    libepoxy
-    libepoxy.dev
-    util-linux.dev
-    xorg.libXdmcp
-    xorg.libXtst
-    xorg.libX11
-    gtk3
-  ];
+  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc libepoxy ];
 
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -159,10 +140,24 @@ in {
     ffmpeg
     # flutter
     fvm
-    cmake
-    ninja
+    at-spi2-core.dev
     clang
+    cmake
+    dart
+    dbus.dev
+    gtk3
+    libdatrie
+    libepoxy.dev
+    libselinux
+    libsepol
+    libthai
+    libxkbcommon
+    ninja
+    pcre
     pkg-config
+    util-linux.dev
+    xorg.libXdmcp
+    xorg.libXtst
   ];
 
   environment.sessionVariables = {
