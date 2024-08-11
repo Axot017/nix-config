@@ -34,6 +34,9 @@ in {
     curl
     expat
     libepoxy
+    util-linux.dev
+    xorg.libXdmcp
+    xorg.libXtst
   ];
 
   imports = [ # Include the results of the hardware scan.
