@@ -143,6 +143,7 @@ in {
     cmake
     ninja
     clang
+    pkg-config
   ];
 
   environment.sessionVariables = {
