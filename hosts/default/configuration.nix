@@ -121,12 +121,6 @@ in {
   environment.systemPackages = with pkgs; [
     grim
     slurp
-    cmake
-    ninja
-    clang
-    pkg-config
-    gtk3
-    fvm
     libsForQt5.qt5.qtquickcontrols
     libsForQt5.qt5.qtgraphicaleffects
     protonup
@@ -156,6 +150,19 @@ in {
     fzf
     xwaylandvideobridge
     ffmpeg
+    # flutter
+    util-linux.dev
+    xorg.libXdmcp
+    xorg.libXtst
+    cmake
+    ninja
+    clang
+    pkg-config
+    gtk3
+    util-linux.dev
+    xorg.libXdmcp
+    xorg.libXtst
+    fvm
   ];
 
   environment.sessionVariables = {
