@@ -23,7 +23,6 @@ let
 in {
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    cmake
     ninja
     clang
     pkg-config
@@ -163,6 +162,7 @@ in {
     ffmpeg
     # flutter
     fvm
+    cmake
   ];
 
   environment.sessionVariables = {
