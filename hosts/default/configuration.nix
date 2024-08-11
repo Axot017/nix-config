@@ -22,7 +22,12 @@ let
     };
 in {
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc libepoxy fontconfig ];
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    libepoxy
+    fontconfig
+    pcre
+  ];
 
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
