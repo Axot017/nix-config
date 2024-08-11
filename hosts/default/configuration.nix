@@ -23,7 +23,6 @@ let
 in {
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    ninja
     clang
     pkg-config
     util-linux.dev
@@ -163,6 +162,7 @@ in {
     # flutter
     fvm
     cmake
+    ninja
   ];
 
   environment.sessionVariables = {
