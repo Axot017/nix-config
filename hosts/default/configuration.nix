@@ -23,7 +23,6 @@ let
 in {
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    clang
     pkg-config
     util-linux.dev
     fontconfig.lib
@@ -163,6 +162,7 @@ in {
     fvm
     cmake
     ninja
+    clang
   ];
 
   environment.sessionVariables = {
