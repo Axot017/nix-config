@@ -34,6 +34,7 @@ in {
     curl
     expat
     libepoxy
+    libepoxy.dev
     util-linux.dev
     xorg.libXdmcp
     xorg.libXtst
