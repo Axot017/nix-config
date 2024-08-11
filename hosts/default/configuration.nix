@@ -23,6 +23,11 @@ let
 in {
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
+    cmake
+    ninja
+    clang
+    pkg-config
+    util-linux.dev
     fontconfig.lib
     sqlite.out
     stdenv.cc.cc
@@ -157,17 +162,6 @@ in {
     xwaylandvideobridge
     ffmpeg
     # flutter
-    util-linux.dev
-    xorg.libXdmcp
-    xorg.libXtst
-    cmake
-    ninja
-    clang
-    pkg-config
-    gtk3
-    util-linux.dev
-    xorg.libXdmcp
-    xorg.libXtst
     fvm
   ];
 
