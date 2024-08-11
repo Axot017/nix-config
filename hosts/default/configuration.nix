@@ -140,25 +140,6 @@ in {
     ffmpeg
     # flutter
     fvm
-    at-spi2-core.dev
-    clang
-    cmake
-    dart
-    dbus.dev
-    gtk3
-    gtkmm3
-    libdatrie
-    libepoxy.dev
-    libselinux
-    libsepol
-    libthai
-    libxkbcommon
-    ninja
-    pcre
-    pkg-config
-    util-linux.dev
-    xorg.libXdmcp
-    xorg.libXtst
   ];
 
   environment.sessionVariables = {
