@@ -37,6 +37,7 @@ in {
     util-linux.dev
     xorg.libXdmcp
     xorg.libXtst
+    xorg.libX11
   ];
 
   imports = [ # Include the results of the hardware scan.
