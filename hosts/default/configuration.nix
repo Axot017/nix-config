@@ -39,6 +39,7 @@ in {
     xorg.libXdmcp
     xorg.libXtst
     xorg.libX11
+    gtk3
   ];
 
   imports = [ # Include the results of the hardware scan.
