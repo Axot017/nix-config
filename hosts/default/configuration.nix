@@ -145,7 +145,9 @@ in {
     clang
     pkg-config
     slack
-    (hunspellWithDicts [ hunspellDicts.en-us hunspellDicts.pl-pl ])
+    aspell
+    aspellDicts.en
+    aspellDicts.pl
   ];
 
   environment.sessionVariables = {
