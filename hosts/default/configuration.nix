@@ -144,6 +144,7 @@ in {
     ninja
     clang
     pkg-config
+    pcre
   ];
 
   environment.sessionVariables = {
