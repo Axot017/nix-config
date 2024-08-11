@@ -22,12 +22,7 @@ let
     };
 in {
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    stdenv.cc.cc
-    libepoxy
-    fontconfig
-    pcre
-  ];
+  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc libepoxy fontconfig ];
 
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -149,7 +144,7 @@ in {
     ninja
     clang
     pkg-config
-    pcre
+    slack
   ];
 
   environment.sessionVariables = {
