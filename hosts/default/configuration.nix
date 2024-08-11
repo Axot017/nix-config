@@ -23,7 +23,6 @@ let
 in {
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    pkg-config
     util-linux.dev
     fontconfig.lib
     sqlite.out
@@ -163,6 +162,7 @@ in {
     cmake
     ninja
     clang
+    pkg-config
   ];
 
   environment.sessionVariables = {
