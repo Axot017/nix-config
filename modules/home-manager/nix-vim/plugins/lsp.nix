@@ -20,6 +20,11 @@
       pyright = { enable = true; };
       elixirls = { enable = true; };
       tsserver = { enable = true; };
+      dartls = {
+        enable = true;
+        package = null;
+        cmd = [ "fvm" "dart" "language-server" "--protocol=lsp" ];
+      };
     };
   };
 }
