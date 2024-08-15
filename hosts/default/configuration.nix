@@ -146,6 +146,7 @@ in {
     pkg-config
     slack
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science pl ]))
+    wl-screenrec
   ];
 
   environment.sessionVariables = {

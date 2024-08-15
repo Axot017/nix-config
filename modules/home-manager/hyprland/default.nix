@@ -86,6 +86,11 @@
           $mainMod SHIFT, S, exec, grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png''
         ''
           $mainMod, S, exec, grim ~/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png''
+        ''
+          $mainMod, R, exec, wl-screenrec -f ~/Videos/ScreenRecordings/$(date +"%Y-%m-%dT%H:%M:%S%z").mkv & echo $! > /tmp/screenrecording.pid''
+        ''
+          $mainMod SHIFT, R, exec, wl-screenrec -g "$(slurp)" -f ~/Videos/ScreenRecordings/$(date +"%Y-%m-%dT%H:%M:%S%z").mkv & echo $! > /tmp/screenrecording.pid''
+        "$mainMod, P, exec, kill $(cat /tmp/screenrecording.pid) && rm /tmp/screenrecording.pid"
       ];
     };
   };
