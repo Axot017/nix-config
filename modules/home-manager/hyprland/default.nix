@@ -90,7 +90,7 @@
           $mainMod, R, exec, wl-screenrec -f ~/Videos/ScreenRecordings/$(date +"%Y-%m-%dT%H:%M:%S%z").mkv & echo $! > /tmp/screenrecording.pid''
         ''
           $mainMod SHIFT, R, exec, wl-screenrec -g "$(slurp)" -f ~/Videos/ScreenRecordings/$(date +"%Y-%m-%dT%H:%M:%S%z").mkv & echo $! > /tmp/screenrecording.pid''
-        "$mainMod, P, exec, kill $(cat /tmp/screenrecording.pid) && rm /tmp/screenrecording.pid"
+        "$mainMod, S, exec, kill $(cat /tmp/screenrecording.pid) && rm /tmp/screenrecording.pid"
       ];
     };
   };
