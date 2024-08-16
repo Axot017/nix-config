@@ -17,5 +17,6 @@
     ./lualine.nix
     ./none-ls.nix
     ./tmux-navigator.nix
+    ./dressing.nix
   ];
 }
