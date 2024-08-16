@@ -1,4 +1,16 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+let
+  makeScreenshot = pkgs.writeShellScriptBin "make-screenshot" ''
+    name=$(~/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png)
+    result=$(grim $name)
+    notificationResult=$(timeout 30s notify-send -A "COPY=Copy" -A "GOTO=Open" "Screenshot saved" $name)
+    if [ "$notificationResult" = "COPY" ]; then
+      wl-copy < $name
+    elif [ "$notificationResult" = "GOTO" ]; then
+      xdg-open $name
+    fi
+  '';
+in {
   imports = [ ./rofi.nix ./wallpapers.nix ./theme.nix ./ags/default.nix ];
   home.file.".config/hypr/scripts".source = ./scripts;
   wayland.windowManager.hyprland = {
@@ -84,8 +96,7 @@
         "$mainMod, P, exec, rofi -show power-menu -modi power-menu:~/.config/hypr/scripts/rofi-power-menu"
         ''
           $mainMod SHIFT, S, exec, grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png''
-        ''
-          $mainMod, S, exec, grim ~/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png''
+        "$mainMod, S, exec, ${makeScreenshot}"
         ''
           $mainMod, R, exec, wl-screenrec -f ~/Videos/ScreenRecordings/$(date +"%Y-%m-%dT%H:%M:%S%z").mkv & echo $! > /tmp/screenrecording.pid''
         ''
