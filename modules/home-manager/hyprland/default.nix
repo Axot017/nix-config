@@ -33,7 +33,7 @@ let
     kill $(cat /tmp/screenrecording.pid) && rm /tmp/screenrecording.pid
     notificationResult=$(timeout 30s notify-send -A "GOTO=Open" -t 30000 "Video saved")
     if [ "$notificationResult" = "GOTO" ]; then
-      yazi /home/axot/Videos/ScreenRecordings
+      wezterm start --new-tab yazi /home/axot/Videos/ScreenRecordings
     fi
   '';
 in {
