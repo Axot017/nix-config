@@ -3,7 +3,7 @@ let
   makeScreenshot = pkgs.writeShellScriptBin "make-screenshot" ''
     name="~/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png"
     result=$(grim $name)
-    notificationResult=$(timeout 30s notify-send -t 30000 -A "COPY=Copy" -A "GOTO=Open" -i "$(name)" "Screenshot saved" "$(name)")
+    notificationResult=$(timeout 30s notify-send -t 30000 -A "COPY=Copy" -A "GOTO=Open" -i $name "Screenshot saved" $name)
     if [ "$notificationResult" = "COPY" ]; then
       wl-copy < $name
     elif [ "$notificationResult" = "GOTO" ]; then
