@@ -97,7 +97,7 @@ in {
         "$mainMod, P, exec, rofi -show power-menu -modi power-menu:~/.config/hypr/scripts/rofi-power-menu"
         ''
           $mainMod SHIFT, S, exec, grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png''
-        "$mainMod, S, exec, ${makeScreenshot}"
+        "$mainMod, S, exec, ${makeScreenshot}/bin/make-screenshot"
         ''
           $mainMod, R, exec, wl-screenrec -f ~/Videos/ScreenRecordings/$(date +"%Y-%m-%dT%H:%M:%S%z").mkv & echo $! > /tmp/screenrecording.pid''
         ''
