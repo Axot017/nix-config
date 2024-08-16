@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   makeScreenshot = pkgs.writeShellScriptBin "make-screenshot" ''
+    wezterm
     name=$(~/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png)
     result=$(grim $name)
     notificationResult=$(timeout 30s notify-send -A "COPY=Copy" -A "GOTO=Open" "Screenshot saved" $name)
