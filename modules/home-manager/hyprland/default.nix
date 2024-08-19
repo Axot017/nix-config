@@ -51,6 +51,7 @@ in {
       decoration = {
         rounding = "10";
         drop_shadow = "yes";
+        inactive_opacity = "0.8";
         shadow_range = "4";
         shadow_render_power = "3";
         blur = {
