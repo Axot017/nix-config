@@ -37,6 +37,7 @@
         };
       };
       select = {
+        enable = true;
         keymaps = {
           af = {
             desc = "Select a function";

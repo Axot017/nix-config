@@ -23,6 +23,7 @@
       pyright = { enable = true; };
       elixirls = { enable = true; };
       tsserver = { enable = true; };
+      typst-lsp = { enable = true; };
       dartls = {
         enable = true;
         package = null;
