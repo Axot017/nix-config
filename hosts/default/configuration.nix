@@ -147,6 +147,7 @@ in {
     slack
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science pl ]))
     wl-screenrec
+    kitty
   ];
 
   environment.sessionVariables = {
