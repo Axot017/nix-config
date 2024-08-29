@@ -9,14 +9,14 @@ in {
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/oh-my-posh.nix
-    ../../modules/home-manager/kitty.nix
+    ../../modules/home-manager/wezterm.nix
     ../../modules/home-manager/yazi.nix
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/zoxide.nix
     ../../modules/home-manager/htop.nix
     ../../modules/home-manager/thefuck.nix
     ../../modules/home-manager/feh.nix
-    ../../modules/home-manager/mpv.nix
+    ../../modules/home-manager/feh.nix
     ../../modules/home-manager/nix-vim/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
