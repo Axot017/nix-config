@@ -109,7 +109,7 @@
           }
           {
             alignment = "left";
-            newline = true;
+            newline = false;
             segments = [{
               foreground = "p:pistachio-green";
               style = "plain";
