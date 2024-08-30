@@ -153,6 +153,123 @@
         # }
         version = 2;
         terminal_background = "p:main-bg";
+        transient_prompt = {
+          background = "p:main-bg";
+          foreground = "p:terminal-blue";
+          template = "u279c ";
+        };
+        secondary_prompt = {
+          background = "transparent";
+          foreground = "p:terminal-blue";
+          template = "u279c ";
+        };
+        final_space = true;
+        console_title_template = " {{ .Folder }} :: {{if .Root}}Admin{{end}}";
+        blocks = [
+          {
+            alignment = "left";
+            segments = [
+              {
+                type = "text";
+                style = "plain";
+                background = "transparent";
+                foreground = "p:terminal-blue";
+                template = "u279c ";
+              }
+              {
+                type = "path";
+                style = "plain";
+                foreground = "p:terminal-magenta";
+                properties = { style = "folder"; };
+                template = "<b>{{ .Path }}</b> <p:light-sky-blue>u26a1</>";
+              }
+              {
+                type = "git";
+                style = "plain";
+                foreground = "p:light-sky-blue";
+                foreground_templates = [
+                  "{{ if or (.Working.Changed) (.Staging.Changed) }}p:terminal-red{{ end }}"
+                  "{{ if and (gt .Ahead 0) (gt .Behind 0)}}p:light-sky-blue {{ end }}"
+                  "{{ if gt .Ahead 0 }}p:terminal-blue{{ end }}"
+                  "{{ if gt .Behind 0 }}p:celeste-blue{{ end }}"
+                ];
+                template = "({{ .HEAD}})";
+                properties = {
+                  fetch_status = true;
+                  branch_icon = "ue725 ";
+                };
+              }
+              {
+                type = "status";
+                style = "plain";
+                foreground = "p:terminal-red";
+                template = " uf00d";
+              }
+            ];
+            type = "prompt";
+          }
+          {
+            alignment = "right";
+            overflow = "hide";
+            segments = [
+              {
+                type = "node";
+                style = "plain";
+                foreground = "p:pistachio-green";
+                template = "ue718 {{ .Full }} ";
+              }
+              {
+                type = "php";
+                style = "plain";
+                foreground = "p:terminal-blue";
+                template = "ue73d {{ .Full }} ";
+              }
+              {
+                type = "python";
+                style = "plain";
+                foreground = "p:terminal-yellow";
+                template = "uE235 {{ .Full }}";
+              }
+              {
+                type = "julia";
+                style = "plain";
+                foreground = "p:terminal-magenta";
+                template = "uE624 {{ .Full }}";
+              }
+              {
+                type = "ruby";
+                style = "plain";
+                foreground = "p:terminal-red";
+                template = "uE791 {{ .Full}}";
+              }
+              {
+                type = "go";
+                style = "plain";
+                foreground = "p:light-sky-blue";
+                template = "uFCD1 {{ .Full}}";
+              }
+              {
+                type = "command";
+                style = "plain";
+                foreground = "p:white-blue";
+                properties = {
+                  command = "git log --pretty=format:%cr -1 || date +%H:%M:%S";
+                  shell = "bash";
+                };
+              }
+              {
+                alignment = "left";
+                newline = true;
+                segments = [{
+                  foreground = "p:pistachio-green";
+                  style = "plain";
+                  template = "u25b6";
+                  type = "text";
+                }];
+              }
+            ];
+          }
+        ];
       };
     };
   };
