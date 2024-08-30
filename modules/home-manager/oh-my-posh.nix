@@ -33,14 +33,14 @@
                 style = "plain";
                 background = "transparent";
                 foreground = "p:terminal-blue";
-                template = "\\u279c ";
+                template = "➜ ";
               }
               {
                 type = "path";
                 style = "plain";
                 foreground = "p:terminal-magenta";
                 properties = { style = "folder"; };
-                template = "<b>{{ .Path }}</b> <p:light-sky-blue>\\u26a1</>";
+                template = "<b>{{ .Path }}</b> <p:light-sky-blue>⚡</>";
               }
               {
                 type = "git";
@@ -55,14 +55,14 @@
                 template = "({{ .HEAD}})";
                 properties = {
                   fetch_status = true;
-                  branch_icon = "\\ue725 ";
+                  branch_icon = " ";
                 };
               }
               {
                 type = "status";
                 style = "plain";
                 foreground = "p:terminal-red";
-                template = " \\uf00d";
+                template = " ";
               }
             ];
             type = "prompt";
@@ -75,37 +75,25 @@
                 type = "node";
                 style = "plain";
                 foreground = "p:pistachio-green";
-                template = "\\ue718 {{ .Full }} ";
+                template = " {{ .Full }} ";
               }
               {
                 type = "php";
                 style = "plain";
                 foreground = "p:terminal-blue";
-                template = "\\ue73d {{ .Full }} ";
+                template = " {{ .Full }} ";
               }
               {
                 type = "python";
                 style = "plain";
                 foreground = "p:terminal-yellow";
-                template = "\\uE235 {{ .Full }}";
-              }
-              {
-                type = "julia";
-                style = "plain";
-                foreground = "p:terminal-magenta";
-                template = "\\uE624 {{ .Full }}";
-              }
-              {
-                type = "ruby";
-                style = "plain";
-                foreground = "p:terminal-red";
-                template = "\\uE791 {{ .Full}}";
+                template = " {{ .Full }}";
               }
               {
                 type = "go";
                 style = "plain";
                 foreground = "p:light-sky-blue";
-                template = "\\uFCD1 {{ .Full}}";
+                template = "󰟓 {{ .Full}}";
               }
               {
                 type = "command";
@@ -125,7 +113,7 @@
             segments = [{
               foreground = "p:pistachio-green";
               style = "plain";
-              template = "\\u25b6";
+              template = "▶";
               type = "text";
             }];
             type = "prompt";
@@ -134,12 +122,12 @@
         secondary_prompt = {
           background = "transparent";
           foreground = "p:terminal-blue";
-          template = "\\u279c ";
+          template = "➜ ";
         };
         transient_prompt = {
           background = "p:t-background";
           foreground = "p:terminal-blue";
-          template = "\\u279c ";
+          template = "➜ ";
         };
         final_space = true;
         version = 2;
