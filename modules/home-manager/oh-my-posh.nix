@@ -66,46 +66,6 @@
             ];
             type = "prompt";
           }
-          # {
-          #   alignment = "right";
-          #   overflow = "hide";
-          #   segments = [
-          #     {
-          #       type = "node";
-          #       style = "plain";
-          #       foreground = "p:pistachio-green";
-          #       template = " {{ .Full }} ";
-          #     }
-          #     {
-          #       type = "php";
-          #       style = "plain";
-          #       foreground = "p:terminal-blue";
-          #       template = " {{ .Full }} ";
-          #     }
-          #     {
-          #       type = "python";
-          #       style = "plain";
-          #       foreground = "p:terminal-yellow";
-          #       template = " {{ .Full }}";
-          #     }
-          #     {
-          #       type = "go";
-          #       style = "plain";
-          #       foreground = "p:light-sky-blue";
-          #       template = "󰟓 {{ .Full}}";
-          #     }
-          #     {
-          #       type = "command";
-          #       style = "plain";
-          #       foreground = "p:white-blue";
-          #       properties = {
-          #         command = "git log --pretty=format:%cr -1 || date +%H:%M:%S";
-          #         shell = "bash";
-          #       };
-          #     }
-          #   ];
-          #   type = "prompt";
-          # }
           {
             alignment = "left";
             newline = true;
