@@ -129,7 +129,7 @@
           foreground = "p:terminal-blue";
           template = "➜ ";
         };
-        final_space = true;
+        final_space = false;
         version = 2;
         terminal_background = "p:t-background";
       };
