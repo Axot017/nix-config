@@ -3,7 +3,6 @@
     oh-my-posh = {
       enable = true;
       enableZshIntegration = true;
-      # useTheme = "the-unnamed";
       settings = {
         console_title_template = " {{ .Folder }} :: {{if .Root}}Admin{{end}}";
         palette = {
@@ -109,11 +108,11 @@
           }
           {
             alignment = "left";
-            newline = false;
+            newline = true;
             segments = [{
               foreground = "p:pistachio-green";
               style = "plain";
-              template = "▶";
+              template = "❯";
               type = "text";
             }];
             type = "prompt";
@@ -129,7 +128,7 @@
           foreground = "p:terminal-blue";
           template = "➜ ";
         };
-        final_space = false;
+        final_space = true;
         version = 2;
         terminal_background = "p:t-background";
       };
