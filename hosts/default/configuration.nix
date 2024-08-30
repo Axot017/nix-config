@@ -120,7 +120,7 @@ in {
     brave
     discord
     unzip
-    cinnamon.nemo
+    nemo
     nodejs_20
     rebar3
     rustup

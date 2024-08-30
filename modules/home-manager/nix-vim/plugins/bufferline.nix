@@ -1,7 +1,9 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim.plugins.bufferline = {
     enable = true;
-    separatorStyle = "slope";
-    indicator = { style = null; };
+    settings.options = {
+      separator_style = "slope";
+      indicator = { style = null; };
+    };
   };
 }
