@@ -24,11 +24,6 @@
       elixirls = { enable = true; };
       tsserver = { enable = true; };
       typst-lsp = { enable = true; };
-      dartls = {
-        enable = true;
-        package = null;
-        cmd = [ "fvm" "dart" "language-server" "--protocol=lsp" ];
-      };
     };
   };
 }

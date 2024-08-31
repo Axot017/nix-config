@@ -2,25 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
-let
-  fvm = with pkgs;
-    stdenv.mkDerivation {
-      name = "fvm";
-      src = fetchurl {
-        url =
-          "https://github.com/leoafarias/fvm/releases/download/3.1.7/fvm-3.1.7-linux-x64.tar.gz";
-        hash = "sha256-s+cA5BQ0XKo81tXmjPABE/15cWQ+fIKPRfOsmPqzXgk=";
-      };
-      nativeBuildInputs = [ autoPatchelfHook ];
-      buildInputs = [ stdenv.cc.cc ];
-      installPhase = ''
-        mkdir -p $out
-        tar -xzf $src -C $out
-        cp -r $out/* $out/bin
-      '';
-    };
-in {
+{ config, pkgs, inputs, ... }: {
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc libepoxy fontconfig ];
 
@@ -130,7 +112,7 @@ in {
     postman
     gnumake
     erlang
-    elixir
+    elixir_1_17
     lldb
     gleam
     vscode-extensions.vadimcn.vscode-lldb
@@ -138,8 +120,6 @@ in {
     fzf
     xwaylandvideobridge
     ffmpeg
-    # flutter
-    fvm
     cmake
     ninja
     clang
