@@ -111,7 +111,6 @@
     wl-clipboard
     postman
     gnumake
-    erlang_27
     elixir_1_17
     lldb
     gleam
