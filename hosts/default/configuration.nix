@@ -111,7 +111,7 @@
     wl-clipboard
     postman
     gnumake
-    elixir_1_17
+    beam.packages.erlang_27.elixir_1_17
     lldb
     gleam
     vscode-extensions.vadimcn.vscode-lldb
