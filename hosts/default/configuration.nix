@@ -61,7 +61,7 @@
   users.users.axot = {
     isNormalUser = true;
     description = "Axot";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
