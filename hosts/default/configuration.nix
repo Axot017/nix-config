@@ -128,6 +128,7 @@
     wl-screenrec
     kitty
     docker-compose
+    inotify-tools
   ];
 
   environment.sessionVariables = {
