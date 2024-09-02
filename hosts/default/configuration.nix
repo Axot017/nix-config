@@ -127,6 +127,7 @@
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science pl ]))
     wl-screenrec
     kitty
+    docker-compose
   ];
 
   environment.sessionVariables = {
