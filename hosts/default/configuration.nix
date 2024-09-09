@@ -129,6 +129,7 @@
     kitty
     docker-compose
     inotify-tools
+    mongodb-compass
   ];
 
   environment.sessionVariables = {
