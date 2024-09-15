@@ -130,6 +130,7 @@
     docker-compose
     inotify-tools
     mongodb-compass
+    inputs.zen-browser.packages."${system}".specific
   ];
 
   environment.sessionVariables = {
