@@ -1,7 +1,9 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim.plugins.lualine = {
     enable = true;
-    theme = "horizon";
-    globalstatus = true;
+    settings.options = {
+      theme = "horizon";
+      globalstatus = true;
+    };
   };
 }

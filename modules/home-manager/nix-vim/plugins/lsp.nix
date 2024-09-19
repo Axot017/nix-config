@@ -22,7 +22,7 @@
       yamlls = { enable = true; };
       pyright = { enable = true; };
       elixirls = { enable = true; };
-      tsserver = { enable = true; };
+      ts-ls = { enable = true; };
       typst-lsp = { enable = true; };
     };
   };
