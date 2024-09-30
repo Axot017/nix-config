@@ -1,5 +1,7 @@
 { pkgs, config, inputs, helpers, ... }: {
   imports = [
+    ./avante.nix
+    ./neogit.nix
     ./autoclose.nix
     ./bufferline.nix
     ./oil.nix
