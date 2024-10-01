@@ -1,5 +1,6 @@
 { pkgs, config, inputs, helpers, ... }: {
   imports = [
+    ./web-devicons.nix
     ./avante.nix
     ./neogit.nix
     ./autoclose.nix
