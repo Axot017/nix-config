@@ -131,6 +131,7 @@
     inotify-tools
     mongodb-compass
     inputs.zen-browser.packages."${system}".specific
+    stripe-cli
   ];
 
   environment.sessionVariables = {
