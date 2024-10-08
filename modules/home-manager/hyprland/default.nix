@@ -33,7 +33,7 @@ let
     kill $(cat /tmp/screenrecording.pid) && rm /tmp/screenrecording.pid
     notificationResult=$(timeout 30s notify-send -A "GOTO=Open" -t 30000 "Video saved")
     if [ "$notificationResult" = "GOTO" ]; then
-      wezterm start --new-tab yazi /home/axot/Videos/ScreenRecordings
+      alaxrity -e yazi /home/axot/Videos/ScreenRecordings
     fi
   '';
 in {
@@ -76,7 +76,7 @@ in {
       "$mainMod" = "SUPER";
       bind = [
         ", mouse:276, pass, ^discord$"
-        "$mainMod, T, exec, wezterm start"
+        "$mainMod, T, exec, alacritty"
         "$mainMod, Q, killactive"
 
         "$mainMod, H, movefocus, l"
