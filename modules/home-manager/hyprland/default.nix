@@ -71,6 +71,7 @@ in {
         border_size = "2";
         # col.active_border = "rgba(db42f8ff) rgba(74cff0ff) 45deg";
       };
+      misc = { follow_mouse = 2; };
       animation = "global,1,2,default";
       monitor = ",preferred,auto,auto";
       "$mainMod" = "SUPER";
