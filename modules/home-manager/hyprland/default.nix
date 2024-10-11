@@ -59,7 +59,7 @@ in {
         shadow_render_power = "3";
         blur = {
           enabled = "true";
-          size = "3";
+          size = "20";
           passes = "1";
         };
       };
