@@ -57,11 +57,7 @@ in {
         inactive_opacity = "0.8";
         shadow_range = "4";
         shadow_render_power = "3";
-        blur = {
-          enabled = "true";
-          size = "20";
-          passes = "3";
-        };
+        blur = { enabled = "true"; };
       };
       master = {
         new_on_top = "false";
