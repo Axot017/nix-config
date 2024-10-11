@@ -60,7 +60,7 @@ in {
         blur = {
           enabled = "true";
           size = "20";
-          passes = "20";
+          passes = "3";
         };
       };
       master = {
