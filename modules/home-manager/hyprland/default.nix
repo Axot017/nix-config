@@ -90,10 +90,10 @@ in {
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-        "$mainMod ALT, L, resizeactive, 10 0"
-        "$mainMod ALT, H, resizeactive, -10 0"
-        "$mainMod ALT, K, resizeactive, 0 -10"
-        "$mainMod ALT, J, resizeactive, 0 10"
+        "$mainMod CTRL, L, resizeactive, 10 0"
+        "$mainMod CTRL, H, resizeactive, -10 0"
+        "$mainMod CTRL, K, resizeactive, 0 -10"
+        "$mainMod CTRL, J, resizeactive, 0 10"
 
         "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "$mainMod, SPACE, exec, rofi -show drun -show-icons"
