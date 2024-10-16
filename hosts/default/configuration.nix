@@ -131,6 +131,7 @@
     mongodb-compass
     inputs.zen-browser.packages."${system}".specific
     stripe-cli
+    hyprshot
   ];
 
   environment.sessionVariables = {
