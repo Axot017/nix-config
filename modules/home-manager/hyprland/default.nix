@@ -1,26 +1,5 @@
 { config, pkgs, ... }:
 let
-  makeScreenshot = pkgs.writeShellScriptBin "make-screenshot" ''
-    name="/home/axot/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png"
-    result=$(grim $name)
-    notificationResult=$(timeout 30s notify-send -t 30000 -A "COPY=Copy" -A "GOTO=Open" -i $name "Screenshot saved" $name)
-    if [ "$notificationResult" = "COPY" ]; then
-      wl-copy < $name
-    elif [ "$notificationResult" = "GOTO" ]; then
-      xdg-open $name
-    fi
-  '';
-
-  makeScreenshotSelect = pkgs.writeShellScriptBin "make-screenshot-select" ''
-    name="/home/axot/Pictures/Screenshots/$(date +"%Y-%m-%dT%H:%M:%S%z").png"
-    result=$(grim -g "$(slurp)" $name)
-    notificationResult=$(timeout 30s notify-send -t 30000 -A "COPY=Copy" -A "GOTO=Open" -i $name "Screenshot saved" $name)
-    if [ "$notificationResult" = "COPY" ]; then
-      wl-copy < $name
-    elif [ "$notificationResult" = "GOTO" ]; then
-      xdg-open $name
-    fi
-  '';
   recordScreen = pkgs.writeShellScriptBin "record-screen" ''
     name="/home/axot/Videos/ScreenRecordings/$(date +"%Y-%m-%dT%H:%M:%S%z").mkv"
     wl-screenrec -f $name & echo $! > /tmp/screenrecording.pid
@@ -33,7 +12,7 @@ let
     kill $(cat /tmp/screenrecording.pid) && rm /tmp/screenrecording.pid
     notificationResult=$(timeout 30s notify-send -A "GOTO=Open" -t 30000 "Video saved")
     if [ "$notificationResult" = "GOTO" ]; then
-      alaxrity -e yazi /home/axot/Videos/ScreenRecordings
+      nemo /home/axot/Videos/ScreenRecordings
     fi
   '';
 in {
@@ -119,8 +98,9 @@ in {
         "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "$mainMod, SPACE, exec, rofi -show drun -show-icons"
         "$mainMod, P, exec, rofi -show power-menu -modi power-menu:~/.config/hypr/scripts/rofi-power-menu"
-        "$mainMod SHIFT, S, exec, ${makeScreenshotSelect}/bin/make-screenshot-select"
-        "$mainMod, S, exec, ${makeScreenshot}/bin/make-screenshot"
+        "$mainMod SHIFT, S, exec, hyprshot -m region"
+        "$mainMod ALT, S, exec, hyprshot -m window"
+        "$mainMod, S, exec, hyprshot -m window"
         "$mainMod, R, exec, ${recordScreen}/bin/record-screen"
         "$mainMod SHIFT, R, exec, ${recordScreenSelect}/bin/record-screen-select"
         "$mainMod, X, exec, ${stopRecording}/bin/stop-recording"
