@@ -101,6 +101,7 @@ in {
         "$mainMod SHIFT, S, exec, hyprshot -m region"
         "$mainMod CTRL, S, exec, hyprshot -m window"
         "$mainMod, S, exec, hyprshot -m window"
+        "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod, R, exec, ${recordScreen}/bin/record-screen"
         "$mainMod SHIFT, R, exec, ${recordScreenSelect}/bin/record-screen-select"
         "$mainMod, X, exec, ${stopRecording}/bin/stop-recording"
