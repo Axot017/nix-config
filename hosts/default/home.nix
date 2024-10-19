@@ -19,8 +19,6 @@ in {
     ../../modules/home-manager/nix-vim/default.nix
   ];
 
-  services.swaync = { enable = true; };
-
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home = {

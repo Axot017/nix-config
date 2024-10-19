@@ -16,7 +16,8 @@ let
     fi
   '';
 in {
-  imports = [ ./rofi.nix ./wallpapers.nix ./theme.nix ./ags/default.nix ];
+  imports =
+    [ ./rofi.nix ./wallpapers.nix ./theme.nix ./ags/default.nix ./swaync.nix ];
   home.file.".config/hypr/scripts".source = ./scripts;
   wayland.windowManager.hyprland = {
     enable = true;
