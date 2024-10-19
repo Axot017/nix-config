@@ -16,6 +16,30 @@
       fit-to-screen = true;
       control-center-width = 500;
       keyboard-shortcuts = true;
+      image-visibility = "when-available";
+      transition-time = 200;
+      hide-on-clear = true;
+      hide-on-action = true;
+      script-fail-notify = true;
+      widgets = [ "buttons-grid" "volume" "backlight" ];
+      widget-config = {
+        title = {
+          text = "Notification Center";
+          clear-all-button = true;
+          button-text = "󰆴 Clear";
+        };
+        dnd = { text = "Do Not Disturb"; };
+        label = {
+          max-lines = 1;
+          text = "Notification Center";
+        };
+        mpris = {
+          image-size = 64;
+          image-radius = 8;
+        };
+        volume = { label = "󰕾"; };
+        backlight = { label = "󰃟"; };
+      };
     };
     style = ''
       @define-color cc-bg rgba(26, 27, 38, 1);
