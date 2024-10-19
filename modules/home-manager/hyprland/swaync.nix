@@ -1,6 +1,22 @@
 { config, pkgs, ... }: {
   services.swaync = {
     enable = true;
+    settings = {
+      positionX = "right";
+      positionY = "top";
+      control-center-margin-right = 8;
+      control-center-margin-top = 8;
+      control-center-margin-bottom = 8;
+      notification-icon-size = 64;
+      notification-body-image-height = 100;
+      notification-body-image-width = 200;
+      timeout = 10;
+      timeout-low = 5;
+      timeout-critical = 0;
+      fit-to-screen = true;
+      control-center-width = 500;
+      keyboard-shortcuts = true;
+    };
     style = ''
       @define-color cc-bg rgba(26, 27, 38, 1);
       @define-color noti-border-color rgba(255, 255, 255, 0.15);
@@ -15,7 +31,7 @@
       @define-color bg-selected rgb(0, 128, 255);
 
       * {
-        font-family: JetBrainsMono NFM SemiBold;
+        font-family: JetBrainsMonoNL Nerd Font Mono;
       }
 
       .control-center .notification-row:focus,
