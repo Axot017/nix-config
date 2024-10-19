@@ -21,7 +21,15 @@
       hide-on-clear = true;
       hide-on-action = true;
       script-fail-notify = true;
-      widgets = [ "title" "dnd" "volume" "backlight" "mpris" "buttons-grid" ];
+      widgets = [
+        "title"
+        "dnd"
+        "notifications"
+        "volume"
+        "backlight"
+        "mpris"
+        "buttons-grid"
+      ];
       widget-config = {
         title = {
           text = "Notification Center";
