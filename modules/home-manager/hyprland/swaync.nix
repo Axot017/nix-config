@@ -39,6 +39,22 @@
         };
         volume = { label = "󰕾"; };
         backlight = { label = "󰃟"; };
+        buttons-grid = {
+          actions = [
+            {
+              label = "󰐥";
+              command = "systemctl poweroff";
+            }
+            {
+              label = "󰜉";
+              command = "systemctl reboot";
+            }
+            {
+              label = "󰌾";
+              command = "";
+            }
+          ];
+        };
       };
     };
     style = ''
