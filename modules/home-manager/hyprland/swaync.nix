@@ -92,8 +92,14 @@
 
       .notification {
         background: @bg;
-        border: 2px solid #34548a;
-        border-radius: 0px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+
+        border-bottom-left-radius: 32px;
+        border-bottom-right-radius: 32px;
+
+        border: 2px solid @border-color;
+
         margin: 3px -2px 3px 0px;
       }
 
