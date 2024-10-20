@@ -79,6 +79,10 @@
         font-family: JetBrainsMonoNL Nerd Font Mono;
       }
 
+      .notification-group {
+        padding: 8px;
+      }
+
       .notification-row {
         outline: none;
         margin: 0px;
