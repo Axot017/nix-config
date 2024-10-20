@@ -296,6 +296,10 @@
         font-size: 2rem;
         color: @warning;
       }
+
+      scale trough {
+        background: @warning;
+      }
     '';
   };
 }
