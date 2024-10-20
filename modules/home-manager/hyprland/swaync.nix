@@ -121,6 +121,7 @@
       }
 
       .notification-action:hover {
+        background: transparent;
         color: @warning;
       }
 
