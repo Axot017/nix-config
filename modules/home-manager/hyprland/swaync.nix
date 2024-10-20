@@ -21,15 +21,8 @@
       hide-on-clear = true;
       hide-on-action = true;
       script-fail-notify = true;
-      widgets = [
-        "title"
-        "dnd"
-        "notifications"
-        "volume"
-        "backlight"
-        "mpris"
-        "buttons-grid"
-      ];
+      widgets =
+        [ "title" "dnd" "notifications" "volume" "mpris" "buttons-grid" ];
       widget-config = {
         title = {
           text = "Notification Center";
@@ -37,16 +30,11 @@
           button-text = "󰆴 Clear";
         };
         dnd = { text = "Do Not Disturb"; };
-        label = {
-          max-lines = 1;
-          text = "Notification Center";
-        };
         mpris = {
           image-size = 64;
           image-radius = 8;
         };
         volume = { label = "󰕾"; };
-        backlight = { label = "󰃟"; };
         buttons-grid = {
           actions = [
             {
@@ -61,12 +49,20 @@
               label = "󰌾";
               command = "";
             }
+            {
+              label = "󰖩";
+              command = "alacritty -e nmtui";
+            }
+            {
+              label = "󰜉";
+              command = "";
+            }
           ];
         };
       };
     };
     style = ''
-      @define-color cc-bg rgba(26, 27, 38, 1);
+      @define-color cc-bg ${config.lib.stylix.colors.withHashtag.base02};
       @define-color noti-border-color rgba(255, 255, 255, 0.15);
       @define-color noti-bg rgb(17, 17, 27);
       @define-color noti-bg-darker rgb(43, 43, 57);
