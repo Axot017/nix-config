@@ -107,7 +107,8 @@
       }
 
       .close-button {
-        color: @bg;
+        color: @warning;
+        background: @bg;
         text-shadow: none;
         padding: 0px;
         border-radius: 0px;
@@ -115,43 +116,12 @@
         margin-right: 5px;
       }
 
-      .close-button:hover {
-        box-shadow: none;
-        color: @warning;
-        transition: all 0.15s ease-in-out;
-        border: none;
-      }
-
       .notification-action {
-        border: 2px solid #34548a;
-        border-top: none;
-        border-radius: 0px;
+        color: @text-color;
       }
 
-      .notification-default-action:hover,
       .notification-action:hover {
-        color: #7aa2f7;
-        background: @bg;
-      }
-
-      .notification-default-action {
-        border-radius: 5px;
-        margin: 0px;
-      }
-
-      .notification-default-action:not(:only-child) {
-        border-bottom-left-radius: 7px;
-        border-bottom-right-radius: 7px;
-      }
-
-      .notification-action:first-child {
-        border-bottom-left-radius: 10px;
-        background: #1b1b2b;
-      }
-
-      .notification-action:last-child {
-        border-bottom-right-radius: 10px;
-        background: #1b1b2b;
+        color: @warning;
       }
 
       .inline-reply {
