@@ -21,15 +21,13 @@
       hide-on-clear = true;
       hide-on-action = true;
       script-fail-notify = true;
-      widgets =
-        [ "dnd" "title" "notifications" "volume" "mpris" "buttons-grid" ];
+      widgets = [ "title" "notifications" "volume" "mpris" "buttons-grid" ];
       widget-config = {
         title = {
           text = "Notification Center";
           clear-all-button = true;
           button-text = "󰆴 Clear";
         };
-        dnd = { text = "Do Not Disturb"; };
         mpris = {
           image-size = 64;
           image-radius = 8;
@@ -225,27 +223,6 @@
         border: 1px solid @error;
       }
 
-      .widget-dnd {
-        background: transparent;
-        margin: 8px 16px;
-        color: @text-color;
-      }
-
-      .widget-dnd > switch {
-        border-radius: 64px;
-        background: @fg-light;
-      }
-
-      .widget-dnd > switch:checked {
-        background: @warning;
-      }
-
-      .widget-dnd > switch slider,
-      .widget-dnd > switch:checked slider {
-        background: @bg;
-        border-radius: 64px;
-      }
-
       .widget-label {
         margin: 10px 10px 5px 10px;
       }
@@ -257,17 +234,16 @@
 
       .widget-mpris {
         color: @text-color;
-        padding: 8px 16px;
-        border-radius: 5px;
+        border-radius: 8px;
       }
 
       .widget-mpris > box > button {
-        border-radius: 5px;
+        border-radius: 8px;
       }
 
       .widget-mpris-player {
-        padding: 5px 10px;
-        margin: 10px;
+        padding: 8px 16px;
+        margin: 18px;
       }
 
       .widget-mpris-title {
@@ -281,27 +257,25 @@
 
       .widget-buttons-grid {
         font-size: x-large;
-        padding: 5px;
-        margin: 10px 10px 5px 10px;
-        border-radius: 0px;
-        background: @noti-bg-darker;
+        margin: 8px 16px;
+        background: transparent;
       }
 
       .widget-buttons-grid > flowbox > flowboxchild > button {
         margin: 3px;
         background: @bg;
-        border-radius: 0px;
+        border: 1px solid @text-color;
         color: @text-color;
       }
 
       .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-        background: rgba(122, 162, 247, 1);
-        color: @bg;
+        border: 1px solid @warning;
+        color: @warning;
       }
 
       .widget-buttons-grid > flowbox > flowboxchild > button:checked {
-        background: rgb(158, 206, 106);
-        color: @bg;
+        border: 1px solid @warning;
+        color: @warning;
       }
 
       .widget-menubar > box > .menu-button-bar > button {
