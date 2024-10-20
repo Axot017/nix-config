@@ -4,9 +4,9 @@
     settings = {
       positionX = "right";
       positionY = "top";
-      control-center-margin-right = 8;
-      control-center-margin-top = 8;
-      control-center-margin-bottom = 8;
+      control-center-margin-right = 16;
+      control-center-margin-top = 16;
+      control-center-margin-bottom = 16;
       notification-icon-size = 64;
       notification-body-image-height = 100;
       notification-body-image-width = 200;
@@ -24,7 +24,7 @@
       widgets = [ "title" "notifications" "volume" "mpris" "buttons-grid" ];
       widget-config = {
         title = {
-          text = "Notification Center";
+          text = "";
           clear-all-button = true;
           button-text = "󰆴 Clear";
         };
@@ -34,7 +34,6 @@
         };
         volume = { label = "󰕾"; };
         buttons-grid = {
-          position = "center";
           actions = [
             {
               label = "󰐥";
@@ -259,6 +258,7 @@
 
       .widget-buttons-grid > flowbox > flowboxchild > button {
         margin: 3px;
+        padding: unset;
         background: @bg;
         border: 1px solid @text-color;
         color: @text-color;
