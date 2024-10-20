@@ -62,8 +62,8 @@
       };
     };
     style = ''
-      @define-color cc-bg ${config.lib.stylix.colors.withHashtag.base02};
-      @define-color noti-border-color rgba(255, 255, 255, 0.15);
+      @define-color cc-bg ${config.lib.stylix.colors.withHashtag.base00};
+      @define-color noti-border-color ${config.lib.stylix.colors.withHashtag.base0D};
       @define-color noti-bg rgb(17, 17, 27);
       @define-color noti-bg-darker rgb(43, 43, 57);
       @define-color noti-bg-hover rgb(27, 27, 43);
