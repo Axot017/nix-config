@@ -291,7 +291,7 @@
       }
 
       scale trough {
-        background: @text-color;
+        background: @text-color-disabled;
       }
 
       scale trough highlight {
