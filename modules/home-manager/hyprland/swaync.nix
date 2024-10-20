@@ -34,6 +34,7 @@
         };
         volume = { label = "󰕾"; };
         buttons-grid = {
+          position = "center";
           actions = [
             {
               label = "󰐥";
