@@ -96,12 +96,12 @@
         border-top-right-radius: 8px;
 
         border-bottom-left-radius: 32px;
-        border-bottom-right-radius: 32px;
+        border-bottom-right-radius: 8px;
 
-        border: 2px solid @border-color;
+        border: 1px solid @border-color;
         margin: 3px -2px 3px 0px;
 
-        padding-left: 16px;
+        padding-left: 24px;
       }
 
       .notification-content {
