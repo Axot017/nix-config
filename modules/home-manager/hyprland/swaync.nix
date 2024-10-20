@@ -63,7 +63,7 @@
     };
     style = ''
       @define-color bg ${config.lib.stylix.colors.withHashtag.base00};
-      @define-color bg80 ${config.lib.stylix.colors.withHashtag.base00}cc;
+      @define-color bg80 "${config.lib.stylix.colors.withHashtag.base00}cc";
       @define-color border-color ${config.lib.stylix.colors.withHashtag.base0D};
       @define-color noti-bg rgb(17, 17, 27);
       @define-color noti-bg-darker rgb(43, 43, 57);
