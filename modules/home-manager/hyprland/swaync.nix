@@ -65,6 +65,7 @@
       @define-color bg ${config.lib.stylix.colors.withHashtag.base00};
       @define-color border-color ${config.lib.stylix.colors.withHashtag.base0D};
       @define-color warning ${config.lib.stylix.colors.withHashtag.base0E};
+      @define-color error ${config.lib.stylix.colors.withHashtag.base0F};
       @define-color noti-bg rgb(17, 17, 27);
       @define-color noti-bg-darker rgb(43, 43, 57);
       @define-color noti-bg-hover rgb(27, 27, 43);
@@ -203,30 +204,26 @@
       }
 
       .widget-title {
-        color: #7aa2f7;
-        background: @noti-bg-darker;
-        padding: 5px 10px;
-        margin: 10px 10px 5px 10px;
-        font-size: 1.5rem;
-        border-radius: 5px;
+        color: @text-color;
+        background: transparent;
+        margin: 8px 16px;
+        font-size: 1.3rem;
       }
 
       .widget-title > button {
         font-size: 1rem;
         color: @text-color;
+        background: transparent;
         text-shadow: none;
-        background: @noti-bg;
         box-shadow: none;
-        border-radius: 5px;
       }
 
       .widget-title > button:hover {
-        background: #f7768e;
-        color: @bg;
+        color: @error;
       }
 
       .widget-dnd {
-        background: @noti-bg-darker;
+        background: transparent;
         padding: 5px 10px;
         margin: 5px 10px;
         border-radius: 5px;
