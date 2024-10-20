@@ -62,8 +62,8 @@
       };
     };
     style = ''
-      @define-color cc-bg ${config.lib.stylix.colors.withHashtag.base00};
-      @define-color noti-border-color ${config.lib.stylix.colors.withHashtag.base0D};
+      @define-color bg ${config.lib.stylix.colors.withHashtag.base00};
+      @define-color border-color ${config.lib.stylix.colors.withHashtag.base0D};
       @define-color noti-bg rgb(17, 17, 27);
       @define-color noti-bg-darker rgb(43, 43, 57);
       @define-color noti-bg-hover rgb(27, 27, 43);
@@ -91,14 +91,14 @@
       }
 
       .notification {
-        background: @cc-bg;
+        background: @bg;
         border: 2px solid #34548a;
         border-radius: 0px;
         margin: 3px -2px 3px 0px;
       }
 
       .notification-content {
-        background: @cc-bg;
+        background: @bg;
       }
 
       .notification-default-action {
@@ -109,7 +109,7 @@
 
       .close-button {
         background: #f7768e;
-        color: @cc-bg;
+        color: @bg;
         text-shadow: none;
         padding: 0px;
         border-radius: 0px;
@@ -133,7 +133,7 @@
       .notification-default-action:hover,
       .notification-action:hover {
         color: #7aa2f7;
-        background: @cc-bg;
+        background: @bg;
       }
 
       .notification-default-action {
@@ -164,14 +164,14 @@
         background: @noti-bg-darker;
         color: @text-color;
         caret-color: @text-color;
-        border: 1px solid @noti-border-color;
+        border: 1px solid @border-color;
         border-radius: 5px;
       }
 
       .inline-reply-button {
         margin-left: 4px;
         background: @noti-bg;
-        border: 1px solid @noti-border-color;
+        border: 1px solid @border-color;
         border-radius: 5px;
         color: @text-color;
       }
@@ -217,9 +217,9 @@
       }
 
       .control-center {
-        background: @cc-bg;
-        border: 2px solid #34548a;
-        border-radius: 0px;
+        background: @bg;
+        border: 2px solid @border-color;
+        border-radius: 8px;
       }
 
       .control-center-list {
@@ -258,7 +258,7 @@
 
       .widget-title > button:hover {
         background: #f7768e;
-        color: @cc-bg;
+        color: @bg;
       }
 
       .widget-dnd {
@@ -282,7 +282,7 @@
 
       .widget-dnd > switch slider,
       .widget-dnd > switch:checked slider {
-        background: @cc-bg;
+        background: @bg;
         border-radius: 5px;
       }
 
@@ -331,19 +331,19 @@
 
       .widget-buttons-grid > flowbox > flowboxchild > button {
         margin: 3px;
-        background: @cc-bg;
+        background: @bg;
         border-radius: 0px;
         color: @text-color;
       }
 
       .widget-buttons-grid > flowbox > flowboxchild > button:hover {
         background: rgba(122, 162, 247, 1);
-        color: @cc-bg;
+        color: @bg;
       }
 
       .widget-buttons-grid > flowbox > flowboxchild > button:checked {
         background: rgb(158, 206, 106);
-        color: @cc-bg;
+        color: @bg;
       }
 
       .widget-menubar > box > .menu-button-bar > button {

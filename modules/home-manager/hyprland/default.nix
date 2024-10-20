@@ -32,7 +32,7 @@ in {
         follow_mouse = 2;
       };
       decoration = {
-        rounding = "10";
+        rounding = "8";
         drop_shadow = "yes";
         inactive_opacity = "0.8";
         shadow_range = "4";
