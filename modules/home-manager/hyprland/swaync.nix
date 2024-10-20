@@ -64,6 +64,7 @@
     style = ''
       @define-color bg ${config.lib.stylix.colors.withHashtag.base00};
       @define-color border-color ${config.lib.stylix.colors.withHashtag.base0D};
+      @define-color warning ${config.lib.stylix.colors.withHashtag.base0E};
       @define-color noti-bg rgb(17, 17, 27);
       @define-color noti-bg-darker rgb(43, 43, 57);
       @define-color noti-bg-hover rgb(27, 27, 43);
@@ -76,12 +77,6 @@
 
       * {
         font-family: JetBrainsMonoNL Nerd Font Mono;
-      }
-
-      .control-center .notification-row:focus,
-      .control-center .notification-row:hover {
-        opacity: 1;
-        background: @noti-bg-darker;
       }
 
       .notification-row {
@@ -102,20 +97,16 @@
         margin: 3px -2px 3px 0px;
 
         padding-left: 24px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-right: 4px;
       }
 
       .notification-content {
         background: @bg;
       }
 
-      .notification-default-action {
-        margin: 0;
-        padding: 0;
-        border-radius: 0px;
-      }
-
       .close-button {
-        background: #f7768e;
         color: @bg;
         text-shadow: none;
         padding: 0px;
@@ -126,7 +117,7 @@
 
       .close-button:hover {
         box-shadow: none;
-        background: #f7768e;
+        color: @warning;
         transition: all 0.15s ease-in-out;
         border: none;
       }
