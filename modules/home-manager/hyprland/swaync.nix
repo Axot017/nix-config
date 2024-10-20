@@ -65,15 +65,8 @@
       @define-color fg-light ${config.lib.stylix.colors.withHashtag.base08};
       @define-color warning ${config.lib.stylix.colors.withHashtag.base0E};
       @define-color error ${config.lib.stylix.colors.withHashtag.base0F};
-      @define-color noti-bg rgb(17, 17, 27);
-      @define-color noti-bg-darker rgb(43, 43, 57);
-      @define-color noti-bg-hover rgb(27, 27, 43);
-      @define-color noti-bg-focus rgba(27, 27, 27, 0.6);
-      @define-color noti-close-bg rgba(255, 255, 255, 0.1);
-      @define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
       @define-color text-color ${config.lib.stylix.colors.withHashtag.base05};
       @define-color text-color-disabled ${config.lib.stylix.colors.withHashtag.base04};
-      @define-color bg-selected rgb(0, 128, 255);
 
       * {
         font-family: JetBrainsMonoNL Nerd Font Mono;
@@ -298,6 +291,10 @@
       }
 
       scale trough {
+        background: @text-color;
+      }
+
+      scale trough highlight {
         background: @warning;
       }
     '';
