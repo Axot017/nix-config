@@ -215,12 +215,14 @@
         font-size: 1rem;
         color: @text-color;
         background: transparent;
+        border: 1px solid @text-color-disabled;
         text-shadow: none;
         box-shadow: none;
       }
 
       .widget-title > button:hover {
         color: @error;
+        border: 1px solid @error;
       }
 
       .widget-dnd {
@@ -236,13 +238,12 @@
 
       .widget-dnd > switch:checked {
         background: @warning;
-        border: 1px solid #f7768e;
       }
 
       .widget-dnd > switch slider,
       .widget-dnd > switch:checked slider {
         background: @bg;
-        border-radius: 5px;
+        border-radius: 64px;
       }
 
       .widget-label {
@@ -256,9 +257,7 @@
 
       .widget-mpris {
         color: @text-color;
-        background: @noti-bg-darker;
-        padding: 5px 10px;
-        margin: 5px 10px 5px 10px;
+        padding: 8px 16px;
         border-radius: 5px;
       }
 
@@ -316,21 +315,11 @@
       }
 
       .widget-volume {
-        background: @noti-bg-darker;
-        padding: 5px;
-        margin: 5px 10px;
+        background: transparent;
+        margin: 8px 16px;
         border-radius: 0px;
         font-size: 2rem;
-        color: #7aa2f7;
-      }
-
-      .widget-backlight {
-        background: @noti-bg-darker;
-        padding: 5px;
-        margin: 5px 10px;
-        border-radius: 0px;
-        font-size: 2rem;
-        color: #7aa2f7;
+        color: @warning;
       }
     '';
   };
