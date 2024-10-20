@@ -43,18 +43,6 @@
               label = "󰜉";
               command = "systemctl reboot";
             }
-            {
-              label = "󰌾";
-              command = "";
-            }
-            {
-              label = "󰖩";
-              command = "alacritty -e nmtui";
-            }
-            {
-              label = "󰜉";
-              command = "";
-            }
           ];
         };
       };
