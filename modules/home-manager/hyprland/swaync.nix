@@ -217,6 +217,7 @@
       }
 
       .control-center {
+        opacity: 0.8;
         background: @bg;
         border: 2px solid @border-color;
         border-radius: 8px;
