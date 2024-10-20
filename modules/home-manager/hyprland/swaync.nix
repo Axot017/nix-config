@@ -22,7 +22,7 @@
       hide-on-action = true;
       script-fail-notify = true;
       widgets =
-        [ "title" "dnd" "notifications" "volume" "mpris" "buttons-grid" ];
+        [ "dnd" "title" "notifications" "volume" "mpris" "buttons-grid" ];
       widget-config = {
         title = {
           text = "Notification Center";
@@ -64,6 +64,7 @@
     style = ''
       @define-color bg ${config.lib.stylix.colors.withHashtag.base00};
       @define-color border-color ${config.lib.stylix.colors.withHashtag.base0D};
+      @define-color fg-light ${config.lib.stylix.colors.withHashtag.base08};
       @define-color warning ${config.lib.stylix.colors.withHashtag.base0E};
       @define-color error ${config.lib.stylix.colors.withHashtag.base0F};
       @define-color noti-bg rgb(17, 17, 27);
@@ -224,20 +225,17 @@
 
       .widget-dnd {
         background: transparent;
-        padding: 5px 10px;
-        margin: 5px 10px;
-        border-radius: 5px;
-        font-size: large;
-        color: #7aa2f7;
+        margin: 8px 16px;
+        color: @text-color;
       }
 
       .widget-dnd > switch {
-        border-radius: 5px;
-        background: #7aa2f7;
+        border-radius: 64px;
+        background: @fg-light;
       }
 
       .widget-dnd > switch:checked {
-        background: #f7768e;
+        background: @warning;
         border: 1px solid #f7768e;
       }
 
