@@ -21,10 +21,8 @@
       hide-on-clear = true;
       hide-on-action = true;
       script-fail-notify = true;
-      widgets =
-        [ "title" "dnd" "notifications" "volume" "mpris" "buttons-grid" ];
+      widgets = [ "title" "notifications" "volume" "mpris" "buttons-grid" ];
       widget-config = {
-        dnd = { text = "Do Not Disturb"; };
         title = {
           text = "Notification Center";
           clear-all-button = true;
@@ -207,7 +205,8 @@
       .widget-title {
         color: @text-color;
         background: transparent;
-        margin: 8px 16px;
+        margin-top: 24px;
+        margin-bottom: 16px;
         font-size: 1.3rem;
       }
 
@@ -259,7 +258,8 @@
 
       .widget-buttons-grid {
         font-size: x-large;
-        margin: 8px 16px;
+        margin-top: 16px;
+        margin-bottom: 16px;
         background: transparent;
       }
 
@@ -292,7 +292,6 @@
 
       .widget-volume {
         background: transparent;
-        margin: 8px 16px;
         border-radius: 0px;
         font-size: 2rem;
         color: @warning;
