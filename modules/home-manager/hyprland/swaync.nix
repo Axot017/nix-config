@@ -63,7 +63,6 @@
     };
     style = ''
       @define-color bg ${config.lib.stylix.colors.withHashtag.base00};
-      @define-color bg80 "${config.lib.stylix.colors.withHashtag.base00}cc";
       @define-color border-color ${config.lib.stylix.colors.withHashtag.base0D};
       @define-color noti-bg rgb(17, 17, 27);
       @define-color noti-bg-darker rgb(43, 43, 57);
@@ -71,8 +70,8 @@
       @define-color noti-bg-focus rgba(27, 27, 27, 0.6);
       @define-color noti-close-bg rgba(255, 255, 255, 0.1);
       @define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-      @define-color text-color rgba(169, 177, 214, 1);
-      @define-color text-color-disabled rgb(150, 150, 150);
+      @define-color text-color ${config.lib.stylix.colors.withHashtag.base05};
+      @define-color text-color-disabled ${config.lib.stylix.colors.withHashtag.base04};
       @define-color bg-selected rgb(0, 128, 255);
 
       * {
@@ -200,15 +199,6 @@
         text-shadow: none;
       }
 
-      .time {
-        font-size: 16px;
-        font-weight: 700;
-        background: transparent;
-        color: @text-color;
-        text-shadow: none;
-        margin-right: 18px;
-      }
-
       .body {
         font-size: 15px;
         font-weight: 400;
@@ -218,7 +208,7 @@
       }
 
       .control-center {
-        background: @bg80;
+        background: @bg;
         border: 2px solid @border-color;
         border-radius: 8px;
       }
