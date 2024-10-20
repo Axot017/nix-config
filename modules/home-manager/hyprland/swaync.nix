@@ -21,8 +21,10 @@
       hide-on-clear = true;
       hide-on-action = true;
       script-fail-notify = true;
-      widgets = [ "title" "notifications" "volume" "mpris" "buttons-grid" ];
+      widgets =
+        [ "title" "dnd" "notifications" "volume" "mpris" "buttons-grid" ];
       widget-config = {
+        dnd = { text = "Do Not Disturb"; };
         title = {
           text = "Notification Center";
           clear-all-button = true;
