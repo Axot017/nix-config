@@ -119,7 +119,7 @@
       .notification-action {
         color: @text-color;
       }
-
+      .notification-default-action:hover,
       .notification-action:hover {
         background: transparent;
         color: @warning;
