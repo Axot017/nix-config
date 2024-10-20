@@ -132,6 +132,7 @@
     inputs.zen-browser.packages."${system}".specific
     stripe-cli
     hyprshot
+    hyprpicker
   ];
 
   environment.sessionVariables = {
