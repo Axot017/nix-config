@@ -133,7 +133,6 @@
     stripe-cli
     hyprshot
     hyprpicker
-    kitty
   ];
 
   environment.sessionVariables = {

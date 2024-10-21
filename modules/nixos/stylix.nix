@@ -10,6 +10,6 @@
         name = "JetBrainsMonoNL Nerd Font Mono";
       };
     };
-    targets = { nixvim.enable = lib.mkFroce false; };
+    targets = { nixvim = { enable = false; }; };
   };
 }
