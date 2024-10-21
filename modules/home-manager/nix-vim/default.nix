@@ -10,7 +10,7 @@
     colorschemes.tokyonight = {
       enable = true;
       settings = {
-        style = "storm";
+        style = "night";
         background = "transparent";
       };
     };
