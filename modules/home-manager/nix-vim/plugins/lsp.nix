@@ -12,8 +12,8 @@
       };
     };
     servers = {
-      lua-ls = { enable = true; };
-      nil-ls = { enable = true; };
+      lua_ls = { enable = true; };
+      nil_ls = { enable = true; };
       gopls = { enable = true; };
       html = { enable = true; };
       htmx = { enable = true; };
@@ -22,8 +22,8 @@
       yamlls = { enable = true; };
       pyright = { enable = true; };
       elixirls = { enable = true; };
-      ts-ls = { enable = true; };
-      typst-lsp = { enable = true; };
+      ts_ls = { enable = true; };
+      typst_lsp = { enable = true; };
     };
   };
 }
