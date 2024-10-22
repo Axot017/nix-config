@@ -10,11 +10,5 @@
         name = "JetBrainsMonoNL Nerd Font Mono";
       };
     };
-    targets = {
-      nixvim = {
-        enable = false;
-        plugin = null;
-      };
-    };
   };
 }

@@ -16,6 +16,7 @@ in {
     ../../modules/home-manager/htop.nix
     ../../modules/home-manager/thefuck.nix
     ../../modules/home-manager/feh.nix
+    ../../modules/home-manager/stylix.nix
     ../../modules/home-manager/nix-vim/default.nix
   ];
 
