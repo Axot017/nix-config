@@ -9,7 +9,7 @@
     enable = true;
     colorschemes.tokyonight = {
       enable = true;
-      settings = { style = "day"; };
+      settings = { style = "storm"; };
     };
   };
 }
