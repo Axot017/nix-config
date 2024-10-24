@@ -133,6 +133,7 @@
     stripe-cli
     hyprshot
     hyprpicker
+    bruno
   ];
 
   environment.sessionVariables = {
