@@ -134,6 +134,7 @@
     hyprshot
     hyprpicker
     bruno
+    delve
   ];
 
   environment.sessionVariables = {
