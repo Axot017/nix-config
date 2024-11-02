@@ -24,7 +24,7 @@
     {
       mode = "n";
       key = "<C-n>";
-      action.__raw = "MiniFiles.open()";
+      action.__raw = "MiniFiles.open";
       options = { silent = true; };
     }
     # Window navigation
