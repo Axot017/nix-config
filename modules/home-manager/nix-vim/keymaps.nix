@@ -24,7 +24,7 @@
     {
       mode = "n";
       key = "<C-n>";
-      action.__raw = "MiniFiles.open";
+      action = "<cmd>lua MiniFiles.open()<CR>";
       options = { silent = true; };
     }
     # Window navigation
