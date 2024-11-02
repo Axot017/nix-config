@@ -19,6 +19,7 @@
     ./luasnip.nix
     ./lualine.nix
     ./none-ls.nix
+    ./mini.nix
     ./tmux-navigator.nix
     ./dressing.nix
   ];
