@@ -20,11 +20,11 @@
       key = "<F3>";
       action.__raw = "require('dap').toggle_breakpoint";
     }
-    # Oil
+    # Mini files
     {
       mode = "n";
       key = "<C-n>";
-      action = "<cmd>Oil<CR>";
+      action = "<cmd>MiniFiles.open()<CR>";
       options = { silent = true; };
     }
     # Window navigation
