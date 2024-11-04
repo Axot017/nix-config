@@ -24,8 +24,7 @@
     {
       mode = "n";
       key = "<C-n>";
-      action.__raw =
-        "function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end";
+      action = "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>";
       options = { silent = true; };
     }
     # Window navigation
