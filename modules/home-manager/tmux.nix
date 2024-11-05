@@ -3,7 +3,6 @@
     tmux = {
       enable = true;
       shell = "${pkgs.zsh}/bin/zsh";
-      keyMode = "vi";
       prefix = "C-Space";
     };
   };
