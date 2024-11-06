@@ -10,4 +10,7 @@
       };
     })
   ];
+  programs.nixvim.extraConfigLua = ''
+    require('gopher').setup()
+  '';
 }
