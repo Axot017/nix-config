@@ -21,8 +21,10 @@
   ];
   programs.nixvim.extraConfigLua = ''
     require('gopher').setup({
-      command = {
-        iferr = "${pkgs.iferr}"
+      commands = {
+        iferr = "${pkgs.iferr}/bin/iferr",
+        go = "${pkgs.go}/bin/go",
+        gomodifytags = "${pkgs.gomodifytags}/bin/gomodifytags",
       }
     })
   '';
