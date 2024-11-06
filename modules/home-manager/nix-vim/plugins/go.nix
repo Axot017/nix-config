@@ -20,6 +20,10 @@
     })
   ];
   programs.nixvim.extraConfigLua = ''
-    require('gopher').setup()
+    require('gopher').setup({
+      command = {
+        iferr = "${pkgs.iferr}"
+      }
+    })
   '';
 }
