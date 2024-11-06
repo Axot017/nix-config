@@ -7,14 +7,14 @@
   programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc libepoxy fontconfig ];
 
   imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
     ../../modules/nixos/fonts.nix
-    ../../modules/nixos/pipewire.nix
-    ../../modules/nixos/xserver.nix
     ../../modules/nixos/i18n.nix
+    ../../modules/nixos/pipewire.nix
     ../../modules/nixos/steam.nix
     ../../modules/nixos/stylix.nix
+    ../../modules/nixos/xserver.nix
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
   ];
 
   boot.kernelModules = [ "nct6775" ];

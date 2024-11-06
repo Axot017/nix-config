@@ -1,25 +1,26 @@
 { pkgs, config, inputs, helpers, ... }: {
   imports = [
-    ./web-devicons.nix
-    ./avante.nix
-    ./neogit.nix
     ./autoclose.nix
+    ./avante.nix
     ./bufferline.nix
-    ./neorg.nix
-    ./dap.nix
-    ./hardtime.nix
-    ./treesitter.nix
-    ./telescope.nix
-    ./copilot.nix
-    ./lsp.nix
     ./cmp.nix
     ./comment-nvim.nix
-    ./project-nvim.nix
-    ./luasnip.nix
-    ./lualine.nix
-    ./none-ls.nix
-    ./mini.nix
-    ./tmux-navigator.nix
+    ./copilot.nix
+    ./dap.nix
     ./dressing.nix
+    ./go.nix
+    ./hardtime.nix
+    ./lsp.nix
+    ./lualine.nix
+    ./luasnip.nix
+    ./mini.nix
+    ./neogit.nix
+    ./neorg.nix
+    ./none-ls.nix
+    ./project-nvim.nix
+    ./telescope.nix
+    ./tmux-navigator.nix
+    ./treesitter.nix
+    ./web-devicons.nix
   ];
 }
