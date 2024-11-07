@@ -1,15 +1,6 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim.extraPlugins = [
     (pkgs.vimUtils.buildVimPlugin {
-      name = "plenary.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "nvim-lua";
-        repo = "plenary.nvim";
-        rev = "master";
-        sha256 = "sha256-bmmPekAvuBvLQmrnnX0n+FRBqfVxBsObhxIEkDGAla4=";
-      };
-    })
-    (pkgs.vimUtils.buildVimPlugin {
       name = "gopher.nvim";
       src = pkgs.fetchFromGitHub {
         owner = "olexsmir";
@@ -25,6 +16,8 @@
         iferr = "${pkgs.iferr}/bin/iferr",
         go = "${pkgs.go}/bin/go",
         gomodifytags = "${pkgs.gomodifytags}/bin/gomodifytags",
+        gotests = "${pkgs.gotests}/bin/gotests",
+        impl = "${pkgs.impl}/bin/impl",
       }
     })
   '';

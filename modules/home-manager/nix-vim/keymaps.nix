@@ -141,6 +141,38 @@
       options = { silent = true; };
     }
 
+    # Go
+    {
+      mode = "n";
+      key = "<leader>ge";
+      action = "<cmd>GoIfErr<CR>";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>ge";
+      action = "<cmd>GoIfErr<CR>";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>gt";
+      action = "<cmd>GoTestAdd<CR>";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>gj";
+      action = "<cmd>GoTagAdd json<CR>";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>gy";
+      action = "<cmd>GoTagAdd yaml<CR>";
+      options = { silent = true; };
+    }
+
     ##########################
     ##  Visual              ##
     ##########################
