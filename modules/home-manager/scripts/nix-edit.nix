@@ -3,7 +3,7 @@
 pkgs.writeShellScriptBin "nix-edit" ''
   set -e
   pushd ~/Projects/nix-config
-  nvim .
+  nvim
   git diff -U0 *.nix
   git add -A
   echo "NixOS - rebuilding..."
