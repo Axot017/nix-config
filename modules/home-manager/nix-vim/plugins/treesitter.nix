@@ -8,9 +8,11 @@
         incremental_selection = { enable = true; };
       };
     };
+    treesitter-context = { enable = true; };
     treesitter-textobjects = {
       enable = true;
       move = {
+        enable = true;
         gotoNextStart = {
           "]f" = {
             desc = "Go to next function";
@@ -24,13 +26,13 @@
           };
         };
         gotoPreviousStart = {
-          "]f" = {
+          "[f" = {
             desc = "Go to previous function";
             query = "@function.outer";
           };
         };
         gotoPreviousEnd = {
-          "]F" = {
+          "[F" = {
             desc = "Go to previous function end";
             query = "@function.outer";
           };
