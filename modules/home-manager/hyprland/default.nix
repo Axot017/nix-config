@@ -100,7 +100,6 @@ in {
         "$mainMod, SPACE, exec, rofi -show drun -show-icons"
         "$mainMod, P, exec, rofi -show power-menu -modi power-menu:~/.config/hypr/scripts/rofi-power-menu"
         "$mainMod SHIFT, S, exec, hyprshot -m region -o ~/Pictures/Screenshots"
-        "$mainMod CTRL, S, exec, hyprshot -m window -o ~/Pictures/Screenshots"
         "$mainMod, S, exec, hyprshot -m output -o ~/Pictures/Screenshots"
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod, R, exec, ${recordScreen}/bin/record-screen"
