@@ -2,7 +2,7 @@
   stylix = {
     targets = {
       nixvim = { enable = false; };
-      hyprland = { enable = true; };
+      hyprland = { enable = false; };
     };
   };
 }
