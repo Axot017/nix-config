@@ -1,3 +1,8 @@
 { config, pkgs, ... }: {
-  stylix = { targets = { nixvim = { enable = false; }; }; };
+  stylix = {
+    targets = {
+      nixvim = { enable = false; };
+      hyprland = { enable = true; };
+    };
+  };
 }
