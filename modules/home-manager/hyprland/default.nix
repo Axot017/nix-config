@@ -33,10 +33,7 @@ in {
       };
       decoration = {
         rounding = "8";
-        drop_shadow = "yes";
-        inactive_opacity = "0.8";
-        shadow_range = "4";
-        shadow_render_power = "3";
+        inactive_opacity = "0.9";
         blur = { enabled = "true"; };
       };
       master = {
