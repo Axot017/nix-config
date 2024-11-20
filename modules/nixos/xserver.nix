@@ -5,6 +5,7 @@
       enable = true;
       wayland.enable = true;
       theme = "${import ./packages/sddm-chili.nix { inherit pkgs; }}";
+      settings = { General = { DefaultSession = "hyprland.desktop"; }; };
     };
   };
 }
