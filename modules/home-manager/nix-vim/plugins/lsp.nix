@@ -21,7 +21,7 @@
       terraformls = { enable = true; };
       yamlls = { enable = true; };
       pyright = { enable = true; };
-      elixirls = { enable = true; };
+      lexical = { enable = true; };
       ts_ls = { enable = true; };
       typst_lsp = { enable = true; };
     };
