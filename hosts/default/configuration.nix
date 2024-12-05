@@ -135,6 +135,7 @@
     hyprpicker
     bruno
     delve
+    pavucontrol
   ];
 
   environment.sessionVariables = {
