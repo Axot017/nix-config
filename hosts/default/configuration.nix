@@ -136,6 +136,7 @@
     bruno
     delve
     pavucontrol
+    prismlauncher
   ];
 
   environment.sessionVariables = {
