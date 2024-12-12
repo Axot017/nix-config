@@ -137,6 +137,7 @@
     delve
     pavucontrol
     prismlauncher
+    baobab
   ];
 
   environment.sessionVariables = {
