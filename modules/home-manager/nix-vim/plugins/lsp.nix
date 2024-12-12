@@ -23,7 +23,6 @@
       pyright = { enable = true; };
       lexical = { enable = true; };
       ts_ls = { enable = true; };
-      typst_lsp = { enable = true; };
     };
   };
 }
