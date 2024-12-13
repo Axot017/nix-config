@@ -6,7 +6,7 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-22.11";
 
     zen-browser = {
-      url = "github:ch4og/zen-browser-flake";
+      url = "github:Axot017/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
