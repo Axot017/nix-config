@@ -139,6 +139,7 @@
     prismlauncher
     baobab
     unrar
+    jq
   ];
 
   environment.sessionVariables = {
