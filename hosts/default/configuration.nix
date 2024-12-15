@@ -138,6 +138,7 @@
     pavucontrol
     prismlauncher
     baobab
+    unrar
   ];
 
   environment.sessionVariables = {
