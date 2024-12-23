@@ -23,13 +23,24 @@
     };
   };
 
-  outputs = { self, nixpkgs, stylix, home-manager, ... }@inputs: {
+  outputs = { self, stylix, nixpkgs, nixvim, home-manager, ... }@inputs: {
+    homeConfigurations = {
+      "mateuszledwon" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        modules = [
+          ./hosts/macos/home.nix
+          nixvim.homeManagerModules.nixvim
+          stylix.homeManagerModules.stylix
+        ];
+      };
+    };
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/default/configuration.nix
         home-manager.nixosModules.default
         stylix.nixosModules.stylix
+        nixvim.nixosModules.nixvim
       ];
     };
   };
