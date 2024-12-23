@@ -7,6 +7,7 @@ in {
   imports = [
     ../../modules/home-manager/stylix.nix
     ../../modules/home-manager/zsh.nix
+    ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/zoxide.nix
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/oh-my-posh.nix
