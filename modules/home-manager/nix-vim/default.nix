@@ -8,7 +8,7 @@
   programs.nixvim = {
     enable = true;
     extraConfigLua = ''
-      print("Hello from NixVim!");
+      vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/golang-tools.nvim'))
     '';
     colorschemes.tokyonight = {
       enable = true;
