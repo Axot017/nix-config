@@ -5,10 +5,6 @@ let
 in {
   gtk = {
     enable = true;
-    # theme = {
-    #   name = "Sweet-Ambar-Blue-Dark";
-    #   package = sweet;
-    # };
     iconTheme = {
       name = "Candy-Icons";
       package = candy;
@@ -19,8 +15,6 @@ in {
     };
   };
   home.file = {
-    # ".themes/${config.gtk.theme.name}".source =
-    #   "${config.gtk.theme.package}/${config.gtk.theme.name}";
     ".icons/${config.gtk.cursorTheme.name}".source =
       "${config.gtk.cursorTheme.package}/${config.gtk.theme.name}/kde/cursors/Sweet-cursors";
     ".icons/${config.gtk.iconTheme.name}".source =
