@@ -51,7 +51,6 @@
           ./hosts/default/configuration.nix
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
-          nixvim.nixosModules.nixvim
         ];
       };
     };

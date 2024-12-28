@@ -19,19 +19,19 @@ in {
     };
   };
   home.file = {
-    ".themes/${config.gtk.theme.name}".source =
-      "${config.gtk.theme.package}/${config.gtk.theme.name}";
+    # ".themes/${config.gtk.theme.name}".source =
+    #   "${config.gtk.theme.package}/${config.gtk.theme.name}";
     ".icons/${config.gtk.cursorTheme.name}".source =
       "${config.gtk.cursorTheme.package}/${config.gtk.theme.name}/kde/cursors/Sweet-cursors";
     ".icons/${config.gtk.iconTheme.name}".source =
       "${config.gtk.iconTheme.package}/${config.gtk.iconTheme.name}";
   };
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt;
-    };
-  };
+  # qt = {
+  #   enable = true;
+  #   platformTheme.name = "gtk";
+  #   style = {
+  #     name = "adwaita-dark";
+  #     package = pkgs.adwaita-qt;
+  #   };
+  # };
 }

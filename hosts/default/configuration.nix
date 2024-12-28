@@ -113,7 +113,6 @@
     gnumake
     beam.packages.erlang_27.elixir_1_17
     lldb
-    gleam
     vscode-extensions.vadimcn.vscode-lldb
     mangohud
     fzf
@@ -124,16 +123,13 @@
     clang
     pkg-config
     slack
-    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science pl ]))
     wl-screenrec
     docker-compose
     inotify-tools
-    mongodb-compass
-    inputs.zen-browser.packages."${system}".specific
+    inputs.zen-browser.packages."${system}".default
     stripe-cli
     hyprshot
     hyprpicker
-    bruno
     delve
     pavucontrol
     prismlauncher
