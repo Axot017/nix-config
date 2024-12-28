@@ -10,7 +10,15 @@
     extraConfigLua = ''
       vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/golang-tools.nvim'))
 
-      require("golang-tools").setup({})
+      require("golang-tools").setup({
+        commands = {
+          iferr = "${pkgs.iferr}/bin/iferr",
+          go = "${pkgs.go}/bin/go",
+          gomodifytags = "${pkgs.gomodifytags}/bin/gomodifytags",
+          gotests = "${pkgs.gotests}/bin/gotests",
+          impl = "${pkgs.impl}/bin/impl",
+        }
+      })
     '';
     colorschemes.tokyonight = {
       enable = true;
