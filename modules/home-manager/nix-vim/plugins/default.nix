@@ -8,7 +8,6 @@
     ./copilot.nix
     ./dap.nix
     ./dressing.nix
-    ./go.nix
     ./hardtime.nix
     ./lsp.nix
     ./lualine.nix
