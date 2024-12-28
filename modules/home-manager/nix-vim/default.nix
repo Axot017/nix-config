@@ -7,6 +7,9 @@
   ];
   programs.nixvim = {
     enable = true;
+    extraConfigLua = ''
+      print("Hello from NixVim!");
+    '';
     colorschemes.tokyonight = {
       enable = true;
       settings = { style = "storm"; };
