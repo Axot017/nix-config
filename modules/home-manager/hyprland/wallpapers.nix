@@ -5,7 +5,7 @@
     settings = {
       preload = [ "${../../../wallpapers/witcher.jpg}" ];
 
-      # wallpaper = [ "monitor1,${../../../wallpapers/witcher.jpg}" ];
+      wallpaper = [ "monitor1,${../../../wallpapers/witcher.jpg}" ];
     };
   };
 
