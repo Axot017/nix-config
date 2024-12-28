@@ -9,6 +9,8 @@
     enable = true;
     extraConfigLua = ''
       vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/golang-tools.nvim'))
+
+      require("golang-tools").setup()
     '';
     colorschemes.tokyonight = {
       enable = true;
