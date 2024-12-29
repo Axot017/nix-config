@@ -89,6 +89,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    inputs.ghostty.packages.x86_64-linux.default
     grim
     slurp
     libsForQt5.qt5.qtquickcontrols
