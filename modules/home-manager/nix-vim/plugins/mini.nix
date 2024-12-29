@@ -5,12 +5,6 @@
       indentscope = {
         draw = { animation.__raw = "function(s,n) return 10 end"; };
       };
-      files = {
-        mappings = {
-          reveal_cwd = "<leader>.";
-          close = "<esc>";
-        };
-      };
     };
   };
 }

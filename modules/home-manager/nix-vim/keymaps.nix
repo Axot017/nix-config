@@ -24,7 +24,7 @@
     {
       mode = "n";
       key = "<C-n>";
-      action = "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>";
+      action = "<cmd>Oil<CR>";
       options = { silent = true; };
     }
     # Window navigation

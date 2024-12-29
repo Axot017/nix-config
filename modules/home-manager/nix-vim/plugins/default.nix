@@ -16,6 +16,7 @@
     ./neogit.nix
     ./neorg.nix
     ./none-ls.nix
+    ./oil.nix
     ./project-nvim.nix
     ./telescope.nix
     ./tmux-navigator.nix
