@@ -7,9 +7,19 @@
   ];
   programs.nixvim = {
     enable = true;
+    extraPlugins = [
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "golang-tools.nvim";
+        dependencies = with pkgs.vimPlugins; [ plenary-nvim nvim-treesitter ];
+        src = pkgs.fetchFromGitHub {
+          owner = "Axot017";
+          repo = "golang-tools.nvim";
+          rev = "master";
+          sha256 = "sha256-irv/Edi0wuMOcBxqHl4ZKAwFS4akv92RFpjR+z+mWlE=";
+        };
+      })
+    ];
     extraConfigLua = ''
-      vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/golang-tools.nvim'))
-
       require("golang-tools").setup({
         commands = {
           iferr = "${pkgs.iferr}/bin/iferr",
