@@ -4,13 +4,11 @@
     ./avante.nix
     ./blink-cmp.nix
     ./bufferline.nix
-    # ./cmp.nix
     ./comment-nvim.nix
     ./copilot.nix
     ./dap.nix
     ./dressing.nix
     ./go.nix
-    ./hardtime.nix
     ./lsp.nix
     ./lualine.nix
     ./luasnip.nix
