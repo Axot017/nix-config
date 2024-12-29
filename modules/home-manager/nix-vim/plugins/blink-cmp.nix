@@ -2,7 +2,11 @@
   programs.nixvim.plugins.blink-cmp = {
     enable = true;
     settings = {
-      keymap.preset = "super-tab";
+      keymap = {
+        preset = "none";
+        "<Tab>" = [ "select_next" "fallback" ];
+        "<S-Tab>" = [ "select_prev" "fallback" ];
+      };
       completion.list.selection = "auto_insert";
     };
   };
