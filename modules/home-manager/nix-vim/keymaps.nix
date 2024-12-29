@@ -157,7 +157,13 @@
     {
       mode = "n";
       key = "<leader>gt";
-      action = "<cmd>GoTestAdd<CR>";
+      action.__raw = ''
+        function() 
+          require("gopher").test.add()
+          local test_file = vim.fn.expand("%:r") .. "_test.go"
+          vim.cmd("edit " .. test_file)
+        end
+      '';
       options = { silent = true; };
     }
     {
