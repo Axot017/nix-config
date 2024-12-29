@@ -2,8 +2,9 @@
   imports = [
     ./autoclose.nix
     ./avante.nix
+    ./blink-cmp.nix
     ./bufferline.nix
-    ./cmp.nix
+    # ./cmp.nix
     ./comment-nvim.nix
     ./copilot.nix
     ./dap.nix
