@@ -37,6 +37,11 @@
           Lua = {}
         }
       }
+
+      vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/multiterm.nvim'))
+      require'multiterm'.setup({
+        log_level = 1,
+      })
     '';
   };
 }
