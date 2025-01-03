@@ -44,8 +44,8 @@
         log_level = 1,
       })
       vim.keymap.set("n", "<leader>mt", multiterm.bind_toggle)
-      vim.keymap.set("n", "<leader>mr", multiterm.bind_reset_session)
-      vim.keymap.set("n", "<leader>ma", multiterm.close_all)
+      vim.keymap.set("n", "<leader>mr", multiterm.bind_remove)
+      vim.keymap.set("n", "<leader>ma", multiterm.remove_all)
 
 
     '';
