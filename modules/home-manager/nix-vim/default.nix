@@ -37,17 +37,6 @@
           Lua = {}
         }
       }
-
-      vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/multiterm.nvim'))
-      local multiterm = require'multiterm'
-      multiterm.setup({
-        log_level = 1,
-      })
-      vim.keymap.set("n", "<leader>mt", multiterm.bind_toggle)
-      vim.keymap.set("n", "<leader>mr", multiterm.bind_remove)
-      vim.keymap.set("n", "<leader>ma", multiterm.remove_all)
-
-
     '';
   };
 }
