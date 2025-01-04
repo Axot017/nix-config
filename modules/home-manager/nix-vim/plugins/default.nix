@@ -13,6 +13,7 @@
     ./lualine.nix
     ./luasnip.nix
     ./mini.nix
+    ./multiterm.nix
     ./neogit.nix
     ./neorg.nix
     ./none-ls.nix

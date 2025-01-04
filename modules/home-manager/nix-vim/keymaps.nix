@@ -20,7 +20,26 @@
       key = "<F3>";
       action.__raw = "require('dap').toggle_breakpoint";
     }
-    # Mini files
+    # Multiterm
+    {
+      mode = "n";
+      key = "<leader>tt";
+      action.__raw = "require('multiterm').bind_toggle";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>tq";
+      action.__raw = "require('multiterm').close_active";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>tr";
+      action.__raw = "require('multiterm').bind_remove";
+      options = { silent = true; };
+    }
+    # Oil
     {
       mode = "n";
       key = "<C-n>";
@@ -228,6 +247,15 @@
       mode = "x";
       key = "<C-p>";
       action = ''"+p'';
+      options = { silent = true; };
+    }
+    ##########################
+    ##      Terminal        ##
+    ##########################
+    {
+      mode = "t";
+      key = "<esc><esc>";
+      action = "<C-\\><C-n>";
       options = { silent = true; };
     }
   ];
