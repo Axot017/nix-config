@@ -5,7 +5,6 @@
       formatting = {
         gofmt.enable = true;
         goimports.enable = true;
-        golines.enable = true;
         hclfmt.enable = true;
         nixfmt.enable = true;
         ocamlformat.enable = true;
