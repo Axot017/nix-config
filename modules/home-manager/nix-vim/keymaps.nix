@@ -162,8 +162,40 @@
     # Neotest
     {
       mode = "n";
-      key = "<leader>tr";
+      key = "<leader>trr";
       action.__raw = "function() require('neotest').run.run() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>trd";
+      action.__raw =
+        ''function() require('neotest').run.run({strategy = "dap"}) end'';
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>trf";
+      action.__raw =
+        ''function() require('neotest').run.run({vim.fn.expand("%")}) end'';
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>tst";
+      action.__raw = "function() require('neotest').summary.toggle() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>tot";
+      action.__raw = "function() require('neotest').output_panel.toggle() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>toc";
+      action.__raw = "function() require('neotest').output_panel.clear() end";
       options = { silent = true; };
     }
 
