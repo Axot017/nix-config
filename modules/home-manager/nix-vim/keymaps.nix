@@ -159,6 +159,13 @@
       action = "<cmd>bdelete<CR>";
       options = { silent = true; };
     }
+    # Neotest
+    {
+      mode = "n";
+      key = "<leader>tr";
+      action.__raw = "function() require('neotest').run.run() end";
+      options = { silent = true; };
+    }
 
     # Go
     {

@@ -16,6 +16,7 @@
     ./multiterm.nix
     ./neogit.nix
     ./neorg.nix
+    ./neotest.nix
     ./none-ls.nix
     ./oil.nix
     ./project-nvim.nix
