@@ -11,7 +11,7 @@ in {
     ../../modules/home-manager/zoxide.nix
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/oh-my-posh.nix
-    ../../modules/home-manager/nix-vim/default.nix
+    ../../modules/home-manager/nix-vim/default-macos.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
