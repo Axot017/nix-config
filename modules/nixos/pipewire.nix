@@ -1,7 +1,7 @@
 { pkgs, config, inputs, ... }: {
-  hardware.pulseaudio.enable = false;
-  hardware.pulseaudio.support32Bit = true;
   security.rtkit.enable = true;
+    services.pulseaudio.enable = false;
+    services.pulseaudio.support32Bit = true;
   services.pipewire = {
     enable = true;
     wireplumber.enable = true;

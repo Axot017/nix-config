@@ -2,7 +2,7 @@
   programs.nixvim.plugins = {
     copilot-lua = {
       enable = true;
-      suggestion = {
+      settings.suggestion = {
         enabled = true;
         autoTrigger = true;
         keymap = { accept = "<C-y>"; };
