@@ -4,7 +4,7 @@
       enable = true;
       settings.suggestion = {
         enabled = true;
-        autoTrigger = true;
+        auto_trigger = true;
         keymap = { accept = "<C-y>"; };
       };
     };

@@ -9,7 +9,7 @@
       };
       completion.list.selection = {
         auto_insert = true;
-        preselect = true;
+        preselect = false;
       };
     };
   };
