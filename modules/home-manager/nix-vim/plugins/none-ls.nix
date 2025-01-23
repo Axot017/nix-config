@@ -10,7 +10,6 @@
         ocamlformat.enable = true;
         black.enable = true;
       };
-      diagnostics = { golangci_lint.enable = true; };
       code_actions = { gitsigns.enable = true; };
     };
   };
