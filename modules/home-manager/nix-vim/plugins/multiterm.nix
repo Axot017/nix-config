@@ -7,7 +7,7 @@
         owner = "Axot017";
         repo = "multiterm.nvim";
         rev = "master";
-        sha256 = "sha256-yN46X/8BvgDlD7gwQuaktyqGFq7VHP0lTddqAUeJjzQ=";
+        sha256 = "sha256-SrYBn7FKyq6bCuv4aIkecRYNCXP2A6cmyDKxs5fNifU=";
       };
     })
   ];
