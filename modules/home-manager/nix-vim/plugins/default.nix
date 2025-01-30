@@ -1,9 +1,9 @@
 { pkgs, config, inputs, helpers, ... }: {
   imports = [
     ./autoclose.nix
-    ./avante.nix
     ./blink-cmp.nix
     ./bufferline.nix
+    ./codecompanion.nix
     ./comment-nvim.nix
     ./copilot.nix
     ./dap.nix
