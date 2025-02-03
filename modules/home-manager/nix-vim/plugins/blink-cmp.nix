@@ -8,6 +8,7 @@
         "<S-Tab>" = [ "select_prev" "fallback" ];
         "<CR>" = [ "accept" "fallback" ];
       };
+      sources = { per_filetype = { codecompanion = [ "codecompanion" ]; }; };
       completion.list.selection = {
         auto_insert = true;
         preselect = false;

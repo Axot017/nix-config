@@ -9,9 +9,4 @@
       };
     };
   };
-  programs.nixvim.extraConfigLua = ''
-    require("codecompanion").setup({
-        strategies = { agent = { adapter = "copilot" }, chat = { adapter = "copilot" }, inline = { adapter = "copilot" } },
-    })
-  '';
 }
