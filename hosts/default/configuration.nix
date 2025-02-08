@@ -16,7 +16,7 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
-
+  services.blueman.enable = true;
   boot.kernelModules = [ "nct6775" ];
   hardware.graphics = {
     enable = true;

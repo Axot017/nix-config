@@ -1,5 +1,6 @@
 { pkgs, config, inputs, ... }: {
   security.rtkit.enable = true;
+  hardware.bluetooth.enable = true;
   services = {
     pulseaudio = {
       enable = false;
