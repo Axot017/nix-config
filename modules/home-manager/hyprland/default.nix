@@ -52,7 +52,7 @@ in {
       "$mainMod" = "SUPER";
       bind = [
         ", mouse:276, pass, ^discord$"
-        "$mainMod, T, exec, alacritty"
+        "$mainMod, T, exec, ghostty"
         "$mainMod, Q, killactive"
 
         "$mainMod, H, movefocus, l"
