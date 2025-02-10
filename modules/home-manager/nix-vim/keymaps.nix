@@ -156,7 +156,7 @@
     {
       mode = "n";
       key = "<leader>x";
-      action = "<cmd>bdelete<CR>";
+      action = "<cmd>Bdelete<CR>";
       options = { silent = true; };
     }
     # Neotest
