@@ -20,12 +20,4 @@ in {
     ".icons/${config.gtk.iconTheme.name}".source =
       "${config.gtk.iconTheme.package}/${config.gtk.iconTheme.name}";
   };
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt;
-    };
-  };
 }
