@@ -110,7 +110,6 @@
     protonup
     wev
     lm_sensors
-    ags
     git
     libnotify
     brave
