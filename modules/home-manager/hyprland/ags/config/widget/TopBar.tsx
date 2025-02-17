@@ -35,7 +35,7 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
 //
 function Time() {
   return <eventbox
-    on_primary_click={() => exec(`brave https://calendar.google.com`)}>
+    onClick={() => exec(`zen https://calendar.google.com`)}>
     <box className="clock">
       <label
         halign={Gtk.Align.CENTER}
