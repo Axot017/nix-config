@@ -1,73 +1,92 @@
-* {
-  font-family: 'JetBrainsMonoNL Nerd Font Mono', 'Symbols Nerd Font Moo';
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+
+window.Bar {
+    background: transparent;
+    color: $fg-color;
+    font-weight: bold;
+
+    >centerbox {
+        background: $bg-color;
+        border-radius: 10px;
+        margin: 8px;
+    }
+
+    button {
+        border-radius: 8px;
+        margin: 2px;
+    }
 }
-
-.clock, .cpu, .mem, .temp, .weather, .disk, .audio, .network, .window-title, .workspaces {
-  background-color: @theme_bg_color;
-  color: @theme_text_color;
-  border: 1px solid @borders;
-  margin-top: 8px;
-  padding-left: 24px;
-  padding-right: 24px;
-  font-size: 16px;
-  font-family: 'JetBrainsMonoNL Nerd Font Mono', 'Symbols Nerd Font Moo';
-  min-height: 28px;
-  font-size: 16px;
-}
-
-.gap {
-  margin-left: 12px;
-}
-
-.topbar-icon {
-  color: @warning_color;
-  font-size: 20px;
-}
-
-.workspace-label {
-  margin-left: 12px;
-}
-
-.workspaces {
-  padding-left: 12px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 32px;
-}
-
-.window-title {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 32px;
-}
-
-
-.cpu, .mem, .temp, .disk {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 32px;
-
-  border-bottom-left-radius: 32px;
-  border-bottom-right-radius: 8px;
-}
-
-.weather, .audio, .network {
-  border-top-left-radius: 32px;
-  border-top-right-radius: 8px;
-
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 32px;
-}
-
-.clock, .cpu, .mem, .temp, .weather, .disk, .audio, .network {
-  margin-left: 4px;
-  margin-right: 4px;
-  min-width: 72px;
-}
-
-.clock {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-
-  border-bottom-left-radius: 32px;
-  border-bottom-right-radius: 32px;
-}
-
-
+/* * { */
+/*   font-family: 'JetBrainsMonoNL Nerd Font Mono', 'Symbols Nerd Font Moo'; */
+/* } */
+/**/
+/* .clock, .cpu, .mem, .temp, .weather, .disk, .audio, .network, .window-title, .workspaces { */
+/*   background-color: @theme_bg_color; */
+/*   color: @theme_text_color; */
+/*   border: 1px solid @borders; */
+/*   margin-top: 8px; */
+/*   padding-left: 24px; */
+/*   padding-right: 24px; */
+/*   font-size: 16px; */
+/*   font-family: 'JetBrainsMonoNL Nerd Font Mono', 'Symbols Nerd Font Moo'; */
+/*   min-height: 28px; */
+/*   font-size: 16px; */
+/* } */
+/**/
+/* .gap { */
+/*   margin-left: 12px; */
+/* } */
+/**/
+/* .topbar-icon { */
+/*   color: @warning_color; */
+/*   font-size: 20px; */
+/* } */
+/**/
+/* .workspace-label { */
+/*   margin-left: 12px; */
+/* } */
+/**/
+/* .workspaces { */
+/*   padding-left: 12px; */
+/*   border-top-left-radius: 8px; */
+/*   border-bottom-left-radius: 32px; */
+/* } */
+/**/
+/* .window-title { */
+/*   border-top-right-radius: 8px; */
+/*   border-bottom-right-radius: 32px; */
+/* } */
+/**/
+/**/
+/* .cpu, .mem, .temp, .disk { */
+/*   border-top-left-radius: 8px; */
+/*   border-top-right-radius: 32px; */
+/**/
+/*   border-bottom-left-radius: 32px; */
+/*   border-bottom-right-radius: 8px; */
+/* } */
+/**/
+/* .weather, .audio, .network { */
+/*   border-top-left-radius: 32px; */
+/*   border-top-right-radius: 8px; */
+/**/
+/*   border-bottom-left-radius: 8px; */
+/*   border-bottom-right-radius: 32px; */
+/* } */
+/**/
+/* .clock, .cpu, .mem, .temp, .weather, .disk, .audio, .network { */
+/*   margin-left: 4px; */
+/*   margin-right: 4px; */
+/*   min-width: 72px; */
+/* } */
+/**/
+/* .clock { */
+/*   border-top-left-radius: 8px; */
+/*   border-top-right-radius: 8px; */
+/**/
+/*   border-bottom-left-radius: 32px; */
+/*   border-bottom-right-radius: 32px; */
+/* } */
+/**/
+/**/
