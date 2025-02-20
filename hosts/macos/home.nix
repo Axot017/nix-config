@@ -45,7 +45,7 @@ in {
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
     };
-    packages = with pkgs; [ nix-edit-script fzf aerospace delve rustup ];
+    packages = with pkgs; [ fzf delve rustup ];
   };
 
   programs.home-manager.enable = true;
