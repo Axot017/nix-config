@@ -14,25 +14,36 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
     anchor={TOP | LEFT | RIGHT}
     application={App}>
     <centerbox>
+      <Workspaces />
       <Time />
     </centerbox>
   </window>
 }
 
+type IconProps = {
+  child?: JSX.Element
+}
 
-// const Time = () => Widget.EventBox({
-//   on_primary_click: () => Utils.exec(`brave https://calendar.google.com`),
-//   child: Widget.Box({
-//     class_name: 'clock',
-//     children: [
-//       Widget.Label({
-//         hpack: 'center',
-//         label: time.bind(),
-//       }),
-//     ],
-//   })
-// })
-//
+function Icon(props: IconProps) {
+  return <label
+    className="topbar-icon"
+  >{props.child}</label>
+}
+
+function Workspaces() {
+  return <box
+    halign={Gtk.Align.END}>
+    <box />
+    <box className="workspaces">
+      {Array.from({ length: 5 }, (_, i) => i + 1).map(i =>
+        <box className="workspace-label">
+          <Icon>{i}</Icon>
+        </box>
+      )}
+    </box>
+  </box>
+}
+
 function Time() {
   return <eventbox
     onClick={() => exec(`zen https://calendar.google.com`)}>
