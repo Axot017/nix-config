@@ -7,7 +7,7 @@
           function()
             return require("codecompanion.adapters").extend("anthropic", {
               env = {
-                api_key = "cmd:cat ~/.config/secret/anthropic | tr -d '\n'",
+                api_key = "cmd:cat ~/.config/.secret/anthropic | tr -d '\n'",
               },
             })
           end
