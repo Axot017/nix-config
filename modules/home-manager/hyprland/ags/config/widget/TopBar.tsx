@@ -14,9 +14,9 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
     anchor={TOP | LEFT | RIGHT}
     application={App}>
     <centerbox>
-      <Workspaces />
       <Time />
     </centerbox>
+    <Workspaces />
   </window>
 }
 
