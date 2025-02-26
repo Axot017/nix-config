@@ -6,7 +6,7 @@ import Hyprland from "gi://AstalHyprland"
 
 const hyprland = Hyprland.get_default()
 
-const hyprlandWorkspaceId = bind(hyprland.active.workspace, "id")
+const hyprlandWorkspace = bind(hyprland, "focused_workspace")
 
 const time = Variable("").poll(1000, "date")
 
@@ -44,7 +44,7 @@ function Workspaces() {
     <box className="workspaces">
       {Array.from({ length: 5 }, (_, i) => i + 1).map(i =>
         <box className="workspace-label">
-          <Icon>{hyprlandWorkspaceId.as(id => id === i ? "" : "")}</Icon>
+          <Icon>{hyprlandWorkspace.as(workspace => workspace.id === i ? "" : "")}</Icon>
         </box>
       )}
     </box>
