@@ -8,6 +8,8 @@ const hyprland = Hyprland.get_default()
 
 const hyprlandWorkspace = bind(hyprland, "focused_workspace")
 
+const hyprlandClient = bind(hyprland, "focused_client")
+
 const time = Variable("").poll(1000, "date")
 
 export default function TopBar(gdkmonitor: Gdk.Monitor) {
@@ -20,12 +22,14 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
     anchor={TOP | LEFT | RIGHT}
     application={App}>
     <centerbox>
-      <box />
+      <FocusedTitle />
       <Time />
       <Workspaces />
     </centerbox>
   </window>
 }
+
+
 
 type IconProps = {
   child?: JSX.Element
@@ -35,6 +39,14 @@ function Icon(props: IconProps) {
   return <label
     className="topbar-icon"
   >{props.child}</label>
+}
+
+function FocusedTitle() {
+  return <box
+    className="window-title"
+    visible={hyprlandClient.as(client => !!client)}>
+    <label>{hyprlandClient.as(client => client.title)}</label>
+  </box>
 }
 
 function Workspaces() {
