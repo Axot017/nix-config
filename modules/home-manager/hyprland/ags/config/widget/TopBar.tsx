@@ -1,6 +1,12 @@
 import { App, Astal, Gtk, Gdk } from "astal/gtk3"
 import { Variable } from "astal"
-import { exec } from "astal"
+import { exec, bind } from "astal"
+
+import Hyprland from "gi://AstalHyprland"
+
+const hyprland = Hyprland.get_default()
+
+const hyprlandWorkspaceId = bind(hyprland.active.workspace, "id")
 
 const time = Variable("").poll(1000, "date")
 
@@ -38,7 +44,7 @@ function Workspaces() {
     <box className="workspaces">
       {Array.from({ length: 5 }, (_, i) => i + 1).map(i =>
         <box className="workspace-label">
-          <Icon>{i}</Icon>
+          <Icon>{hyprlandWorkspaceId.as(id => id === i ? "" : "")}</Icon>
         </box>
       )}
     </box>
