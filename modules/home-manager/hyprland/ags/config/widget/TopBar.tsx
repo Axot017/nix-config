@@ -42,10 +42,12 @@ function Icon(props: IconProps) {
 }
 
 function FocusedTitle() {
-  return <box
-    className="window-title"
-    visible={hyprlandClient.as(client => !!client)}>
-    <label>{hyprlandClient.as(client => client.title)}</label>
+  return <box>
+    <box
+      className="window-title"
+      visible={hyprlandClient.as(client => !!client)}>
+      <label>{hyprlandClient.as(client => client.title)}</label>
+    </box>
     <box />
   </box>
 }
