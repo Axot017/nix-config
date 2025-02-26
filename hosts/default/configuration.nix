@@ -129,7 +129,6 @@
     vscode-extensions.vadimcn.vscode-lldb
     mangohud
     fzf
-    xwaylandvideobridge
     ffmpeg
     cmake
     ninja
