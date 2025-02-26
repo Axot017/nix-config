@@ -148,7 +148,6 @@
     baobab
     unrar
     jq
-    inputs.astal.packages.${system}.default
   ];
 
   environment.sessionVariables = {
