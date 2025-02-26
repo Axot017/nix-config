@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 let
   nix-edit-script =
     import ../../modules/home-manager/scripts/nix-edit.nix { inherit pkgs; };
@@ -52,7 +52,7 @@ in {
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
     };
-    packages = [ nix-edit-script ];
+    packages = [ nix-edit-script inputs.ags.packages.${pkgs.system}.hyprland ];
   };
 
   # Let Home Manager install and manage itself.
