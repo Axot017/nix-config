@@ -52,7 +52,7 @@ in {
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
     };
-    packages = [ nix-edit-script inputs.ags.packages.${pkgs.system}.hyprland ];
+    packages = [ nix-edit-script ];
   };
 
   # Let Home Manager install and manage itself.
