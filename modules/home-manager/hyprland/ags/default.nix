@@ -3,6 +3,10 @@
   programs.ags = {
     enable = true;
     configDir = ./config;
-    extraPackages = [ inputs.ags.packages.${pkgs.system}.hyprland ];
+    extraPackages = [
+      inputs.ags.packages.${pkgs.system}.hyprland
+      inputs.ags.packages.${pkgs.system}.network
+      inputs.ags.packages.${pkgs.system}.wireplumber
+    ];
   };
 }
