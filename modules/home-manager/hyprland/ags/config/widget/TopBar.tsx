@@ -121,8 +121,7 @@ function Center() {
 
 function Speaker() {
   return <eventbox
-    onScrollUp={increaseSpeakerVolume}
-    onScrollDown={decreaseSpeakerVolume}>
+    onScroll={(_, event) => event.direction === Gdk.ScrollDirection.UP ? increaseSpeakerVolume() : decreaseSpeakerVolume()}>
     <centerbox className="audio">
       <box>
         <label>{audioSpeaker.as(value => `${Math.floor(value.volume * 100)}%`)}</label>
@@ -136,8 +135,7 @@ function Speaker() {
 
 function Mic() {
   return <eventbox
-    onScrollUp={increaseMicVolume}
-    onScrollDown={decreaseMicVolume}>
+    onScroll={(_, event) => event.direction === Gdk.ScrollDirection.UP ? increaseMicVolume() : decreaseMicVolume()}>
     <centerbox className="audio">
       <box>
         <label>{audioMic.as(value => `${Math.floor(value.volume * 100)}%`)}</label>
