@@ -141,7 +141,7 @@ function Gap() {
 
 function Mic() {
   return <eventbox
-    onScroll={(_, event) => changeMicVolume(event.delta_y)}>
+    onScroll={(_, event) => event.direction === Gdk.ScrollDirection.UP ? increaseMicVolume() : decreaseMicVolume()}>
     <centerbox className="audio">
       <box />
       <box>
@@ -152,13 +152,6 @@ function Mic() {
       <box />
     </centerbox>
   </eventbox>
-}
-
-function changeMicVolume(delta: number) {
-  const mic = audio?.default_microphone
-  if (mic) {
-    mic.volume = Math.min(1, Math.max(0, mic.volume + delta))
-  }
 }
 
 function increaseSpeakerVolume() {
