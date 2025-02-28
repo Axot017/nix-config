@@ -11,9 +11,9 @@ const hyprland = Hyprland.get_default()
 const hyprlandWorkspace = bind(hyprland, "focused_workspace")
 const hyprlandClient = bind(hyprland, "focused_client")
 
-const audio = Wp.get_default()?.audio
-const audioSpeaker = bind(audio!, "default_speaker")
-const audioMic = bind(audio!, "default_microphone")
+const wp = Wp.get_default()
+const audioSpeaker = bind(wp!, "default_speaker")
+const audioMic = bind(wp!, "default_microphone")
 
 const network = Network.get_default()
 
@@ -123,11 +123,13 @@ function Speaker() {
   return <eventbox
     onScroll={(_, event) => event.direction === Gdk.ScrollDirection.UP ? increaseSpeakerVolume() : decreaseSpeakerVolume()}>
     <centerbox className="audio">
+      <box />
       <box>
         <label>{audioSpeaker.as(value => `${Math.floor(value.volume * 100)}%`)}</label>
         <Gap />
         <Icon>󰕾</Icon>
       </box>
+      <box />
     </centerbox>
   </eventbox>
 }
