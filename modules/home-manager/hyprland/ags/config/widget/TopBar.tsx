@@ -12,9 +12,8 @@ const hyprlandWorkspace = bind(hyprland, "focused_workspace")
 const hyprlandClient = bind(hyprland, "focused_client")
 
 const audio = Wp.get_default()?.audio
-console.log(audio)
-const audioSpeaker = bind(audio!, "default_speaker")
-const audioMic = bind(audio!, "default_microphone")
+const audioSpeakerVolume = bind(audio!.default_speaker!, "volume")
+const audioMicVolume = bind(audio!.default_microphone!, "volume")
 
 const network = Network.get_default()
 
@@ -126,7 +125,7 @@ function Speaker() {
     <centerbox className="audio">
       <box />
       <box>
-        <label>{audioSpeaker.as(value => `${Math.floor(value.volume * 100)}%`)}</label>
+        <label>{audioSpeakerVolume.as(value => `${Math.floor(value * 100)}%`)}</label>
         <Gap />
         <Icon>󰕾</Icon>
       </box>
@@ -146,7 +145,7 @@ function Mic() {
     <centerbox className="audio">
       <box />
       <box>
-        <label>{audioMic.as(value => `${Math.floor(value.volume * 100)}%`)}</label>
+        <label>{audioMicVolume.as(value => `${Math.floor(value * 100)}%`)}</label>
         <Gap />
         <Icon></Icon>
       </box>
@@ -156,7 +155,7 @@ function Mic() {
 }
 
 function changeMicVolume(delta: number) {
-  const mic = audio?.get_default_microphone()
+  const mic = audio?.default_microphone
   if (mic) {
     mic.volume = Math.min(1, Math.max(0, mic.volume + delta))
   }
