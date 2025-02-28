@@ -141,11 +141,13 @@ function Mic() {
   return <eventbox
     onScroll={(_, event) => changeMicVolume(event.delta_y)}>
     <centerbox className="audio">
+      <box />
       <box>
         <label>{audioMic.as(value => `${Math.floor(value.volume * 100)}%`)}</label>
         <Gap />
         <Icon></Icon>
       </box>
+      <box />
     </centerbox>
   </eventbox>
 }
