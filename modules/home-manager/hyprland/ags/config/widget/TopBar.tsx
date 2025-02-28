@@ -125,26 +125,36 @@ function Speaker() {
     <centerbox className="audio">
       <box>
         <label>{audioSpeaker.as(value => `${Math.floor(value.volume * 100)}%`)}</label>
-      </box>
-      <box>
+        <Gap />
         <Icon>󰕾</Icon>
       </box>
     </centerbox>
   </eventbox>
 }
 
+function Gap() {
+  return <box className="gap" />
+}
+
+
 function Mic() {
   return <eventbox
-    onScroll={(_, event) => event.direction === Gdk.ScrollDirection.UP ? increaseMicVolume() : decreaseMicVolume()}>
+    onScroll={(_, event) => changeMicVolume(event.delta_y)}>
     <centerbox className="audio">
       <box>
         <label>{audioMic.as(value => `${Math.floor(value.volume * 100)}%`)}</label>
-      </box>
-      <box>
+        <Gap />
         <Icon></Icon>
       </box>
     </centerbox>
   </eventbox>
+}
+
+function changeMicVolume(delta: number) {
+  const mic = audio?.get_default_microphone()
+  if (mic) {
+    mic.volume = Math.min(1, Math.max(0, mic.volume + delta))
+  }
 }
 
 function increaseSpeakerVolume() {
