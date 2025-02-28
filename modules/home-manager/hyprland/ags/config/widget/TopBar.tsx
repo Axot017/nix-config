@@ -3,12 +3,19 @@ import { Variable } from "astal"
 import { exec, bind } from "astal"
 
 import Hyprland from "gi://AstalHyprland"
+import Wp from "gi://AstalWp"
+import Network from "gi://AstalNetwork"
+
 
 const hyprland = Hyprland.get_default()
-
 const hyprlandWorkspace = bind(hyprland, "focused_workspace")
-
 const hyprlandClient = bind(hyprland, "focused_client")
+
+const audio = Wp.get_default()?.audio
+const audioSpeaker = bind(audio!, "default_speaker")
+const audioMic = bind(audio!, "default_microphone")
+
+const network = Network.get_default()
 
 const time = Variable("").poll(1000, "date")
 
@@ -23,7 +30,7 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
     application={App}>
     <centerbox>
       <FocusedTitle />
-      <Time />
+      <Center />
       <Workspaces />
     </centerbox>
   </window>
@@ -76,3 +83,97 @@ function Time() {
     </box>
   </eventbox>
 }
+
+// const Center = () => Widget.Box({
+//   class_name: 'center',
+//   children: [
+//     Cpu(),
+//     Temp(),
+//     Mem(),
+//     Disk(),
+//     Time(),
+//     Weather(),
+//     Network(),
+//     Sound(),
+//     Mic(),
+//   ],
+// })
+
+function Center() {
+  return <box className="center">
+    <Time />
+    <Speaker />
+    <Mic />
+  </box>
+  // return <box className="center">
+  //   <Cpu />
+  //   <Temp />
+  //   <Mem />
+  //   <Disk />
+  //   <Time />
+  //   <Weather />
+  //   <Network />
+  //   <Sound />
+  //   <Speaker />
+  //   <Mic />
+  // </box>
+}
+
+function Speaker() {
+  return <eventbox
+    onScrollUp={increaseSpeakerVolume}
+    onScrollDown={decreaseSpeakerVolume}>
+    <centerbox className="audio">
+      <box>
+        <label>{audioSpeaker.as(value => `${Math.floor(value.volume * 100)}%`)}</label>
+      </box>
+      <box>
+        <Icon>󰕾</Icon>
+      </box>
+    </centerbox>
+  </eventbox>
+}
+
+function Mic() {
+  return <eventbox
+    onScrollUp={increaseMicVolume}
+    onScrollDown={decreaseMicVolume}>
+    <centerbox className="audio">
+      <box>
+        <label>{audioMic.as(value => `${Math.floor(value.volume * 100)}%`)}</label>
+      </box>
+      <box>
+        <Icon></Icon>
+      </box>
+    </centerbox>
+  </eventbox>
+}
+
+function increaseSpeakerVolume() {
+  const speaker = audio?.get_default_speaker()
+  if (speaker) {
+    speaker.volume = Math.min(1, speaker.volume + 0.01)
+  }
+}
+
+function decreaseSpeakerVolume() {
+  const speaker = audio?.get_default_speaker()
+  if (speaker) {
+    speaker.volume = Math.max(0, speaker.volume - 0.01)
+  }
+}
+
+function increaseMicVolume() {
+  const mic = audio?.get_default_microphone()
+  if (mic) {
+    mic.volume = Math.min(1, mic.volume + 0.01)
+  }
+}
+
+function decreaseMicVolume() {
+  const mic = audio?.get_default_microphone()
+  if (mic) {
+    mic.volume = Math.max(0, mic.volume - 0.01)
+  }
+}
+
