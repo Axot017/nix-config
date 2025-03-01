@@ -313,7 +313,7 @@ function NetworkWifiWidget() {
 const weather = Variable({
   temp: "",
   icon: ""
-}).poll(10000, async (old) => {
+}).poll(900000, async (old) => {
   try {
     const key = exec(`cat ${HOME}/.config/.secret/openweather`).trim()
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.281760&lon=18.997510&appid=${key}&units=metric`
