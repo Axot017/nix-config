@@ -25,7 +25,7 @@ in {
       exec-once = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "sleep 1s && ags run"
+        "ags run -d ${config.home.homeDirectory}/.config/ags"
       ];
       input = {
         kb_layout = "pl,us";
