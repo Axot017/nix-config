@@ -1,6 +1,6 @@
 import { App, Astal, Gtk, Gdk } from "astal/gtk3"
 import { Binding, Variable } from "astal"
-import { exec, bind, readFileAsync } from "astal"
+import { exec, bind } from "astal"
 
 import Hyprland from "gi://AstalHyprland"
 import Wp from "gi://AstalWp"
@@ -11,7 +11,6 @@ const HOME = GLib.getenv("HOME")
 
 const hyprland = Hyprland.get_default()
 const hyprlandWorkspace = bind(hyprland, "focused_workspace")
-const hyprlandClient = bind(hyprland, "focused_client")
 
 const audio = Wp.get_default()?.audio
 const audioSpeakerVolume = bind(audio!.default_speaker!, "volume")
@@ -65,7 +64,7 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
     anchor={TOP | LEFT | RIGHT}
     application={App}>
     <centerbox>
-      <FocusedTitle />
+      <Title />
       <Center />
       <Workspaces />
     </centerbox>
@@ -84,7 +83,22 @@ function Icon(props: IconProps) {
   >{props.child}</label>
 }
 
+function Title() {
+  const clients = bind(hyprland, "clients")
+
+  return <box>
+    {clients.as(clients => {
+      if (clients.length === 0) {
+        return <box />
+      } else {
+        return <FocusedTitle />
+      }
+    })}
+  </box>
+}
+
 function FocusedTitle() {
+  const hyprlandClient = bind(hyprland, "focused_client")
   return <box>
     <box
       className="window-title"
