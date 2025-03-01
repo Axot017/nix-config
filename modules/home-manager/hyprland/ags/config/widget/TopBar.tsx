@@ -1,6 +1,6 @@
 import { App, Astal, Gtk, Gdk } from "astal/gtk3"
 import { Binding, Variable } from "astal"
-import { exec, bind } from "astal"
+import { exec, bind, readFileAsync } from "astal"
 
 import Hyprland from "gi://AstalHyprland"
 import Wp from "gi://AstalWp"
@@ -118,21 +118,6 @@ function Time() {
   </eventbox>
 }
 
-// const Center = () => Widget.Box({
-//   class_name: 'center',
-//   children: [
-//     Cpu(),
-//     Temp(),
-//     Mem(),
-//     Disk(),
-//     Time(),
-//     Weather(),
-//     Network(),
-//     Sound(),
-//     Mic(),
-//   ],
-// })
-
 function Center() {
   return <box className="center">
     <Cpu />
@@ -140,22 +125,11 @@ function Center() {
     <Mem />
     <Disk />
     <Time />
+    <Weather />
     <NetworkWidget />
     <Speaker />
     <Mic />
   </box>
-  // return <box className="center">
-  //   <Cpu />
-  //   <Temp />
-  //   <Mem />
-  //   <Disk />
-  //   <Time />
-  //   <Weather />
-  //   <Network />
-  //   <Sound />
-  //   <Speaker />
-  //   <Mic />
-  // </box>
 }
 
 function Speaker() {
@@ -334,28 +308,83 @@ function NetworkWifiWidget() {
   </eventbox>
 }
 
-// const Network = () => {
-//   let possibleIcons = ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
-//   let icon = network.wifi.bind("strength").as(strength => {
-//     return possibleIcons[Math.floor((+strength) / 20)]
-//   });
-//
-//
-//   return Widget.EventBox({
-//     on_primary_click: () => Utils.exec(`ghostty -e nmtui`),
-//     child: Widget.CenterBox({
-//       class_name: 'network',
-//       center_widget: Widget.Box({
-//         children: [
-//           Widget.Label({
-//             hpack: 'center',
-//             label: network.wifi.bind("strength").as(strength => `${strength}%`),
-//           }),
-//           Gap(),
-//           Icon(icon),
-//         ],
-//       }),
-//
-//     }),
-//   })
-// }
+const weather = Variable({
+  temp: "",
+  icon: ""
+}).poll(900000, async (old) => {
+  try {
+    const key = exec(`cat $HOME/.config/.secret/openweather`).trim()
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.281760&lon=18.997510&appid=${key}&units=metric`
+    const stdout = exec(`curl -s "${url}" | jq -r '.main.temp, .weather[0].icon'`)
+    const [temp, icon] = stdout.trim().split('\n')
+
+    if (!temp || !icon) {
+      return old
+    }
+
+    return {
+      temp: Math.floor(Number(temp)).toString() + "°C",
+      icon: mapWeatherIcon(icon)
+    }
+  } catch (e) {
+    return old
+  }
+})
+
+const mapWeatherIcon = (icon: string) => {
+  switch (icon) {
+    case "01d":
+      return "󰖙"
+    case "01n":
+      return "󰖙"
+    case "02d":
+      return "󰖕"
+    case "02n":
+      return "󰖕"
+    case "03d":
+      return "󰖐"
+    case "03n":
+      return "󰖐"
+    case "04d":
+      return "󰖐"
+    case "04n":
+      return "󰖐"
+    case "09d":
+      return "󰖗"
+    case "09n":
+      return "󰖗"
+    case "10d":
+      return "󰼳"
+    case "10n":
+      return "󰼳"
+    case "11d":
+      return "󰙾"
+    case "11n":
+      return "󰙾"
+    case "13d":
+      return "󰖘"
+    case "13n":
+      return "󰖘"
+    case "50d":
+      return "󰖑"
+    case "50n":
+      return "󰖑"
+    default:
+      return ""
+  }
+};
+
+function Weather() {
+  return <eventbox
+    onClick={() => exec(`zen https://openweathermap.org/city/3096472`)}>
+    <centerbox className="weather">
+      <box />
+      <box>
+        <label>{weather().as(value => value.temp)}</label>
+        <Gap />
+        <Icon>{weather().as(value => value.icon)}</Icon>
+      </box>
+      <box />
+    </centerbox>
+  </eventbox>
+}
