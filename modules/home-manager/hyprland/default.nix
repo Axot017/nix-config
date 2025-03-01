@@ -25,7 +25,7 @@ in {
       exec-once = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "ags run"
+        "ags run --log-file /home/axot/ags.log"
       ];
       input = {
         kb_layout = "pl,us";
