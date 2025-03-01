@@ -332,6 +332,7 @@ const weather = Variable({
       icon: mapWeatherIcon(icon)
     }
   } catch (e) {
+    console.log("ERROR", e)
     return old
   }
 })
