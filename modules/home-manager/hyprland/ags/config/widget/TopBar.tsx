@@ -316,15 +316,13 @@ const weather = Variable({
 }).poll(10000, async (old) => {
   try {
     const key = exec(`cat ${HOME}/.config/.secret/openweather`).trim()
-    console.log("KEY", key)
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.281760&lon=18.997510&appid=${key}&units=metric`
-    console.log("URL", url)
-    const stdout = exec(`curl -s "${url}"`)
-    console.log("STDOUT", stdout)
-    const [temp, icon] = stdout.trim().split('\n')
+    const response = exec(`curl -s "${url}"`)
 
-    console.log("TEMP", temp)
-    console.log("ICON", icon)
+    const body = JSON.parse(response)
+
+    const temp = body.main.temp
+    const icon = body.weather[0].icon
 
     if (!temp || !icon) {
       return old
@@ -335,7 +333,6 @@ const weather = Variable({
       icon: mapWeatherIcon(icon)
     }
   } catch (e) {
-    console.log("ERROR", e)
     return old
   }
 })
