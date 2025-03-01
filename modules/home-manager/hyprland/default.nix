@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 let
   recordScreen = pkgs.writeShellScriptBin "record-screen" ''
     name="/home/axot/Videos/ScreenRecordings/$(date +"%Y-%m-%dT%H:%M:%S%z").mkv"
@@ -25,7 +25,7 @@ in {
       exec-once = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "ags run -d ${config.home.homeDirectory}/.config/ags"
+        "${inputs.ags}/bin/ags run"
       ];
       input = {
         kb_layout = "pl,us";
