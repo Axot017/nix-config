@@ -19,6 +19,37 @@ const network = Network.get_default()
 
 const time = Variable("").poll(1000, "date")
 
+const asBashCommand = (command: string) => ["bash", "-c", command]
+
+const cpuCommand = "top -bn1 | grep Cpu | awk '{print $2 + $4}'"
+const formatCpu = (out: string) => {
+  const value = Math.floor(+out).toString()
+  return `${value}%`
+}
+const cpu = Variable("").poll(1000, asBashCommand(cpuCommand), formatCpu)
+
+const diskCommand = "df / | grep / | awk '{print 0 + $5}'"
+const formatDisk = (out: string) => {
+  const value = Math.floor(+out).toString()
+  return `${value}%`
+}
+const disk = Variable("").poll(60000, asBashCommand(diskCommand), formatDisk)
+
+const memCommand = "free | grep Mem | awk '{print 100 - ($7/$2 * 100)}'"
+const formatMem = (out: string) => {
+  const value = Math.floor(+out).toString()
+  return `${value}%`
+}
+const mem = Variable("").poll(1000, asBashCommand(memCommand), formatMem)
+
+const tempCommand = "sensors | grep CPUTIN | awk '{print $2}'"
+const formatTemp = (out: string) => {
+  const value = Math.floor(+(out.replace("+", "").replace("°C", ""))).toString()
+  return `${value}°C`
+}
+const temp = Variable("").poll(1000, asBashCommand(tempCommand), formatTemp)
+
+
 export default function TopBar(gdkmonitor: Gdk.Monitor) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor
 
@@ -101,6 +132,10 @@ function Time() {
 
 function Center() {
   return <box className="center">
+    <Cpu />
+    <Temp />
+    <Mem />
+    <Disk />
     <Time />
     <Speaker />
     <Mic />
@@ -141,7 +176,7 @@ function Gap() {
 
 function Mic() {
   return <eventbox
-    onScroll={(_, event) => event.direction === Gdk.ScrollDirection.UP ? increaseMicVolume() : decreaseMicVolume()}>
+    onScroll={(_, event) => changeMicVolume(event.delta_y)}>
     <centerbox className="audio">
       <box />
       <box>
@@ -155,40 +190,66 @@ function Mic() {
 }
 
 function changeSpeakerVolume(delta: number) {
-  console.log("changeSpeakerVolume delta", delta)
   const speaker = audio?.get_default_speaker()
   if (speaker) {
     speaker.volume = Math.min(1, Math.max(0, speaker.volume + (delta / 100)))
   }
 }
 
-function increaseSpeakerVolume() {
-  console.log("increaseSpeakerVolume")
-  const speaker = audio?.get_default_speaker()
-  if (speaker) {
-    speaker.volume = Math.min(1, speaker.volume + 0.01)
-  }
-}
-
-function decreaseSpeakerVolume() {
-  console.log("decreaseSpeakerVolume")
-  const speaker = audio?.get_default_speaker()
-  if (speaker) {
-    speaker.volume = Math.max(0, speaker.volume - 0.01)
-  }
-}
-
-function increaseMicVolume() {
+function changeMicVolume(delta: number) {
   const mic = audio?.get_default_microphone()
   if (mic) {
-    mic.volume = Math.min(1, mic.volume + 0.01)
+    mic.volume = Math.min(1, Math.max(0, mic.volume + (delta / 100)))
   }
 }
 
-function decreaseMicVolume() {
-  const mic = audio?.get_default_microphone()
-  if (mic) {
-    mic.volume = Math.max(0, mic.volume - 0.01)
-  }
+function Temp() {
+  return <centerbox className="temp">
+    <box />
+    <box>
+      <Icon></Icon>
+      <Gap />
+      <label>{temp()}</label>
+    </box>
+    <box />
+  </centerbox>
 }
 
+function Disk() {
+  return <centerbox className="disk">
+    <box />
+    <box>
+      <Icon>󰋊</Icon>
+      <Gap />
+      <label>{disk()}</label>
+    </box>
+    <box />
+  </centerbox>
+}
+
+function Mem() {
+  return <centerbox className="mem">
+    <box />
+    <box>
+      <Icon>󰒋</Icon>
+      <Gap />
+      <label>{mem()}</label>
+    </box>
+    <box />
+  </centerbox>
+}
+
+function Cpu() {
+  return <eventbox
+    onClick={() => exec(`ghostty -e htop`)}>
+    <centerbox className="cpu">
+      <box />
+      <box>
+        <Icon></Icon>
+        <Gap />
+        <label>{cpu()}</label>
+      </box>
+      <box />
+    </centerbox>
+  </eventbox>
+}
