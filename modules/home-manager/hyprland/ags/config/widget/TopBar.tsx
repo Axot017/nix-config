@@ -311,7 +311,7 @@ function NetworkWifiWidget() {
 const weather = Variable({
   temp: "",
   icon: ""
-}).poll(900000, async (old) => {
+}).poll(1000, async (old) => {
   try {
     const key = exec(`cat $HOME/.config/.secret/openweather`).trim()
     console.log("KEY", key)
