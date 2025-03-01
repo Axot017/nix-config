@@ -25,6 +25,7 @@ in {
       exec-once = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "sleep 1s && ags run"
       ];
       input = {
         kb_layout = "pl,us";
