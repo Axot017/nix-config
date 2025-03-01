@@ -9,7 +9,6 @@ import GLib from "gi://GLib"
 
 const HOME = GLib.getenv("HOME")
 
-
 const hyprland = Hyprland.get_default()
 const hyprlandWorkspace = bind(hyprland, "focused_workspace")
 const hyprlandClient = bind(hyprland, "focused_client")
@@ -319,7 +318,8 @@ const weather = Variable({
     const key = exec(`cat ${HOME}/.config/.secret/openweather`).trim()
     console.log("KEY", key)
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.281760&lon=18.997510&appid=${key}&units=metric`
-    const stdout = exec(`curl -s "${url}" | jq -r '.main.temp, .weather[0].icon'`)
+    console.log("URL", url)
+    const stdout = exec(`curl -s "${url}"`)
     console.log("STDOUT", stdout)
     const [temp, icon] = stdout.trim().split('\n')
 
