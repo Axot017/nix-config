@@ -121,7 +121,7 @@ function Center() {
 
 function Speaker() {
   return <eventbox
-    onScroll={(_, event) => event.direction === Gdk.ScrollDirection.UP ? increaseSpeakerVolume() : decreaseSpeakerVolume()}>
+    onScroll={(_, event) => changeSpeakerVolume(event.delta_y)}>
     <centerbox className="audio">
       <box />
       <box>
@@ -152,6 +152,14 @@ function Mic() {
       <box />
     </centerbox>
   </eventbox>
+}
+
+function changeSpeakerVolume(delta: number) {
+  console.log("changeSpeakerVolume delta", delta)
+  const speaker = audio?.get_default_speaker()
+  if (speaker) {
+    speaker.volume = Math.min(1, Math.max(0, speaker.volume + (delta / 100)))
+  }
 }
 
 function increaseSpeakerVolume() {
