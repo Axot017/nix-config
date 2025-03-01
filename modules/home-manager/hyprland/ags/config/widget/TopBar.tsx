@@ -5,6 +5,9 @@ import { exec, bind, readFileAsync } from "astal"
 import Hyprland from "gi://AstalHyprland"
 import Wp from "gi://AstalWp"
 import Network from "gi://AstalNetwork"
+import GLib from "gi://GLib"
+
+const HOME = GLib.getenv("HOME")
 
 
 const hyprland = Hyprland.get_default()
@@ -311,9 +314,9 @@ function NetworkWifiWidget() {
 const weather = Variable({
   temp: "",
   icon: ""
-}).poll(1000, async (old) => {
+}).poll(10000, async (old) => {
   try {
-    const key = exec(`cat ./.config/.secret/openweather`).trim()
+    const key = exec(`cat ${HOME}/.config/.secret/openweather`).trim()
     console.log("KEY", key)
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.281760&lon=18.997510&appid=${key}&units=metric`
     const stdout = exec(`curl -s "${url}" | jq -r '.main.temp, .weather[0].icon'`)
