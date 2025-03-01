@@ -155,6 +155,7 @@ function Mic() {
 }
 
 function increaseSpeakerVolume() {
+  console.log("increaseSpeakerVolume")
   const speaker = audio?.get_default_speaker()
   if (speaker) {
     speaker.volume = Math.min(1, speaker.volume + 0.01)
@@ -162,6 +163,7 @@ function increaseSpeakerVolume() {
 }
 
 function decreaseSpeakerVolume() {
+  console.log("decreaseSpeakerVolume")
   const speaker = audio?.get_default_speaker()
   if (speaker) {
     speaker.volume = Math.max(0, speaker.volume - 0.01)
