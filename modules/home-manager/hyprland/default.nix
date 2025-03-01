@@ -15,6 +15,7 @@ let
       nemo /home/axot/Videos/ScreenRecordings
     fi
   '';
+  ags = inputs.ags.packages.${pkgs.system}.ags;
 in {
   imports =
     [ ./rofi.nix ./wallpapers.nix ./theme.nix ./ags/default.nix ./swaync.nix ];
@@ -25,7 +26,7 @@ in {
       exec-once = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "${inputs.ags}/bin/ags run"
+        "${ags}/bin/ags run"
       ];
       input = {
         kb_layout = "pl,us";
