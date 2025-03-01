@@ -1,5 +1,5 @@
 import { App, Astal, Gtk, Gdk } from "astal/gtk3"
-import { Variable } from "astal"
+import { Binding, Variable } from "astal"
 import { exec, bind } from "astal"
 
 import Hyprland from "gi://AstalHyprland"
@@ -16,6 +16,9 @@ const audioSpeakerVolume = bind(audio!.default_speaker!, "volume")
 const audioMicVolume = bind(audio!.default_microphone!, "volume")
 
 const network = Network.get_default()
+const networkWifiStrength = bind(network.wifi, "strength")
+const networkState = bind(network, "state")
+const networkPrimary = bind(network, "primary")
 
 const time = Variable("").poll(1000, "date")
 
@@ -137,6 +140,7 @@ function Center() {
     <Mem />
     <Disk />
     <Time />
+    <NetworkWidget />
     <Speaker />
     <Mic />
   </box>
@@ -253,3 +257,105 @@ function Cpu() {
     </centerbox>
   </eventbox>
 }
+
+type MultiIconProps = {
+  icons: string[]
+  value: Binding<number>
+}
+
+function MultiIcon({ icons, value }: MultiIconProps) {
+  const step = 100 / icons.length
+  return <Icon>
+    {value.as(value => icons[Math.min(icons.length - 1, Math.floor(value / step))])}
+  </Icon>
+}
+
+function NetworkWidget() {
+  return <box>
+    {networkState.as(state => {
+      if (state === Network.State.CONNECTED_GLOBAL) {
+        return <NetworkConnectedWidget />
+      } else {
+        return <NetworkDisconnectedWidget />
+      }
+    })}
+  </box>
+}
+
+function NetworkConnectedWidget() {
+  return <box>
+    {networkPrimary.as(primary => {
+      if (primary === Network.Primary.WIFI) {
+        return <NetworkWifiWidget />
+      } else {
+        return <NetworkWiredWidget />
+      }
+
+    })}
+  </box>
+}
+
+function NetworkDisconnectedWidget() {
+  return <eventbox
+    onClick={() => exec(`ghostty -e nmtui`)}>
+    <centerbox className="network">
+      <box />
+      <box>
+        <Icon>󰤮</Icon>
+      </box>
+      <box />
+    </centerbox>
+  </eventbox>
+}
+
+function NetworkWiredWidget() {
+  return <eventbox
+    onClick={() => exec(`ghostty -e nmtui`)}>
+    <centerbox className="network">
+      <box />
+      <Icon>󰈁</Icon>
+      <box />
+    </centerbox>
+  </eventbox>
+}
+
+function NetworkWifiWidget() {
+  return <eventbox
+    onClick={() => exec(`ghostty -e nmtui`)}>
+    <centerbox className="network">
+      <box />
+      <box>
+        <label>{networkWifiStrength.as(strength => `${strength}%`)}</label>
+        <Gap />
+        <MultiIcon icons={["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]} value={networkWifiStrength} />
+      </box>
+      <box />
+    </centerbox>
+  </eventbox>
+}
+
+// const Network = () => {
+//   let possibleIcons = ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+//   let icon = network.wifi.bind("strength").as(strength => {
+//     return possibleIcons[Math.floor((+strength) / 20)]
+//   });
+//
+//
+//   return Widget.EventBox({
+//     on_primary_click: () => Utils.exec(`ghostty -e nmtui`),
+//     child: Widget.CenterBox({
+//       class_name: 'network',
+//       center_widget: Widget.Box({
+//         children: [
+//           Widget.Label({
+//             hpack: 'center',
+//             label: network.wifi.bind("strength").as(strength => `${strength}%`),
+//           }),
+//           Gap(),
+//           Icon(icon),
+//         ],
+//       }),
+//
+//     }),
+//   })
+// }
