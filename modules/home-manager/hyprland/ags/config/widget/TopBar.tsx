@@ -103,7 +103,7 @@ function FocusedTitle() {
   return <box>
     <box
       className="window-title"
-      visible={hyprlandClient.as(client => !!client)}>
+      visible={hyprlandClient.as(client => !!client?.title)}>
       <label>{hyprlandClient.as(client => client?.title)}</label>
     </box>
     <box />
