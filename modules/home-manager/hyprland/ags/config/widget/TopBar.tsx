@@ -57,7 +57,6 @@ const temp = Variable("").poll(1000, asBashCommand(tempCommand), formatTemp)
 export default function TopBar(gdkmonitor: Gdk.Monitor) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor
 
-  // <Title />
   return <window
     className="top-bar"
     gdkmonitor={gdkmonitor}
@@ -66,7 +65,7 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
     application={App}>
 
     <centerbox>
-      <box />
+      <Title />
       <Center />
       <Workspaces />
     </centerbox>
