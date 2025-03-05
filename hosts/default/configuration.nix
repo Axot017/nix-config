@@ -90,6 +90,11 @@
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = { "axot" = import ./home.nix; };
