@@ -117,20 +117,13 @@
     lm_sensors
     git
     libnotify
-    brave
     discord
     unzip
     nemo
-    nodejs_20
-    rebar3
-    rustup
-    go
     cliphist
     wl-clipboard
     postman
     gnumake
-    beam.packages.erlang_27.elixir_1_17
-    lldb
     vscode-extensions.vadimcn.vscode-lldb
     mangohud
     fzf
@@ -148,12 +141,8 @@
     hyprshot
     hyprpicker
     delve
-    pavucontrol
-    prismlauncher
-    baobab
     unrar
     jq
-    claude-code
   ];
 
   environment.sessionVariables = {
