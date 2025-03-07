@@ -144,6 +144,7 @@
     delve
     unrar
     jq
+    claude-code
   ];
 
   environment.sessionVariables = {
