@@ -6,8 +6,8 @@
       src = pkgs.fetchFromGitHub {
         owner = "Axot017";
         repo = "multiterm.nvim";
-        rev = "insert-mode-on-open";
-        sha256 = "sha256-Q3aGPJkbgFIiwnErAJXXluW6v+xfYIejkvglJHIbBec=";
+        rev = "master";
+        sha256 = "sha256-GMZ2U8Z0nY8W70zJWwxJdvieYrZreapgKksKttg/xQc=";
       };
     })
   ];
