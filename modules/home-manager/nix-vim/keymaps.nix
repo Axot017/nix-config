@@ -24,19 +24,19 @@
     {
       mode = "n";
       key = "<leader>tt";
-      action.__raw = "require('multiterm').bind_toggle";
+      action.__raw = "function() require('multiterm').bind_toggle() end";
       options = { silent = true; };
     }
     {
       mode = "n";
       key = "<leader>tq";
-      action.__raw = "require('multiterm').close_active";
+      action.__raw = "function() require('multiterm').close_active() end";
       options = { silent = true; };
     }
     {
       mode = "n";
       key = "<leader>tr";
-      action.__raw = "require('multiterm').bind_remove";
+      action.__raw = "function() require('multiterm').bind_remove() end";
       options = { silent = true; };
     }
     # Oil
