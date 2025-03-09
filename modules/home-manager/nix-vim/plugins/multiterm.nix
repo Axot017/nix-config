@@ -13,7 +13,7 @@
   ];
   programs.nixvim.extraConfigLua = ''
     -- For development
-    vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/multiterm.nvim'))
+    -- vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/multiterm.nvim'))
 
     require('multiterm').setup()
   '';
