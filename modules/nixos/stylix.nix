@@ -10,5 +10,10 @@
         name = "JetBrainsMonoNL Nerd Font Mono";
       };
     };
+    cursor = {
+      package = pkgs.rose-pine-cursor;
+      name = "BreezeX Cursor";
+      size = 16;
+    };
   };
 }
