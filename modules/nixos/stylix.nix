@@ -12,7 +12,7 @@
     };
     cursor = {
       package = pkgs.rose-pine-cursor;
-      name = "BreezeX Cursor";
+      name = "BreezeX-RosePine-Linux";
       size = 16;
     };
   };
