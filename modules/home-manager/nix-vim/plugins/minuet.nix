@@ -28,7 +28,7 @@
               local key = f:read("*all")
               f:close()
 
-              return key
+              return string.gsub(key, "\n", "")
             end,
             optional = {},
           },
