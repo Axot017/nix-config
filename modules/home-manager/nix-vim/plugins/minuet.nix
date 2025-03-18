@@ -2,7 +2,7 @@
   programs.nixvim = {
     extraPlugins = [ pkgs.vimPlugins.minuet-ai-nvim ];
     extraConfigLua = ''
-      require('minuet').setup({ -- 
+      require('minuet').setup({
         cmp = {
           enable_auto_complete = false,
         },
@@ -17,6 +17,9 @@
           },
         },
         provider = "gemini",
+        throttle = 0,
+        debounce = 150,
+        n_completions = 1,
         provider_options = {
           gemini = {
             api_key = function()
@@ -35,7 +38,9 @@
         }
       })
 
-      require('minuet.virtualtext').action.enable_auto_trigger()
+      vim.cmd[[
+        Minuet virtualtext enable
+      ]]
     '';
   };
 }
