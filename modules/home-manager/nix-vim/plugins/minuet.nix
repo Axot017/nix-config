@@ -1,7 +1,6 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim = {
     extraPlugins = [ pkgs.vimPlugins.minuet-ai-nvim ];
-
     extraConfigLua = ''
       require('minuet').setup({
         cmp = {
@@ -23,11 +22,13 @@
             stream = true,
             api_key = function()
               local path = os.getenv("HOME") .. "/.config/.secret/gemini"
+              vim.notify(path)
               local f = io.open(path, "r")
               if f == nil then
                 return ""
               end
               local key = f:read("*all")
+              vim.notify(key)
               f:close()
 
               return key
