@@ -9,7 +9,7 @@
             accept = '<A-A>',
           },
         },
-        provider = "gemini-flash",
+        provider = "gemini",
         provider_options = {
           gemini = {
             stream = true,
