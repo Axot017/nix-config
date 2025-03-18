@@ -17,7 +17,6 @@
           },
         },
         provider = "gemini",
-        notify = "debug",
         provider_options = {
           gemini = {
             api_key = function()
@@ -35,6 +34,8 @@
           },
         }
       })
+
+      require('minuet.virtualtext').action.enable_auto_trigger()
     '';
   };
 }
