@@ -2,7 +2,7 @@
   programs.nixvim = {
     extraPlugins = [ pkgs.vimPlugins.minuet-ai-nvim ];
     extraConfigLua = ''
-      require('minuet').setup({
+      require('minuet').setup({ -- 
         cmp = {
           enable_auto_complete = false,
         },
@@ -17,6 +17,7 @@
           },
         },
         provider = "gemini",
+        notify = "debug",
         provider_options = {
           gemini = {
             api_key = function()
