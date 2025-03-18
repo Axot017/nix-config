@@ -1,6 +1,7 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim = {
     extraPlugins = [ pkgs.vimPlugins.minuet-ai-nvim ];
+
     extraConfigLua = ''
       require('minuet').setup({
         virtualtext = {
@@ -21,6 +22,7 @@
               end
               local key = f:read("*all")
               f:close()
+              vim.notify(key)
 
               return key
             end,
