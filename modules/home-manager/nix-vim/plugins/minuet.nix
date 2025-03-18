@@ -4,10 +4,17 @@
 
     extraConfigLua = ''
       require('minuet').setup({
+        cmp = {
+          enable_auto_complete = false,
+        },
+        blink = {
+          enable_auto_complete = false,
+        },
         virtualtext = {
+          show_on_completion_menu = true,
           auto_trigger_ft = {},
           keymap = {
-            accept = '<A-A>',
+            accept = '<C-y>',
           },
         },
         provider = "gemini",
@@ -15,14 +22,13 @@
           gemini = {
             stream = true,
             api_key = function()
-              -- Read file ~/.config/.secrets/gemini
-              local f = io.open(os.getenv("HOME") .. "/.config/.secrets/gemini", "r")
+              local path = os.getenv("HOME") .. "/.config/.secret/gemini"
+              local f = io.open(path, "r")
               if f == nil then
                 return ""
               end
               local key = f:read("*all")
               f:close()
-              vim.notify(key)
 
               return key
             end,
