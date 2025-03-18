@@ -6,7 +6,7 @@
     ./bufferline.nix
     ./codecompanion.nix
     ./comment-nvim.nix
-    ./copilot.nix
+    # ./copilot.nix
     ./dap.nix
     ./dressing.nix
     ./go.nix
@@ -14,6 +14,7 @@
     ./lualine.nix
     ./luasnip.nix
     ./mini.nix
+    ./minuet.nix
     ./multiterm.nix
     ./neogit.nix
     ./neorg.nix
