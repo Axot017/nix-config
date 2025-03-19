@@ -1,4 +1,16 @@
-{ pkgs, config, inputs, ... }: {
+{ pkgs, config, inputs, ... }:
+let
+  vectorcode = (pkgs.python3Packages.buildPythonPackage rec {
+    pname = "vectorcode";
+    version = "0.4.12";
+    format = "wheel";
+    src = pkgs.python3Packages.fetchPypi {
+      inherit pname version;
+      sha256 = "sha256-Yu4N7EAGOAVdAxBMTbrO/j5DzDgtlmpxOJ/SFzyI7M4=";
+    };
+  });
+in {
+  home = { packages = [ vectorcode ]; };
   programs.nixvim = {
     extraPlugins = [ pkgs.vimPlugins.minuet-ai-nvim ];
     extraConfigLua = ''
