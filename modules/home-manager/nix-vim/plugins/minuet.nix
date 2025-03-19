@@ -1,6 +1,6 @@
 { pkgs, config, inputs, ... }:
 let
-  vectorcode = (pkgs.python3Packages.buildPythonPackage rec {
+  vectorcode = (pkgs.python3Packages.buildPythonApplication rec {
     pname = "vectorcode";
     version = "0.4.12";
     format = "wheel";
