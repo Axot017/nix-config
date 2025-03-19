@@ -1,9 +1,37 @@
 { pkgs, config, inputs, ... }:
 let
+  tree-sitter-language-pack = (pkgs.python3Packages.buildPythonPackage rec {
+    pname = "tree-sitter-language-pack";
+    version = "0.6.1";
+    format = "wheel";
+    src = pkgs.python3Packages.fetchPypi {
+      inherit version format;
+      pname = "tree_sitter_language_pack";
+      sha256 = "sha256-JA8JMO8dtoYAksgXSBOb9Rkvjt38wOqKXm9WjLi7cOY=";
+      abi = "abi3";
+      python = "cp39";
+      dist = "cp39";
+      platform = "manylinux2014_x86_64";
+    };
+  });
   vectorcode = (pkgs.python3Packages.buildPythonApplication rec {
     pname = "vectorcode";
     version = "0.4.12";
-    format = "wheel";
+    format = "pyproject";
+    build-system = [ pkgs.python3Packages.pdm-backend ];
+    dependencies = with pkgs.python3Packages; [
+      chromadb
+      sentence-transformers
+      pathspec
+      tabulate
+      shtab
+      numpy
+      psutil
+      httpx
+      tree-sitter
+      tree-sitter-language-pack
+      pygments
+    ];
     src = pkgs.python3Packages.fetchPypi {
       inherit pname version;
       sha256 = "sha256-Yu4N7EAGOAVdAxBMTbrO/j5DzDgtlmpxOJ/SFzyI7M4=";
