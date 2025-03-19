@@ -145,6 +145,15 @@
     unrar
     jq
     claude-code
+    (pkgs.python3Packages.buildPythonPackage rec {
+      pname = "vectorcode";
+      version = "0.4.12";
+      format = "wheel";
+      src = pkgs.python3Packages.fetchPypi {
+        inherit pname version;
+        sha256 = "sha256-Yu4N7EAGOAVdAxBMTbrO/j5DzDgtlmpxOJ/SFzyI7M4=";
+      };
+    })
   ];
 
   environment.sessionVariables = {
