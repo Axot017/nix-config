@@ -145,6 +145,7 @@
     unrar
     jq
     claude-code
+    aider-chat
   ];
 
   environment.sessionVariables = {
