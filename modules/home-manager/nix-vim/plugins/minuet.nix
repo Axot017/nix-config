@@ -68,7 +68,7 @@ let
   vectorcode = (pkgs.python3Packages.buildPythonApplication rec {
     pname = "vectorcode";
     version = "0.4.12";
-    format = "pyproject";
+    format = "wheel";
     build-system = [ pkgs.python3Packages.pdm-backend ];
     dependencies = with pkgs.python3Packages; [
       chromadb
@@ -84,8 +84,10 @@ let
       pygments
     ];
     src = pkgs.python3Packages.fetchPypi {
-      inherit pname version;
-      sha256 = "sha256-Yu4N7EAGOAVdAxBMTbrO/j5DzDgtlmpxOJ/SFzyI7M4=";
+      inherit pname version format;
+      python = "py3";
+      dist = "py3";
+      sha256 = "sha256-QzrgyKTMDKwo5X9A4eM3IHpWQRkDiQvfZT4g5d181yA=";
     };
   });
 in {
