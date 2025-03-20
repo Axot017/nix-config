@@ -65,55 +65,6 @@ let
       platform = "manylinux2014_x86_64";
     };
   });
-  chromadb = (pkgs.python3Packages.buildPythonPackage rec {
-    pname = "chromadb";
-    version = "0.6.3";
-    format = "wheel";
-    propagatedBuildInputs = with pkgs.python3Packages; [
-      bcrypt
-      build
-      chroma-hnswlib
-      fastapi
-      grpcio
-      grpcio-tools # Added for gRPC tools which includes google.rpc
-      googleapis-common-protos # Added for google.rpc
-      httpx
-      importlib-resources
-      kubernetes
-      mmh3
-      numpy
-      onnxruntime
-      opentelemetry-api
-      opentelemetry-exporter-otlp-proto-grpc
-      opentelemetry-instrumentation-fastapi
-      opentelemetry-sdk
-      orjson
-      overrides
-      posthog
-      pulsar-client
-      pydantic
-      pypika
-      pyyaml
-      requests
-      tenacity
-      tokenizers
-      tqdm
-      typer
-      typing-extensions
-      uvicorn
-      protobuf # Added for Protocol Buffers support
-    ];
-    src = pkgs.python3Packages.fetchPypi {
-      inherit pname version format;
-      python = "py3";
-      dist = "py3";
-      sha256 = "sha256-SFElhImjYStVhIjZjQmuD+CijVyta9G6ZLlv3EGdwOU=";
-    };
-    # Make sure Python can find the modules
-    postInstall = ''
-      export PYTHONPATH="$out/${pkgs.python3.sitePackages}:$PYTHONPATH"
-    '';
-  });
   vectorcode = (pkgs.python3Packages.buildPythonApplication rec {
     pname = "vectorcode";
     version = "0.4.12";
@@ -137,10 +88,6 @@ let
       dist = "py3";
       sha256 = "sha256-QzrgyKTMDKwo5X9A4eM3IHpWQRkDiQvfZT4g5d181yA=";
     };
-    # Make sure vectorcode can find the chromadb module
-    makeWrapperArgs = [
-      "--set PYTHONPATH ${chromadb}/${pkgs.python3.sitePackages}:$PYTHONPATH"
-    ];
   });
 in {
   home = { packages = [ vectorcode ]; };
