@@ -69,7 +69,37 @@ let
     pname = "chromadb";
     version = "0.6.3";
     format = "wheel";
-    dependencies = with pkgs.python3Packages; [ ];
+    dependencies = with pkgs.python3Packages; [
+      bcrypt
+      build
+      chroma-hnswlib
+      fastapi
+      grpcio
+      httpx
+      importlib-resources
+      kubernetes
+      mmh3
+      numpy
+      onnxruntime
+      opentelemetry-api
+      opentelemetry-exporter-otlp-proto-grpc
+      opentelemetry-instrumentation-fastapi
+      opentelemetry-sdk
+      orjson
+      overrides
+      posthog
+      pulsar-client
+      pydantic
+      pypika
+      pyyaml
+      requests
+      tenacity
+      tokenizers
+      tqdm
+      typer
+      typing-extensions
+      uvicorn
+    ];
     src = pkgs.python3Packages.fetchPypi {
       inherit pname version format;
       python = "py3";
