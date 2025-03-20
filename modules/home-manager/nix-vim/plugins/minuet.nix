@@ -4,7 +4,7 @@
     extraConfigLua = ''
       require('minuet').setup({
         cmp = {
-          enable_auto_complete = false,
+          enable_auto_complete = true,
         },
         blink = {
           enable_auto_complete = false,
