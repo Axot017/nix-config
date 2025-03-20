@@ -2,6 +2,10 @@
 let
   nix-edit-script =
     import ../../modules/home-manager/scripts/nix-edit.nix { inherit pkgs; };
+  aider-gemini-script =
+    import ../../modules/home-manager/scripts/aider-gemini.nix {
+      inherit pkgs;
+    };
 
 in {
   imports = [
@@ -53,7 +57,7 @@ in {
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
     };
-    packages = [ nix-edit-script ];
+    packages = [ nix-edit-script aider-gemini-script ];
   };
 
   # Let Home Manager install and manage itself.
