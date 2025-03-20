@@ -49,7 +49,7 @@ let
     pname = "tree-sitter-language-pack";
     version = "0.6.1";
     format = "wheel";
-    dependencies = with pkgs.python3Packages; [
+    propagatedBuildInputs = with pkgs.python3Packages; [
       tree-sitter
       tree-sitter-yaml
       tree-sitter-c-sharp
@@ -69,7 +69,7 @@ let
     pname = "chromadb";
     version = "0.6.3";
     format = "wheel";
-    dependencies = with pkgs.python3Packages; [
+    propagatedBuildInputs = with pkgs.python3Packages; [
       bcrypt
       build
       chroma-hnswlib
@@ -111,7 +111,7 @@ let
     pname = "vectorcode";
     version = "0.4.12";
     format = "wheel";
-    dependencies = with pkgs.python3Packages; [
+    propagatedBuildInputs = with pkgs.python3Packages; [
       chromadb
       sentence-transformers
       pathspec
