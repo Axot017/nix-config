@@ -1,9 +1,28 @@
 { pkgs, config, inputs, ... }:
 let
+  tree-sitter-c-sharp = (pkgs.python3Packages.buildPythonPackage rec {
+    pname = "tree-sitter-c-sharp";
+    version = "0.23.1";
+    format = "wheel";
+    src = pkgs.python3Packages.fetchPypi {
+      inherit version format;
+      pname = "tree_sitter_c_sharp";
+      sha256 = "sha256-qAJORmsvVhHG3JAyHyMthYSJPH+4i3XkqDGZL4d2FtI=";
+      abi = "abi3";
+      python = "cp39";
+      dist = "cp39";
+      platform =
+        "manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64";
+    };
+  });
   tree-sitter-language-pack = (pkgs.python3Packages.buildPythonPackage rec {
     pname = "tree-sitter-language-pack";
     version = "0.6.1";
     format = "wheel";
+    dependencies = with pkgs.python3Packages; [
+      tree-sitter
+      tree-sitter-c-sharp
+    ];
     src = pkgs.python3Packages.fetchPypi {
       inherit version format;
       pname = "tree_sitter_language_pack";
