@@ -75,6 +75,8 @@ let
       chroma-hnswlib
       fastapi
       grpcio
+      grpcio-tools # Added for gRPC tools which includes google.rpc
+      googleapis-common-protos # Added for google.rpc
       httpx
       importlib-resources
       kubernetes
@@ -99,6 +101,7 @@ let
       typer
       typing-extensions
       uvicorn
+      protobuf # Added for Protocol Buffers support
     ];
     src = pkgs.python3Packages.fetchPypi {
       inherit pname version format;
