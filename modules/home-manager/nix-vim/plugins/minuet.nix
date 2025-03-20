@@ -1,5 +1,35 @@
 { pkgs, config, inputs, ... }:
 let
+  tree-sitter-yaml = (pkgs.python3Packages.buildPythonPackage rec {
+    pname = "tree-sitter-yaml";
+    version = "0.7.0";
+    format = "wheel";
+    src = pkgs.python3Packages.fetchPypi {
+      inherit version format;
+      pname = "tree_sitter_yaml";
+      sha256 = "sha256-nRsmg3glT3W7Jzltg8ltiGzL/Npr2MJ3jpTj4dJFkIU=";
+      abi = "abi3";
+      python = "cp39";
+      dist = "cp39";
+      platform =
+        "manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64";
+    };
+  });
+  tree-sitter-embedded-template = (pkgs.python3Packages.buildPythonPackage rec {
+    pname = "tree-sitter-embedded-template";
+    version = "0.23.2";
+    format = "wheel";
+    src = pkgs.python3Packages.fetchPypi {
+      inherit version format;
+      pname = "tree_sitter_embedded_template";
+      sha256 = "sha256-vPoB9iuI1Q28tzbMI7rsjdv+CNqs/cYT7ujASrZe/Qk=";
+      abi = "abi3";
+      python = "cp39";
+      dist = "cp39";
+      platform =
+        "manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64";
+    };
+  });
   tree-sitter-c-sharp = (pkgs.python3Packages.buildPythonPackage rec {
     pname = "tree-sitter-c-sharp";
     version = "0.23.1";
@@ -21,7 +51,9 @@ let
     format = "wheel";
     dependencies = with pkgs.python3Packages; [
       tree-sitter
+      tree-sitter-yaml
       tree-sitter-c-sharp
+      tree-sitter-embedded-template
     ];
     src = pkgs.python3Packages.fetchPypi {
       inherit version format;
