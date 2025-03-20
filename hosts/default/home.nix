@@ -48,6 +48,7 @@ in {
       #   org.gradle.daemon.idletimeout=3600000
       # '';
     };
+    sessionPath = [ "/home/axot/.local/bin" ];
     sessionVariables = {
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
