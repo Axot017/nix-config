@@ -65,11 +65,22 @@ let
       platform = "manylinux2014_x86_64";
     };
   });
+  chromadb = (pkgs.python3Packages.buildPythonApplication rec {
+    pname = "chromadb";
+    version = "0.6.3";
+    format = "wheel";
+    dependencies = with pkgs.python3Packages; [ ];
+    src = pkgs.python3Packages.fetchPypi {
+      inherit pname version format;
+      python = "py3";
+      dist = "py3";
+      sha256 = "sha256-SFElhImjYStVhIjZjQmuD+CijVyta9G6ZLlv3EGdwOU=";
+    };
+  });
   vectorcode = (pkgs.python3Packages.buildPythonApplication rec {
     pname = "vectorcode";
     version = "0.4.12";
     format = "wheel";
-    build-system = [ pkgs.python3Packages.pdm-backend ];
     dependencies = with pkgs.python3Packages; [
       chromadb
       sentence-transformers
