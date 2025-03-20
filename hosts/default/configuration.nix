@@ -145,7 +145,6 @@
     unrar
     jq
     claude-code
-    pipx
   ];
 
   environment.sessionVariables = {
