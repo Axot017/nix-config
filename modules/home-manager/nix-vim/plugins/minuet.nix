@@ -11,7 +11,7 @@
         },
         virtualtext = {
           show_on_completion_menu = true,
-          auto_trigger_ft = {},
+          auto_trigger_ft = { "*" },
           keymap = {
             accept = '<C-y>',
           },
@@ -37,10 +37,6 @@
           },
         }
       })
-
-      vim.cmd[[
-        Minuet virtualtext enable
-      ]]
     '';
   };
 }
