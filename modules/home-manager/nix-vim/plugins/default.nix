@@ -23,7 +23,7 @@
     ./oil.nix
     ./project-nvim.nix
     ./snacks.nix
-    ./telescope.nix
+    # ./telescope.nix
     ./tmux-navigator.nix
     ./treesitter.nix
     ./web-devicons.nix

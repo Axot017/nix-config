@@ -237,6 +237,14 @@
       options = { silent = true; };
     }
 
+    # Snacks picker
+    {
+      mode = "n";
+      key = "<leader>ff";
+      action.__raw = "function() Snacks.picker.files() end";
+      options = { silent = true; };
+    }
+
     ##########################
     ##  Visual              ##
     ##########################
