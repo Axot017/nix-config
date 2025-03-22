@@ -156,7 +156,13 @@
     {
       mode = "n";
       key = "<leader>x";
-      action = "<cmd>Bdelete<CR>";
+      action.__raw = "function() Snacks.bufdelete() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>X";
+      action.__raw = "function() Snacks.bufdelete.other() end";
       options = { silent = true; };
     }
     # Neotest

@@ -2,7 +2,17 @@
   programs.nixvim.plugins.snacks = {
     enable = true;
     settings = {
+      animate = { enabled = true; };
+      bigfile = { enabled = true; };
+      bufdelete = { enabled = true; };
+      dashboard = { enabled = true; };
+      image = { enabled = true; };
+      indent = { enabled = true; };
+      input = { enabled = true; };
       notifier = { enabled = true; };
+      scope = { enabled = true; };
+      scroll = { enabled = true; };
+      words = { enabled = true; };
       picker = {
         enabled = true;
         matcher = {
@@ -15,12 +25,6 @@
         };
         layout = { preset = "ivy"; };
       };
-      input = { enabled = true; };
-      words = { enabled = true; };
-      image = { enabled = true; };
-      scope = { enabled = true; };
-      animate = { enabled = true; };
-      scroll = { enabled = true; };
     };
   };
 }
