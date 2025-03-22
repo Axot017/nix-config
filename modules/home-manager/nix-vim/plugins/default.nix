@@ -22,6 +22,7 @@
     ./none-ls.nix
     ./oil.nix
     ./project-nvim.nix
+    ./snacks.nix
     ./telescope.nix
     ./tmux-navigator.nix
     ./treesitter.nix
