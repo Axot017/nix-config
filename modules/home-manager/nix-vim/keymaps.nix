@@ -244,6 +244,54 @@
       action.__raw = "function() Snacks.picker.files() end";
       options = { silent = true; };
     }
+    {
+      mode = "n";
+      key = "<leader>fg";
+      action.__raw = "function() Snacks.picker.grep() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>fd";
+      action.__raw = "function() Snacks.picker.diagnostics() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "gi";
+      action.__raw = "function() Snacks.picker.lsp_implementations() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "gd";
+      action.__raw = "function() Snacks.picker.lsp_definitions() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "gr";
+      action.__raw = "function() Snacks.picker.lsp_references() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>gb";
+      action.__raw = "function() Snacks.picker.git_branches() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>gs";
+      action.__raw = "function() Snacks.picker.git_status() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>gd";
+      action.__raw = "function() Snacks.picker.git_diff() end";
+      options = { silent = true; };
+    }
 
     ##########################
     ##  Visual              ##

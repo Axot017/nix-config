@@ -17,6 +17,10 @@
       };
       input = { enabled = true; };
       words = { enabled = true; };
+      image = { enabled = true; };
+      scope = { enabled = true; };
+      animate = { enabled = true; };
+      scroll = { enabled = true; };
     };
   };
 }
