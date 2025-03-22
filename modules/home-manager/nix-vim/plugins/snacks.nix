@@ -13,8 +13,7 @@
           frecency = true;
           history_bonus = true;
         };
-        preset = "ivy";
-        layout = { position = "bottom"; };
+        layout = { preset = "ivy"; };
       };
       input = { enabled = true; };
       words = { enabled = true; };
