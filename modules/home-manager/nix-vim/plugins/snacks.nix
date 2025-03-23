@@ -21,7 +21,15 @@
       notifier = { enabled = true; };
       rename = { enabled = true; };
       scope = { enabled = true; };
-      scroll = { enabled = true; };
+      scroll = {
+        enabled = true;
+        animate = {
+          duration = {
+            step = 5;
+            total = 50;
+          };
+        };
+      };
       words = { enabled = true; };
       picker = {
         enabled = true;
