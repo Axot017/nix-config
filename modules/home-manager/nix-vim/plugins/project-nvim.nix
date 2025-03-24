@@ -1,6 +1,3 @@
 { pkgs, config, inputs, ... }: {
-  programs.nixvim.plugins.project-nvim = {
-    enable = true;
-    enableTelescope = true;
-  };
+  programs.nixvim.plugins.project-nvim = { enable = true; };
 }
