@@ -1,6 +1,7 @@
 { pkgs, config, inputs, helpers, ... }: {
   imports = [
     ./autoclose.nix
+    ./avante.nix
     ./blink-cmp.nix
     ./bufdelete.nix
     ./bufferline.nix
