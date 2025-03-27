@@ -6,7 +6,7 @@
       cursor_applying_provider = "gemini";
       claude = {
         api_key_name = "cmd:cat /home/axot/.config/.secret/anthropic";
-        model = "claude-3-7-sonnet-latest";
+        model = "claude-3-5-sonnet-latest";
       };
       gemini = {
         api_key_name = "cmd:cat /home/axot/.config/.secret/gemini";
