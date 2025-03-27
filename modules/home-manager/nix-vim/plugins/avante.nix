@@ -12,7 +12,7 @@
         model = "gemini-2.0-flash";
       };
       behaviour = {
-        enable_cursor_planning_mode = false;
+        enable_cursor_planning_mode = true;
         auto_suggestions = false;
       };
       file_selector = { provider = "snacks"; };
