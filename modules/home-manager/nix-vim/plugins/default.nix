@@ -20,6 +20,7 @@
     ./neogit.nix
     ./neorg.nix
     ./neotest.nix
+    ./noice.nix
     ./none-ls.nix
     ./oil.nix
     ./project-nvim.nix
