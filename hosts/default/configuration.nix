@@ -135,17 +135,15 @@
     pkg-config
     slack
     wl-screenrec
-    docker-compose
     inotify-tools
     inputs.zen-browser.packages."${system}".default
-    stripe-cli
     hyprshot
     hyprpicker
-    delve
     unrar
     jq
     claude-code
     aider-chat
+    pavucontrol
   ];
 
   environment.sessionVariables = {
