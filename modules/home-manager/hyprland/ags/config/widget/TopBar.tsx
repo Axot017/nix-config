@@ -151,7 +151,8 @@ function Center() {
 
 function Speaker() {
   return <eventbox
-    onScroll={(_, event) => changeSpeakerVolume(-event.delta_y)}>
+    onScroll={(_, event) => changeSpeakerVolume(-event.delta_y)}
+    onClick={() => exec(`pavucontrol`)}>
     <centerbox className="audio">
       <box />
       <box>
@@ -171,7 +172,8 @@ function Gap() {
 
 function Mic() {
   return <eventbox
-    onScroll={(_, event) => changeMicVolume(-event.delta_y)}>
+    onScroll={(_, event) => changeMicVolume(-event.delta_y)}
+    onClick={() => exec(`pavucontrol`)}>
     <centerbox className="audio">
       <box />
       <box>
