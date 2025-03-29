@@ -144,6 +144,7 @@
     claude-code
     aider-chat
     pavucontrol
+    beekeeper-studio
   ];
 
   environment.sessionVariables = {
