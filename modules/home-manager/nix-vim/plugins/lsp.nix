@@ -12,17 +12,17 @@
       };
     };
     servers = {
-      lua_ls = { enable = true; };
-      nil_ls = { enable = true; };
+      elixirls = { enable = true; };
       gopls = { enable = true; };
       html = { enable = true; };
       htmx = { enable = true; };
       jsonls = { enable = true; };
-      terraformls = { enable = true; };
-      yamlls = { enable = true; };
+      lua_ls = { enable = true; };
+      nil_ls = { enable = true; };
       pyright = { enable = true; };
-      lexical = { enable = true; };
+      terraformls = { enable = true; };
       ts_ls = { enable = true; };
+      yamlls = { enable = true; };
     };
   };
 }
