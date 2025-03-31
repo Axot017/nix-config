@@ -16,7 +16,7 @@
             accept = '<C-y>',
           },
         },
-        provider = "qwen",
+        provider = "openai_fim_compatible",
         throttle = 0,
         debounce = 150,
         n_completions = 1,
@@ -36,14 +36,15 @@
             end,
             optional = {},
           },
-          qwen = {
-              name = 'Ollama',
-              end_point = 'http://localhost:11434/v1/completions',
-              model = 'qwen2.5-coder:7b',
-              optional = {
-                  max_tokens = 56,
-                  top_p = 0.9,
-              },
+          openai_fim_compatible = {
+            name = 'Ollama',
+            api_key = 'TERM',
+            end_point = 'http://localhost:11434/v1/completions',
+            model = 'qwen2.5-coder:7b',
+            optional = {
+              max_tokens = 56,
+              top_p = 0.9,
+            },
           },
         }
       })
