@@ -43,7 +43,7 @@
             model = 'qwen2.5-coder:7b',
             optional = {
               max_tokens = 56,
-              top_p = 0.9,
+              top_p = 0.5,
             },
           },
         }
