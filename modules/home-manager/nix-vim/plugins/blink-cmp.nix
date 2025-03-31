@@ -6,7 +6,7 @@
         owner = "Kaiser-Yang";
         repo = "blink-cmp-avante";
         rev = "master";
-        sha256 = "sha256-r+GdP7CzndXk2x6h066Ww4LuMBgKDW2GMv/d39r1M48=";
+        sha256 = "sha256-W1nq45GrHRCPHJJVPm7ePPwGFgvvZSHmwgLSZxQiUA0=";
       };
     })
   ];
