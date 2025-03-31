@@ -145,7 +145,6 @@
     aider-chat
     pavucontrol
     beekeeper-studio
-    ollama
   ];
 
   environment.sessionVariables = {
