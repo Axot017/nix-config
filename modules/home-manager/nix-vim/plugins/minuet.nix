@@ -17,8 +17,8 @@
           },
         },
         provider = "openai_fim_compatible",
-        throttle = 1000,
-        debounce = 400,
+        throttle = 200,
+        debounce = 150,
         n_completions = 1,
         context_window = 512,
         provider_options = {
