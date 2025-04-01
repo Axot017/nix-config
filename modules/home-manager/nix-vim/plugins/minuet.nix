@@ -20,7 +20,7 @@
         throttle = 200,
         debounce = 150,
         n_completions = 1,
-        context_window = 256,
+        context_window = 512,
         provider_options = {
           gemini = {
             api_key = function()
