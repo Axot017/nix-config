@@ -9,7 +9,7 @@
   imports = [ # Include the results of the hardware scan.
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/i18n.nix
-    ../../modules/nixos/ollama.nix
+    # ../../modules/nixos/ollama.nix
     ../../modules/nixos/pipewire.nix
     ../../modules/nixos/steam.nix
     ../../modules/nixos/stylix.nix
@@ -146,6 +146,7 @@
     aider-chat
     pavucontrol
     beekeeper-studio
+    ollama-rocm
   ];
 
   environment.sessionVariables = {
