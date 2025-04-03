@@ -18,7 +18,7 @@
       ollama = { model = "qwen2.5-coder:7b"; };
       behaviour = {
         enable_cursor_planning_mode = false;
-        auto_suggestions = false;
+        auto_suggestions = true;
       };
       vendors = {
         ollama = {
