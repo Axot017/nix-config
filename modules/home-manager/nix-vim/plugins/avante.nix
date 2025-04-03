@@ -2,7 +2,7 @@
   programs.nixvim.plugins.avante = {
     enable = true;
     settings = {
-      provider = "claude";
+      provider = "ollama";
       # auto_suggestions_provider = "ollama";
       cursor_applying_provider = "gemini";
       claude = {
@@ -21,11 +21,7 @@
         auto_suggestions = true;
       };
       file_selector = { provider = "snacks"; };
-      mappings = { 
-        suggestions = {
-          # accept = "<C-y>"; 
-        }; 
-      };
+      mappings = { suggestions = { accept = "<C-y>"; }; };
     };
   };
 }
