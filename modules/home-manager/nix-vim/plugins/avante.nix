@@ -2,8 +2,8 @@
   programs.nixvim.plugins.avante = {
     enable = true;
     settings = {
-      provider = "ollama";
-      # auto_suggestions_provider = "ollama";
+      provider = "claude";
+      auto_suggestions_provider = "ollama";
       cursor_applying_provider = "gemini";
       claude = {
         api_key_name.__raw =
@@ -18,10 +18,14 @@
       ollama = { model = "qwen2.5-coder:7b"; };
       behaviour = {
         enable_cursor_planning_mode = false;
-        auto_suggestions = true;
+        auto_suggestions = false;
       };
       file_selector = { provider = "snacks"; };
-      mappings = { suggestions = { accept = "<C-y>"; }; };
+      mappings = { 
+        suggestions = {
+          accept = "<C-y>"; 
+        }; 
+      };
     };
   };
 }
