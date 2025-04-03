@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       provider = "claude";
-      auto_suggestions_provider = "ollama";
+      # auto_suggestions_provider = "ollama";
       cursor_applying_provider = "gemini";
       claude = {
         api_key_name.__raw =
