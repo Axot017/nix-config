@@ -3,6 +3,7 @@
     enable = true;
     settings = {
       provider = "claude";
+      auto_suggestions_provider = "ollama";
       cursor_applying_provider = "gemini";
       claude = {
         api_key_name.__raw =
@@ -14,11 +15,13 @@
           ''"cmd:cat " .. os.getenv("HOME") .. "/.config/.secret/gemini"'';
         model = "gemini-2.0-flash";
       };
+      ollama = { model = "qwen2.5-coder:7b"; };
       behaviour = {
         enable_cursor_planning_mode = false;
-        auto_suggestions = false;
+        auto_suggestions = true;
       };
       file_selector = { provider = "snacks"; };
+      mappings = { suggestions = { accept = "<C-y>"; }; };
     };
   };
 }
