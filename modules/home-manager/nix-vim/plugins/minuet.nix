@@ -1,6 +1,6 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim = {
-    extraPlugins = [ pkgs.vimPlugins.minuet-ai-nvim ];
+    # extraPlugins = [ pkgs.vimPlugins.minuet-ai-nvim ];
     extraConfigLua = ''
       vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/minuet-ai.nvim'))
 
