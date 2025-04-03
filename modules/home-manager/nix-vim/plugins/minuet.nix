@@ -2,6 +2,8 @@
   programs.nixvim = {
     extraPlugins = [ pkgs.vimPlugins.minuet-ai-nvim ];
     extraConfigLua = ''
+      vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/minuet-ai.nvim'))
+
       require('minuet').setup({
         cmp = {
           enable_auto_complete = true,
@@ -40,7 +42,7 @@
             name = 'Ollama',
             api_key = 'TERM',
             end_point = 'http://localhost:11434/v1/completions',
-            model = 'qwen2.5-coder:3b',
+            model = 'qwen2.5-coder:7b',
             optional = {
               max_tokens = 56,
               top_p = 0.9,
