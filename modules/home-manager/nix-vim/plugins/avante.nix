@@ -21,7 +21,11 @@
         auto_suggestions = true;
       };
       file_selector = { provider = "snacks"; };
-      mappings = { suggestions = { accept = "<C-y>"; }; };
+      mappings = { 
+        suggestions = {
+          # accept = "<C-y>"; 
+        }; 
+      };
     };
   };
 }
