@@ -147,6 +147,7 @@
     pavucontrol
     beekeeper-studio
     ollama-rocm
+    posting
   ];
 
   environment.sessionVariables = {
