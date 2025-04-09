@@ -11,7 +11,7 @@
         owner = "olexsmir";
         repo = "gopher.nvim";
         rev = "master";
-        sha256 = "sha256-It0R3aV0n1fFDAZpMxFjYC0DX2q1PFHNHBviI/MeS6g=";
+        sha256 = "sha256-gxiD5y+uhGSTxE4td3Zhlns4wvJAbMdRSmB2/BZnQaA=";
       };
     })
   ];

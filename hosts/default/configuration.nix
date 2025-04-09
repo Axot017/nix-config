@@ -145,7 +145,6 @@
     claude-code
     aider-chat
     pavucontrol
-    beekeeper-studio
     ollama-rocm
     posting
   ];
