@@ -7,5 +7,5 @@ pkgs.writeShellScriptBin "aider-gemini" ''
   export GEMINI_API_KEY=$(cat ~/.config/.secret/gemini)
 
   # Run aider with the specified model
-  aider --model gemini/gemini-2.0-flash "$@"
+  ${pkgs.aider-chat}/bin/aider --model gemini/gemini-2.0-flash "$@"
 ''

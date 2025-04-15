@@ -143,7 +143,6 @@
     unrar
     jq
     claude-code
-    aider-chat
     pavucontrol
     ollama-rocm
     posting

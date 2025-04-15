@@ -1,7 +1,13 @@
 { config, pkgs, ... }:
 let
-  nix-edit-script =
-    import ../../modules/home-manager/scripts/nix-edit.nix { inherit pkgs; };
+  aider-gemini-script =
+    import ../../modules/home-manager/scripts/aider-gemini.nix {
+      inherit pkgs;
+    };
+  aider-claude-script =
+    import ../../modules/home-manager/scripts/aider-claude.nix {
+      inherit pkgs;
+    };
 
 in {
   imports = [
@@ -45,7 +51,13 @@ in {
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
     };
-    packages = with pkgs; [ fzf delve rustup ];
+    packages = with pkgs; [
+      fzf
+      delve
+      rustup
+      aider-gemini-script
+      aider-claude-script
+    ];
   };
 
   programs.home-manager.enable = true;
