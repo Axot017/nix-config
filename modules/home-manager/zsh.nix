@@ -4,7 +4,7 @@
     syntaxHighlighting = { enable = true; };
     autosuggestion.enable = true;
     enableCompletion = true;
-    initExtra = ''
+    initContent = ''
       autoload -U compinit
       zstyle ':completion:*' menu select
       zmodload zsh/complist
