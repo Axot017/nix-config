@@ -20,7 +20,7 @@
     multiterm.setup({
       mappings = {
         n = {
-          ["<esc>"] = function() multiterm.close_active() end
+          ["<esc>"] = function() multiterm.close_active() end,
         }
       }
     })
