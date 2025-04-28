@@ -20,7 +20,10 @@
     multiterm.setup({
       mappings = {
         n = {
-          ["<esc>"] = function() multiterm.close_active() end,
+          ["<esc>"] = function() 
+            vim.notify("Closing active terminal")
+            multiterm.close_active() 
+          end,
         }
       }
     })
