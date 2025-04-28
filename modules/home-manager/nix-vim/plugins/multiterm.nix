@@ -24,6 +24,12 @@
             vim.notify("Closing active terminal")
             multiterm.close_active() 
           end,
+        },
+        t = {
+          ["<esc>"] = function() 
+            vim.notify("Closing active terminal")
+            multiterm.close_active() 
+          end,
         }
       }
     })
