@@ -14,7 +14,6 @@
     ./lualine.nix
     ./luasnip.nix
     ./mini.nix
-    ./minuet.nix
     ./multiterm.nix
     ./neogit.nix
     ./neorg.nix

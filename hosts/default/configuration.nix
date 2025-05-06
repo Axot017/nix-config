@@ -9,7 +9,6 @@
   imports = [ # Include the results of the hardware scan.
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/i18n.nix
-    # ../../modules/nixos/ollama.nix
     ../../modules/nixos/pipewire.nix
     ../../modules/nixos/steam.nix
     ../../modules/nixos/stylix.nix
@@ -144,7 +143,6 @@
     jq
     claude-code
     pavucontrol
-    ollama-rocm
     posting
   ];
 
