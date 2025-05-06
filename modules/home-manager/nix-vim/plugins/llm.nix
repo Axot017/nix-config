@@ -1,4 +1,5 @@
 { pkgs, config, inputs, ... }: {
+  programs.nixvim.dependencies.llm-ls = { enable = true; };
   programs.nixvim.plugins.llm = {
     enable = true;
     settings = {
