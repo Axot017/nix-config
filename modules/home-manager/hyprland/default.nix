@@ -26,6 +26,7 @@ in {
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "ags run"
+        "HSA_OVERRIDE_GFX_VERSION=10.1.0 ollama serve"
       ];
       input = {
         kb_layout = "pl,us";

@@ -143,6 +143,7 @@
     jq
     claude-code
     pavucontrol
+    ollama-rocm
     posting
   ];
 
