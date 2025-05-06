@@ -14,6 +14,7 @@ let
 in {
   imports = [
     ../../modules/home-manager/alacritty.nix
+    ../../modules/home-manager/jujutsu.nix
     ../../modules/home-manager/feh.nix
     ../../modules/home-manager/ghostty.nix
     ../../modules/home-manager/git.nix
