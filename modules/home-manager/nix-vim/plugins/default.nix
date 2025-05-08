@@ -20,10 +20,8 @@
     ./noice.nix
     ./none-ls.nix
     ./oil.nix
-    ./project-nvim.nix
     ./snacks.nix
-    # ./telescope.nix
-    ./tmux-navigator.nix
+    ./supermaven.nix
     ./treesitter.nix
     ./web-devicons.nix
   ];
