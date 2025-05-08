@@ -8,6 +8,5 @@
         keymap = { accept = "<C-y>"; };
       };
     };
-    copilot-chat = { enable = true; };
   };
 }
