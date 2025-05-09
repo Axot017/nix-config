@@ -7,5 +7,8 @@
     ./plugins/default.nix
     ./theme.nix
   ];
-  programs.nixvim = { enable = true; };
+  programs.nixvim = {
+    enable = true;
+    nixpkgs = { config.allowUnfree = true; };
+  };
 }
