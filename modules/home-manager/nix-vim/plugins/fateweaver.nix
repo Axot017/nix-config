@@ -5,7 +5,7 @@
 
     local fateweaver = require('fateweaver')
 
-    multiterm.setup({
+    fateweaver.setup({
       log_level = 'DEBUG'
     })
   '';
