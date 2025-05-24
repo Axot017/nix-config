@@ -6,7 +6,8 @@
     local fateweaver = require('fateweaver')
 
     fateweaver.setup({
-      log_level = 'DEBUG'
+      log_level = 'DEBUG',
+      logger_fn = require('fateweaver.logger').file_logger(vim.fn.stdpath("cache") .. "/fateweaver.log")
     })
   '';
 }
