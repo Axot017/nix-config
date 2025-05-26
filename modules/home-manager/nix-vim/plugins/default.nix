@@ -22,9 +22,7 @@
     ./none-ls.nix
     ./oil.nix
     ./snacks.nix
-    # ./supermaven.nix
     ./treesitter.nix
     ./web-devicons.nix
-    ./windsurf.nix
   ];
 }
