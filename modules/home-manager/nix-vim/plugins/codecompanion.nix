@@ -1,4 +1,16 @@
-{ pkgs, config, inputs, ... }: {
+{ pkgs, config, inputs, ... }:
+
+let
+  mcphub = (pkgs.buildNpmPackage {
+    name = "mcp-hub";
+    src = pkgs.fetchFromGitHub {
+      owner = "ravitemer";
+      repo = "mcp-hub";
+      rev = "v3.3.0";
+      sha256 = "";
+    };
+  });
+in {
   programs.nixvim.plugins.codecompanion = {
     enable = true;
     settings = {
