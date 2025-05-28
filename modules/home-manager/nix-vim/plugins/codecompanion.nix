@@ -7,10 +7,12 @@ let
       owner = "ravitemer";
       repo = "mcp-hub";
       rev = "v3.3.0";
-      sha256 = "";
+      sha256 = "sha256-IIgV3GLdKUW2rG2DFKt8pUKdbGyr604C3EmpuhOL++Y=";
     };
+    npmDepsHash = "sha256-nALbWyVz78fiX6fFcrnlg2roF62qNzs4iclrvdSvhu8=";
   });
 in {
+  home.packages = [ mcphub ];
   programs.nixvim.plugins.codecompanion = {
     enable = true;
     settings = {
