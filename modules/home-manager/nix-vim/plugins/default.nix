@@ -4,6 +4,7 @@
     ./blink-cmp.nix
     ./bufdelete.nix
     ./bufferline.nix
+    ./codecompanion.nix
     ./comment-nvim.nix
     # ./copilot.nix
     ./dap.nix
