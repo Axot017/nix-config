@@ -147,7 +147,6 @@
     pavucontrol
     ollama-rocm
     posting
-    nodejs_24
   ];
 
   environment.sessionVariables = {

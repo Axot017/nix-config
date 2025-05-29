@@ -32,8 +32,8 @@ in {
     serverConfig = {
       mcpServers = {
         context7 = {
-          command = "npx";
-          args = [ "-y" "@upstash/context7-mcp" ];
+          command = "docker";
+          args = [ "run" "-i" "--rm" "mcp/context7" ];
         };
       };
     };
@@ -44,6 +44,41 @@ in {
         cmd = "${mcphub}/bin/mcp-hub"
     })
   '';
+
+  programs.nixvim.keymaps = [
+    {
+      mode = "n";
+      key = "<leader>ca";
+      action = "<cmd>CodeCompanionActions<cr>";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>cc";
+      action = "<cmd>CodeCompanionChat Toggle<cr>";
+      options = { silent = true; };
+    }
+    {
+      mode = "v";
+      key = "<leader>ci";
+      action = "<cmd>CodeCompanionChat Add<cr>";
+      options = { silent = true; };
+    }
+    {
+      mode = "v";
+      key = "<leader>ci";
+      action.__raw = ''
+        function()
+          vim.ui.input({ prompt = "Enter prompt: " }, function(input)
+            if input then
+              vim.cmd("CodeCompanion " .. input)
+            end
+          end)
+        end
+      '';
+      options = { silent = true; };
+    }
+  ];
   programs.nixvim.plugins.codecompanion = {
     enable = true;
     settings = {
