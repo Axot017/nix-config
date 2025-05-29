@@ -11,8 +11,19 @@ let
     };
     npmDepsHash = "sha256-nALbWyVz78fiX6fFcrnlg2roF62qNzs4iclrvdSvhu8=";
   });
+  mcphub-nvim = (pkgs.vimUtils.buildVimPlugin {
+    name = "mcphub.nvim";
+    dependencies = with pkgs.vimPlugins; [ plenary-nvim ];
+    src = pkgs.fetchFromGitHub {
+      owner = "ravitemer";
+      repo = "mcp-hub";
+      rev = "v3.3.0";
+      sha256 = "sha256-IIgV3GLdKUW2rG2DFKt8pUKdbGyr604C3EmpuhOL++Y=";
+    };
+  });
 in {
   home.packages = [ mcphub ];
+  programs.nixvim.extraPlugins = [ mcphub-nvim ];
   programs.nixvim.plugins.codecompanion = {
     enable = true;
     settings = {
@@ -36,7 +47,7 @@ in {
               },
               schema = {
                 model = {
-                  gemini = "google/gemini-2.5-flash-preview-05-20",
+                  default = "google/gemini-2.5-flash-preview-05-20",
                 },
               },
             })
@@ -47,6 +58,16 @@ in {
         agent.adapter = "anthropic";
         chat.adapter = "anthropic";
         inline.adapter = "anthropic";
+      };
+      extensions = {
+        mcphub = {
+          callback = "mcphub.extensions.codecompanion";
+          opts = {
+            show_result_in_chat = true;
+            make_vars = true;
+            make_slash_commands = true;
+          };
+        };
       };
     };
   };
