@@ -32,8 +32,9 @@ in {
     serverConfig = {
       mcpServers = {
         context7 = {
-          command = "npx";
-          args = [ "-y" "@upstash/context7-mcp" ];
+          url = "https://github.com/upstash/context7";
+          # command = "npx";
+          # args = [ "-y" "@upstash/context7-mcp" ];
         };
       };
     };
