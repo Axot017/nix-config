@@ -16,10 +16,15 @@ let
     dependencies = with pkgs.vimPlugins; [ plenary-nvim ];
     src = pkgs.fetchFromGitHub {
       owner = "ravitemer";
-      repo = "mcp-hub";
-      rev = "v3.3.0";
-      sha256 = "sha256-IIgV3GLdKUW2rG2DFKt8pUKdbGyr604C3EmpuhOL++Y=";
+      repo = "mcphub.nvim";
+      rev = "v5.6.0";
+      sha256 = "sha256-wA+1F6gYddRa25q7csi4h48KD4xDtR406Cy/pXoxe6w=";
     };
+    nvimSkipModules = [
+      "bundled_build"
+      "mcphub.extensions.lualine"
+      "mcphub.extensions.codecompanion.xml_tool"
+    ];
   });
 in {
   home.packages = [ mcphub ];
