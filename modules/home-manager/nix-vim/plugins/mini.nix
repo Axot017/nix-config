@@ -1,6 +1,9 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim.plugins.mini = {
     enable = true;
-    modules = { test = { }; };
+    modules = {
+      test = { };
+      diff = { };
+    };
   };
 }
