@@ -32,7 +32,7 @@ in {
     serverConfig = {
       mcpServers = {
         context7 = {
-          command = "${pkgs.nodejs_24}/bin/npx";
+          command = "npx";
           args = [ "-y" "@upstash/context7-mcp" ];
         };
       };
