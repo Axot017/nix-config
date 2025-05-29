@@ -28,6 +28,7 @@ let
   });
 in {
   home.packages = [ mcphub ];
+  home.file.".config/mcphub/servers.json".source = ./mcphub/servers.json;
   programs.nixvim.extraPlugins = [ mcphub-nvim ];
   programs.nixvim.plugins.codecompanion = {
     enable = true;
