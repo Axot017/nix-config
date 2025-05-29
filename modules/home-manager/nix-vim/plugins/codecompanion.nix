@@ -41,7 +41,7 @@ in {
   programs.nixvim.extraPlugins = [ mcphub-nvim ];
   programs.nixvim.extraConfigLua = ''
     require("mcphub").setup({
-        cmd = "${mcphub-nvim}/bin/mcp-hub"
+        cmd = "${mcphub}/bin/mcp-hub"
     })
   '';
   programs.nixvim.plugins.codecompanion = {
