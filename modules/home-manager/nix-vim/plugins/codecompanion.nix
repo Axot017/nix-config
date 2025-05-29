@@ -28,7 +28,16 @@ let
   });
 in {
   home.packages = [ mcphub ];
-  home.file.".config/mcphub/servers.json".source = ./mcphub/servers.json;
+  home.file.".config/mcphub/servers.json".text = let
+    serverConfig = {
+      mcpServers = {
+        context7 = {
+          command = "${pkgs.nodejs_24}/bin/npx";
+          args = [ "-y" "@upstash/context7-mcp" ];
+        };
+      };
+    };
+  in builtins.toJSON serverConfig;
   programs.nixvim.extraPlugins = [ mcphub-nvim ];
   programs.nixvim.plugins.codecompanion = {
     enable = true;
