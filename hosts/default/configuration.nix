@@ -154,6 +154,7 @@
     pavucontrol
     ollama-rocm
     posting
+    rocmPackages.rocminfo
   ];
 
   environment.sessionVariables = {
