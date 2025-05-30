@@ -22,5 +22,5 @@ in pkgs.writeShellScriptBin "run-llamafile" ''
   export ROCM_PATH=${rocmtoolkit_joined}
   export ROCM_SOURCE_DIR=${rocmtoolkit_joined}
 
-  $@
+  /home/axot/Projects/zeta/zeta.llamafile --gpu amd
 ''
