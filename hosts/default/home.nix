@@ -10,10 +10,6 @@ let
     import ../../modules/home-manager/scripts/aider-claude.nix {
       inherit pkgs;
     };
-  run-llamafile = import ../../modules/home-manager/scripts/run-llamafile.nix {
-    inherit pkgs;
-  };
-
 in {
   imports = [
     ../../modules/home-manager/alacritty.nix
@@ -66,8 +62,7 @@ in {
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
     };
-    packages =
-      [ nix-edit-script aider-gemini-script aider-claude-script run-llamafile ];
+    packages = [ nix-edit-script aider-gemini-script aider-claude-script ];
   };
 
   # Let Home Manager install and manage itself.
