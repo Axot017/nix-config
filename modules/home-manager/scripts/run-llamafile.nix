@@ -3,33 +3,7 @@ let
   rocmtoolkit_joined = pkgs.symlinkJoin {
     name = "rocm-merged";
 
-    paths = with pkgs.rocmPackages; [
-      rocm-core
-      clr
-      rccl
-      miopen
-      miopengemm
-      rocrand
-      rocblas
-      rocsparse
-      hipsparse
-      rocthrust
-      rocprim
-      hipcub
-      roctracer
-      rocfft
-      rocsolver
-      hipfft
-      hipsolver
-      hipblas
-      rocminfo
-      rocm-thunk
-      rocm-comgr
-      rocm-device-libs
-      rocm-runtime
-      clr.icd
-      hipify
-    ];
+    paths = with pkgs.rocmPackages; [ rocblas hipblas clr ];
   };
 in pkgs.writeShellScriptBin "run-llamafile" ''
   if [ $# -eq 0 ] ; then
