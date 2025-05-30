@@ -155,6 +155,7 @@
     ollama-rocm
     posting
     rocmPackages.rocminfo
+    rocmPackages.clr
   ];
 
   environment.sessionVariables = {
