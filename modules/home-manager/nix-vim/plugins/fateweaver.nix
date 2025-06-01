@@ -1,16 +1,16 @@
 { pkgs, config, inputs, ... }: {
-  programs.nixvim.extraPlugins = [
-    (pkgs.vimUtils.buildVimPlugin {
-      name = "fateweaver.nvim";
-      dependencies = with pkgs.vimPlugins; [ plenary-nvim ];
-      src = pkgs.fetchFromGitHub {
-        owner = "Axot017";
-        repo = "fateweaver.nvim";
-        rev = "v0.1.0";
-        sha256 = "sha256-qISx9e7SqGVpIsxwSZJUdnPEKG9hWwvmCxyB8hLa+Os=";
-      };
-    })
-  ];
+  # programs.nixvim.extraPlugins = [
+  #   (pkgs.vimUtils.buildVimPlugin {
+  #     name = "fateweaver.nvim";
+  #     dependencies = with pkgs.vimPlugins; [ plenary-nvim ];
+  #     src = pkgs.fetchFromGitHub {
+  #       owner = "Axot017";
+  #       repo = "fateweaver.nvim";
+  #       rev = "v0.1.0";
+  #       sha256 = "sha256-qISx9e7SqGVpIsxwSZJUdnPEKG9hWwvmCxyB8hLa+Os=";
+  #     };
+  #   })
+  # ];
   programs.nixvim.keymaps = [{
     mode = "i";
     key = "<C-y>";
@@ -23,7 +23,7 @@
   }];
   programs.nixvim.extraConfigLua = ''
     -- For development
-    -- vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/fateweaver.nvim'))
+    vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/fateweaver.nvim'))
 
     local fateweaver = require('fateweaver')
 
