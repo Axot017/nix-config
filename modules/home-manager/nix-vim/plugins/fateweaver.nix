@@ -1,7 +1,7 @@
 { pkgs, config, inputs, ... }: {
   programs.nixvim.extraPlugins = [
     (pkgs.vimUtils.buildVimPlugin {
-      name = "multiterm.nvim";
+      name = "fateweaver.nvim";
       dependencies = with pkgs.vimPlugins; [ plenary-nvim ];
       src = pkgs.fetchFromGitHub {
         owner = "Axot017";
