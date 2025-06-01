@@ -6,8 +6,8 @@
       src = pkgs.fetchFromGitHub {
         owner = "Axot017";
         repo = "fateweaver.nvim";
-        rev = "master";
-        sha256 = "sha256-Jlf072IEIsEi21JW7mS39Lj+r0PjltBWLrWetUiw5ts=";
+        rev = "v0.1.0";
+        sha256 = "sha256-qISx9e7SqGVpIsxwSZJUdnPEKG9hWwvmCxyB8hLa+Os=";
       };
     })
   ];
