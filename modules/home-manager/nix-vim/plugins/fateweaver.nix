@@ -31,6 +31,7 @@
       log_level = 'DEBUG',
       logger_fn = require('fateweaver.logger').file_logger(vim.fn.stdpath("cache") .. "/fateweaver.log"),
       completion_endpoint = "https://api.runpod.ai/v2/plnpuslpuwcq9o/openai/v1/completions",
+      model_name = "zed-industries/zeta",
       api_key = function()
         local path = os.getenv("HOME") .. "/.config/.secret/runpod"
         local f = io.open(path, "r")
