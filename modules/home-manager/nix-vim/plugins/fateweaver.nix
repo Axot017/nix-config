@@ -29,7 +29,18 @@
 
     fateweaver.setup({
       log_level = 'DEBUG',
-      logger_fn = require('fateweaver.logger').file_logger(vim.fn.stdpath("cache") .. "/fateweaver.log")
+      logger_fn = require('fateweaver.logger').file_logger(vim.fn.stdpath("cache") .. "/fateweaver.log"),
+      api_key = function()
+        local path = os.getenv("HOME") .. "/.config/.secret/runpod"
+        local f = io.open(path, "r")
+        if f == nil then
+          return ""
+        end
+        local key = f:read("*all")
+        f:close()
+
+        return string.gsub(key, "\n", "")
+      end
     })
   '';
 }
