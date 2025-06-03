@@ -30,19 +30,20 @@
     fateweaver.setup({
       log_level = 'DEBUG',
       logger_fn = require('fateweaver.logger').file_logger(vim.fn.stdpath("cache") .. "/fateweaver.log"),
-      completion_endpoint = "https://api.runpod.ai/v2/7yrz3gxd96w1lk/openai/v1/completions",
-      model_name = "zed-industries/zeta",
-      api_key = function()
-        local path = os.getenv("HOME") .. "/.config/.secret/runpod"
-        local f = io.open(path, "r")
-        if f == nil then
-          return ""
-        end
-        local key = f:read("*all")
-        f:close()
-
-        return string.gsub(key, "\n", "")
-      end
+      completion_endpoint = "zed-industries/zeta",
+      model_name = "hf.co/bartowski/zed-industries_zeta-GGUF:Q4_K_M",
+      api_key = nil
+      -- api_key = function()
+      --   local path = os.getenv("HOME") .. "/.config/.secret/runpod"
+      --   local f = io.open(path, "r")
+      --   if f == nil then
+      --     return ""
+      --   end
+      --   local key = f:read("*all")
+      --   f:close()
+      --
+      --   return string.gsub(key, "\n", "")
+      -- end
     })
   '';
 }
