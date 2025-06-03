@@ -30,7 +30,7 @@
     fateweaver.setup({
       log_level = 'DEBUG',
       logger_fn = require('fateweaver.logger').file_logger(vim.fn.stdpath("cache") .. "/fateweaver.log"),
-      completion_endpoint = "zed-industries/zeta",
+      completion_endpoint = "http://localhost:11434/v1/completions",
       model_name = "hf.co/bartowski/zed-industries_zeta-GGUF:Q4_K_M",
       api_key = nil
       -- api_key = function()
