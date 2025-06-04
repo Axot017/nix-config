@@ -6,7 +6,7 @@
     ./bufferline.nix
     ./codecompanion.nix
     ./comment-nvim.nix
-    ./copilot.nix
+    # ./copilot.nix
     ./dap.nix
     ./dressing.nix
     ./go.nix
@@ -19,7 +19,7 @@
     ./neorg.nix
     ./neotest.nix
     ./noice.nix
-    # ./fateweaver.nix
+    ./fateweaver.nix
     ./none-ls.nix
     ./oil.nix
     ./snacks.nix
