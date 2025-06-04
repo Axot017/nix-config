@@ -25,6 +25,7 @@ in {
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/stylix.nix
     ../../modules/home-manager/thefuck.nix
+    ../../modules/home-manager/uv.nix
     ../../modules/home-manager/yazi.nix
     ../../modules/home-manager/zoxide.nix
     ../../modules/home-manager/zsh.nix
