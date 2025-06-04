@@ -146,6 +146,7 @@
     pavucontrol
     ollama-rocm
     posting
+    uv
   ];
 
   environment.sessionVariables = {
