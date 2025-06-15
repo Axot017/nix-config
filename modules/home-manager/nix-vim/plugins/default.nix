@@ -19,7 +19,7 @@
     ./neorg.nix
     ./neotest.nix
     ./noice.nix
-    # ./fateweaver.nix
+    ./fateweaver.nix
     ./none-ls.nix
     ./oil.nix
     ./snacks.nix
