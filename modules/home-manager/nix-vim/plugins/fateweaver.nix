@@ -30,19 +30,19 @@
     fateweaver.setup({
       log_level = 'DEBUG',
       logger_fn = require('fateweaver.logger').file_logger(vim.fn.stdpath("cache") .. "/fateweaver.log"),
-      completion_endpoint = "https://api.cortex.cerebrium.ai/v4/p-43603246/fateweaver/run",
-      model_name = "hf.co/bartowski/zed-industries_zeta-GGUF:Q4_K_M",
-      api_key = function()
-        local path = os.getenv("HOME") .. "/.config/.secret/fateweaver_api_key"
-        local f = io.open(path, "r")
-        if f == nil then
-          return ""
-        end
-        local key = f:read("*all")
-        f:close()
-
-        return string.gsub(key, "\n", "")
-      end
+      -- completion_endpoint = "http://localhost:11434/v1/completions",
+      -- model_name = "hf.co/bartowski/zed-industries_zeta-GGUF:Q4_K_M",
+      -- api_key = function()
+      --   local path = os.getenv("HOME") .. "/.config/.secret/fateweaver_api_key"
+      --   local f = io.open(path, "r")
+      --   if f == nil then
+      --     return ""
+      --   end
+      --   local key = f:read("*all")
+      --   f:close()
+      --
+      --   return string.gsub(key, "\n", "")
+      -- end
     })
   '';
 }
