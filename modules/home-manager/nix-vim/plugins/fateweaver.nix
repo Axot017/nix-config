@@ -11,16 +11,16 @@
   #     };
   #   })
   # ];
-  # programs.nixvim.keymaps = [{
-  #   mode = "i";
-  #   key = "<C-y>";
-  #   action.__raw = ''
-  #     function()
-  #       require('fateweaver').accept_completion()
-  #     end
-  #   '';
-  #   options = { silent = true; };
-  # }];
+  programs.nixvim.keymaps = [{
+    mode = "i";
+    key = "<C-y>";
+    action.__raw = ''
+      function()
+        require('fateweaver').accept_completion()
+      end
+    '';
+    options = { silent = true; };
+  }];
   programs.nixvim.extraConfigLua = ''
     -- For development
     vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/fateweaver.nvim'))

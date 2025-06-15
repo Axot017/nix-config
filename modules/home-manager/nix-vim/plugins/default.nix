@@ -6,7 +6,7 @@
     ./bufferline.nix
     ./codecompanion.nix
     ./comment-nvim.nix
-    ./copilot.nix
+    # ./copilot.nix
     ./dap.nix
     ./dressing.nix
     ./go.nix
