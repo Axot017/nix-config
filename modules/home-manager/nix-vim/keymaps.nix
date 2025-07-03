@@ -7,6 +7,46 @@
     # DAP
     {
       mode = "n";
+      key = "<leader>dh";
+      action.__raw = "function() require('dapui').eval() end";
+    }
+    {
+      mode = "n";
+      key = "<leader>de";
+      action.__raw = ''
+        function() 
+                vim.ui.input({ prompt = 'Expresion: ' }, function(input)
+                  require('dapui').eval(input) 
+                end)
+              end'';
+    }
+    {
+      mode = "n";
+      key = "<leader>dt";
+      action.__raw = "require('dapui').toggle";
+    }
+    {
+      mode = "n";
+      key = "<leader>dc";
+      action.__raw = "require('dap').continue";
+    }
+    {
+      mode = "n";
+      key = "<leader>di";
+      action.__raw = "require('dap').step_into";
+    }
+    {
+      mode = "n";
+      key = "<leader>do";
+      action.__raw = "require('dap').step_over";
+    }
+    {
+      mode = "n";
+      key = "<leader>dt";
+      action.__raw = "require('dap').toggle_breakpoint";
+    }
+    {
+      mode = "n";
       key = "<F1>";
       action.__raw = "require('dapui').toggle";
     }
@@ -248,6 +288,12 @@
       mode = "n";
       key = "<leader>ff";
       action.__raw = "function() Snacks.picker.files() end";
+      options = { silent = true; };
+    }
+    {
+      mode = "n";
+      key = "<leader>fr";
+      action.__raw = "function() Snacks.picker.recent() end";
       options = { silent = true; };
     }
     {

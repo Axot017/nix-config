@@ -9,7 +9,7 @@ pkgs.writeShellScriptBin "nix-edit" ''
   echo "NixOS - rebuilding..."
   sudo nixos-rebuild switch --flake .#default
 
-  gen=$(nixos-rebuild list-generations --flake .#default | grep current)
+  gen=$(nixos-rebuild list-generations --flake .#default | grep True)
   git commit -m "$gen"
 
   echo "NixOS - build finished"
