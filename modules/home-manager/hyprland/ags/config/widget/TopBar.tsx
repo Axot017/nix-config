@@ -158,9 +158,9 @@ function Speaker() {
   return <eventbox
     onScroll={(_, event) => changeSpeakerVolume(-event.delta_y)}
     onClick={() => exec(`pavucontrol`)}>
-    <centerbox class="audio">
-      <box />
-      <With value={audioSpeakerVolume}>
+    <centerbox orientation={Gtk.Orientation.HORIZONTAL} class="audio">
+      <box $type="start" />
+      <With value={audioSpeakerVolume} $type="center">
         {value =>
           <box>
             <label label={`${Math.floor(value * 100)}%`} />
@@ -169,7 +169,7 @@ function Speaker() {
           </box>
         }
       </With>
-      <box />
+      <box $type="end" />
     </centerbox>
   </eventbox>
 }
@@ -183,9 +183,9 @@ function Mic() {
   return <eventbox
     onScroll={(_, event) => changeMicVolume(-event.delta_y)}
     onClick={() => exec(`pavucontrol`)}>
-    <centerbox class="audio">
-      <box />
-      <With value={audioMicVolume}>
+    <centerbox orientation={Gtk.Orientation.HORIZONTAL} class="audio">
+      <box $type="start" />
+      <With value={audioMicVolume} $type="center">
         {value =>
           <box>
             <label label={`${Math.floor(value * 100)}%`} />
@@ -194,7 +194,7 @@ function Mic() {
           </box>
         }
       </With>
-      <box />
+      <box $type="end" />
     </centerbox>
   </eventbox>
 }
@@ -214,9 +214,9 @@ function changeMicVolume(delta: number) {
 }
 
 function Temp() {
-  return <centerbox class="temp">
-    <box />
-    <With value={temp}>
+  return <centerbox orientation={Gtk.Orientation.HORIZONTAL} class="temp">
+    <box $type="start" />
+    <With value={temp} $type="center">
       {temp =>
         <box>
           <label class="topbar-icon" label="" />
@@ -225,14 +225,14 @@ function Temp() {
         </box>
       }
     </With>
-    <box />
+    <box $type="end" />
   </centerbox>
 }
 
 function Disk() {
-  return <centerbox class="disk">
-    <box />
-    <With value={disk}>
+  return <centerbox orientation={Gtk.Orientation.HORIZONTAL} class="disk">
+    <box $type="start" />
+    <With value={disk} $type="center">
       {disk =>
         <box>
           <label class="topbar-icon" label="󰋊" />
@@ -241,14 +241,14 @@ function Disk() {
         </box>
       }
     </With>
-    <box />
+    <box $type="end" />
   </centerbox>
 }
 
 function Mem() {
-  return <centerbox class="mem">
-    <box />
-    <With value={mem}>
+  return <centerbox orientation={Gtk.Orientation.HORIZONTAL} class="mem">
+    <box $type="start" />
+    <With value={mem} $type="center">
       {mem =>
         <box>
           <label class="topbar-icon" label="󰒋" />
@@ -257,16 +257,16 @@ function Mem() {
         </box>
       }
     </With>
-    <box />
+    <box $type="end" />
   </centerbox>
 }
 
 function Cpu() {
   return <eventbox
     onClick={() => exec(`ghostty -e htop`)}>
-    <centerbox class="cpu">
-      <box />
-      <With value={cpu}>
+    <centerbox orientation={Gtk.Orientation.HORIZONTAL} class="cpu">
+      <box $type="start" />
+      <With value={cpu} $type="center">
         {cpu =>
           <box>
             <label class="topbar-icon" label="" />
@@ -275,7 +275,7 @@ function Cpu() {
           </box>
         }
       </With>
-      <box />
+      <box $type="end" />
     </centerbox>
   </eventbox>
 }
@@ -319,12 +319,12 @@ function NetworkConnectedWidget() {
 function NetworkDisconnectedWidget() {
   return <eventbox
     onClick={() => exec(`ghostty -e nmtui`)}>
-    <centerbox class="network">
-      <box />
-      <box>
+    <centerbox orientation={Gtk.Orientation.HORIZONTAL} class="network">
+      <box $type="start" />
+      <box $type="center">
         <label class="topbar-icon" label="󰤮" />
       </box>
-      <box />
+      <box $type="end" />
     </centerbox>
   </eventbox>
 }
@@ -332,10 +332,10 @@ function NetworkDisconnectedWidget() {
 function NetworkWiredWidget() {
   return <eventbox
     onClick={() => exec(`ghostty -e nmtui`)}>
-    <centerbox class="network">
-      <box />
-      <label class="topbar-icon" label="󰈁" />
-      <box />
+    <centerbox orientation={Gtk.Orientation.HORIZONTAL} class="network">
+      <box $type="start" />
+      <label $type="center" class="topbar-icon" label="󰈁" />
+      <box $type="end" />
     </centerbox>
   </eventbox>
 }
@@ -343,9 +343,9 @@ function NetworkWiredWidget() {
 function NetworkWifiWidget() {
   return <eventbox
     onClick={() => exec(`ghostty -e nmtui`)}>
-    <centerbox class="network">
-      <box />
-      <With value={networkWifiStrength}>
+    <centerbox orientation={Gtk.Orientation.HORIZONTAL} class="network">
+      <box $type="start" />
+      <With value={networkWifiStrength} $type="center">
         {strength =>
           <box>
             <label label={`${strength}%`} />
@@ -354,7 +354,7 @@ function NetworkWifiWidget() {
           </box>
         }
       </With>
-      <box />
+      <box $type="end" />
     </centerbox>
   </eventbox>
 }
@@ -432,9 +432,9 @@ const mapWeatherIcon = (icon: string) => {
 function Weather() {
   return <eventbox
     onClick={() => exec(`zen https://openweathermap.org/city/3096472`)}>
-    <centerbox class="weather">
-      <box />
-      <With value={weather}>
+    <centerbox orientation={Gtk.Orientation.HORIZONTAL} class="weather">
+      <box $type="start" />
+      <With value={weather} $type="center">
         {value =>
           <box>
             <label label={value.temp} />
@@ -443,7 +443,7 @@ function Weather() {
           </box>
         }
       </With>
-      <box />
+      <box $type="end" />
     </centerbox>
   </eventbox>
 }
