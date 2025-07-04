@@ -69,7 +69,7 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
     <centerbox>
       <Title />
       <box />
-      <box />
+      <Workspaces />
     </centerbox>
   </window>
 }
