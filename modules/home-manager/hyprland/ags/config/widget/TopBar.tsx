@@ -1,6 +1,8 @@
-import { App, Astal, Gtk, Gdk } from "astal/gtk3"
-import { Binding, Variable } from "astal"
-import { exec, bind } from "astal"
+import app from "ags/gtk3/app"
+import { Astal, Gtk, Gdk } from "ags/gtk3"
+import { exec } from "ags/process"
+import { createBinding, With } from "ags"
+import { createPoll } from "ags/time"
 
 import Hyprland from "gi://AstalHyprland"
 import Wp from "gi://AstalWp"
@@ -10,18 +12,18 @@ import GLib from "gi://GLib"
 const HOME = GLib.getenv("HOME")
 
 const hyprland = Hyprland.get_default()
-const hyprlandWorkspace = bind(hyprland, "focused_workspace")
+const hyprlandWorkspace = createBinding(hyprland, "focused_workspace")
 
 const audio = Wp.get_default()?.audio
-const audioSpeakerVolume = bind(audio!.default_speaker!, "volume")
-const audioMicVolume = bind(audio!.default_microphone!, "volume")
+const audioSpeakerVolume = createBinding(audio!.default_speaker!, "volume")
+const audioMicVolume = createBinding(audio!.default_microphone!, "volume")
 
 const network = Network.get_default()
-const networkWifiStrength = bind(network.wifi, "strength")
-const networkState = bind(network, "state")
-const networkPrimary = bind(network, "primary")
+const networkWifiStrength = createBinding(network.wifi, "strength")
+const networkState = createBinding(network, "state")
+const networkPrimary = createBinding(network, "primary")
 
-const time = Variable("").poll(1000, "date")
+const time = createPoll("", 1000, "date")
 
 const asBashCommand = (command: string) => ["bash", "-c", command]
 
@@ -30,39 +32,39 @@ const formatCpu = (out: string) => {
   const value = Math.floor(+out).toString()
   return `${value}%`
 }
-const cpu = Variable("").poll(1000, asBashCommand(cpuCommand), formatCpu)
+const cpu = createPoll("", 1000, asBashCommand(cpuCommand), formatCpu)
 
 const diskCommand = "df / | grep / | awk '{print 0 + $5}'"
 const formatDisk = (out: string) => {
   const value = Math.floor(+out).toString()
   return `${value}%`
 }
-const disk = Variable("").poll(60000, asBashCommand(diskCommand), formatDisk)
+const disk = createPoll("", 60000, asBashCommand(diskCommand), formatDisk)
 
 const memCommand = "free | grep Mem | awk '{print 100 - ($7/$2 * 100)}'"
 const formatMem = (out: string) => {
   const value = Math.floor(+out).toString()
   return `${value}%`
 }
-const mem = Variable("").poll(1000, asBashCommand(memCommand), formatMem)
+const mem = createPoll("", 1000, asBashCommand(memCommand), formatMem)
 
 const tempCommand = "sensors | grep CPUTIN | awk '{print $2}'"
 const formatTemp = (out: string) => {
   const value = Math.floor(+(out.replace("+", "").replace("°C", ""))).toString()
   return `${value}°C`
 }
-const temp = Variable("").poll(1000, asBashCommand(tempCommand), formatTemp)
+const temp = createPoll("", 1000, asBashCommand(tempCommand), formatTemp)
 
 
 export default function TopBar(gdkmonitor: Gdk.Monitor) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor
 
   return <window
-    className="top-bar"
+    class="top-bar"
     gdkmonitor={gdkmonitor}
     exclusivity={Astal.Exclusivity.EXCLUSIVE}
     anchor={TOP | LEFT | RIGHT}
-    application={App}>
+    application={app}>
 
     <centerbox>
       <Title />
@@ -75,37 +77,43 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
 
 
 type IconProps = {
-  child?: JSX.Element
+  children?: any
 }
 
 function Icon(props: IconProps) {
   return <label
-    className="topbar-icon"
-  >{props.child}</label>
+    class="topbar-icon"
+  >{props.children}</label>
 }
 
 function Title() {
-  const clients = bind(hyprland, "clients")
+  const clients = createBinding(hyprland, "clients")
 
   return <box>
-    {clients.as(clients => {
-      if (clients.length === 0) {
-        return <box />
-      } else {
-        return <FocusedTitle />
-      }
-    })}
+    <With value={clients}>
+      {clients => {
+        if (clients.length === 0) {
+          return <box />
+        } else {
+          return <FocusedTitle />
+        }
+      }}
+    </With>
   </box>
 }
 
 function FocusedTitle() {
-  const hyprlandClient = bind(hyprland, "focused_client")
+  const hyprlandClient = createBinding(hyprland, "focused_client")
   return <box>
-    <box
-      className="window-title"
-      visible={hyprlandClient.as(client => !!client?.title)}>
-      <label>{hyprlandClient.as(client => client?.title)}</label>
-    </box>
+    <With value={hyprlandClient}>
+      {client =>
+        <box
+          class="window-title"
+          visible={!!client?.title}>
+          <label label={client?.title}></label>
+        </box>
+      }
+    </With>
     <box />
   </box>
 }
@@ -114,10 +122,14 @@ function Workspaces() {
   return <box
     halign={Gtk.Align.END}>
     <box />
-    <box className="workspaces">
+    <box class="workspaces">
       {Array.from({ length: 5 }, (_, i) => i + 1).map(i =>
-        <box className="workspace-label">
-          <Icon>{hyprlandWorkspace.as(workspace => workspace.id === i ? "" : "")}</Icon>
+        <box class="workspace-label">
+          <With value={hyprlandWorkspace}>
+            {workspace =>
+              <Icon>{workspace.id === i ? "" : ""}</Icon>
+            }
+          </With>
         </box>
       )}
     </box>
@@ -127,16 +139,22 @@ function Workspaces() {
 function Time() {
   return <eventbox
     onClick={() => exec(`zen https://calendar.google.com`)}>
-    <box className="clock">
-      <label
-        halign={Gtk.Align.CENTER}
-      >{time()}</label>
+    <box class="clock">
+      <With value={time}>
+        {time =>
+          <label
+            halign={Gtk.Align.CENTER}
+          >
+            {time}
+          </label>
+        }
+      </With>
     </box>
   </eventbox>
 }
 
 function Center() {
-  return <box className="center">
+  return <box class="center">
     <Cpu />
     <Temp />
     <Mem />
@@ -153,20 +171,24 @@ function Speaker() {
   return <eventbox
     onScroll={(_, event) => changeSpeakerVolume(-event.delta_y)}
     onClick={() => exec(`pavucontrol`)}>
-    <centerbox className="audio">
+    <centerbox class="audio">
       <box />
-      <box>
-        <label>{audioSpeakerVolume.as(value => `${Math.floor(value * 100)}%`)}</label>
-        <Gap />
-        <Icon>󰕾</Icon>
-      </box>
+      <With value={audioSpeakerVolume}>
+        {value =>
+          <box>
+            <label>{`${Math.floor(value * 100)}%`}</label>
+            <Gap />
+            <Icon>󰕾</Icon>
+          </box>
+        }
+      </With>
       <box />
     </centerbox>
   </eventbox>
 }
 
 function Gap() {
-  return <box className="gap" />
+  return <box class="gap" />
 }
 
 
@@ -174,13 +196,17 @@ function Mic() {
   return <eventbox
     onScroll={(_, event) => changeMicVolume(-event.delta_y)}
     onClick={() => exec(`pavucontrol`)}>
-    <centerbox className="audio">
+    <centerbox class="audio">
       <box />
-      <box>
-        <label>{audioMicVolume.as(value => `${Math.floor(value * 100)}%`)}</label>
-        <Gap />
-        <Icon></Icon>
-      </box>
+      <With value={audioMicVolume}>
+        {value =>
+          <box>
+            <label>{`${Math.floor(value * 100)}%`}</label>
+            <Gap />
+            <Icon></Icon>
+          </box>
+        }
+      </With>
       <box />
     </centerbox>
   </eventbox>
@@ -201,37 +227,49 @@ function changeMicVolume(delta: number) {
 }
 
 function Temp() {
-  return <centerbox className="temp">
+  return <centerbox class="temp">
     <box />
-    <box>
-      <Icon></Icon>
-      <Gap />
-      <label>{temp()}</label>
-    </box>
+    <With value={temp}>
+      {temp =>
+        <box>
+          <Icon></Icon>
+          <Gap />
+          <label>{temp}</label>
+        </box>
+      }
+    </With>
     <box />
   </centerbox>
 }
 
 function Disk() {
-  return <centerbox className="disk">
+  return <centerbox class="disk">
     <box />
-    <box>
-      <Icon>󰋊</Icon>
-      <Gap />
-      <label>{disk()}</label>
-    </box>
+    <With value={disk}>
+      {disk =>
+        <box>
+          <Icon>󰋊</Icon>
+          <Gap />
+          <label>{disk}</label>
+        </box>
+      }
+    </With>
     <box />
   </centerbox>
 }
 
 function Mem() {
-  return <centerbox className="mem">
+  return <centerbox class="mem">
     <box />
-    <box>
-      <Icon>󰒋</Icon>
-      <Gap />
-      <label>{mem()}</label>
-    </box>
+    <With value={mem}>
+      {mem =>
+        <box>
+          <Icon>󰒋</Icon>
+          <Gap />
+          <label>{mem}</label>
+        </box>
+      }
+    </With>
     <box />
   </centerbox>
 }
@@ -239,13 +277,17 @@ function Mem() {
 function Cpu() {
   return <eventbox
     onClick={() => exec(`ghostty -e htop`)}>
-    <centerbox className="cpu">
+    <centerbox class="cpu">
       <box />
-      <box>
-        <Icon></Icon>
-        <Gap />
-        <label>{cpu()}</label>
-      </box>
+      <With value={cpu}>
+        {cpu =>
+          <box>
+            <Icon></Icon>
+            <Gap />
+            <label>{cpu}</label>
+          </box>
+        }
+      </With>
       <box />
     </centerbox>
   </eventbox>
@@ -253,45 +295,44 @@ function Cpu() {
 
 type MultiIconProps = {
   icons: string[]
-  value: Binding<number>
+  value: number
 }
 
 function MultiIcon({ icons, value }: MultiIconProps) {
   const step = 100 / icons.length
   return <Icon>
-    {value.as(value => icons[Math.min(icons.length - 1, Math.floor(value / step))])}
+    {icons[Math.min(icons.length - 1, Math.floor(value / step))]}
   </Icon>
 }
 
 function NetworkWidget() {
-  return <box>
-    {networkState.as(state => {
-      if (state === Network.State.CONNECTED_GLOBAL) {
-        return <NetworkConnectedWidget />
-      } else {
-        return <NetworkDisconnectedWidget />
-      }
-    })}
-  </box>
+  return <With value={networkState}>
+    {state =>
+      <box>
+        {state === Network.State.CONNECTED_GLOBAL
+          ? <NetworkConnectedWidget />
+          : <NetworkDisconnectedWidget />}
+      </box>
+    }
+  </With>
 }
 
 function NetworkConnectedWidget() {
-  return <box>
-    {networkPrimary.as(primary => {
-      if (primary === Network.Primary.WIFI) {
-        return <NetworkWifiWidget />
-      } else {
-        return <NetworkWiredWidget />
-      }
-
-    })}
-  </box>
+  return <With value={networkPrimary}>
+    {primary =>
+      <box>
+        {primary === Network.Primary.WIFI
+          ? <NetworkWifiWidget />
+          : <NetworkWiredWidget />}
+      </box>
+    }
+  </With>
 }
 
 function NetworkDisconnectedWidget() {
   return <eventbox
     onClick={() => exec(`ghostty -e nmtui`)}>
-    <centerbox className="network">
+    <centerbox class="network">
       <box />
       <box>
         <Icon>󰤮</Icon>
@@ -304,7 +345,7 @@ function NetworkDisconnectedWidget() {
 function NetworkWiredWidget() {
   return <eventbox
     onClick={() => exec(`ghostty -e nmtui`)}>
-    <centerbox className="network">
+    <centerbox class="network">
       <box />
       <Icon>󰈁</Icon>
       <box />
@@ -315,22 +356,26 @@ function NetworkWiredWidget() {
 function NetworkWifiWidget() {
   return <eventbox
     onClick={() => exec(`ghostty -e nmtui`)}>
-    <centerbox className="network">
+    <centerbox class="network">
       <box />
-      <box>
-        <label>{networkWifiStrength.as(strength => `${strength}%`)}</label>
-        <Gap />
-        <MultiIcon icons={["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]} value={networkWifiStrength} />
-      </box>
+      <With value={networkWifiStrength}>
+        {strength =>
+          <box>
+            <label>{`${strength}%`}</label>
+            <Gap />
+            <MultiIcon icons={["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]} value={strength} />
+          </box>
+        }
+      </With>
       <box />
     </centerbox>
   </eventbox>
 }
 
-const weather = Variable({
+const weather = createPoll({
   temp: "",
   icon: ""
-}).poll(900000, async (old) => {
+}, 900000, async (old) => {
   try {
     const key = exec(`cat ${HOME}/.config/.secret/openweather`).trim()
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.281760&lon=18.997510&appid=${key}&units=metric`
@@ -400,13 +445,17 @@ const mapWeatherIcon = (icon: string) => {
 function Weather() {
   return <eventbox
     onClick={() => exec(`zen https://openweathermap.org/city/3096472`)}>
-    <centerbox className="weather">
+    <centerbox class="weather">
       <box />
-      <box>
-        <label>{weather().as(value => value.temp)}</label>
-        <Gap />
-        <Icon>{weather().as(value => value.icon)}</Icon>
-      </box>
+      <With value={weather}>
+        {value =>
+          <box>
+            <label>{value.temp}</label>
+            <Gap />
+            <Icon>{value.icon}</Icon>
+          </box>
+        }
+      </With>
       <box />
     </centerbox>
   </eventbox>

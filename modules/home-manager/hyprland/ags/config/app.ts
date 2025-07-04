@@ -1,10 +1,10 @@
-import { App } from "astal/gtk3"
+import app from "ags/gtk3/app"
 import style from "./style.css"
 import TopBar from "./widget/TopBar"
 
-App.start({
+app.start({
   css: style,
   main() {
-    App.get_monitors().map(TopBar)
+    app.get_monitors().map(TopBar)
   },
 })
