@@ -110,17 +110,17 @@ function Workspaces() {
   return <box
     halign={Gtk.Align.END}>
     <box />
-    <box class="workspaces">
-      {Array.from({ length: 5 }, (_, i) => i + 1).map(i =>
-        <box class="workspace-label">
-          <With value={hyprlandWorkspace}>
-            {workspace =>
+    <With value={hyprlandWorkspace}>
+      {workspace =>
+        <box class="workspaces">
+          {Array.from({ length: 5 }, (_, i) => i + 1).map(i =>
+            <box class="workspace-label">
               <label class="topbar-icon">{workspace.id === i ? "" : ""}</label>
-            }
-          </With>
+            </box>
+          )}
         </box>
-      )}
-    </box>
+      }
+    </With>
   </box>
 }
 
