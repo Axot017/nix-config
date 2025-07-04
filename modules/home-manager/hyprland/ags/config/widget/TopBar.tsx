@@ -127,7 +127,7 @@ function Workspaces() {
         <box class="workspace-label">
           <With value={hyprlandWorkspace}>
             {workspace =>
-              <Icon>{workspace.id === i ? "" : ""}</Icon>
+              <Icon><>{workspace.id === i ? "" : ""}</></Icon>
             }
           </With>
         </box>
@@ -178,7 +178,7 @@ function Speaker() {
           <box>
             <label>{`${Math.floor(value * 100)}%`}</label>
             <Gap />
-            <Icon>󰕾</Icon>
+            <Icon><>󰕾</></Icon>
           </box>
         }
       </With>
@@ -203,7 +203,7 @@ function Mic() {
           <box>
             <label>{`${Math.floor(value * 100)}%`}</label>
             <Gap />
-            <Icon></Icon>
+            <Icon><></></Icon>
           </box>
         }
       </With>
@@ -232,7 +232,7 @@ function Temp() {
     <With value={temp}>
       {temp =>
         <box>
-          <Icon></Icon>
+          <Icon><></></Icon>
           <Gap />
           <label>{temp}</label>
         </box>
@@ -248,7 +248,7 @@ function Disk() {
     <With value={disk}>
       {disk =>
         <box>
-          <Icon>󰋊</Icon>
+          <Icon><>󰋊</></Icon>
           <Gap />
           <label>{disk}</label>
         </box>
@@ -264,7 +264,7 @@ function Mem() {
     <With value={mem}>
       {mem =>
         <box>
-          <Icon>󰒋</Icon>
+          <Icon><>󰒋</></Icon>
           <Gap />
           <label>{mem}</label>
         </box>
@@ -282,7 +282,7 @@ function Cpu() {
       <With value={cpu}>
         {cpu =>
           <box>
-            <Icon></Icon>
+            <Icon><></></Icon>
             <Gap />
             <label>{cpu}</label>
           </box>
@@ -301,7 +301,7 @@ type MultiIconProps = {
 function MultiIcon({ icons, value }: MultiIconProps) {
   const step = 100 / icons.length
   return <Icon>
-    {icons[Math.min(icons.length - 1, Math.floor(value / step))]}
+    <>{icons[Math.min(icons.length - 1, Math.floor(value / step))]}</>
   </Icon>
 }
 
@@ -335,7 +335,7 @@ function NetworkDisconnectedWidget() {
     <centerbox class="network">
       <box />
       <box>
-        <Icon>󰤮</Icon>
+        <Icon><>󰤮</></Icon>
       </box>
       <box />
     </centerbox>
@@ -347,7 +347,7 @@ function NetworkWiredWidget() {
     onClick={() => exec(`ghostty -e nmtui`)}>
     <centerbox class="network">
       <box />
-      <Icon>󰈁</Icon>
+      <Icon><>󰈁</></Icon>
       <box />
     </centerbox>
   </eventbox>
@@ -452,7 +452,7 @@ function Weather() {
           <box>
             <label>{value.temp}</label>
             <Gap />
-            <Icon>{value.icon}</Icon>
+            <Icon><>{value.icon}</></Icon>
           </box>
         }
       </With>
