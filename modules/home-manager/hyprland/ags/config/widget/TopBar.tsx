@@ -66,10 +66,10 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
     anchor={TOP | LEFT | RIGHT}
     application={app}>
 
-    <centerbox>
-      <Title />
-      <Center />
-      <Workspaces />
+    <centerbox orientation={Gtk.Orientation.HORIZONTAL}>
+      <Title $type="start" />
+      <Center $type="center" />
+      <Workspaces $type="end" />
     </centerbox>
   </window>
 }
@@ -271,7 +271,7 @@ function Cpu() {
           <box>
             <label class="topbar-icon" label="" />
             <Gap />
-            <label label="{cpu}" />
+            <label label={cpu} />
           </box>
         }
       </With>
