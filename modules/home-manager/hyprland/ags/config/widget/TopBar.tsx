@@ -68,20 +68,10 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
 
     <centerbox>
       <Title />
-      <Center />
-      <Workspaces />
+      <box />
+      <box />
     </centerbox>
   </window>
-}
-
-
-
-type IconProps = {
-  children?: JSX.Element | Array<JSX.Element>
-}
-
-function Icon(props: IconProps) {
-  return <label class="topbar-icon">{props.children}</label>
 }
 
 function Title() {
@@ -230,7 +220,7 @@ function Temp() {
     <With value={temp}>
       {temp =>
         <box>
-          <label class="topbar-icon"></label>
+          <label class="topbar-icon"></label>
           <Gap />
           <label>{temp}</label>
         </box>
@@ -246,7 +236,7 @@ function Disk() {
     <With value={disk}>
       {disk =>
         <box>
-          <label class="topbar-icon"></label>
+          <label class="topbar-icon">󰋊</label>
           <Gap />
           <label>{disk}</label>
         </box>
@@ -262,7 +252,7 @@ function Mem() {
     <With value={mem}>
       {mem =>
         <box>
-          <label class="topbar-icon"></label>
+          <label class="topbar-icon">󰒋</label>
           <Gap />
           <label>{mem}</label>
         </box>
@@ -280,7 +270,7 @@ function Cpu() {
       <With value={cpu}>
         {cpu =>
           <box>
-            <label class="topbar-icon"></label>
+            <label class="topbar-icon"></label>
             <Gap />
             <label>{cpu}</label>
           </box>
@@ -333,7 +323,7 @@ function NetworkDisconnectedWidget() {
     <centerbox class="network">
       <box />
       <box>
-        <label class="topbar-icon"></label>
+        <label class="topbar-icon">󰤮</label>
       </box>
       <box />
     </centerbox>
@@ -345,7 +335,7 @@ function NetworkWiredWidget() {
     onClick={() => exec(`ghostty -e nmtui`)}>
     <centerbox class="network">
       <box />
-      <label class="topbar-icon"></label>
+      <label class="topbar-icon">󰈁</label>
       <box />
     </centerbox>
   </eventbox>
@@ -361,7 +351,7 @@ function NetworkWifiWidget() {
           <box>
             <label>{`${strength}%`}</label>
             <Gap />
-            <MultiIcon icons={["", "", "", "", ""]} value={strength} />
+            <MultiIcon icons={["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]} value={strength} />
           </box>
         }
       </With>
