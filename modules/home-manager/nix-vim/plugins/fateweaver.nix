@@ -11,16 +11,28 @@
   #     };
   #   })
   # ];
-  programs.nixvim.keymaps = [{
-    mode = "i";
-    key = "<C-y>";
-    action.__raw = ''
-      function()
-        require('fateweaver').accept_completion()
-      end
-    '';
-    options = { silent = true; };
-  }];
+  programs.nixvim.keymaps = [
+    {
+      mode = "i";
+      key = "<C-y>";
+      action.__raw = ''
+        function()
+          require('fateweaver').accept_completion()
+        end
+      '';
+      options = { silent = true; };
+    }
+    {
+      mode = "i";
+      key = "<C-s>";
+      action.__raw = ''
+        function()
+          require('fateweaver').save_sample()
+        end
+      '';
+      options = { silent = true; };
+    }
+  ];
   programs.nixvim.extraConfigLua = ''
     -- For development
     vim.opt.rtp:append(vim.fn.expand('$HOME/Projects/fateweaver.nvim'))
@@ -30,6 +42,7 @@
     fateweaver.setup({
       log_level = 'DEBUG',
       logger_fn = require('fateweaver.logger').file_logger(vim.fn.stdpath("cache") .. "/fateweaver.log"),
+      samples_file_path = vim.fn.stdpath("cache") .. "/samples.log",
       -- completion_endpoint = "http://localhost:11434/v1/completions",
       -- model_name = "hf.co/bartowski/zed-industries_zeta-GGUF:Q4_K_M",
       -- api_key = function()
