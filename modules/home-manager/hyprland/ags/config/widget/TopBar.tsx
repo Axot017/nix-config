@@ -115,7 +115,7 @@ function Workspaces() {
         <box class="workspaces">
           {Array.from({ length: 5 }, (_, i) => i + 1).map(i =>
             <box class="workspace-label">
-              <label class="topbar-icon">{workspace.id === i ? "" : ""}</label>
+              {workspace.id === i ? "" : ""}
             </box>
           )}
         </box>
