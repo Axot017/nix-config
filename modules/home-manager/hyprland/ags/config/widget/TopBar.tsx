@@ -81,9 +81,7 @@ type IconProps = {
 }
 
 function Icon(props: IconProps) {
-  return <label
-    class="topbar-icon"
-  >{props.children}</label>
+  return <label class="topbar-icon">{props.children}</label>
 }
 
 function Title() {
@@ -127,7 +125,7 @@ function Workspaces() {
         <box class="workspace-label">
           <With value={hyprlandWorkspace}>
             {workspace =>
-              <Icon><>{workspace.id === i ? "" : ""}</></Icon>
+              <label class="topbar-icon">{workspace.id === i ? "" : ""}</label>
             }
           </With>
         </box>
@@ -178,7 +176,7 @@ function Speaker() {
           <box>
             <label>{`${Math.floor(value * 100)}%`}</label>
             <Gap />
-            <Icon><>󰕾</></Icon>
+            <label class="topbar-icon">󰕾</label>
           </box>
         }
       </With>
@@ -203,7 +201,7 @@ function Mic() {
           <box>
             <label>{`${Math.floor(value * 100)}%`}</label>
             <Gap />
-            <Icon><></></Icon>
+            <label class="topbar-icon"></label>
           </box>
         }
       </With>
@@ -232,7 +230,7 @@ function Temp() {
     <With value={temp}>
       {temp =>
         <box>
-          <Icon><></></Icon>
+          <label class="topbar-icon"></label>
           <Gap />
           <label>{temp}</label>
         </box>
@@ -248,7 +246,7 @@ function Disk() {
     <With value={disk}>
       {disk =>
         <box>
-          <Icon><>󰋊</></Icon>
+          <label class="topbar-icon">󰋊</label>
           <Gap />
           <label>{disk}</label>
         </box>
@@ -264,7 +262,7 @@ function Mem() {
     <With value={mem}>
       {mem =>
         <box>
-          <Icon><>󰒋</></Icon>
+          <label class="topbar-icon">󰒋</label>
           <Gap />
           <label>{mem}</label>
         </box>
@@ -282,7 +280,7 @@ function Cpu() {
       <With value={cpu}>
         {cpu =>
           <box>
-            <Icon><></></Icon>
+            <label class="topbar-icon"></label>
             <Gap />
             <label>{cpu}</label>
           </box>
@@ -300,9 +298,9 @@ type MultiIconProps = {
 
 function MultiIcon({ icons, value }: MultiIconProps) {
   const step = 100 / icons.length
-  return <Icon>
-    <>{icons[Math.min(icons.length - 1, Math.floor(value / step))]}</>
-  </Icon>
+  return <label class="topbar-icon">
+    {icons[Math.min(icons.length - 1, Math.floor(value / step))]}
+  </label>
 }
 
 function NetworkWidget() {
@@ -335,7 +333,7 @@ function NetworkDisconnectedWidget() {
     <centerbox class="network">
       <box />
       <box>
-        <Icon><>󰤮</></Icon>
+        <label class="topbar-icon">󰤮</label>
       </box>
       <box />
     </centerbox>
@@ -347,7 +345,7 @@ function NetworkWiredWidget() {
     onClick={() => exec(`ghostty -e nmtui`)}>
     <centerbox class="network">
       <box />
-      <Icon><>󰈁</></Icon>
+      <label class="topbar-icon">󰈁</label>
       <box />
     </centerbox>
   </eventbox>
@@ -452,7 +450,7 @@ function Weather() {
           <box>
             <label>{value.temp}</label>
             <Gap />
-            <Icon><>{value.icon}</></Icon>
+            <label class="topbar-icon">{value.icon}</label>
           </box>
         }
       </With>
