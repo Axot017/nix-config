@@ -277,10 +277,10 @@ function Cpu() {
     onClick={() => exec(`ghostty -e htop`)}>
     <centerbox class="cpu">
       <box />
+      <label class="topbar-icon"></label>
       <With value={cpu}>
         {cpu =>
           <box>
-            <label class="topbar-icon"></label>
             <Gap />
             <label>{cpu}</label>
           </box>
