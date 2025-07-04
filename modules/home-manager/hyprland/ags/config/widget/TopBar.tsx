@@ -77,7 +77,7 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
 
 
 type IconProps = {
-  children?: string
+  children?: JSX.Element | Array<JSX.Element>
 }
 
 function Icon(props: IconProps) {
