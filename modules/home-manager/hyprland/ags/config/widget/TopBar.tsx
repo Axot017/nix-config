@@ -68,7 +68,7 @@ export default function TopBar(gdkmonitor: Gdk.Monitor) {
 
     <centerbox>
       <Title />
-      <box />
+      <Center />
       <Workspaces />
     </centerbox>
   </window>
@@ -132,9 +132,8 @@ function Time() {
         {time =>
           <label
             halign={Gtk.Align.CENTER}
-          >
-            {time}
-          </label>
+            label={time}
+          />
         }
       </With>
     </box>
@@ -164,9 +163,9 @@ function Speaker() {
       <With value={audioSpeakerVolume}>
         {value =>
           <box>
-            <label>{`${Math.floor(value * 100)}%`}</label>
+            <label label={`${Math.floor(value * 100)}%`} />
             <Gap />
-            <label class="topbar-icon">󰕾</label>
+            <label class="topbar-icon" label="󰕾" />
           </box>
         }
       </With>
@@ -189,9 +188,9 @@ function Mic() {
       <With value={audioMicVolume}>
         {value =>
           <box>
-            <label>{`${Math.floor(value * 100)}%`}</label>
+            <label label={`${Math.floor(value * 100)}%`} />
             <Gap />
-            <label class="topbar-icon"></label>
+            <label class="topbar-icon" label="" />
           </box>
         }
       </With>
@@ -220,9 +219,9 @@ function Temp() {
     <With value={temp}>
       {temp =>
         <box>
-          <label class="topbar-icon"></label>
+          <label class="topbar-icon" label="" />
           <Gap />
-          <label>{temp}</label>
+          <label label={temp} />
         </box>
       }
     </With>
@@ -236,9 +235,9 @@ function Disk() {
     <With value={disk}>
       {disk =>
         <box>
-          <label class="topbar-icon">󰋊</label>
+          <label class="topbar-icon" label="󰋊" />
           <Gap />
-          <label>{disk}</label>
+          <label label={disk} />
         </box>
       }
     </With>
@@ -252,9 +251,9 @@ function Mem() {
     <With value={mem}>
       {mem =>
         <box>
-          <label class="topbar-icon">󰒋</label>
+          <label class="topbar-icon" label="󰒋" />
           <Gap />
-          <label>{mem}</label>
+          <label label={mem} />
         </box>
       }
     </With>
@@ -270,9 +269,9 @@ function Cpu() {
       <With value={cpu}>
         {cpu =>
           <box>
-            <label class="topbar-icon"></label>
+            <label class="topbar-icon" label="" />
             <Gap />
-            <label>{cpu}</label>
+            <label label="{cpu}" />
           </box>
         }
       </With>
@@ -288,9 +287,9 @@ type MultiIconProps = {
 
 function MultiIcon({ icons, value }: MultiIconProps) {
   const step = 100 / icons.length
-  return <label class="topbar-icon">
-    {icons[Math.min(icons.length - 1, Math.floor(value / step))]}
-  </label>
+  return <label
+    class="topbar-icon"
+    label={icons[Math.min(icons.length - 1, Math.floor(value / step))]} />
 }
 
 function NetworkWidget() {
@@ -323,7 +322,7 @@ function NetworkDisconnectedWidget() {
     <centerbox class="network">
       <box />
       <box>
-        <label class="topbar-icon">󰤮</label>
+        <label class="topbar-icon" label="󰤮" />
       </box>
       <box />
     </centerbox>
@@ -335,7 +334,7 @@ function NetworkWiredWidget() {
     onClick={() => exec(`ghostty -e nmtui`)}>
     <centerbox class="network">
       <box />
-      <label class="topbar-icon">󰈁</label>
+      <label class="topbar-icon" label="󰈁" />
       <box />
     </centerbox>
   </eventbox>
@@ -349,7 +348,7 @@ function NetworkWifiWidget() {
       <With value={networkWifiStrength}>
         {strength =>
           <box>
-            <label>{`${strength}%`}</label>
+            <label label={`${strength}%`} />
             <Gap />
             <MultiIcon icons={["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]} value={strength} />
           </box>
@@ -438,9 +437,9 @@ function Weather() {
       <With value={weather}>
         {value =>
           <box>
-            <label>{value.temp}</label>
+            <label label={value.temp} />
             <Gap />
-            <label class="topbar-icon">{value.icon}</label>
+            <label class="topbar-icon" label={value.icon} />
           </box>
         }
       </With>
