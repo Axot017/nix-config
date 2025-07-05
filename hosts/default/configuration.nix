@@ -6,7 +6,8 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc libepoxy fontconfig ];
 
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/i18n.nix
     ../../modules/nixos/pipewire.nix
@@ -146,6 +147,7 @@
     pavucontrol
     ollama-rocm
     posting
+    oversteer
   ];
 
   environment.sessionVariables = {
