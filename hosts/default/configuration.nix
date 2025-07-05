@@ -33,6 +33,7 @@
     };
   };
   boot.kernelModules = [ "nct6775" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ hid-tmff2 ];
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
