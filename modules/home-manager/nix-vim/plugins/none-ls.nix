@@ -10,6 +10,7 @@
         mix.enable = true;
         nixfmt.enable = true;
         ocamlformat.enable = true;
+        yamlfmt.enable = true;
       };
       code_actions = { gitsigns.enable = true; };
     };
