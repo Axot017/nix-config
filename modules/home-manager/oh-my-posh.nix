@@ -83,11 +83,11 @@
           foreground = "p:terminal-blue";
           template = "➜ ";
         };
-        transient_prompt = {
-          background = "p:t-background";
-          foreground = "p:terminal-blue";
-          template = "➜ ";
-        };
+        # transient_prompt = {
+        #   background = "p:t-background";
+        #   foreground = "p:terminal-blue";
+        #   template = "➜ ";
+        # };
         final_space = true;
         version = 2;
         terminal_background = "p:t-background";
