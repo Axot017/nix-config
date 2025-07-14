@@ -149,6 +149,7 @@
     ollama-rocm
     posting
     oversteer
+    opencode
   ];
 
   environment.sessionVariables = {
