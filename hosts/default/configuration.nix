@@ -150,7 +150,9 @@
     posting
     oversteer
     opencode
+    beekeeper-studio
   ];
+  nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.2.12" ];
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATH = "\${HOME}/.steam/root/compatibilitytools.d";
