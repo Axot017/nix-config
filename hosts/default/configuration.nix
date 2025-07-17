@@ -147,7 +147,7 @@
     claude-code
     pavucontrol
     ollama-rocm
-    posting
+    bruno
     oversteer
     opencode
     beekeeper-studio
