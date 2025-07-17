@@ -43,7 +43,7 @@
       log_level = 'DEBUG',
       logger_fn = require('fateweaver.logger').file_logger(vim.fn.stdpath("cache") .. "/fateweaver.log"),
       samples_file_path = vim.fn.stdpath("cache") .. "/samples.jsonl",
-      completion_endpoint = "http://192.168.0.17:11434/v1/completions",
+      -- completion_endpoint = "http://192.168.0.17:11434/v1/completions",
       -- model_name = "hf.co/bartowski/zed-industries_zeta-GGUF:Q4_K_M",
       -- api_key = function()
       --   local path = os.getenv("HOME") .. "/.config/.secret/fateweaver_api_key"
