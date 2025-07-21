@@ -151,7 +151,6 @@
     oversteer
     opencode
     beekeeper-studio
-    bluetui
   ];
   nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.2.12" ];
 
