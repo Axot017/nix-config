@@ -59,5 +59,7 @@ in
     gotests
     impl
     delve
+
+    nodejs_20
   ];
 }
