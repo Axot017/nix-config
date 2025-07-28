@@ -4,6 +4,19 @@
   inputs,
   ...
 }:
+let
+  gopher = (
+    pkgs.vimUtils.buildVimPlugin {
+      name = "gopher.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "olexsmir";
+        repo = "gopher.nvim";
+        rev = "master";
+        sha256 = "sha256-8F8hi29YJSmu/TdfobznE1jM3grUqdr0MBOp7ZlyCTA=";
+      };
+    }
+  );
+in
 {
   home.file.".config/nvim".source = ./config;
   programs.neovim = {
@@ -25,6 +38,11 @@
       oil-nvim
       snacks-nvim
       tokyonight-nvim
+      gopher
+      nvim-dap
+      nvim-dap-go
+      nvim-dap-ui
+      nvim-nio
     ];
   };
   home.packages = with pkgs; [
@@ -33,5 +51,12 @@
     elixir-ls
     nixfmt-rfc-style
     lua-language-server
+
+    go
+    iferr
+    gomodifytags
+    gotests
+    impl
+    delve
   ];
 }
