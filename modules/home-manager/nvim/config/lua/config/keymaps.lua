@@ -84,6 +84,10 @@ vim.keymap.set('n', '<leader>gb', function() Snacks.picker.git_branches() end, {
 vim.keymap.set('n', '<leader>gs', function() Snacks.picker.git_status() end, { silent = true, desc = 'Git status' })
 vim.keymap.set('n', '<leader>gd', function() Snacks.picker.git_diff() end, { silent = true, desc = 'Git diff' })
 
+-- LSP
+vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end, { silent = true, desc = 'LSP rename' })
+vim.keymap.set('n', '<leader>ca', function() vim.lsp.buf.code_action() end, { silent = true, desc = 'LSP code action' })
+
 -- Terminal mode
 vim.keymap.set('t', '<esc><esc>', '<C-\\><C-n>', { silent = true, desc = 'Exit terminal mode' })
 
