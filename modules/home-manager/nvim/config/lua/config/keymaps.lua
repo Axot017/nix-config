@@ -1,3 +1,4 @@
+-- DAP
 vim.keymap.set('n', '<leader>dh', function() require('dapui').eval() end, { silent = true, desc = 'DAP eval hover' })
 vim.keymap.set('n', '<leader>de', function()
   vim.ui.input({ prompt = 'Expression: ' }, function(input)
@@ -45,15 +46,21 @@ vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<CR>', { silent = true, de
 vim.keymap.set('n', '<leader>x', function() Snacks.bufdelete() end, { silent = true, desc = 'Delete buffer' })
 vim.keymap.set('n', '<leader>X', function() Snacks.bufdelete.other() end,
   { silent = true, desc = 'Delete other buffers' })
---
--- -- Neotest
--- vim.keymap.set('n', '<leader>trr', function() require('neotest').run.run() end, { silent = true, desc = 'Run nearest test' })
--- vim.keymap.set('n', '<leader>trd', function() require('neotest').run.run({strategy = "dap"}) end, { silent = true, desc = 'Debug nearest test' })
--- vim.keymap.set('n', '<leader>trf', function() require('neotest').run.run({vim.fn.expand("%")}) end, { silent = true, desc = 'Run file tests' })
--- vim.keymap.set('n', '<leader>tst', function() require('neotest').summary.toggle() end, { silent = true, desc = 'Toggle test summary' })
--- vim.keymap.set('n', '<leader>tot', function() require('neotest').output_panel.toggle() end, { silent = true, desc = 'Toggle test output' })
--- vim.keymap.set('n', '<leader>toc', function() require('neotest').output_panel.clear() end, { silent = true, desc = 'Clear test output' })
---
+
+-- Neotest
+vim.keymap.set('n', '<leader>trr', function() require('neotest').run.run() end,
+  { silent = true, desc = 'Run nearest test' })
+vim.keymap.set('n', '<leader>trd', function() require('neotest').run.run({ strategy = "dap" }) end,
+  { silent = true, desc = 'Debug nearest test' })
+vim.keymap.set('n', '<leader>trf', function() require('neotest').run.run({ vim.fn.expand("%") }) end,
+  { silent = true, desc = 'Run file tests' })
+vim.keymap.set('n', '<leader>tst', function() require('neotest').summary.toggle() end,
+  { silent = true, desc = 'Toggle test summary' })
+vim.keymap.set('n', '<leader>tot', function() require('neotest').output_panel.toggle() end,
+  { silent = true, desc = 'Toggle test output' })
+vim.keymap.set('n', '<leader>toc', function() require('neotest').output_panel.clear() end,
+  { silent = true, desc = 'Clear test output' })
+
 -- Go
 vim.keymap.set('n', '<leader>ge', '<cmd>GoIfErr<CR>', { silent = true, desc = 'Add Go if err' })
 vim.keymap.set('n', '<leader>gt', function()

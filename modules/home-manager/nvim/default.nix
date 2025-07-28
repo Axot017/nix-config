@@ -28,6 +28,9 @@ in
       gitsigns-nvim
       gopher
       lualine-nvim
+      neotest
+      neotest-elixir
+      neotest-go
       noice-nvim
       none-ls-nvim
       nui-nvim
@@ -42,6 +45,7 @@ in
       nvim-treesitter.withAllGrammars
       nvim-web-devicons
       oil-nvim
+      plenary-nvim
       snacks-nvim
       tokyonight-nvim
     ];
