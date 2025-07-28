@@ -68,18 +68,18 @@ vim.keymap.set('n', 'N', 'Nzz', { silent = true, desc = 'Previous search result 
       -- # vim.keymap.set('n', '<leader>gj', '<cmd>GoTagAdd json<CR>', { silent = true, desc = 'Add JSON tags' })
       -- # vim.keymap.set('n', '<leader>gy', '<cmd>GoTagAdd yaml<CR>', { silent = true, desc = 'Add YAML tags' })
       -- # 
-      -- # -- Snacks picker
-      -- # vim.keymap.set('n', '<leader>ff', function() Snacks.picker.files() end, { silent = true, desc = 'Find files' })
-      -- # vim.keymap.set('n', '<leader>fr', function() Snacks.picker.recent() end, { silent = true, desc = 'Recent files' })
-      -- # vim.keymap.set('n', '<leader>fg', function() Snacks.picker.grep() end, { silent = true, desc = 'Live grep' })
-      -- # vim.keymap.set('n', '<leader>fd', function() Snacks.picker.diagnostics() end, { silent = true, desc = 'Diagnostics' })
-      -- # vim.keymap.set('n', 'gi', function() Snacks.picker.lsp_implementations() end, { silent = true, desc = 'Go to implementations' })
-      -- # vim.keymap.set('n', 'gd', function() Snacks.picker.lsp_definitions() end, { silent = true, desc = 'Go to definitions' })
-      -- # vim.keymap.set('n', 'gr', function() Snacks.picker.lsp_references() end, { silent = true, desc = 'Go to references' })
-      -- # vim.keymap.set('n', '<leader>gb', function() Snacks.picker.git_branches() end, { silent = true, desc = 'Git branches' })
-      -- # vim.keymap.set('n', '<leader>gs', function() Snacks.picker.git_status() end, { silent = true, desc = 'Git status' })
-      -- # vim.keymap.set('n', '<leader>gd', function() Snacks.picker.git_diff() end, { silent = true, desc = 'Git diff' })
-      -- # 
+-- Snacks picker
+vim.keymap.set('n', '<leader>ff', function() Snacks.picker.files() end, { silent = true, desc = 'Find files' })
+vim.keymap.set('n', '<leader>fr', function() Snacks.picker.recent() end, { silent = true, desc = 'Recent files' })
+vim.keymap.set('n', '<leader>fg', function() Snacks.picker.grep() end, { silent = true, desc = 'Live grep' })
+vim.keymap.set('n', '<leader>fd', function() Snacks.picker.diagnostics() end, { silent = true, desc = 'Diagnostics' })
+vim.keymap.set('n', 'gi', function() Snacks.picker.lsp_implementations() end, { silent = true, desc = 'Go to implementations' })
+vim.keymap.set('n', 'gd', function() Snacks.picker.lsp_definitions() end, { silent = true, desc = 'Go to definitions' })
+vim.keymap.set('n', 'gr', function() Snacks.picker.lsp_references() end, { silent = true, desc = 'Go to references' })
+vim.keymap.set('n', '<leader>gb', function() Snacks.picker.git_branches() end, { silent = true, desc = 'Git branches' })
+vim.keymap.set('n', '<leader>gs', function() Snacks.picker.git_status() end, { silent = true, desc = 'Git status' })
+vim.keymap.set('n', '<leader>gd', function() Snacks.picker.git_diff() end, { silent = true, desc = 'Git diff' })
+      
       -- # -- Visual mode keymaps
       -- # -- Stay in indent mode
       -- # vim.keymap.set('v', '<', '<gv', { silent = true, desc = 'Indent left and reselect' })
