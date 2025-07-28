@@ -19,6 +19,9 @@ let
 in
 {
   home.file.".config/nvim".source = ./config;
+  home.sessionVariables = {
+    NVIM_ELIXIR_LS_PATH = "${pkgs.elixir-ls}/bin/elixir-ls";
+  };
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
@@ -52,7 +55,6 @@ in
     extraPackages = with pkgs; [
       nil
       gopls
-      elixir-ls
       nixfmt-rfc-style
       lua-language-server
 

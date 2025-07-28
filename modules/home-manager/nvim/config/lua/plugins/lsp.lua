@@ -1,34 +1,11 @@
 local lspconfig = require('lspconfig')
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-local on_attach = function(client, bufnr)
-end
-
--- Configure diagnostics display
--- vim.diagnostic.config({
--- virtual_text = {
--- prefix = '●',
--- source = "if_many",
--- },
--- float = {
--- source = "always",
--- border = "rounded",
--- },
--- signs = true,
--- underline = true,
--- update_in_insert = false,
--- severity_sort = true,
--- })
-
--- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
--- for type, icon in pairs(signs) do
--- local hl = "DiagnosticSign" .. type
--- vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
--- end
-
 local servers = {
-  elixirls = {},
+  elixirls = {
+    cmd = {
+      path = os.getenv("NVIM_ELIXIR_LS_PATH") or "elixir-ls",
+    },
+  },
   gopls = {},
   lua_ls = {
     settings = {
@@ -59,10 +36,6 @@ local servers = {
 }
 
 for server, config in pairs(servers) do
-  local server_config = vim.tbl_deep_extend("force", {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }, config)
-
-  lspconfig[server].setup(server_config)
+  vim.lsp.enable(server)
+  vim.lsp.config(server, config)
 end
