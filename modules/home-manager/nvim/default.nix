@@ -9,14 +9,21 @@
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars
-      tokyonight-nvim
-      oil-nvim
-      snacks-nvim
       blink-cmp
       copilot-lua
-      nvim-treesitter-textobjects
+      nvim-lspconfig
       nvim-treesitter-context
+      nvim-treesitter-textobjects
+      nvim-treesitter.withAllGrammars
+      oil-nvim
+      snacks-nvim
+      tokyonight-nvim
     ];
   };
+  home.packages = with pkgs; [
+    nil
+    gopls
+    elixir-ls
+    lua-language-server
+  ];
 }
