@@ -12,6 +12,7 @@
       blink-cmp
       bufferline-nvim
       copilot-lua
+      lualine-nvim
       noice-nvim
       none-ls-nvim
       nui-nvim
