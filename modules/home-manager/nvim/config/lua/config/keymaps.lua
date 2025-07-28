@@ -1,23 +1,18 @@
--- # vim.keymap.set('n', '<leader>dh', function() require('dapui').eval() end, { silent = true, desc = 'DAP eval hover' })
--- # vim.keymap.set('n', '<leader>de', function()
--- # vim.ui.input({ prompt = 'Expression: ' }, function(input)
--- # require('dapui').eval(input)
--- # end)
--- # end, { silent = true, desc = 'DAP eval expression' })
--- # vim.keymap.set('n', '<leader>dt', require('dapui').toggle, { silent = true, desc = 'DAP UI toggle' })
--- # vim.keymap.set('n', '<leader>dc', require('dap').continue, { silent = true, desc = 'DAP continue' })
--- # vim.keymap.set('n', '<leader>di', require('dap').step_into, { silent = true, desc = 'DAP step into' })
--- # vim.keymap.set('n', '<leader>do', require('dap').step_over, { silent = true, desc = 'DAP step over' })
--- # vim.keymap.set('n', '<leader>dt', require('dap').toggle_breakpoint, { silent = true, desc = 'DAP toggle breakpoint' })
--- # vim.keymap.set('n', '<F1>', require('dapui').toggle, { silent = true, desc = 'DAP UI toggle' })
--- # vim.keymap.set('n', '<F2>', require('dap').continue, { silent = true, desc = 'DAP continue' })
--- # vim.keymap.set('n', '<F3>', require('dap').toggle_breakpoint, { silent = true, desc = 'DAP toggle breakpoint' })
--- #
--- # -- Multiterm
--- # vim.keymap.set('n', '<leader>tt', function() require('multiterm').bind_toggle() end, { silent = true, desc = 'Terminal toggle' })
--- # vim.keymap.set('n', '<leader>tq', function() require('multiterm').close_active() end, { silent = true, desc = 'Terminal close' })
--- # vim.keymap.set('n', '<leader>tr', function() require('multiterm').bind_remove() end, { silent = true, desc = 'Terminal remove' })
--- #
+vim.keymap.set('n', '<leader>dh', function() require('dapui').eval() end, { silent = true, desc = 'DAP eval hover' })
+vim.keymap.set('n', '<leader>de', function()
+  vim.ui.input({ prompt = 'Expression: ' }, function(input)
+    require('dapui').eval(input)
+  end)
+end, { silent = true, desc = 'DAP eval expression' })
+vim.keymap.set('n', '<leader>dt', require('dapui').toggle, { silent = true, desc = 'DAP UI toggle' })
+vim.keymap.set('n', '<leader>dc', require('dap').continue, { silent = true, desc = 'DAP continue' })
+vim.keymap.set('n', '<leader>di', require('dap').step_into, { silent = true, desc = 'DAP step into' })
+vim.keymap.set('n', '<leader>do', require('dap').step_over, { silent = true, desc = 'DAP step over' })
+vim.keymap.set('n', '<leader>dt', require('dap').toggle_breakpoint, { silent = true, desc = 'DAP toggle breakpoint' })
+vim.keymap.set('n', '<F1>', require('dapui').toggle, { silent = true, desc = 'DAP UI toggle' })
+vim.keymap.set('n', '<F2>', require('dap').continue, { silent = true, desc = 'DAP continue' })
+vim.keymap.set('n', '<F3>', require('dap').toggle_breakpoint, { silent = true, desc = 'DAP toggle breakpoint' })
+
 -- Oil
 vim.keymap.set('n', '<C-n>', '<cmd>Oil<CR>', { silent = true, desc = 'Open Oil' })
 
@@ -50,25 +45,25 @@ vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<CR>', { silent = true, de
 vim.keymap.set('n', '<leader>x', function() Snacks.bufdelete() end, { silent = true, desc = 'Delete buffer' })
 vim.keymap.set('n', '<leader>X', function() Snacks.bufdelete.other() end,
   { silent = true, desc = 'Delete other buffers' })
--- #
--- # -- Neotest
--- # vim.keymap.set('n', '<leader>trr', function() require('neotest').run.run() end, { silent = true, desc = 'Run nearest test' })
--- # vim.keymap.set('n', '<leader>trd', function() require('neotest').run.run({strategy = "dap"}) end, { silent = true, desc = 'Debug nearest test' })
--- # vim.keymap.set('n', '<leader>trf', function() require('neotest').run.run({vim.fn.expand("%")}) end, { silent = true, desc = 'Run file tests' })
--- # vim.keymap.set('n', '<leader>tst', function() require('neotest').summary.toggle() end, { silent = true, desc = 'Toggle test summary' })
--- # vim.keymap.set('n', '<leader>tot', function() require('neotest').output_panel.toggle() end, { silent = true, desc = 'Toggle test output' })
--- # vim.keymap.set('n', '<leader>toc', function() require('neotest').output_panel.clear() end, { silent = true, desc = 'Clear test output' })
--- #
--- # -- Go
--- # vim.keymap.set('n', '<leader>ge', '<cmd>GoIfErr<CR>', { silent = true, desc = 'Add Go if err' })
--- # vim.keymap.set('n', '<leader>gt', function()
--- # require("gopher").test.add()
--- # local test_file = vim.fn.expand("%:r") .. "_test.go"
--- # vim.cmd("edit " .. test_file)
--- # end, { silent = true, desc = 'Add Go test' })
--- # vim.keymap.set('n', '<leader>gj', '<cmd>GoTagAdd json<CR>', { silent = true, desc = 'Add JSON tags' })
--- # vim.keymap.set('n', '<leader>gy', '<cmd>GoTagAdd yaml<CR>', { silent = true, desc = 'Add YAML tags' })
--- #
+--
+-- -- Neotest
+-- vim.keymap.set('n', '<leader>trr', function() require('neotest').run.run() end, { silent = true, desc = 'Run nearest test' })
+-- vim.keymap.set('n', '<leader>trd', function() require('neotest').run.run({strategy = "dap"}) end, { silent = true, desc = 'Debug nearest test' })
+-- vim.keymap.set('n', '<leader>trf', function() require('neotest').run.run({vim.fn.expand("%")}) end, { silent = true, desc = 'Run file tests' })
+-- vim.keymap.set('n', '<leader>tst', function() require('neotest').summary.toggle() end, { silent = true, desc = 'Toggle test summary' })
+-- vim.keymap.set('n', '<leader>tot', function() require('neotest').output_panel.toggle() end, { silent = true, desc = 'Toggle test output' })
+-- vim.keymap.set('n', '<leader>toc', function() require('neotest').output_panel.clear() end, { silent = true, desc = 'Clear test output' })
+--
+-- Go
+vim.keymap.set('n', '<leader>ge', '<cmd>GoIfErr<CR>', { silent = true, desc = 'Add Go if err' })
+vim.keymap.set('n', '<leader>gt', function()
+  require("gopher").test.add()
+  local test_file = vim.fn.expand("%:r") .. "_test.go"
+  vim.cmd("edit " .. test_file)
+end, { silent = true, desc = 'Add Go test' })
+vim.keymap.set('n', '<leader>gj', '<cmd>GoTagAdd json<CR>', { silent = true, desc = 'Add JSON tags' })
+vim.keymap.set('n', '<leader>gy', '<cmd>GoTagAdd yaml<CR>', { silent = true, desc = 'Add YAML tags' })
+
 -- Snacks picker
 vim.keymap.set('n', '<leader>ff', function() Snacks.picker.files() end, { silent = true, desc = 'Find files' })
 vim.keymap.set('n', '<leader>fr', function() Snacks.picker.recent() end, { silent = true, desc = 'Recent files' })
@@ -84,3 +79,8 @@ vim.keymap.set('n', '<leader>gd', function() Snacks.picker.git_diff() end, { sil
 
 -- Terminal mode
 vim.keymap.set('t', '<esc><esc>', '<C-\\><C-n>', { silent = true, desc = 'Exit terminal mode' })
+
+-- -- Multiterm
+-- vim.keymap.set('n', '<leader>tt', function() require('multiterm').bind_toggle() end, { silent = true, desc = 'Terminal toggle' })
+-- vim.keymap.set('n', '<leader>tq', function() require('multiterm').close_active() end, { silent = true, desc = 'Terminal close' })
+-- vim.keymap.set('n', '<leader>tr', function() require('multiterm').bind_remove() end, { silent = true, desc = 'Terminal remove' })
