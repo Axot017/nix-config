@@ -19,12 +19,14 @@
       snacks-nvim
       tokyonight-nvim
       none-ls-nvim
+    bufdelete-nvim
     ];
   };
   home.packages = with pkgs; [
     nil
     gopls
     elixir-ls
+nixfmt-rfc-style
     lua-language-server
   ];
 }

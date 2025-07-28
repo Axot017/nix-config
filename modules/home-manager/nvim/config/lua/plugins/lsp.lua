@@ -7,24 +7,24 @@ end
 
 -- Configure diagnostics display
 -- vim.diagnostic.config({
-  -- virtual_text = {
-    -- prefix = '●',
-    -- source = "if_many",
-  -- },
-  -- float = {
-    -- source = "always",
-    -- border = "rounded",
-  -- },
-  -- signs = true,
-  -- underline = true,
-  -- update_in_insert = false,
-  -- severity_sort = true,
+-- virtual_text = {
+-- prefix = '●',
+-- source = "if_many",
+-- },
+-- float = {
+-- source = "always",
+-- border = "rounded",
+-- },
+-- signs = true,
+-- underline = true,
+-- update_in_insert = false,
+-- severity_sort = true,
 -- })
 
 -- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 -- for type, icon in pairs(signs) do
-  -- local hl = "DiagnosticSign" .. type
-  -- vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+-- local hl = "DiagnosticSign" .. type
+-- vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 -- end
 
 local servers = {
@@ -43,20 +43,15 @@ local servers = {
       },
     },
   },
-  
-  nil_ls = {
-    settings = {
-      ['nil'] = {
-        formatting = { command = { "nixpkgs-fmt" } },
-      },
-    },
-  },
+
+  nil_ls = {},
   yamlls = {
     settings = {
       yaml = {
         schemas = {
           ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-          ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "/docker-compose*.yml",
+          ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] =
+          "/docker-compose*.yml",
         },
       },
     },
@@ -68,6 +63,6 @@ for server, config in pairs(servers) do
     on_attach = on_attach,
     capabilities = capabilities,
   }, config)
-  
+
   lspconfig[server].setup(server_config)
 end
