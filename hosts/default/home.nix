@@ -23,8 +23,8 @@ in
     ../../modules/home-manager/hyprland/default.nix
     ../../modules/home-manager/jujutsu.nix
     ../../modules/home-manager/mpv.nix
-    # ../../modules/home-manager/nix-vim/default.nix
-    ../../modules/home-manager/nvim/default.nix
+    ../../modules/home-manager/nix-vim/default.nix
+    # ../../modules/home-manager/nvim/default.nix
     ../../modules/home-manager/oh-my-posh.nix
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/stylix.nix
