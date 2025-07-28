@@ -2,9 +2,7 @@ local lspconfig = require('lspconfig')
 
 local servers = {
   elixirls = {
-    cmd = {
-      path = os.getenv("NVIM_ELIXIR_LS_PATH") or "elixir-ls",
-    },
+    cmd = { os.getenv("NVIM_ELIXIR_LS_PATH") or "elixir-ls" },
   },
   gopls = {},
   lua_ls = {
