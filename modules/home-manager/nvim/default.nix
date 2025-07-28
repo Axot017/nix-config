@@ -18,6 +18,7 @@
       oil-nvim
       snacks-nvim
       tokyonight-nvim
+      none-ls-nvim
     ];
   };
   home.packages = with pkgs; [
