@@ -18,15 +18,16 @@
       oil-nvim
       snacks-nvim
       tokyonight-nvim
+      bufferline-nvim
+      nvim-web-devicons
       none-ls-nvim
-    bufdelete-nvim
     ];
   };
   home.packages = with pkgs; [
     nil
     gopls
     elixir-ls
-nixfmt-rfc-style
+    nixfmt-rfc-style
     lua-language-server
   ];
 }
