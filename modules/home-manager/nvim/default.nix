@@ -25,7 +25,7 @@ in
       blink-cmp
       bufferline-nvim
       copilot-lua
-      copilot-lua
+      gitsigns-nvim
       gopher
       lualine-nvim
       noice-nvim
