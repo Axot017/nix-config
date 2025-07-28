@@ -10,17 +10,20 @@
     enable = true;
     plugins = with pkgs.vimPlugins; [
       blink-cmp
+      bufferline-nvim
       copilot-lua
+      noice-nvim
+      none-ls-nvim
+      nui-nvim
       nvim-lspconfig
+      nvim-notify
       nvim-treesitter-context
       nvim-treesitter-textobjects
       nvim-treesitter.withAllGrammars
+      nvim-web-devicons
       oil-nvim
       snacks-nvim
       tokyonight-nvim
-      bufferline-nvim
-      nvim-web-devicons
-      none-ls-nvim
     ];
   };
   home.packages = with pkgs; [
