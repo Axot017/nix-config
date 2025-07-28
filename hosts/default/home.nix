@@ -1,19 +1,16 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ config, pkgs, inputs, ... }:
 let
-  nix-edit-script = import ../../modules/home-manager/scripts/nix-edit.nix { inherit pkgs; };
-  aider-gemini-script = import ../../modules/home-manager/scripts/aider-gemini.nix {
-    inherit pkgs;
-  };
-  aider-claude-script = import ../../modules/home-manager/scripts/aider-claude.nix {
-    inherit pkgs;
-  };
-in
-{
+  nix-edit-script =
+    import ../../modules/home-manager/scripts/nix-edit.nix { inherit pkgs; };
+  aider-gemini-script =
+    import ../../modules/home-manager/scripts/aider-gemini.nix {
+      inherit pkgs;
+    };
+  aider-claude-script =
+    import ../../modules/home-manager/scripts/aider-claude.nix {
+      inherit pkgs;
+    };
+in {
   imports = [
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/feh.nix
@@ -23,8 +20,8 @@ in
     ../../modules/home-manager/hyprland/default.nix
     ../../modules/home-manager/jujutsu.nix
     ../../modules/home-manager/mpv.nix
-    ../../modules/home-manager/nix-vim/default.nix
-    # ../../modules/home-manager/nvim/default.nix
+    # ../../modules/home-manager/nix-vim/default.nix
+    ../../modules/home-manager/nvim/default.nix
     ../../modules/home-manager/oh-my-posh.nix
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/stylix.nix
@@ -66,11 +63,7 @@ in
       EDITOR = "nvim";
       SUDO_EDITOR = "nvim";
     };
-    packages = [
-      nix-edit-script
-      aider-gemini-script
-      aider-claude-script
-    ];
+    packages = [ nix-edit-script aider-gemini-script aider-claude-script ];
   };
 
   # Let Home Manager install and manage itself.
