@@ -25,11 +25,17 @@ in
       blink-cmp
       bufferline-nvim
       copilot-lua
+      copilot-lua
+      gopher
       lualine-nvim
       noice-nvim
       none-ls-nvim
       nui-nvim
+      nvim-dap
+      nvim-dap-go
+      nvim-dap-ui
       nvim-lspconfig
+      nvim-nio
       nvim-notify
       nvim-treesitter-context
       nvim-treesitter-textobjects
@@ -38,11 +44,6 @@ in
       oil-nvim
       snacks-nvim
       tokyonight-nvim
-      gopher
-      nvim-dap
-      nvim-dap-go
-      nvim-dap-ui
-      nvim-nio
     ];
   };
   home.packages = with pkgs; [
