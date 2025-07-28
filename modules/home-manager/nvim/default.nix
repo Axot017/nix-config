@@ -17,7 +17,6 @@
       copilot-lua
       nvim-treesitter-textobjects
       nvim-treesitter-context
-
     ];
   };
 }
