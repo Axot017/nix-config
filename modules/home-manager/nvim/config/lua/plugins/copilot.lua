@@ -1,6 +1,7 @@
 require('copilot').setup({
   keymap = {
     accept = "<C-y>",
+    accept_line = true,
   },
   suggestion = {
     enable = true,
