@@ -45,21 +45,21 @@ in
       snacks-nvim
       tokyonight-nvim
     ];
+    extraPackages = with pkgs; [
+      nil
+      gopls
+      elixir-ls
+      nixfmt-rfc-style
+      lua-language-server
+
+      go
+      iferr
+      gomodifytags
+      gotests
+      impl
+      delve
+
+      nodejs_20
+    ];
   };
-  home.packages = with pkgs; [
-    nil
-    gopls
-    elixir-ls
-    nixfmt-rfc-style
-    lua-language-server
-
-    go
-    iferr
-    gomodifytags
-    gotests
-    impl
-    delve
-
-    nodejs_20
-  ];
 }
