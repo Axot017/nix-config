@@ -44,6 +44,7 @@ in
   home.file.".config/nvim".source = ./config;
   home.sessionVariables = {
     NVIM_ELIXIR_LS_PATH = "${pkgs.elixir-ls}/bin/elixir-ls";
+    NVIM_KULALA_HTTP_GRAMMAR_PATH = "${treesitter-kulala-http-grammar}";
   };
   programs.neovim = {
     enable = true;
