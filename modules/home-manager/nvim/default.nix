@@ -28,6 +28,17 @@ let
       };
     }
   );
+  treesitter-kulala-http-grammar = pkgs.tree-sitter.buildGrammar {
+    language = "kulala_http";
+    version = "5.3.1";
+    src = pkgs.fetchFromGitHub {
+      owner = "mistweaverco";
+      repo = "kulala.nvim";
+      rev = "902fc21e8a3fee7ccace37784879327baa6d1ece";
+      hash = "sha256-whQpwZMEvD62lgCrnNryrEvfSwLJJ+IqVCywTq78Vf8=";
+    };
+    location = "lua/tree-sitter";
+  };
 in
 {
   home.file.".config/nvim".source = ./config;
@@ -37,6 +48,7 @@ in
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
+      treesitter-kulala-http-grammar
       blink-cmp
       bufferline-nvim
       copilot-lua
