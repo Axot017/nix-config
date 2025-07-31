@@ -91,7 +91,12 @@ vim.keymap.set('n', '<leader>ca', function() vim.lsp.buf.code_action() end, { si
 -- Terminal mode
 vim.keymap.set('t', '<esc><esc>', '<C-\\><C-n>', { silent = true, desc = 'Exit terminal mode' })
 
--- -- Multiterm
--- vim.keymap.set('n', '<leader>tt', function() require('multiterm').bind_toggle() end, { silent = true, desc = 'Terminal toggle' })
--- vim.keymap.set('n', '<leader>tq', function() require('multiterm').close_active() end, { silent = true, desc = 'Terminal close' })
--- vim.keymap.set('n', '<leader>tr', function() require('multiterm').bind_remove() end, { silent = true, desc = 'Terminal remove' })
+-- Kulala
+vim.keymap.set('n', '<leader>hs', function() require('kulala').run() end, { silent = true, desc = 'Run Kulala' })
+vim.keymap.set('n', '<leader>ha', function() require('kulala').run_all() end, { silent = true, desc = 'Run all Kulala' })
+vim.keymap.set('n', '<leader>hb', function() require('kulala').scratch() end, { silent = true, desc = 'Kulala scratch' })
+
+-- Multiterm
+vim.keymap.set('n', '<leader>tt', function() require('multiterm').bind_toggle() end, { silent = true, desc = 'Terminal toggle' })
+vim.keymap.set('n', '<leader>tq', function() require('multiterm').close_active() end, { silent = true, desc = 'Terminal close' })
+vim.keymap.set('n', '<leader>tr', function() require('multiterm').bind_remove() end, { silent = true, desc = 'Terminal remove' })

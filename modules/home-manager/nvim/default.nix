@@ -16,6 +16,18 @@ let
       };
     }
   );
+  multiterm = (
+    pkgs.vimUtils.buildVimPlugin {
+      name = "multiterm.nvim";
+      dependencies = with pkgs.vimPlugins; [ plenary-nvim ];
+      src = pkgs.fetchFromGitHub {
+        owner = "Axot017";
+        repo = "multiterm.nvim";
+        rev = "master";
+        sha256 = "sha256-9NoTj3lF/KZYPZIm7Jo7D9rfmVJ7XPxGCjXeqPylChw=";
+      };
+    }
+  );
 in
 {
   home.file.".config/nvim".source = ./config;
@@ -30,6 +42,7 @@ in
       copilot-lua
       gitsigns-nvim
       gopher
+      multiterm
       lualine-nvim
       neotest
       neotest-elixir
@@ -42,6 +55,7 @@ in
       nvim-dap-ui
       nvim-lspconfig
       nvim-nio
+      kulala-nvim
       nvim-notify
       nvim-treesitter-context
       nvim-treesitter-textobjects
