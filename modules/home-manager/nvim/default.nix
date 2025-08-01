@@ -73,7 +73,9 @@ in
       nvim-notify
       nvim-treesitter-context
       nvim-treesitter-textobjects
-      (nvim-treesitter.withPlugins (p: nvim-treesitter.passthru.allGrammars))
+      (nvim-treesitter.withPlugins (
+        p: nvim-treesitter.passthru.allGrammars ++ [ treesitter-kulala-http-grammar ]
+      ))
       nvim-web-devicons
       oil-nvim
       plenary-nvim
