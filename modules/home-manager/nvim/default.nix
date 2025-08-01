@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   config,
   inputs,
   ...
@@ -72,7 +73,7 @@ in
       nvim-notify
       nvim-treesitter-context
       nvim-treesitter-textobjects
-      nvim-treesitter.withAllGrammars
+      (nvim-treesitter.withPlugins (p: nvim-treesitter.passthru.allGrammars))
       nvim-web-devicons
       oil-nvim
       plenary-nvim

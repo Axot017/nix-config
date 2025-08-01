@@ -1,15 +1,5 @@
 { config, pkgs, ... }:
-let
-  aider-gemini-script =
-    import ../../modules/home-manager/scripts/aider-gemini.nix {
-      inherit pkgs;
-    };
-  aider-claude-script =
-    import ../../modules/home-manager/scripts/aider-claude.nix {
-      inherit pkgs;
-    };
-
-in {
+{
   imports = [
     ../../modules/home-manager/stylix.nix
     ../../modules/home-manager/zsh.nix
@@ -55,8 +45,6 @@ in {
       fzf
       delve
       rustup
-      aider-gemini-script
-      aider-claude-script
     ];
   };
 
