@@ -85,7 +85,7 @@ vim.keymap.set('n', '<leader>gs', function() Snacks.picker.git_status() end, { s
 vim.keymap.set('n', '<leader>gd', function() Snacks.picker.git_diff() end, { silent = true, desc = 'Git diff' })
 
 -- LSP
-vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end, { silent = true, desc = 'LSP rename' })
+vim.keymap.set('n', '<leader>r', function() vim.lsp.buf.rename() end, { silent = true, desc = 'LSP rename' })
 vim.keymap.set('n', '<leader>ca', function() vim.lsp.buf.code_action() end, { silent = true, desc = 'LSP code action' })
 
 -- Terminal mode
@@ -97,6 +97,9 @@ vim.keymap.set('n', '<leader>ha', function() require('kulala').run_all() end, { 
 vim.keymap.set('n', '<leader>hb', function() require('kulala').scratch() end, { silent = true, desc = 'Kulala scratch' })
 
 -- Multiterm
-vim.keymap.set('n', '<leader>tt', function() require('multiterm').bind_toggle() end, { silent = true, desc = 'Terminal toggle' })
-vim.keymap.set('n', '<leader>tq', function() require('multiterm').close_active() end, { silent = true, desc = 'Terminal close' })
-vim.keymap.set('n', '<leader>tr', function() require('multiterm').bind_remove() end, { silent = true, desc = 'Terminal remove' })
+vim.keymap.set('n', '<leader>tt', function() require('multiterm').bind_toggle() end,
+  { silent = true, desc = 'Terminal toggle' })
+vim.keymap.set('n', '<leader>tq', function() require('multiterm').close_active() end,
+  { silent = true, desc = 'Terminal close' })
+vim.keymap.set('n', '<leader>tr', function() require('multiterm').bind_remove() end,
+  { silent = true, desc = 'Terminal remove' })
