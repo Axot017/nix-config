@@ -40,47 +40,49 @@ let
     };
     location = "lua/tree-sitter";
   };
+  treesitter =
+    with pkgs.vimPlugins;
+    (nvim-treesitter.withPlugins (
+      p: nvim-treesitter.passthru.allGrammars ++ [ treesitter-kulala-http-grammar ]
+    ));
 in
 {
   home.file.".config/nvim".source = ./config;
   home.sessionVariables = {
     NVIM_ELIXIR_LS_PATH = "${pkgs.elixir-ls}/bin/elixir-ls";
-    NVIM_KULALA_HTTP_GRAMMAR_PATH = "${treesitter-kulala-http-grammar}";
   };
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      treesitter-kulala-http-grammar
       blink-cmp
       bufferline-nvim
       copilot-lua
       gitsigns-nvim
       gopher
-      multiterm
+      kulala-nvim
       lualine-nvim
+      multiterm
       neotest
       neotest-elixir
       neotest-go
       noice-nvim
       none-ls-nvim
       nui-nvim
+      nvim-autopairs
       nvim-dap
       nvim-dap-go
       nvim-dap-ui
       nvim-lspconfig
       nvim-nio
-      kulala-nvim
       nvim-notify
       nvim-treesitter-context
       nvim-treesitter-textobjects
-      (nvim-treesitter.withPlugins (
-        p: nvim-treesitter.passthru.allGrammars ++ [ treesitter-kulala-http-grammar ]
-      ))
       nvim-web-devicons
       oil-nvim
       plenary-nvim
       snacks-nvim
       tokyonight-nvim
+      treesitter
     ];
     extraPackages = with pkgs; [
       nil
