@@ -87,6 +87,9 @@ vim.keymap.set('n', '<leader>gd', function() Snacks.picker.git_diff() end, { sil
 -- LSP
 vim.keymap.set('n', '<leader>r', function() vim.lsp.buf.rename() end, { silent = true, desc = 'LSP rename' })
 vim.keymap.set('n', '<leader>ca', function() vim.lsp.buf.code_action() end, { silent = true, desc = 'LSP code action' })
+vim.keymap.set('n', '<leader>]d', function() vim.diagnostic.goto_next() end, { silent = true, desc = 'Next diagnostic' })
+vim.keymap.set('n', '<leader>[d', function() vim.diagnostic.goto_prev() end,
+  { silent = true, desc = 'Previous diagnostic' })
 
 -- Terminal mode
 vim.keymap.set('t', '<esc><esc>', '<C-\\><C-n>', { silent = true, desc = 'Exit terminal mode' })
