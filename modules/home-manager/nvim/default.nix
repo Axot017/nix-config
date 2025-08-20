@@ -75,6 +75,7 @@ in
       nvim-lspconfig
       nvim-nio
       nvim-notify
+      nvim-surround
       nvim-treesitter-context
       nvim-treesitter-textobjects
       nvim-web-devicons
