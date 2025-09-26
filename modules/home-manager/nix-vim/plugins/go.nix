@@ -1,4 +1,10 @@
-{ pkgs, config, inputs, ... }: {
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}:
+{
   programs.nixvim.extraPlugins = [
     (pkgs.vimUtils.buildVimPlugin {
       name = "gopher.nvim";
@@ -11,7 +17,7 @@
         owner = "olexsmir";
         repo = "gopher.nvim";
         rev = "master";
-        sha256 = "sha256-8F8hi29YJSmu/TdfobznE1jM3grUqdr0MBOp7ZlyCTA=";
+        sha256 = "sha256-6t2gdXv+S4xVmncnwFO7rIN64HUqhNaDVfdGlCoos+M=";
       };
     })
   ];

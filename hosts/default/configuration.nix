@@ -2,9 +2,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc libepoxy fontconfig ];
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    libepoxy
+    fontconfig
+  ];
 
   imports = [
     # Include the results of the hardware scan.
@@ -28,8 +38,12 @@
         FastConnectable = "true";
         Experimental = "true";
       };
-      Policy = { AutoEnable = "true"; };
-      LE = { EnableAdvMonInterleaveScan = "true"; };
+      Policy = {
+        AutoEnable = "true";
+      };
+      LE = {
+        EnableAdvMonInterleaveScan = "true";
+      };
     };
   };
   boot.kernelModules = [ "nct6775" ];
@@ -44,7 +58,10 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -76,7 +93,11 @@
   users.users.axot = {
     isNormalUser = true;
     description = "Axot";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -94,12 +115,16 @@
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
-    nix-direnv = { enable = true; };
+    nix-direnv = {
+      enable = true;
+    };
   };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = { "axot" = import ./home.nix; };
+    users = {
+      "axot" = import ./home.nix;
+    };
     backupFileExtension = "backup";
 
   };
@@ -154,7 +179,7 @@
     blueman
     ngrok
   ];
-  nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.2.12" ];
+  nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.3.4" ];
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATH = "\${HOME}/.steam/root/compatibilitytools.d";
@@ -188,7 +213,9 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   virtualisation = {
-    podman = { enable = true; };
+    podman = {
+      enable = true;
+    };
     docker = {
       enable = true;
       enableOnBoot = true;
