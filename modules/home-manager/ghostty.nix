@@ -1,1 +1,10 @@
-{ config, pkgs, ... }: { programs = { ghostty = { enable = true; }; }; }
+{ config, pkgs, ... }:
+{
+
+  home.file.".config/ghostty/shaders".source = ./ghostty/shaders;
+  programs = {
+    ghostty = {
+      enable = true;
+    };
+  };
+}
