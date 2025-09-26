@@ -7,7 +7,8 @@
       enable = true;
       settings = {
         custom-shader = [
-          "${config.home.homeDirectory}/.config/ghostty/shaders/cursor_blaze.glsl"
+          "${config.home.homeDirectory}/.config/ghostty/shaders/cursor_smear.glsl"
+          "${config.home.homeDirectory}/.config/ghostty/shaders/cubes.glsl"
         ];
       };
     };
