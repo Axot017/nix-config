@@ -8,7 +8,7 @@
       settings = {
         custom-shader = [
           "${config.home.homeDirectory}/.config/ghostty/shaders/cursor_smear.glsl"
-          "${config.home.homeDirectory}/.config/ghostty/shaders/cubes.glsl"
+          "${config.home.homeDirectory}/.config/ghostty/shaders/sparks.glsl"
         ];
       };
     };
