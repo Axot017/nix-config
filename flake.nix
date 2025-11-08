@@ -31,23 +31,33 @@
   };
 
   outputs =
-    { self, stylix, nixpkgs, nixvim, home-manager, mac-app-util, ... }@inputs:
-    let system = "aarch64-darwin";
-    in {
-      homeConfigurations = {
-        "mateuszledwon" = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          modules = [
-            mac-app-util.homeManagerModules.default
-            ./hosts/macos/home.nix
-            stylix.homeModules.stylix
-            nixvim.homeManagerModules.nixvim
-          ];
-        };
-      };
+    {
+      self,
+      stylix,
+      nixpkgs,
+      nixvim,
+      home-manager,
+      mac-app-util,
+      ...
+    }@inputs:
+    let
+      system = "aarch64-darwin";
+    in
+    {
+      # homeConfigurations = {
+      #   "mateuszledwon" = home-manager.lib.homeManagerConfiguration {
+      #     pkgs = import nixpkgs {
+      #       inherit system;
+      #       config.allowUnfree = true;
+      #     };
+      #     modules = [
+      #       mac-app-util.homeManagerModules.default
+      #       ./hosts/macos/home.nix
+      #       stylix.homeModules.stylix
+      #       nixvim.homeManagerModules.nixvim
+      #     ];
+      #   };
+      # };
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [

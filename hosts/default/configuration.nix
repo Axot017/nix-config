@@ -141,7 +141,7 @@
     slurp
     libsForQt5.qt5.qtquickcontrols
     libsForQt5.qt5.qtgraphicaleffects
-    protonup
+    protonup-ng
     wev
     lm_sensors
     git
@@ -164,7 +164,7 @@
     slack
     wl-screenrec
     inotify-tools
-    inputs.zen-browser.packages."${system}".default
+    # inputs.zen-browser.packages."${system}".default
     hyprshot
     hyprpicker
     unrar

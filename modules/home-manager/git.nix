@@ -3,12 +3,14 @@
   programs = {
     git = {
       enable = true;
-      userName = "Mateusz Ledwoń";
-      userEmail = "mateuszledwon@duck.com";
-      extraConfig = {
+      settings = {
+        user = {
+          name = "Mateusz Ledwoń";
+          email = "mateuszledwon@duck.com";
+        };
         push = {
           autoSetupRemote = true;
-	      };
+        };
       };
     };
   };
