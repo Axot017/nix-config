@@ -44,20 +44,20 @@
       system = "aarch64-darwin";
     in
     {
-      # homeConfigurations = {
-      #   "mateuszledwon" = home-manager.lib.homeManagerConfiguration {
-      #     pkgs = import nixpkgs {
-      #       inherit system;
-      #       config.allowUnfree = true;
-      #     };
-      #     modules = [
-      #       mac-app-util.homeManagerModules.default
-      #       ./hosts/macos/home.nix
-      #       stylix.homeModules.stylix
-      #       nixvim.homeManagerModules.nixvim
-      #     ];
-      #   };
-      # };
+      homeConfigurations = {
+        "mateuszledwon" = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            stdenv.hostPlatform.system = system;
+            config.allowUnfree = true;
+          };
+          modules = [
+            mac-app-util.homeManagerModules.default
+            ./hosts/macos/home.nix
+            stylix.homeModules.stylix
+            nixvim.homeManagerModules.nixvim
+          ];
+        };
+      };
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [

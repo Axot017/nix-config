@@ -98,7 +98,7 @@ in
       impl
       delve
 
-      nodejs_20
+      nodejs_22
     ];
   };
 }
