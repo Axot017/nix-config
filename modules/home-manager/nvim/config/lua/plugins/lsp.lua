@@ -5,6 +5,7 @@ local servers = {
     cmd = { os.getenv("NVIM_ELIXIR_LS_PATH") or "elixir-ls" },
   },
   gopls = {},
+  gleam = {},
   lua_ls = {
     settings = {
       Lua = {
