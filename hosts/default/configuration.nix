@@ -164,7 +164,7 @@
     slack
     wl-screenrec
     inotify-tools
-    inputs.zen-browser.packages."${system}".default
+    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
     hyprshot
     hyprpicker
     unrar
