@@ -56,6 +56,7 @@ in
     plugins = with pkgs.vimPlugins; [
       blink-cmp
       bufferline-nvim
+      codecompanion-nvim
       copilot-lua
       gitsigns-nvim
       gopher
