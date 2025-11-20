@@ -3,7 +3,7 @@ local helpers = require("codecompanion.adapters.acp.helpers")
 require("codecompanion").setup({
   strategies = {
     chat = {
-      name = "opencode",
+      adapter = "opencode",
     },
     inline = {
       adapter = "opencode",

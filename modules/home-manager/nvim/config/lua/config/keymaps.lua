@@ -105,3 +105,13 @@ vim.keymap.set('n', '<leader>tq', function() require('multiterm').close_active()
   { silent = true, desc = 'Terminal close' })
 vim.keymap.set('n', '<leader>tr', function() require('multiterm').bind_remove() end,
   { silent = true, desc = 'Terminal remove' })
+
+-- CodeCompanion
+vim.keymap.set('n', '<leader>cc', '<cmd>CodeCompanionChat<CR>', { silent = true, desc = 'CodeCompanion Chat' })
+vim.keymap.set({ 'n', 'v' }, '<leader>ca', function()
+  vim.ui.input({ prompt = 'CodeCompanion: ' }, function(input)
+    if input and input ~= '' then
+      vim.cmd('CodeCompanion ' .. input)
+    end
+  end)
+end, { silent = true, desc = 'CodeCompanion with prompt' })
