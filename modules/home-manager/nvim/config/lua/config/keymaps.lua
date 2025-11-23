@@ -108,7 +108,7 @@ vim.keymap.set('n', '<leader>tr', function() require('multiterm').bind_remove() 
 
 -- CodeCompanion
 vim.keymap.set('n', '<leader>cc', '<cmd>CodeCompanionChat<CR>', { silent = true, desc = 'CodeCompanion Chat' })
-vim.keymap.set({ 'n', 'v' }, '<leader>ca', function()
+vim.keymap.set({ 'n', 'v' }, '<leader>ci', function()
   vim.ui.input({ prompt = 'CodeCompanion: ' }, function(input)
     if input and input ~= '' then
       vim.cmd('CodeCompanion ' .. input)
