@@ -100,6 +100,8 @@ in
       delve
 
       nodejs_22
+
+      lsof
     ];
   };
 }

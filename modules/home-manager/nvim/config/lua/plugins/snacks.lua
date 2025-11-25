@@ -8,6 +8,7 @@ require('snacks').setup({
   rename = { enabled = true },
   scope = { enabled = true },
   words = { enabled = true },
+  terminal = { enabled = true },
   picker = {
     enabled = true,
     matcher = {
