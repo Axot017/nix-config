@@ -56,7 +56,6 @@ in
     plugins = with pkgs.vimPlugins; [
       blink-cmp
       bufferline-nvim
-      codecompanion-nvim
       copilot-lua
       gitsigns-nvim
       gopher
@@ -81,6 +80,7 @@ in
       nvim-treesitter-textobjects
       nvim-web-devicons
       oil-nvim
+      opencode-nvim
       plenary-nvim
       snacks-nvim
       tokyonight-nvim

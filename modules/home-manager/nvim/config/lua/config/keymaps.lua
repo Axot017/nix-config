@@ -106,12 +106,11 @@ vim.keymap.set('n', '<leader>tq', function() require('multiterm').close_active()
 vim.keymap.set('n', '<leader>tr', function() require('multiterm').bind_remove() end,
   { silent = true, desc = 'Terminal remove' })
 
--- CodeCompanion
-vim.keymap.set('n', '<leader>cc', '<cmd>CodeCompanionChat<CR>', { silent = true, desc = 'CodeCompanion Chat' })
-vim.keymap.set({ 'n', 'v' }, '<leader>ci', function()
-  vim.ui.input({ prompt = 'CodeCompanion: ' }, function(input)
-    if input and input ~= '' then
-      vim.cmd('CodeCompanion ' .. input)
-    end
-  end)
-end, { silent = true, desc = 'CodeCompanion with prompt' })
+-- Opencode
+vim.keymap.set({ "n", "x" }, "<leader>os", function() require("opencode").ask("@this: ", { submit = true }) end,
+  { desc = "Ask opencode" })
+vim.keymap.set({ "n", "x" }, "<leader>ox", function() require("opencode").select() end,
+  { desc = "Execute opencode action…" })
+vim.keymap.set({ "n", "x" }, "<leader>oa", function() require("opencode").prompt("@this") end,
+  { desc = "Add to opencode" })
+vim.keymap.set({ "n", "t" }, "<leader>ot", function() require("opencode").toggle() end, { desc = "Toggle opencode" })
