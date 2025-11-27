@@ -179,6 +179,8 @@
     blueman
     ngrok
     lazyjj
+    kubectl
+    k3d
   ];
   nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.3.4" ];
 
