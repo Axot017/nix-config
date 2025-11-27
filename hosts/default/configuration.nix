@@ -181,6 +181,7 @@
     lazyjj
     kubectl
     k3d
+    kubernetes-helm
   ];
   nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.3.4" ];
 
