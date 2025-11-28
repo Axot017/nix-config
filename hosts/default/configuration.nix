@@ -184,6 +184,7 @@
     k3d
     kubernetes-helm
     argocd
+    openssl
   ];
   nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.3.4" ];
 
