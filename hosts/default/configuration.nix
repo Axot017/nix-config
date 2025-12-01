@@ -185,6 +185,7 @@
     kubernetes-helm
     argocd
     openssl
+    google-cloud-sdk
   ];
   nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.3.4" ];
 
