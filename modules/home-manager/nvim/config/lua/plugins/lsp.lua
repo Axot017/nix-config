@@ -6,6 +6,7 @@ local servers = {
   },
   gopls = {},
   gleam = {},
+  ocamllsp = {},
   lua_ls = {
     settings = {
       Lua = {

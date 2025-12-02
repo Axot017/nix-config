@@ -102,6 +102,9 @@ in
       nodejs_22
 
       lsof
+
+      ocamlPackages.ocaml-lsp
+      ocamlPackages.ocamlformat
     ];
   };
 }
