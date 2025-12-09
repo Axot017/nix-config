@@ -180,12 +180,7 @@
     blueman
     ngrok
     lazyjj
-    kubectl
-    k3d
-    kubernetes-helm
-    argocd
-    openssl
-    (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    awscli
   ];
   nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.3.4" ];
 
