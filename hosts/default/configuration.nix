@@ -180,7 +180,7 @@
     blueman
     ngrok
     lazyjj
-    awscli
+    awscli2
   ];
   nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.3.4" ];
 
