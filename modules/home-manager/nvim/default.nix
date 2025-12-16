@@ -105,6 +105,8 @@ in
 
       ocamlPackages.ocaml-lsp
       ocamlPackages.ocamlformat
+
+      tofu-ls
     ];
   };
 }
