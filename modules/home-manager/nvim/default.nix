@@ -82,6 +82,7 @@ in
       oil-nvim
       opencode-nvim
       plenary-nvim
+      sidekick-nvim
       snacks-nvim
       tokyonight-nvim
       treesitter

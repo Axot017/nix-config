@@ -127,7 +127,7 @@
       "axot" = import ./home.nix;
     };
     backupFileExtension = "backup";
-
+    useGlobalPkgs = true;
   };
 
   # Allow unfree packages
@@ -181,7 +181,6 @@
     ngrok
     lazyjj
     awscli2
-    vimPlugins.sidekick-nvim
   ];
   nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.3.4" ];
 
