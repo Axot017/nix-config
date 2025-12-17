@@ -87,8 +87,10 @@ vim.keymap.set('n', '<leader>gd', function() Snacks.picker.git_diff() end, { sil
 -- LSP
 vim.keymap.set('n', '<leader>r', function() vim.lsp.buf.rename() end, { silent = true, desc = 'LSP rename' })
 vim.keymap.set('n', '<leader>ca', function() vim.lsp.buf.code_action() end, { silent = true, desc = 'LSP code action' })
-vim.keymap.set('n', ']d', function() vim.diagnostic.goto_next() end, { silent = true, desc = 'Next diagnostic' })
-vim.keymap.set('n', '[d', function() vim.diagnostic.goto_prev() end, { silent = true, desc = 'Previous diagnostic' })
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end,
+  { silent = true, desc = 'Next diagnostic' })
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end,
+  { silent = true, desc = 'Previous diagnostic' })
 
 -- Terminal mode
 vim.keymap.set('t', '<esc><esc>', '<C-\\><C-n>', { silent = true, desc = 'Exit terminal mode' })
@@ -121,15 +123,17 @@ vim.keymap.set('n', '<C-y>', function()
 end, { expr = true, desc = 'Goto/Apply Next Edit Suggestion' })
 vim.keymap.set({ 'n', 't', 'i', 'x' }, '<C-.>', function() require('sidekick.cli').toggle() end,
   { desc = 'Sidekick Toggle' })
-vim.keymap.set('n', '<leader>aa', function() require('sidekick.cli').toggle() end, { desc = 'Sidekick Toggle CLI' })
-vim.keymap.set('n', '<leader>as', function() require('sidekick.cli').select() end, { desc = 'Select CLI' })
 vim.keymap.set('n', '<leader>ad', function() require('sidekick.cli').close() end, { desc = 'Detach a CLI Session' })
 vim.keymap.set({ 'n', 'x' }, '<leader>at', function() require('sidekick.cli').send({ msg = '{this}' }) end,
   { desc = 'Send This' })
-vim.keymap.set('n', '<leader>af', function() require('sidekick.cli').send({ msg = '{file}' }) end, { desc = 'Send File' })
+vim.keymap.set('n', '<leader>an', function() require('sidekick.cli').send({ msg = '{file}' }) end, { desc = 'Send File' })
+vim.keymap.set('n', '<leader>af', function() require('sidekick.cli').send({ msg = '{function}' }) end,
+  { desc = 'Send function' })
+vim.keymap.set('n', '<leader>ac', function() require('sidekick.cli').send({ msg = '{class}' }) end,
+  { desc = 'Send Class' })
 vim.keymap.set('x', '<leader>av', function() require('sidekick.cli').send({ msg = '{selection}' }) end,
   { desc = 'Send Visual Selection' })
 vim.keymap.set({ 'n', 'x' }, '<leader>ap', function() require('sidekick.cli').prompt() end,
   { desc = 'Sidekick Select Prompt' })
-vim.keymap.set('n', '<leader>ao', function() require('sidekick.cli').toggle({ name = 'opencode', focus = true }) end,
+vim.keymap.set('n', '<leader>aa', function() require('sidekick.cli').toggle({ name = 'opencode', focus = true }) end,
   { desc = 'Sidekick Toggle Claude' })
