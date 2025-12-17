@@ -54,7 +54,6 @@
             mac-app-util.homeManagerModules.default
             ./hosts/macos/home.nix
             stylix.homeModules.stylix
-            nixvim.homeManagerModules.nixvim
           ];
         };
       };
