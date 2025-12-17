@@ -181,6 +181,7 @@
     ngrok
     lazyjj
     awscli2
+    vimPlugins.sidekick-nvim
   ];
   nixpkgs.config.permittedInsecurePackages = [ "beekeeper-studio-5.3.4" ];
 
