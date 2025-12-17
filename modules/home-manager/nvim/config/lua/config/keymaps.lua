@@ -116,7 +116,7 @@ vim.keymap.set({ "n", "x" }, "<leader>oa", function() require("opencode").prompt
 vim.keymap.set({ "n", "t" }, "<leader>ot", function() require("opencode").toggle() end, { desc = "Toggle opencode" })
 
 -- Sidekick
-vim.keymap.set('i', '<C-n>', function()
+vim.keymap.set('n', '<C-y>', function()
   require('sidekick').nes_jump_or_apply()
 end, { expr = true, desc = 'Goto/Apply Next Edit Suggestion' })
 vim.keymap.set({ 'n', 't', 'i', 'x' }, '<C-.>', function() require('sidekick.cli').toggle() end,
