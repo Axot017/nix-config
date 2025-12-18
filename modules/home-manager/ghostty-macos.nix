@@ -4,6 +4,7 @@
   programs = {
     ghostty = {
       enable = true;
+      package = pkgs.ghostty-bin;
       settings = {
         custom-shader = [
           "${config.home.homeDirectory}/.config/ghostty/shaders/cursor_smear.glsl"

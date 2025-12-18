@@ -4,10 +4,11 @@
     ../../modules/home-manager/stylix.nix
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/alacritty.nix
+    ../../modules/home-manager/ghostty-macos.nix
     ../../modules/home-manager/zoxide.nix
     ../../modules/home-manager/ripgrep.nix
     ../../modules/home-manager/oh-my-posh.nix
-    ../../modules/home-manager/nix-vim/default-macos.nix
+    ../../modules/home-manager/nvim/default.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -47,6 +48,6 @@
       rustup
     ];
   };
-
+  programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
 }

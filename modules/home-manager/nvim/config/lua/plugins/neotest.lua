@@ -1,6 +1,6 @@
 require('neotest').setup({
   adapters = {
-    require('neotest-go'),
+    require('neotest-golang'),
     require('neotest-elixir'),
   },
 })

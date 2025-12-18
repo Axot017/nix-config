@@ -47,7 +47,7 @@
       homeConfigurations = {
         "mateuszledwon" = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
-            stdenv.hostPlatform.system = system;
+            inherit system;
             config.allowUnfree = true;
           };
           modules = [

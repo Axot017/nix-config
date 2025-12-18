@@ -64,7 +64,7 @@ in
       multiterm
       neotest
       neotest-elixir
-      neotest-go
+      neotest-golang
       noice-nvim
       none-ls-nvim
       nui-nvim
