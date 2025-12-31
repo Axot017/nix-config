@@ -1,7 +1,15 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   programs.zsh = {
     enable = true;
-    syntaxHighlighting = { enable = true; };
+    syntaxHighlighting = {
+      enable = true;
+    };
     autosuggestion.enable = true;
     enableCompletion = true;
     initContent = ''
@@ -11,9 +19,30 @@
       compinit
       _comp_options+=(globdots)
 
-      # vi mode
-      bindkey -v
-      export KEYTIMEOUT=1
+      autoload -Uz edit-command-line
+      zle -N edit-command-line
+      bindkey '^X^E' edit-command-line
+
+      bindkey ' ' magic-space
+
+      if command -v pbcopy &> /dev/null; then
+          alias -g C='| pbcopy'
+      elif command -v wl-copy &> /dev/null; then
+          alias -g C='| wl-copy'
+      elif command -v xclip &> /dev/null; then
+          alias -g C='| xclip -selection clipboard'
+      fi
+
+      alias -g NE='2>/dev/null'
+      alias -g NO='>/dev/null'
+      alias -g NUL='>/dev/null 2>&1'
+      alias -g J='| jq'
+
+      autoload -Uz zmv
+
+      hash -d proj=~/Projects
+      hash -d nix=~/Projects/nix-config
+      hash -d dl=~/Downloads
 
       # Use vim keys in tab complete menu:
       bindkey -M menuselect 'h' vi-backward-char
@@ -21,27 +50,6 @@
       bindkey -M menuselect 'l' vi-forward-char
       bindkey -M menuselect 'j' vi-down-line-or-history
       bindkey -v '^?' backward-delete-char
-
-      # Change cursor shape for different vi modes.
-      function zle-keymap-select {
-        if [[ ''${KEYMAP} == vicmd ]] ||
-           [[ $1 = 'block' ]]; then
-          echo -ne '\e[1 q'
-        elif [[ ''${KEYMAP} == main ]] ||
-             [[ ''${KEYMAP} == viins ]] ||
-             [[ ''${KEYMAP} = ''' ]] ||
-             [[ $1 = 'beam' ]]; then
-          echo -ne '\e[5 q'
-        fi
-      }
-      zle -N zle-keymap-select
-      zle-line-init() {
-          zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-          echo -ne "\e[5 q"
-      }
-      zle -N zle-line-init
-      echo -ne '\e[5 q' # Use beam shape cursor on startup.
-      preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
       source <(fzf --zsh)
     '';
