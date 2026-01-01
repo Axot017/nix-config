@@ -135,8 +135,6 @@
 
   nixpkgs.config.rocmSupport = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     grim
     slurp
@@ -152,7 +150,6 @@
     nemo
     cliphist
     wl-clipboard
-    postman
     gnumake
     vscode-extensions.vadimcn.vscode-lldb
     mangohud
@@ -178,7 +175,6 @@
     opencode
     beekeeper-studio
     blueman
-    ngrok
     lazyjj
     awscli2
   ];
