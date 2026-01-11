@@ -57,6 +57,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
+  networking.nameservers = [
+    "192.168.18.123"
+    "1.1.1.1"
+  ];
   networking.extraHosts = "127.0.0.1 app73.local";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   nix.settings.experimental-features = [
