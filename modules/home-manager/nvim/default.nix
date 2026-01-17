@@ -108,6 +108,8 @@ in
       ocamlPackages.ocamlformat
 
       tofu-ls
+
+      yaml-language-server
     ];
   };
 }
